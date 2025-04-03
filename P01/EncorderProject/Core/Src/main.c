@@ -75,7 +75,7 @@ uint32_t encoder_ticks2 = 0;       // Current tick count from Encoder 2
 uint32_t encoder_ticks2_prev = 0;  // Previous tick count from Encoder 2
 
 // Counters to track the number of timer interrupts or events
-uint32_t MainCount = 0;            // Main counter to keep track of loop or events
+uint32_t MainloopCount = 0;            // Main counter to keep track of loop or events
 uint32_t SDCardCount=0;			   // Counter for SD card
 uint32_t record_number = 1;  // Counter for record numbers
 // Velocity and acceleration variables for Encoder 1
@@ -105,28 +105,27 @@ UINT bw;                           // Bytes written to the file
 
 ///////////Test Vrriabblles  ////////
 FRESULT fresult2;
-
+int EncoderUpdated=0;
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim) {
     if (htim->Instance == TIM13) {  // Ensure this corresponds to the correct timer
         SDCardCount++;
-        if (SDCardCount > 30000) {
-            SDCardCount = 0;
-
+        if ((EncoderUpdated==1)) {
             // Open the file for appending
             f_open(&fil, "Data.txt", FA_OPEN_APPEND | FA_WRITE);
 
             // Format the record number and encoder tick data into a string
-            sprintf(buffer, "Record %lu: Encoder1: %lu, Encoder2: %lu\n", record_number, encoder_ticks, encoder_ticks2);
+            sprintf(buffer, "R%lu: E1: %lu, E2: %lu\n", SDCardCount, encoder_ticks, encoder_ticks2);
 
             // Write to the file
             f_write(&fil, buffer, strlen(buffer), NULL);
 
             // Close the file
             f_close(&fil);
-
+            EncoderUpdated=0;
             // Increment the record number
             record_number++;
         }
+
     }
 }
 /* USER CODE END 0 */
@@ -188,8 +187,11 @@ int main(void)
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
-      encoder_ticks = __HAL_TIM_GET_COUNTER(&htim1);
-      encoder_ticks2 = __HAL_TIM_GET_COUNTER(&htim4);
+	  MainloopCount++;
+	  EncoderUpdated=0;
+	  encoder_ticks = __HAL_TIM_GET_COUNTER(&htim1);
+	  encoder_ticks2 = __HAL_TIM_GET_COUNTER(&htim4);
+	  EncoderUpdated=1;
   }
   /* USER CODE END 3 */
 }
@@ -395,7 +397,7 @@ static void MX_TIM13_Init(void)
 
   /* USER CODE END TIM13_Init 1 */
   htim13.Instance = TIM13;
-  htim13.Init.Prescaler = 0;
+  htim13.Init.Prescaler = 7199;
   htim13.Init.CounterMode = TIM_COUNTERMODE_UP;
   htim13.Init.Period = 999;
   htim13.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
