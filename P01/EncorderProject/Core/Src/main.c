@@ -79,14 +79,6 @@ uint32_t MainloopCount = 0;            // Main counter to keep track of loop or 
 uint32_t SDCardCount=0;			   // Counter for SD card
 uint32_t record_number = 1;  // Counter for record numbers
 // Velocity and acceleration variables for Encoder 1
-float velocity1 = 0.0f;            // Velocity from Encoder 1 in counts per second
-float acceleration1 = 0.0f;        // Acceleration from Encoder 1 in counts per second^2
-float velocity1_prev = 0.0f;       // Previous velocity of Encoder 1 for calculating acceleration
-
-// Velocity and acceleration variables for Encoder 2
-float velocity2 = 0.0f;            // Velocity from Encoder 2 in counts per second
-float acceleration2 = 0.0f;        // Acceleration from Encoder 2 in counts per second^2
-float velocity2_prev = 0.0f;       // Previous velocity of Encoder 2 for calculating acceleration
 
 // Timing variable to set the interval for calculation
 uint32_t time_interval = 5;        // Time interval in milliseconds (equivalent to 0.005 seconds at 20 kHz Timer)
@@ -103,31 +95,61 @@ char buffer[1024];                 // Buffer to hold data for file operations
 UINT br;                           // Bytes read from the file
 UINT bw;                           // Bytes written to the file
 
-///////////Test Vrriabblles  ////////
+/////////// Test Variables  ////////
 FRESULT fresult2;
-int EncoderUpdated=0;
+volatile int EncoderUpdated = 0;
+
+/////////// Algorithm Code Varibles  ////////
+#define CPR 1024 //Counter Per Revolution
+uint32_t time_start=0;
+uint32_t time_end=0;
+// Position (angles in rad)
+float theta1 = 0.0, theta2 = 0.0;
+float theta1_prev = 0.0, theta2_prev = 0.0;
+
+// Velocity calculations
+float velocity1 = 0.0, velocity2 = 0.0;
+float velocity1_prev = 0.0, velocity2_prev = 0.0;
+
+// Acceleration calculations
+float acceleration1 = 0.0, acceleration2 = 0.0;
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim) {
-    if (htim->Instance == TIM13) {  // Ensure this corresponds to the correct timer
+    if (htim->Instance == TIM13) {
         SDCardCount++;
-        if ((EncoderUpdated==1)) {
+
+        if (EncoderUpdated == 1) {
+            FRESULT fr;
+            UINT bytes_written;
+
             // Open the file for appending
-            f_open(&fil, "Data.txt", FA_OPEN_APPEND | FA_WRITE);
+            fr = f_open(&fil, "Data.txt", FA_OPEN_APPEND | FA_WRITE);
+            if (fr != FR_OK) {
+                // Optional: Handle error (blink LED, set flag, etc.)
+                return;
+            }
 
             // Format the record number and encoder tick data into a string
             sprintf(buffer, "R%lu: E1: %lu, E2: %lu\n", SDCardCount, encoder_ticks, encoder_ticks2);
 
             // Write to the file
-            f_write(&fil, buffer, strlen(buffer), NULL);
+            fr = f_write(&fil, buffer, strlen(buffer), &bytes_written);
+            if (fr != FR_OK || bytes_written == 0) {
+                f_close(&fil);  // Close anyway if open
+                return;
+            }
 
             // Close the file
-            f_close(&fil);
-            EncoderUpdated=0;
-            // Increment the record number
+            fr = f_close(&fil);
+            if (fr != FR_OK) {
+                return;
+            }
+
+            EncoderUpdated = 0;
             record_number++;
         }
-
     }
 }
+
 /* USER CODE END 0 */
 
 /**
@@ -172,12 +194,20 @@ int main(void)
   HAL_TIM_Encoder_Start_IT(&htim4, TIM_CHANNEL_ALL);
   HAL_TIM_Encoder_Start_IT(&htim1, TIM_CHANNEL_ALL);
   HAL_TIM_Base_Start_IT(&htim13);  // Start TIM2 in interrupt mode
-  fresult = f_mount(&fs, "/", 1);
-  if (fresult == FR_OK) {
-      // Create and close the file initially
+  // Mount the filesystem
+  fresult = f_mount(&fs, "", 1);
+  if (fresult != FR_OK) {
+      // Optional: Handle mount failure
+      // e.g., flash LED or set flag to disable SD logging
+      // while (1);  // You can also skip this if you want MCU to continue
+  } else {
+      // Create a new file if mount was successful
       fresult = f_open(&fil, "Data.txt", FA_CREATE_ALWAYS | FA_WRITE);
-      f_close(&fil);
+      if (fresult == FR_OK) {
+          fresult = f_close(&fil);
+      }
   }
+
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -192,6 +222,24 @@ int main(void)
 	  encoder_ticks = __HAL_TIM_GET_COUNTER(&htim1);
 	  encoder_ticks2 = __HAL_TIM_GET_COUNTER(&htim4);
 	  EncoderUpdated=1;
+      time_start = HAL_GetTick();  // Get time at start of loop
+      // Compute **Encoder 1** Position, Velocity, & Acceleration
+      theta1 = (encoder_ticks * 2 * 3.14) / CPR;
+      velocity1 = (theta1 - theta1_prev) * 1000 / time_interval;
+      acceleration1 = (velocity1 - velocity1_prev) * 1000 / time_interval;
+      theta1_prev = theta1;
+      velocity1_prev = velocity1;
+
+      // Compute **Encoder 2** Position, Velocity, & Acceleration
+      theta2 = (encoder_ticks2 * 2 * 3.14) / CPR;
+      velocity2 = (theta2 - theta2_prev) * 1000 / time_interval;
+      acceleration2 = (velocity2 - velocity2_prev) * 1000 / time_interval;
+      theta2_prev = theta2;
+      velocity2_prev = velocity2;
+
+      time_end = HAL_GetTick();  // Get time at end of loop
+      time_interval = time_end - time_start;  // Time elapsed in ms
+
   }
   /* USER CODE END 3 */
 }

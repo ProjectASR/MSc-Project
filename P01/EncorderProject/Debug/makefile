@@ -64,8 +64,8 @@ all: main-build
 main-build: EncorderProject.elf secondary-outputs
 
 # Tool invocations
-EncorderProject.elf EncorderProject.map: $(OBJS) $(USER_OBJS) C:\Users\ashen\STM32CubeIDE\workspace_1.17.0\EncorderProject\STM32F756ZGTX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "EncorderProject.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m7 -T"C:\Users\ashen\STM32CubeIDE\workspace_1.17.0\EncorderProject\STM32F756ZGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="EncorderProject.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+EncorderProject.elf EncorderProject.map: $(OBJS) $(USER_OBJS) C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\STM32F756ZGTX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "EncorderProject.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m7 -T"C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\STM32F756ZGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="EncorderProject.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 
