@@ -123,12 +123,23 @@ float acceleration1 = 0.0, acceleration2 = 0.0;
 // Variables for filter processing
 float Y_old = 0.0f; // Initial condition (previous output value)
 // Define constants and variables for both motors
-// Define floating-point variables
-float Iref1 = 1.2, Iref2 = 1.1;  // Reference current (A) for both motors
-float Ktn1 = 0.05, Ktn2 = 0.048; // Torque constants (Nm/A)
-float Jn1 = 0.01, Jn2 = 0.012;   // System inertia (kg·m^2)
-float Gdis1 = 100.0, Gdis2 = 95.0; // Disturbance observer gains
-float Tdis1, Tdis2;              // Disturbance torque
+float Iref1, Iref2;        // Reference current (A) for Motor 1 & 2
+float Ktn1, Ktn2;          // Torque constant (Nm/A)
+float Jn1, Jn2;           // System inertia (kg·m^2)
+float Gdis1, Gdis2;       // Disturbance observer gains
+double Tdis1, Tdis2;       // Estimated disturbance torque (Nm) for Motor 1 & 2
+
+// Initialize values (modify based on your system specs)
+Iref1 = 1.2;
+Iref2 = 1.1;
+Ktn1 = 0.05;
+Ktn2 = 0.048;
+velocity1 = 10.0;
+velocity2 = 9.8;
+Jn1 = 0.01;
+Jn2 = 0.012;
+Gdis1 = 100.0;
+Gdis2 = 95.0;
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim) {
     if (htim->Instance == TIM13) {
         SDCardCount++;
@@ -273,8 +284,7 @@ int main(void)
 	  velocity2_prev = velocity2;
 
 	  // Disturbance Observers //
-	  Tdis1 = (Iref1 * Ktn1 + velocity1 * Jn1 * Gdis1) * Gdis1 / (time_interval + Gdis1) - velocity1 * Jn1 * Gdis1;
-	  Tdis2 = (Iref2 * Ktn2 + velocity2 * Jn2 * Gdis2) * Gdis2 / (time_interval + Gdis2) - velocity2 * Jn2 * Gdis2;
+	  Tdis1=(Iref*Ktn+velocity1*Jn*Gdis)*Gdis/(time_interval+Gdis)-velocity1*Jn*Gdis;
 	  uint32_t time_end = __HAL_TIM_GET_COUNTER(&htim2);
 	  time_interval = time_end - time_start;
   }

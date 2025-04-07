@@ -25,7 +25,6 @@
 #include "fatfs_sd.h"
 #include "string.h"
 #include "stdio.h"
-#include <math.h>
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -106,7 +105,6 @@ volatile int EncoderUpdated = 0;
 #define CPR 1024 //Counter Per Revolution
 uint32_t time_start=0;
 uint32_t time_end=0;
-uint32_t secondFromStart;
 // Position (angles in rad)
 float theta1 = 0.0, theta2 = 0.0;
 float theta1_prev = 0.0, theta2_prev = 0.0;
@@ -117,18 +115,6 @@ float velocity1_prev = 0.0, velocity2_prev = 0.0;
 
 // Acceleration calculations
 float acceleration1 = 0.0, acceleration2 = 0.0;
-// Parameters
-#define G 0.1f  // Smoothing factor (adjust 0 < G < 1)
-
-// Variables for filter processing
-float Y_old = 0.0f; // Initial condition (previous output value)
-// Define constants and variables for both motors
-// Define floating-point variables
-float Iref1 = 1.2, Iref2 = 1.1;  // Reference current (A) for both motors
-float Ktn1 = 0.05, Ktn2 = 0.048; // Torque constants (Nm/A)
-float Jn1 = 0.01, Jn2 = 0.012;   // System inertia (kg·m^2)
-float Gdis1 = 100.0, Gdis2 = 95.0; // Disturbance observer gains
-float Tdis1, Tdis2;              // Disturbance torque
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim) {
     if (htim->Instance == TIM13) {
         SDCardCount++;
@@ -165,13 +151,7 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim) {
         }
     }
 }
-float applyLowPassFilterVelocity(float X, float Y_old) {
-    // Apply the first-order low-pass filter formula
-    float Y = Y_old + G * (X - Y_old);
 
-    // Return the filtered output
-    return Y;
-}
 /* USER CODE END 0 */
 
 /**
@@ -243,40 +223,28 @@ int main(void)
 
     /* USER CODE BEGIN 3 */
 	  MainloopCount++;
-	  EncoderUpdated = 0;
+	  EncoderUpdated=0;
 	  encoder_ticks = __HAL_TIM_GET_COUNTER(&htim1);
 	  encoder_ticks2 = __HAL_TIM_GET_COUNTER(&htim4);
-	  EncoderUpdated = 1;
-	  secondFromStart=__HAL_TIM_GET_COUNTER(&htim2)/100000;
+	  EncoderUpdated=1;
 	  uint32_t time_start = __HAL_TIM_GET_COUNTER(&htim2);
+      // Compute **Encoder 1** Position, Velocity, & Acceleration
+      theta1 = (encoder_ticks * 2 * 3.14) / CPR;
+      velocity1 = (theta1 - theta1_prev) * 1000 / time_interval;
+      acceleration1 = (velocity1 - velocity1_prev) * 1000 / time_interval;
+      theta1_prev = theta1;
+      velocity1_prev = velocity1;
 
-	  // Compute **Encoder 1** Position, Velocity, & Acceleration
-	  theta1 = (float)(encoder_ticks) * 2.0f * M_PI / (float)CPR;
-	  velocity1 = (theta1 - theta1_prev) * 1000000  / time_interval;
-	  acceleration1 = (velocity1 - velocity1_prev) * 1000000  / time_interval;
+      // Compute **Encoder 2** Position, Velocity, & Acceleration
+      theta2 = (encoder_ticks2 * 2 * 3.14) / CPR;
+      velocity2 = (theta2 - theta2_prev) * 1000 / time_interval;
+      acceleration2 = (velocity2 - velocity2_prev) * 1000 / time_interval;
+      theta2_prev = theta2;
+      velocity2_prev = velocity2;
 
-	  // Apply low-pass filter on the velocity of Encoder 1
-	  velocity1 = applyLowPassFilterVelocity(velocity1, velocity1_prev);  // Filtered velocity
+      uint32_t time_end = __HAL_TIM_GET_COUNTER(&htim2);
+      time_interval=time_end - time_start;
 
-	  theta1_prev = theta1;
-	  velocity1_prev = velocity1;
-
-	  // Compute **Encoder 2** Position, Velocity, & Acceleration
-	  theta2 = (float)(encoder_ticks2) * 2.0f * M_PI / (float)CPR;
-	  velocity2 = (theta2 - theta2_prev) * 1000000  / time_interval;
-	  acceleration2 = (velocity2 - velocity2_prev) * 1000000  / time_interval;
-
-	  // Apply low-pass filter on the velocity of Encoder 2
-	  velocity2 = applyLowPassFilterVelocity(velocity2, velocity2_prev);  // Filtered velocity
-
-	  theta2_prev = theta2;
-	  velocity2_prev = velocity2;
-
-	  // Disturbance Observers //
-	  Tdis1 = (Iref1 * Ktn1 + velocity1 * Jn1 * Gdis1) * Gdis1 / (time_interval + Gdis1) - velocity1 * Jn1 * Gdis1;
-	  Tdis2 = (Iref2 * Ktn2 + velocity2 * Jn2 * Gdis2) * Gdis2 / (time_interval + Gdis2) - velocity2 * Jn2 * Gdis2;
-	  uint32_t time_end = __HAL_TIM_GET_COUNTER(&htim2);
-	  time_interval = time_end - time_start;
   }
   /* USER CODE END 3 */
 }
@@ -436,7 +404,7 @@ static void MX_TIM2_Init(void)
 
   /* USER CODE END TIM2_Init 1 */
   htim2.Instance = TIM2;
-  htim2.Init.Prescaler = 143;
+  htim2.Init.Prescaler = 71;
   htim2.Init.CounterMode = TIM_COUNTERMODE_UP;
   htim2.Init.Period = 0xffffffff;
   htim2.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;

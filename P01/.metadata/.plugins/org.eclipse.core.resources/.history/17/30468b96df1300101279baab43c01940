@@ -273,8 +273,7 @@ int main(void)
 	  velocity2_prev = velocity2;
 
 	  // Disturbance Observers //
-	  Tdis1 = (Iref1 * Ktn1 + velocity1 * Jn1 * Gdis1) * Gdis1 / (time_interval + Gdis1) - velocity1 * Jn1 * Gdis1;
-	  Tdis2 = (Iref2 * Ktn2 + velocity2 * Jn2 * Gdis2) * Gdis2 / (time_interval + Gdis2) - velocity2 * Jn2 * Gdis2;
+	  Tdis1=(Iref*Ktn+velocity1*Jn*Gdis)*Gdis/(time_interval+Gdis)-velocity1*Jn*Gdis;
 	  uint32_t time_end = __HAL_TIM_GET_COUNTER(&htim2);
 	  time_interval = time_end - time_start;
   }
