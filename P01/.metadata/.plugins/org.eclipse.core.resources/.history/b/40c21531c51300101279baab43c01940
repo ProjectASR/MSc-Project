@@ -47,7 +47,7 @@
 SPI_HandleTypeDef hspi4;
 
 TIM_HandleTypeDef htim1;
-TIM_HandleTypeDef htim2;
+extern TIM_HandleTypeDef htim2;
 TIM_HandleTypeDef htim4;
 TIM_HandleTypeDef htim13;
 

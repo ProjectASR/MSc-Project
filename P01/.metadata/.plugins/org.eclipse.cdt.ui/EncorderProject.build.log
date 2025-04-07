@@ -1,10 +1,10 @@
-20:44:57 **** Incremental Build of configuration Debug for project EncorderProject ****
+21:00:16 **** Incremental Build of configuration Debug for project EncorderProject ****
 make -j12 all 
 arm-none-eabi-size  EncorderProject.elf 
    text	   data	    bss	    dec	    hex	filename
-  31092	    124	  11684	  42900	   a794	EncorderProject.elf
+  32216	    124	  11756	  44096	   ac40	EncorderProject.elf
 Finished building: default.size.stdout
  
 
-20:44:57 Build Finished. 0 errors, 0 warnings. (took 364ms)
+21:00:17 Build Finished. 0 errors, 0 warnings. (took 429ms)
 

@@ -227,7 +227,7 @@ int main(void)
 	  encoder_ticks = __HAL_TIM_GET_COUNTER(&htim1);
 	  encoder_ticks2 = __HAL_TIM_GET_COUNTER(&htim4);
 	  EncoderUpdated=1;
-	  uint32_t time_start = __HAL_TIM_GET_COUNTER(&htim2);
+      time_start = HAL_GetTick();  // Get time at start of loop
       // Compute **Encoder 1** Position, Velocity, & Acceleration
       theta1 = (encoder_ticks * 2 * 3.14) / CPR;
       velocity1 = (theta1 - theta1_prev) * 1000 / time_interval;
@@ -242,8 +242,8 @@ int main(void)
       theta2_prev = theta2;
       velocity2_prev = velocity2;
 
-      uint32_t time_end = __HAL_TIM_GET_COUNTER(&htim2);
-      time_interval=time_end - time_start;
+      time_end = HAL_GetTick();  // Get time at end of loop
+      time_interval = time_end - time_start;  // Time elapsed in ms
 
   }
   /* USER CODE END 3 */

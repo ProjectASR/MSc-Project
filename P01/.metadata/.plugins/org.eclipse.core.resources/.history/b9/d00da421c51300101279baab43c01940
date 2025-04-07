@@ -47,7 +47,7 @@
 SPI_HandleTypeDef hspi4;
 
 TIM_HandleTypeDef htim1;
-TIM_HandleTypeDef htim2;
+extern TIM_HandleTypeDef htim2;
 TIM_HandleTypeDef htim4;
 TIM_HandleTypeDef htim13;
 
@@ -243,6 +243,7 @@ int main(void)
       velocity2_prev = velocity2;
 
       uint32_t time_end = __HAL_TIM_GET_COUNTER(&htim2);
+      uint32_t time_interval=0;
       time_interval=time_end - time_start;
 
   }
