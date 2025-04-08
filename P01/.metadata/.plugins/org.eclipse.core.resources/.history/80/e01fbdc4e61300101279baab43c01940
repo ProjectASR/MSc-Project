@@ -119,7 +119,13 @@ float velocity1_prev = 0.0, velocity2_prev = 0.0;
 float acceleration1 = 0.0, acceleration2 = 0.0;
 // Parameters
 #define G 0.1f  // Smoothing factor (adjust 0 < G < 1)
+
+// Variables for filter processing
+float Y_old = 0.0f; // Initial condition (previous output value)
 // Define constants and variables for both motors
+// Define floating-point variables
+// Define motor-specific parameters
+// Define and initialize floating-point variables
 // Motor 1 Parameters
 float Icmd1 = 1.2;        // Commanded current (A)
 float Ktn1 = 0.05;        // Torque constant (Nm/A)
@@ -139,6 +145,8 @@ float Kt2 = 0.048;        // Additional torque constant scaling
 float Grtob2 = 45.0;      // Reaction torque observer gain
 float Fint2 = 0.08;       // Internal force (Nm)
 float Ffric2 = 0.04;      // Friction force (Nm)
+
+float time_interval = 0.005; // Sampling time (s)
 
 // Disturbance Torque Variables
 float Tdis1, Tdis2;  // Disturbance torque estimation (Nm)
@@ -461,9 +469,9 @@ static void MX_TIM2_Init(void)
 
   /* USER CODE END TIM2_Init 1 */
   htim2.Instance = TIM2;
-  htim2.Init.Prescaler = 71;
+  htim2.Init.Prescaler = 143;
   htim2.Init.CounterMode = TIM_COUNTERMODE_UP;
-  htim2.Init.Period = 0xFFFFFFFF;
+  htim2.Init.Period = 0xffffffff;
   htim2.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
   htim2.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;
   if (HAL_TIM_Base_Init(&htim2) != HAL_OK)

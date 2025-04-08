@@ -119,37 +119,16 @@ float velocity1_prev = 0.0, velocity2_prev = 0.0;
 float acceleration1 = 0.0, acceleration2 = 0.0;
 // Parameters
 #define G 0.1f  // Smoothing factor (adjust 0 < G < 1)
+
+// Variables for filter processing
+float Y_old = 0.0f; // Initial condition (previous output value)
 // Define constants and variables for both motors
-// Motor 1 Parameters
-float Icmd1 = 1.2;        // Commanded current (A)
-float Ktn1 = 0.05;        // Torque constant (Nm/A)
-float Jn1 = 0.01;         // Motor inertia (kg·m^2)
-float Gdis1 = 100.0;      // Disturbance observer gain
-float Kt1 = 0.05;        // Additional torque constant scaling
-float Grtob1 = 50.0;      // Reaction torque observer gain
-float Fint = 0.1;         // Internal force (Nm)
-float Ffric = 0.05;       // Friction force (Nm)
-
-// Motor 2 Parameters
-float Icmd2 = 1.1;        // Commanded current (A)
-float Ktn2 = 0.048;       // Torque constant (Nm/A)
-float Jn2 = 0.012;        // Motor inertia (kg·m^2)
-float Gdis2 = 95.0;       // Disturbance observer gain
-float Kt2 = 0.048;        // Additional torque constant scaling
-float Grtob2 = 45.0;      // Reaction torque observer gain
-float Fint2 = 0.08;       // Internal force (Nm)
-float Ffric2 = 0.04;      // Friction force (Nm)
-
-// Disturbance Torque Variables
-float Tdis1, Tdis2;  // Disturbance torque estimation (Nm)
-
-// Disturbance-Induced Currents
-float Idis1, Idis2;  // Disturbance-induced current (A)
-
-// External Torque Estimations
-float Text1, Text2;  // External torque estimation (Nm)
-// External Torque Estimations
-float Text1, Text2;
+// Define floating-point variables
+float Iref1 = 1.2, Iref2 = 1.1;  // Reference current (A) for both motors
+float Ktn1 = 0.05, Ktn2 = 0.048; // Torque constants (Nm/A)
+float Jn1 = 0.01, Jn2 = 0.012;   // System inertia (kg·m^2)
+float Gdis1 = 100.0, Gdis2 = 95.0; // Disturbance observer gains
+float Tdis1, Tdis2;              // Disturbance torque
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim) {
     if (htim->Instance == TIM13) {
         SDCardCount++;
@@ -298,8 +277,7 @@ int main(void)
 	  Tdis2 = (Icmd2 * Ktn2 + velocity2 * Jn2 * Gdis2) * Gdis2 / (time_interval + Gdis2) - velocity2 * Jn2 * Gdis2;
 	  Idis1=Tdis1*Kt1;
 	  Idis2=Tdis2*Kt2;
-	  Text1=(Icmd1*(1/Kt1)+velocity1 * Jn1 * Grtob1-(Fint+Ffric))*Grtob1/(time_interval + Grtob1)-velocity1 * Jn1 * Grtob1;
-	  Text2 = (Icmd2 * (1 / Kt2) + velocity2 * Jn2 * Grtob2 - (Fint2 + Ffric2)) * Grtob2 / (time_interval + Grtob2) - velocity2 * Jn2 * Grtob2;
+	  Icmd1*(1/Kt1)+velocity1 * Jn1 * Grtob1-(Fint+Ffric);
 	  uint32_t time_end = __HAL_TIM_GET_COUNTER(&htim2);
 	  time_interval = time_end - time_start;
   }
@@ -461,9 +439,9 @@ static void MX_TIM2_Init(void)
 
   /* USER CODE END TIM2_Init 1 */
   htim2.Instance = TIM2;
-  htim2.Init.Prescaler = 71;
+  htim2.Init.Prescaler = 143;
   htim2.Init.CounterMode = TIM_COUNTERMODE_UP;
-  htim2.Init.Period = 0xFFFFFFFF;
+  htim2.Init.Period = 0xffffffff;
   htim2.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
   htim2.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;
   if (HAL_TIM_Base_Init(&htim2) != HAL_OK)

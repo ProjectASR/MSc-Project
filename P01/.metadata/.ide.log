@@ -1,320 +1,1227 @@
-2025-04-07 20:08:58,292 [INFO] Activator:176 - 
-
-
-2025-04-07 20:08:58,298 [INFO] Activator:177 - !SESSION log4j initialized
-2025-04-07 20:09:04,441 [INFO] LogOutputStream:77 - [STDOUT_REDIRECT] 
-2025-04-07 20:09:10,089 [INFO] ApplicationProperties:184 - Using Application install path: C:\ST\STM32CubeIDE_1.17.0\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_6.14.0.202502271554
-2025-04-07 20:09:10,119 [INFO] DbMcusXml:78 - Set database path to: C:\ST\STM32CubeIDE_1.17.0\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_6.14.0.202502271554\\db\/mcu/
-2025-04-07 20:09:10,120 [INFO] ApiDb:274 - Set plugin database path to: C:\ST\STM32CubeIDE_1.17.0\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_6.14.0.202502271554\\db\/plugins/boardmanager/
-2025-04-07 20:09:10,122 [WARN] ApiDb:259 - Overriding images path with different value:  => C:\ST\STM32CubeIDE_1.17.0\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_6.14.0.202502271554\\db\/plugins/mcufinder/images/
-2025-04-07 20:09:10,132 [INFO] ApiDb:250 - Set database path to: C:\Users\ashen\.stmcufinder\plugins\mcufinder//mcu/
-2025-04-07 20:09:10,134 [INFO] DbMcusAds:125 - Set database path to: C:\Users\ashen\.stmcufinder\plugins\mcufinder//mcu/
-2025-04-07 20:09:10,137 [INFO] CrossReferenceDbSqlite:203 - Set database path to: C:\Users\ashen\.stmcufinder\plugins\mcufinder//mcu/cs/
-2025-04-07 20:09:10,281 [INFO] RulesReader:64 - Compatibility file has been processed (301 Rules)
-2025-04-07 20:09:10,396 [INFO] DbMcusXml:78 - Set database path to: C:\ST\STM32CubeIDE_1.17.0\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_6.14.0.202502271554\\db\/mcu/
-2025-04-07 20:09:10,396 [INFO] ApiDb:274 - Set plugin database path to: C:\ST\STM32CubeIDE_1.17.0\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_6.14.0.202502271554\\db\/plugins/boardmanager/
-2025-04-07 20:09:10,397 [INFO] ApiDb:261 - Set plugin images path to: C:\ST\STM32CubeIDE_1.17.0\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_6.14.0.202502271554\\db\/plugins/mcufinder/images/
-2025-04-07 20:09:10,397 [WARN] DbFile:41 - Overriding database path with different value: C:\Users\ashen\.stmcufinder\plugins\mcufinder/ => C:\Users\ashen\.stmcufinder\plugins\mcufinder
-2025-04-07 20:09:10,397 [INFO] ApiDb:250 - Set database path to: C:\Users\ashen\.stmcufinder\plugins\mcufinder//mcu/
-2025-04-07 20:09:10,397 [WARN] DbFile:41 - Overriding database path with different value: C:\Users\ashen\.stmcufinder\plugins\mcufinder/ => C:\Users\ashen\.stmcufinder\plugins\mcufinder
-2025-04-07 20:09:10,397 [INFO] DbMcusAds:125 - Set database path to: C:\Users\ashen\.stmcufinder\plugins\mcufinder//mcu/
-2025-04-07 20:09:10,397 [WARN] DbFile:41 - Overriding database path with different value: C:\Users\ashen\.stmcufinder\plugins\mcufinder/ => C:\Users\ashen\.stmcufinder\plugins\mcufinder
-2025-04-07 20:09:10,397 [WARN] DbFile:41 - Overriding database path with different value: C:\Users\ashen\.stmcufinder\plugins\mcufinder/ => C:\Users\ashen\.stmcufinder\plugins\mcufinder
-2025-04-07 20:09:10,398 [INFO] CrossReferenceDbSqlite:203 - Set database path to: C:\Users\ashen\.stmcufinder\plugins\mcufinder//mcu/cs/
-2025-04-07 20:09:10,557 [INFO] MainPanel:272 - HeapMemory: 268435456
-2025-04-07 20:09:10,697 [INFO] DbMcusXml:78 - Set database path to: C:\ST\STM32CubeIDE_1.17.0\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_6.14.0.202502271554\\db\/mcu/
-2025-04-07 20:09:10,698 [INFO] ApiDb:274 - Set plugin database path to: C:\ST\STM32CubeIDE_1.17.0\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_6.14.0.202502271554\\db\/plugins/boardmanager/
-2025-04-07 20:09:10,698 [INFO] ApiDb:261 - Set plugin images path to: C:\ST\STM32CubeIDE_1.17.0\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_6.14.0.202502271554\\db\/plugins/mcufinder/images/
-2025-04-07 20:09:10,698 [WARN] DbFile:41 - Overriding database path with different value: C:\Users\ashen\.stmcufinder\plugins\mcufinder/ => C:\Users\ashen\.stmcufinder\plugins\mcufinder
-2025-04-07 20:09:10,698 [INFO] ApiDb:250 - Set database path to: C:\Users\ashen\.stmcufinder\plugins\mcufinder//mcu/
-2025-04-07 20:09:10,698 [WARN] DbFile:41 - Overriding database path with different value: C:\Users\ashen\.stmcufinder\plugins\mcufinder/ => C:\Users\ashen\.stmcufinder\plugins\mcufinder
-2025-04-07 20:09:10,699 [INFO] DbMcusAds:125 - Set database path to: C:\Users\ashen\.stmcufinder\plugins\mcufinder//mcu/
-2025-04-07 20:09:10,699 [WARN] DbFile:41 - Overriding database path with different value: C:\Users\ashen\.stmcufinder\plugins\mcufinder/ => C:\Users\ashen\.stmcufinder\plugins\mcufinder
-2025-04-07 20:09:10,699 [WARN] DbFile:41 - Overriding database path with different value: C:\Users\ashen\.stmcufinder\plugins\mcufinder/ => C:\Users\ashen\.stmcufinder\plugins\mcufinder
-2025-04-07 20:09:10,699 [INFO] CrossReferenceDbSqlite:203 - Set database path to: C:\Users\ashen\.stmcufinder\plugins\mcufinder//mcu/cs/
-2025-04-07 20:09:10,718 [INFO] ApplicationProperties:184 - Using Application install path: C:\ST\STM32CubeIDE_1.17.0\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_6.14.0.202502271554
-2025-04-07 20:09:10,720 [INFO] PluginManage:196 - Search for loadable plugins [exclusion list=, ]
-2025-04-07 20:09:10,722 [INFO] PluginManage:310 - Check plugin analytics
-2025-04-07 20:09:10,941 [INFO] AnalyticsPlugin:253 - Accepted Software Licenses: 
-2025-04-07 20:09:10,942 [INFO] AnalyticsPlugin:255 - Accepted CMSIS Pack Licenses: 
-2025-04-07 20:09:10,942 [INFO] AnalyticsPlugin:257 - Accepted Firmware Licenses: 
-2025-04-07 20:09:10,946 [INFO] PluginManage:359 - Loaded plugin analytics (category:tool,tabindex:-1)
-2025-04-07 20:09:10,947 [INFO] PluginManage:310 - Check plugin cadmodel
-2025-04-07 20:09:10,951 [INFO] CADModel:105 - Init CAD model plugin
-2025-04-07 20:09:10,951 [INFO] PluginManage:359 - Loaded plugin cadmodel (category:power,tabindex:5)
-2025-04-07 20:09:10,951 [INFO] PluginManage:310 - Check plugin clock
-2025-04-07 20:09:10,960 [INFO] PluginManage:359 - Loaded plugin clock (category:base,tabindex:2)
-2025-04-07 20:09:10,960 [INFO] PluginManage:310 - Check plugin ddr
-2025-04-07 20:09:10,963 [INFO] PluginManage:359 - Loaded plugin ddr (category:tool,tabindex:6)
-2025-04-07 20:09:10,963 [INFO] PluginManage:310 - Check plugin filemanager
-2025-04-07 20:09:11,151 [INFO] PluginManage:359 - Loaded plugin filemanager (category:base,tabindex:10)
-2025-04-07 20:09:11,152 [INFO] PluginManage:310 - Check plugin ipmanager
-2025-04-07 20:09:11,158 [INFO] PluginManage:359 - Loaded plugin ipmanager (category:base,tabindex:5)
-2025-04-07 20:09:11,158 [INFO] PluginManage:310 - Check plugin lpbam
-2025-04-07 20:09:11,163 [INFO] PluginManage:359 - Loaded plugin lpbam (category:base,tabindex:0)
-2025-04-07 20:09:11,163 [INFO] PluginManage:310 - Check plugin memorymap
-2025-04-07 20:09:11,175 [INFO] PluginManage:359 - Loaded plugin memorymap (category:base,tabindex:4)
-2025-04-07 20:09:11,175 [INFO] PluginManage:310 - Check plugin pinoutandconfiguration
-2025-04-07 20:09:11,181 [INFO] PluginManage:359 - Loaded plugin pinoutandconfiguration (category:base,tabindex:1)
-2025-04-07 20:09:11,181 [INFO] PluginManage:310 - Check plugin pinoutconfig
-2025-04-07 20:09:11,261 [WARN] SupportedApi:132 - Cannot load RTOS API schema: s4s-elt-must-match.1: The content of 'definitions' must match (annotation?, (simpleType | complexType)?, (unique | key | keyref)*)). A problem was found starting at: attribute.
-2025-04-07 20:09:11,409 [INFO] PluginManage:359 - Loaded plugin pinoutconfig (category:base,tabindex:0)
-2025-04-07 20:09:11,409 [INFO] PluginManage:310 - Check plugin power
-2025-04-07 20:09:11,420 [INFO] PluginManage:359 - Loaded plugin power (category:power,tabindex:4)
-2025-04-07 20:09:11,420 [INFO] PluginManage:310 - Check plugin projectmanager
-2025-04-07 20:09:11,434 [INFO] PluginManage:359 - Loaded plugin projectmanager (category:projectmanager,tabindex:4)
-2025-04-07 20:09:11,435 [INFO] PluginManage:310 - Check plugin rif
-2025-04-07 20:09:11,441 [INFO] PluginManage:359 - Loaded plugin rif (category:base,tabindex:3)
-2025-04-07 20:09:11,441 [INFO] PluginManage:310 - Check plugin thirdparty
-2025-04-07 20:09:11,597 [WARN] IntegrityCheckThread:84 - waiting for thirdparty lock release [integrity check]
-2025-04-07 20:09:11,598 [INFO] PluginManage:359 - Loaded plugin thirdparty (category:base,tabindex:-1)
-2025-04-07 20:09:11,598 [INFO] IntegrityCheckThread:86 - entering critical section [integrity check]
-2025-04-07 20:09:11,598 [INFO] PluginManage:310 - Check plugin tools
-2025-04-07 20:09:11,599 [INFO] ThirdPartyUpdaterWithRetryManager:70 - Updater plugin not ready yet. [1/15]
-2025-04-07 20:09:11,603 [INFO] PluginManage:359 - Loaded plugin tools (category:base,tabindex:7)
-2025-04-07 20:09:11,603 [INFO] PluginManage:310 - Check plugin tutovideos
-2025-04-07 20:09:11,824 [INFO] PluginManage:359 - Loaded plugin tutovideos (category:base,tabindex:-1)
-2025-04-07 20:09:11,825 [INFO] PluginManage:310 - Check plugin updater
-2025-04-07 20:09:11,862 [INFO] PluginManage:359 - Loaded plugin updater (category:base,tabindex:12)
-2025-04-07 20:09:11,862 [INFO] PluginManage:310 - Check plugin userauth
-2025-04-07 20:09:11,871 [INFO] UserAuth:118 - Init User Auth plugin
-2025-04-07 20:09:11,873 [INFO] PluginManage:359 - Loaded plugin userauth (category:base,tabindex:14)
-2025-04-07 20:09:11,875 [INFO] PluginManage:283 - PluginManage : Loaded plugins [18]
-2025-04-07 20:09:12,095 [INFO] PinOutPanel:1589 - setPackage(No Configuration,No Configuration)
-2025-04-07 20:09:12,180 [INFO] CADModel:165 - CPN selected for project level
-2025-04-07 20:09:12,180 [INFO] CADModel:114 - Register for checkConnection events
-2025-04-07 20:09:12,198 [INFO] IPUIPlugin:80 - create IPUIPlugin
-2025-04-07 20:09:12,198 [INFO] PluginManager:220 - loadIPPluginJar : add adc
-2025-04-07 20:09:12,200 [INFO] IPUIPlugin:80 - create IPUIPlugin
-2025-04-07 20:09:12,200 [INFO] PluginManager:220 - loadIPPluginJar : add aes
-2025-04-07 20:09:12,202 [INFO] IPUIPlugin:80 - create IPUIPlugin
-2025-04-07 20:09:12,202 [INFO] PluginManager:220 - loadIPPluginJar : add can
-2025-04-07 20:09:12,206 [INFO] IPUIPlugin:80 - create IPUIPlugin
-2025-04-07 20:09:12,206 [INFO] PluginManager:220 - loadIPPluginJar : add comp
-2025-04-07 20:09:12,209 [INFO] IPUIPlugin:80 - create IPUIPlugin
-2025-04-07 20:09:12,209 [INFO] PluginManager:220 - loadIPPluginJar : add cryp
-2025-04-07 20:09:12,211 [INFO] IPUIPlugin:80 - create IPUIPlugin
-2025-04-07 20:09:12,211 [INFO] PluginManager:220 - loadIPPluginJar : add ddr_ctrl_phy
-2025-04-07 20:09:12,214 [INFO] IPUIPlugin:80 - create IPUIPlugin
-2025-04-07 20:09:12,214 [INFO] PluginManager:220 - loadIPPluginJar : add dfsdm
-2025-04-07 20:09:12,218 [INFO] IPUIPlugin:80 - create IPUIPlugin
-2025-04-07 20:09:12,218 [INFO] PluginManager:220 - loadIPPluginJar : add dma
-2025-04-07 20:09:12,222 [INFO] IPUIPlugin:80 - create IPUIPlugin
-2025-04-07 20:09:12,222 [INFO] PluginManager:220 - loadIPPluginJar : add dma3
-2025-04-07 20:09:12,227 [INFO] IPUIPlugin:80 - create IPUIPlugin
-2025-04-07 20:09:12,227 [INFO] PluginManager:220 - loadIPPluginJar : add extmemmanager
-2025-04-07 20:09:12,229 [INFO] IPUIPlugin:80 - create IPUIPlugin
-2025-04-07 20:09:12,229 [INFO] PluginManager:220 - loadIPPluginJar : add fatfs
-2025-04-07 20:09:12,233 [INFO] IPUIPlugin:80 - create IPUIPlugin
-2025-04-07 20:09:12,233 [INFO] PluginManager:220 - loadIPPluginJar : add fmc
-2025-04-07 20:09:12,242 [INFO] IPUIPlugin:80 - create IPUIPlugin
-2025-04-07 20:09:12,244 [INFO] PluginManager:220 - loadIPPluginJar : add freertos
-2025-04-07 20:09:12,246 [INFO] IPUIPlugin:80 - create IPUIPlugin
-2025-04-07 20:09:12,246 [INFO] PluginManager:220 - loadIPPluginJar : add genericplugin
-2025-04-07 20:09:12,248 [INFO] IPUIPlugin:80 - create IPUIPlugin
-2025-04-07 20:09:12,248 [INFO] PluginManager:220 - loadIPPluginJar : add gfxmmu
-2025-04-07 20:09:12,252 [INFO] IPUIPlugin:80 - create IPUIPlugin
-2025-04-07 20:09:12,252 [INFO] PluginManager:220 - loadIPPluginJar : add gic
-2025-04-07 20:09:12,259 [INFO] IPUIPlugin:80 - create IPUIPlugin
-2025-04-07 20:09:12,259 [INFO] PluginManager:220 - loadIPPluginJar : add gpio
-2025-04-07 20:09:12,262 [INFO] IPUIPlugin:80 - create IPUIPlugin
-2025-04-07 20:09:12,262 [INFO] PluginManager:220 - loadIPPluginJar : add gtzc
-2025-04-07 20:09:12,266 [INFO] IPUIPlugin:80 - create IPUIPlugin
-2025-04-07 20:09:12,266 [INFO] PluginManager:220 - loadIPPluginJar : add hash
-2025-04-07 20:09:12,270 [INFO] IPUIPlugin:80 - create IPUIPlugin
-2025-04-07 20:09:12,270 [INFO] PluginManager:220 - loadIPPluginJar : add i2c
-2025-04-07 20:09:12,273 [INFO] IPUIPlugin:80 - create IPUIPlugin
-2025-04-07 20:09:12,273 [INFO] PluginManager:220 - loadIPPluginJar : add i2s
-2025-04-07 20:09:12,279 [INFO] IPUIPlugin:80 - create IPUIPlugin
-2025-04-07 20:09:12,280 [INFO] PluginManager:220 - loadIPPluginJar : add i3c
-2025-04-07 20:09:12,286 [INFO] IPUIPlugin:80 - create IPUIPlugin
-2025-04-07 20:09:12,286 [INFO] PluginManager:220 - loadIPPluginJar : add ipddr
-2025-04-07 20:09:12,294 [INFO] IPUIPlugin:80 - create IPUIPlugin
-2025-04-07 20:09:12,295 [INFO] PluginManager:220 - loadIPPluginJar : add linkedlist
-2025-04-07 20:09:12,298 [INFO] IPUIPlugin:80 - create IPUIPlugin
-2025-04-07 20:09:12,299 [INFO] PluginManager:220 - loadIPPluginJar : add lorawan
-2025-04-07 20:09:12,300 [INFO] IPUIPlugin:80 - create IPUIPlugin
-2025-04-07 20:09:12,300 [INFO] PluginManager:220 - loadIPPluginJar : add ltdc
-2025-04-07 20:09:12,305 [INFO] IPUIPlugin:80 - create IPUIPlugin
-2025-04-07 20:09:12,306 [INFO] PluginManager:220 - loadIPPluginJar : add mdma
-2025-04-07 20:09:12,311 [INFO] IPUIPlugin:80 - create IPUIPlugin
-2025-04-07 20:09:12,311 [INFO] PluginManager:220 - loadIPPluginJar : add nvic
-2025-04-07 20:09:12,316 [INFO] IPUIPlugin:80 - create IPUIPlugin
-2025-04-07 20:09:12,316 [INFO] PluginManager:220 - loadIPPluginJar : add opamp
-2025-04-07 20:09:12,319 [INFO] IPUIPlugin:80 - create IPUIPlugin
-2025-04-07 20:09:12,320 [INFO] PluginManager:220 - loadIPPluginJar : add openamp
-2025-04-07 20:09:12,323 [INFO] IPUIPlugin:80 - create IPUIPlugin
-2025-04-07 20:09:12,323 [INFO] PluginManager:220 - loadIPPluginJar : add pdm2pcm
-2025-04-07 20:09:12,331 [INFO] IPUIPlugin:80 - create IPUIPlugin
-2025-04-07 20:09:12,335 [INFO] PluginManager:220 - loadIPPluginJar : add plateformsettings
-2025-04-07 20:09:12,337 [INFO] IPUIPlugin:80 - create IPUIPlugin
-2025-04-07 20:09:12,337 [INFO] PluginManager:220 - loadIPPluginJar : add quadspi
-2025-04-07 20:09:12,339 [INFO] IPUIPlugin:80 - create IPUIPlugin
-2025-04-07 20:09:12,341 [INFO] PluginManager:220 - loadIPPluginJar : add radio
-2025-04-07 20:09:12,346 [INFO] IPUIPlugin:80 - create IPUIPlugin
-2025-04-07 20:09:12,346 [INFO] PluginManager:220 - loadIPPluginJar : add resmgrutility
-2025-04-07 20:09:12,350 [INFO] IPUIPlugin:80 - create IPUIPlugin
-2025-04-07 20:09:12,351 [INFO] PluginManager:220 - loadIPPluginJar : add sai
-2025-04-07 20:09:12,353 [INFO] IPUIPlugin:80 - create IPUIPlugin
-2025-04-07 20:09:12,353 [INFO] PluginManager:220 - loadIPPluginJar : add spi
-2025-04-07 20:09:12,361 [INFO] IPUIPlugin:80 - create IPUIPlugin
-2025-04-07 20:09:12,361 [INFO] PluginManager:220 - loadIPPluginJar : add stm32_wpan
-2025-04-07 20:09:12,364 [INFO] IPUIPlugin:80 - create IPUIPlugin
-2025-04-07 20:09:12,364 [INFO] PluginManager:220 - loadIPPluginJar : add tim
-2025-04-07 20:09:12,367 [INFO] IPUIPlugin:80 - create IPUIPlugin
-2025-04-07 20:09:12,367 [INFO] PluginManager:220 - loadIPPluginJar : add touchsensing
-2025-04-07 20:09:12,369 [INFO] IPUIPlugin:80 - create IPUIPlugin
-2025-04-07 20:09:12,369 [INFO] PluginManager:220 - loadIPPluginJar : add tracer_emb
-2025-04-07 20:09:12,371 [INFO] IPUIPlugin:80 - create IPUIPlugin
-2025-04-07 20:09:12,371 [INFO] PluginManager:220 - loadIPPluginJar : add ts
-2025-04-07 20:09:12,374 [INFO] IPUIPlugin:80 - create IPUIPlugin
-2025-04-07 20:09:12,374 [INFO] PluginManager:220 - loadIPPluginJar : add tsc
-2025-04-07 20:09:12,377 [INFO] IPUIPlugin:80 - create IPUIPlugin
-2025-04-07 20:09:12,377 [INFO] PluginManager:220 - loadIPPluginJar : add ucpd
-2025-04-07 20:09:12,380 [INFO] IPUIPlugin:80 - create IPUIPlugin
-2025-04-07 20:09:12,380 [INFO] PluginManager:220 - loadIPPluginJar : add usart
-2025-04-07 20:09:12,385 [INFO] IPUIPlugin:80 - create IPUIPlugin
-2025-04-07 20:09:12,385 [INFO] PluginManager:220 - loadIPPluginJar : add usbx
-2025-04-07 20:09:12,521 [FATAL] Updater:351 - Updater called before beeing initialized
-2025-04-07 20:09:12,556 [INFO] RulesReader:64 - Compatibility file has been processed (301 Rules)
-2025-04-07 20:09:12,573 [INFO] RulesReader:64 - Compatibility file has been processed (301 Rules)
-2025-04-07 20:09:12,586 [INFO] CADModel:165 - CPN selected for project level
-2025-04-07 20:09:12,586 [INFO] CADModel:114 - Register for checkConnection events
-2025-04-07 20:09:12,586 [FATAL] Updater:351 - Updater called before beeing initialized
-2025-04-07 20:09:12,586 [ERROR] CADModel:125 - Updater not yet initialized, retry later 
-2025-04-07 20:09:12,729 [FATAL] Updater:351 - Updater called before beeing initialized
-2025-04-07 20:09:12,730 [INFO] CADModel:165 - CPN selected for project level
-2025-04-07 20:09:12,731 [INFO] CADModel:114 - Register for checkConnection events
-2025-04-07 20:09:12,731 [FATAL] Updater:351 - Updater called before beeing initialized
-2025-04-07 20:09:12,731 [ERROR] CADModel:125 - Updater not yet initialized, retry later 
-2025-04-07 20:09:12,733 [FATAL] Updater:351 - Updater called before beeing initialized
-2025-04-07 20:09:12,879 [FATAL] Updater:351 - Updater called before beeing initialized
-2025-04-07 20:09:12,888 [INFO] DbMcusAds:53 - JSON generation date=Thu Mar 06 20:24:21 IST 2025 (1741272861825)
-2025-04-07 20:09:12,889 [FATAL] Updater:351 - Updater called before beeing initialized
-2025-04-07 20:09:12,935 [WARN] DetailPanel:346 - Failed to get advertising image, set to default
-2025-04-07 20:09:13,243 [FATAL] Updater:351 - Updater called before beeing initialized
-2025-04-07 20:09:13,246 [FATAL] Updater:351 - Updater called before beeing initialized
-2025-04-07 20:09:13,248 [FATAL] Updater:351 - Updater called before beeing initialized
-2025-04-07 20:09:13,248 [WARN] DetailPanel:346 - Failed to get advertising image, set to default
-2025-04-07 20:09:13,249 [FATAL] Updater:351 - Updater called before beeing initialized
-2025-04-07 20:09:13,322 [ERROR] Updater:1198 - MainUpdater not yet initialized. External WinMGr cannot be set.
-2025-04-07 20:09:13,326 [INFO] Updater:1134 - Updater Version found : 6.14.0
-2025-04-07 20:09:13,353 [INFO] ApplicationProperties:184 - Using Application install path: C:\ST\STM32CubeIDE_1.17.0\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_6.14.0.202502271554
-2025-04-07 20:09:14,600 [INFO] ThirdPartyUpdaterWithRetryManager:70 - Updater plugin not ready yet. [2/15]
-2025-04-07 20:09:14,926 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] Apr 07, 2025 8:09:14 PM java.util.prefs.WindowsPreferences <init>
-2025-04-07 20:09:14,929 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] WARNING: Could not open/create prefs root node Software\JavaSoft\Prefs at root 0xffffffff80000002. Windows RegCreateKeyEx(...) returned error code 5.
-2025-04-07 20:09:14,929 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 
-2025-04-07 20:09:16,047 [INFO] MainUpdater:2872 - connection check result : 10
-2025-04-07 20:09:16,047 [INFO] MainUpdater:3566 - Updater definition file requires update
-2025-04-07 20:09:16,048 [INFO] MainUpdater:289 - Updater Check For Update Now.
-2025-04-07 20:09:16,048 [INFO] MicroXplorer:498 - Change Database Version : DB.6.0.140
-2025-04-07 20:09:16,054 [INFO] McuFinderGlobals:63 - Set McuFinder mode to 2 (CubeIDE integrated)
-2025-04-07 20:09:16,054 [INFO] UserAuth:486 - Internet connection configuration mode: 1
-2025-04-07 20:09:16,070 [INFO] JxBrowserEngine:152 - Initiate JxBrowser Engine with user profile folder
-2025-04-07 20:09:17,264 [INFO] ServerAccessManage:473 - Download File updaters.zip
-2025-04-07 20:09:17,542 [INFO] WebApp:169 - Instantiating new browser for Auth
-2025-04-07 20:09:17,604 [WARN] MainUpdater:1193 - Updater busy. Cannot search thirdparties
-2025-04-07 20:09:17,605 [INFO] ThirdPartyUpdaterWithRetryManager:96 - Updater plugin is busy. [1/15]
-2025-04-07 20:09:18,564 [INFO] FileExtend:242 - Unzip File : updaters.zip
-2025-04-07 20:09:18,565 [INFO] FileExtend:257 - Standard Zip Deflate
-2025-04-07 20:09:18,686 [INFO] WebApp:463 - Apply proxy settings
-2025-04-07 20:09:18,687 [INFO] WebApp:548 - Chromium requires no authentication
-2025-04-07 20:09:18,722 [INFO] WebApp:491 - Direct internet connection detected
-2025-04-07 20:09:18,776 [INFO] WebApp:894 - Register for checkConnection events
-2025-04-07 20:09:18,776 [INFO] WebApp:463 - Apply proxy settings
-2025-04-07 20:09:18,777 [INFO] WebApp:548 - Chromium requires no authentication
-2025-04-07 20:09:18,778 [INFO] WebApp:491 - Direct internet connection detected
-2025-04-07 20:09:19,060 [INFO] WebApp:225 - Starting web application
-2025-04-07 20:09:19,061 [INFO] WebApp:593 - Web application path used C:\ST\STM32CubeIDE_1.17.0\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_6.14.0.202502271554\db\plugins\mcufinder\reactClient1\index.html
-2025-04-07 20:09:19,264 [INFO] WebApp:191 - Connection restablished
-2025-04-07 20:09:19,356 [INFO] ServerAccessManage:473 - Download File PacksControlFlags.xml
-2025-04-07 20:09:19,370 [INFO] UserAuth:486 - Internet connection configuration mode: 1
-2025-04-07 20:09:19,893 [INFO] ServerAccessManage:473 - Download File cubemx.pidx
-2025-04-07 20:09:20,060 [INFO] LoadServerUpdatesThread:375 - End of LoadServerUpdate Thread
-2025-04-07 20:09:20,291 [INFO] CheckServerUpdateThread:120 - End of CheckServer Thread
-2025-04-07 20:09:20,996 [WARN] PackLoader:240 - Cannot read IP mode file for STMicroelectronics.FP-SNS-MOTENVWB1.1.4.0
-2025-04-07 20:09:21,023 [WARN] PackLoader:240 - Cannot read IP mode file for STMicroelectronics.FP-ATR-ASTRA1.2.0.2
-2025-04-07 20:09:21,036 [WARN] PackLoader:240 - Cannot read IP mode file for STMicroelectronics.FP-ATR-ASTRA1.2.0.1
-2025-04-07 20:09:21,055 [WARN] PackLoader:240 - Cannot read IP mode file for STMicroelectronics.X-CUBE-SMBUS.2.1.0
-2025-04-07 20:09:21,077 [WARN] PackLoader:240 - Cannot read IP mode file for STMicroelectronics.X-CUBE-WB05N.1.1.0
-2025-04-07 20:09:21,181 [WARN] PackLoader:240 - Cannot read IP mode file for STMicroelectronics.X-CUBE-AZRTOS-F7.1.1.0
-2025-04-07 20:09:21,208 [WARN] PackLoader:240 - Cannot read IP mode file for STMicroelectronics.FP-SNS-FLIGHT1.5.0.2
-2025-04-07 20:09:21,340 [WARN] PackLoader:240 - Cannot read IP mode file for Infineon.AIROC-Wi-Fi-Bluetooth-STM32.1.7.0
-2025-04-07 20:09:21,382 [WARN] PackLoader:240 - Cannot read IP mode file for STMicroelectronics.X-CUBE-DISPLAY.3.0.0
-2025-04-07 20:09:21,407 [WARN] PackLoader:240 - Cannot read IP mode file for STMicroelectronics.X-CUBE-BLE1.7.0.0
-2025-04-07 20:09:21,426 [WARN] PackLoader:240 - Cannot read IP mode file for STMicroelectronics.X-CUBE-NFC10.1.0.0
-2025-04-07 20:09:21,460 [WARN] PackLoader:240 - Cannot read IP mode file for STMicroelectronics.X-CUBE-BLEMGR.4.0.0
-2025-04-07 20:09:21,483 [WARN] PackLoader:240 - Cannot read IP mode file for emotas.I-CUBE-CANOPEN.1.3.0
-2025-04-07 20:09:21,493 [WARN] PackLoader:240 - Cannot read IP mode file for STMicroelectronics.X-CUBE-AI.10.0.0
-2025-04-07 20:09:21,504 [WARN] PackLoader:240 - Cannot read IP mode file for STMicroelectronics.FP-SNS-SMARTAG2.1.2.0
-2025-04-07 20:09:21,515 [WARN] PackLoader:240 - Cannot read IP mode file for STMicroelectronics.FP-SNS-FLIGHT1.5.1.0
-2025-04-07 20:09:21,642 [WARN] PackLoader:240 - Cannot read IP mode file for STMicroelectronics.X-CUBE-MEMS1.11.1.0
-2025-04-07 20:09:22,004 [INFO] LogOutputStream:77 - [STDOUT_REDIRECT] 1 : Invalid condition id : UX_CORESTACK_Condition cause : null
-2025-04-07 20:09:22,005 [INFO] LogOutputStream:77 - [STDOUT_REDIRECT] 1 : Invalid condition id : UX_CORESTACK_Condition cause : null
-2025-04-07 20:09:22,008 [INFO] LogOutputStream:77 - [STDOUT_REDIRECT] 1 : Invalid condition id : UX_CORESTACK_Condition cause : null
-2025-04-07 20:09:22,010 [INFO] LogOutputStream:77 - [STDOUT_REDIRECT] 1 : Invalid condition id : UX_CORESTACK_Condition cause : null
-2025-04-07 20:09:22,013 [INFO] LogOutputStream:77 - [STDOUT_REDIRECT] 1 : Invalid condition id : UX_CORESTACK_Condition cause : null
-2025-04-07 20:09:22,021 [WARN] PackLoader:240 - Cannot read IP mode file for STMicroelectronics.X-CUBE-AZRTOS-WL.2.0.0
-2025-04-07 20:09:22,038 [WARN] PackLoader:240 - Cannot read IP mode file for STMicroelectronics.FP-SNS-MOTENV1.5.0.0
-2025-04-07 20:09:22,047 [WARN] PackLoader:240 - Cannot read IP mode file for wolfSSL.I-CUBE-wolfMQTT.1.19.0
-2025-04-07 20:09:22,097 [WARN] PackLoader:240 - Cannot read IP mode file for WES.I-CUBE-Cesium.1.3.0
-2025-04-07 20:09:22,115 [WARN] PackLoader:240 - Cannot read IP mode file for STMicroelectronics.X-CUBE-BLE2.3.3.0
-2025-04-07 20:09:22,184 [WARN] PackLoader:240 - Cannot read IP mode file for STMicroelectronics.X-CUBE-NFC9.1.0.0
-2025-04-07 20:09:22,202 [WARN] PackLoader:240 - Cannot read IP mode file for STMicroelectronics.X-CUBE-BLE1.7.1.0
-2025-04-07 20:09:22,230 [WARN] PackLoader:240 - Cannot read IP mode file for STMicroelectronics.X-CUBE-AZRTOS-G0.1.1.0
-2025-04-07 20:09:22,254 [WARN] PackLoader:240 - Cannot read IP mode file for STMicroelectronics.X-CUBE-SAFEA1.1.2.2
-2025-04-07 20:09:22,273 [WARN] PackLoader:240 - Cannot read IP mode file for STMicroelectronics.X-CUBE-NFC4.3.0.0
-2025-04-07 20:09:22,294 [WARN] PackLoader:240 - Cannot read IP mode file for EmbeddedOffice.I-CUBE-FS-RTOS.1.0.1
-2025-04-07 20:09:22,309 [WARN] PackLoader:240 - Cannot read IP mode file for STMicroelectronics.X-CUBE-TCPP.4.2.0
-2025-04-07 20:09:22,323 [WARN] PackLoader:240 - Cannot read IP mode file for RealThread.X-CUBE-RT-Thread_Nano.4.1.1
-2025-04-07 20:09:22,332 [WARN] PackLoader:240 - Cannot read IP mode file for STMicroelectronics.FP-ATR-SIGFOX1.3.2.0
-2025-04-07 20:09:22,342 [WARN] ConditionMgr:438 - getConditionDescription Invalid condition id : Cortex-A Device cause : null
-2025-04-07 20:09:22,374 [WARN] ConditionMgr:1044 - genDependencies : Invalid condition id : Cortex-A Device cause : null
-2025-04-07 20:09:22,374 [WARN] ConditionMgr:1044 - genDependencies : Invalid condition id : Cortex-A Device cause : null
-2025-04-07 20:09:22,375 [WARN] ConditionMgr:1044 - genDependencies : Invalid condition id : Cortex-A Device cause : null
-2025-04-07 20:09:22,389 [WARN] PackLoader:240 - Cannot read IP mode file for STMicroelectronics.X-CUBE-EEPRMA1.5.1.0
-2025-04-07 20:09:22,406 [WARN] PackLoader:240 - Cannot read IP mode file for wolfSSL.I-CUBE-wolfSSL.5.7.6
-2025-04-07 20:09:22,414 [WARN] PackLoader:240 - Cannot read IP mode file for ITTIA_DB.I-CUBE-ITTIADB.8.9.0
-2025-04-07 20:09:22,475 [WARN] PackLoader:240 - Cannot read IP mode file for SEGGER.I-CUBE-embOS.1.3.1
-2025-04-07 20:09:22,547 [WARN] PackLoader:240 - Cannot read IP mode file for STMicroelectronics.X-CUBE-ALGOBUILD.1.4.0
-2025-04-07 20:09:22,578 [WARN] PackLoader:240 - Cannot read IP mode file for STMicroelectronics.X-CUBE-AZRTOS-F4.1.1.0
-2025-04-07 20:09:22,593 [WARN] PackLoader:240 - Cannot read IP mode file for STMicroelectronics.X-CUBE-ISPU.2.1.0
-2025-04-07 20:09:22,625 [WARN] PackLoader:240 - Cannot read IP mode file for STMicroelectronics.X-CUBE-AZRTOS-L5.2.0.0
-2025-04-07 20:09:22,642 [WARN] PackLoader:240 - Cannot read IP mode file for STMicroelectronics.X-CUBE-NFC6.3.1.0
-2025-04-07 20:09:22,652 [WARN] PackLoader:240 - Cannot read IP mode file for STMicroelectronics.X-CUBE-DPower.1.2.0
-2025-04-07 20:09:22,662 [WARN] PackLoader:240 - Cannot read IP mode file for STMicroelectronics.X-CUBE-FREERTOS.1.3.0
-2025-04-07 20:09:22,671 [WARN] PackLoader:240 - Cannot read IP mode file for STMicroelectronics.X-CUBE-NFC7.1.0.1
-2025-04-07 20:09:22,680 [WARN] PackLoader:240 - Cannot read IP mode file for STMicroelectronics.X-CUBE-DPower.1.3.0
-2025-04-07 20:09:22,708 [WARN] ConditionMgr:438 - getConditionDescription Invalid condition id : LAN8742 Phy interface Condition cause : null
-2025-04-07 20:09:22,709 [WARN] PackLoader:240 - Cannot read IP mode file for STMicroelectronics.X-CUBE-AZRTOS-L4.2.0.0
-2025-04-07 20:09:22,712 [WARN] ConditionMgr:1044 - genDependencies : Invalid condition id : LAN8742 Phy interface Condition cause : null
-2025-04-07 20:09:22,712 [WARN] ConditionMgr:1044 - genDependencies : Invalid condition id : LAN8742 Phy interface Condition cause : null
-2025-04-07 20:09:22,713 [WARN] ConditionMgr:1044 - genDependencies : Invalid condition id : LAN8742 Phy interface Condition cause : null
-2025-04-07 20:09:22,728 [WARN] PackLoader:240 - Cannot read IP mode file for STMicroelectronics.X-CUBE-SFXS2LP1.4.0.0
-2025-04-07 20:09:22,771 [WARN] PackLoader:240 - Cannot read IP mode file for STMicroelectronics.X-CUBE-AZRTOS-H7.3.3.0
-2025-04-07 20:09:22,803 [WARN] ConditionMgr:438 - getConditionDescription Invalid condition id : UX DEVICE CLASS RTOS Condition cause : null
-2025-04-07 20:09:22,804 [WARN] ConditionMgr:438 - getConditionDescription Invalid condition id : UX DEVICE CLASS RTOS Condition cause : null
-2025-04-07 20:09:22,809 [WARN] PackLoader:240 - Cannot read IP mode file for STMicroelectronics.X-CUBE-AZRTOS-WB.2.0.0
-2025-04-07 20:09:22,810 [WARN] ConditionMgr:1044 - genDependencies : Invalid condition id : UX DEVICE CLASS RTOS Condition cause : null
-2025-04-07 20:09:22,810 [WARN] ConditionMgr:1044 - genDependencies : Invalid condition id : UX DEVICE CLASS RTOS Condition cause : null
-2025-04-07 20:09:22,810 [WARN] ConditionMgr:1044 - genDependencies : Invalid condition id : UX DEVICE CLASS RTOS Condition cause : null
-2025-04-07 20:09:22,811 [WARN] ConditionMgr:1044 - genDependencies : Invalid condition id : UX DEVICE CLASS RTOS Condition cause : null
-2025-04-07 20:09:22,811 [WARN] ConditionMgr:1044 - genDependencies : Invalid condition id : UX DEVICE CLASS RTOS Condition cause : null
-2025-04-07 20:09:22,823 [WARN] PackLoader:240 - Cannot read IP mode file for STMicroelectronics.X-CUBE-GNSS1.7.0.1
-2025-04-07 20:09:22,831 [WARN] PackLoader:240 - Cannot read IP mode file for STMicroelectronics.X-CUBE-TOUCHGFX.4.25.0
-2025-04-07 20:09:22,845 [WARN] PackLoader:240 - Cannot read IP mode file for STMicroelectronics.FP-SNS-STBOX1.2.0.0
-2025-04-07 20:09:22,864 [WARN] PackLoader:240 - Cannot read IP mode file for STMicroelectronics.X-CUBE-SUBG2.5.0.0
-2025-04-07 20:09:22,911 [WARN] PackLoader:240 - Cannot read IP mode file for STMicroelectronics.X-CUBE-AZRTOS-H7RS.1.1.0
-2025-04-07 20:09:22,927 [WARN] PackLoader:240 - Cannot read IP mode file for Cesanta.I-CUBE-Mongoose.7.13.0
-2025-04-07 20:09:22,957 [WARN] PackLoader:240 - Cannot read IP mode file for STMicroelectronics.X-CUBE-AZRTOS-G4.2.0.0
-2025-04-07 20:09:22,987 [WARN] PackLoader:240 - Cannot read IP mode file for STMicroelectronics.X-CUBE-IPS.3.1.0
-2025-04-07 20:09:23,055 [WARN] PackLoader:240 - Cannot read IP mode file for STMicroelectronics.X-CUBE-ALS.1.0.2
-2025-04-07 20:09:23,064 [WARN] PackLoader:240 - Cannot read IP mode file for STMicroelectronics.X-CUBE-TOUCHGFX.4.24.2
-2025-04-07 20:09:23,078 [WARN] PackLoader:240 - Cannot read IP mode file for wolfSSL.I-CUBE-wolfTPM.3.4.0
-2025-04-07 20:09:23,104 [WARN] PackLoader:240 - Cannot read IP mode file for portGmbH.I-Cube-SoM-uGOAL.1.1.0
-2025-04-07 20:09:23,153 [WARN] PackLoader:240 - Cannot read IP mode file for STMicroelectronics.X-CUBE-AZRTOS-H7RS.1.0.0
-2025-04-07 20:09:23,194 [WARN] PackLoader:240 - Cannot read IP mode file for STMicroelectronics.X-CUBE-TOF1.3.4.2
-2025-04-07 20:09:23,240 [WARN] PackLoader:240 - Cannot read IP mode file for wolfSSL.I-CUBE-wolfSSH.1.4.17
-2025-04-07 20:09:23,242 [INFO] ThirdParty:978 - Integrity check success = true
-2025-04-07 20:09:23,242 [INFO] IntegrityCheckThread:100 - exiting critical section [integrity check]
-2025-04-07 20:09:23,242 [INFO] IntegrityCheckThread:103 - End integrity checks thread
+2025-04-08 01:10:45,138 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 704459528 Bytes (890241024)
+2025-04-08 01:10:48,240 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 740633352 Bytes (890241024)
+2025-04-08 01:10:51,394 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 405615368 Bytes (890241024)
+2025-04-08 01:10:51,897 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: SPI
+2025-04-08 01:10:51,898 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: TIM1_8F7
+2025-04-08 01:10:51,898 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: TIM1_8F7
+2025-04-08 01:10:51,898 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: TIM1_8F7
+2025-04-08 01:10:51,898 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: SYS
+2025-04-08 01:10:51,898 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: RCC
+2025-04-08 01:10:51,898 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: NVIC
+2025-04-08 01:10:51,898 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: TIM1_8F7
+2025-04-08 01:10:51,898 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: CORTEX_M7
+2025-04-08 01:10:51,899 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: GPIO
+2025-04-08 01:10:51,900 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: FATFS
+2025-04-08 01:10:51,902 [INFO] CodeGenerator:882 - code generatio: config db path: C:\ST\STM32CubeIDE_1.17.0\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_6.14.0.202502271554\\db\
+2025-04-08 01:10:52,103 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\license.tmp_save
+2025-04-08 01:10:52,467 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\license.tmp
+2025-04-08 01:10:52,511 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\gpio.tmp_save
+2025-04-08 01:10:52,736 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\gpio.tmp
+2025-04-08 01:10:52,919 [INFO] Middleware:1452 - No code input for Bsp Dependency
+2025-04-08 01:10:52,928 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\fatfs_HalInit.tmp_save
+2025-04-08 01:10:53,078 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\fatfs_HalInit.tmp
+2025-04-08 01:10:53,083 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\fatfs_vars.tmp_save
+2025-04-08 01:10:53,211 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\fatfs_vars.tmp
+2025-04-08 01:10:53,217 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\fatfs_ext_vars.tmp_save
+2025-04-08 01:10:53,323 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\fatfs_ext_vars.tmp
+2025-04-08 01:10:53,328 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\fatfs_inc.tmp_save
+2025-04-08 01:10:53,413 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\fatfs_inc.tmp
+2025-04-08 01:10:53,423 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\cortex.tmp_save
+2025-04-08 01:10:53,518 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\cortex.tmp
+2025-04-08 01:10:53,527 [INFO] Middleware:1452 - No code input for Bsp Dependency
+2025-04-08 01:10:53,541 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\fatfs_HalInit.tmp_save
+2025-04-08 01:10:53,610 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\fatfs_HalInit.tmp
+2025-04-08 01:10:53,617 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\fatfs_vars.tmp_save
+2025-04-08 01:10:53,680 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\fatfs_vars.tmp
+2025-04-08 01:10:53,686 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\fatfs_ext_vars.tmp_save
+2025-04-08 01:10:53,753 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\fatfs_ext_vars.tmp
+2025-04-08 01:10:53,762 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\fatfs_inc.tmp_save
+2025-04-08 01:10:53,828 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\fatfs_inc.tmp
+2025-04-08 01:10:53,835 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\FATFS\Target\ffconf.h_save
+2025-04-08 01:10:53,915 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\FATFS\Target\ffconf.h
+2025-04-08 01:10:53,924 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\FATFS\Target\user_diskio.c_save
+2025-04-08 01:10:53,999 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\FATFS\Target\user_diskio.c
+2025-04-08 01:10:54,007 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\FATFS\Target\user_diskio.h_save
+2025-04-08 01:10:54,079 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\FATFS\Target\user_diskio.h
+2025-04-08 01:10:54,087 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\FATFS\App\fatfs.c_save
+2025-04-08 01:10:54,156 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\FATFS\App\fatfs.c
+2025-04-08 01:10:54,165 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\FATFS\App\fatfs.h_save
+2025-04-08 01:10:54,232 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\FATFS\App\fatfs.h
+2025-04-08 01:10:54,293 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\Core\Src\stm32f7xx_it.c_save
+2025-04-08 01:10:54,487 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\Core\Src\stm32f7xx_it.c
+2025-04-08 01:10:54,495 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\Core\Inc\stm32f7xx_it.h_save
+2025-04-08 01:10:54,566 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\Core\Inc\stm32f7xx_it.h
+2025-04-08 01:10:54,594 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\Core\Src\stm32f7xx_hal_msp.c_save
+2025-04-08 01:10:54,704 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\Core\Src\stm32f7xx_hal_msp.c
+2025-04-08 01:10:54,710 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\system.tmp_save
+2025-04-08 01:10:54,772 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\system.tmp
+2025-04-08 01:10:54,785 [INFO] CodeEngine:319 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\Core\Inc\stm32f7xx_hal_conf.h_save
+2025-04-08 01:10:54,863 [INFO] CodeEngine:343 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\Core\Inc\stm32f7xx_hal_conf.h
+2025-04-08 01:10:54,887 [WARN] IPConfigManager:3747 - IP not found : TIM
+2025-04-08 01:10:54,888 [WARN] CodeGenerator:4198 - IP not found : null
+2025-04-08 01:10:54,900 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\Core\Inc\main.h_save
+2025-04-08 01:10:54,984 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\Core\Inc\main.h
+2025-04-08 01:10:54,989 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\Core\Src\main.c_save
+2025-04-08 01:10:55,110 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\Core\Src\main.c
+2025-04-08 01:10:55,750 [INFO] ProjectBuilder:3324 - Time for Copy HAL[1] : 282mS.
+2025-04-08 01:10:55,755 [INFO] ProjectBuilder:4912 - Project Generator version: 4.6.0-B36
+2025-04-08 01:10:55,837 [INFO] ConfigFileManager:1590 - The Die is : DIE449
+2025-04-08 01:10:56,958 [INFO] ProjectBuilder:5191 - Time for Generating toolchain IDE Files: 1202mS.
+2025-04-08 01:10:56,959 [INFO] ProjectBuilder:3181 - Time for Copy CMSIS : 1mS.
+2025-04-08 01:10:56,964 [INFO] ProjectBuilder:3181 - Time for Copy CMSIS : 0mS.
+2025-04-08 01:18:42,017 [INFO] NvicIntPanel:101 - NVIC parent = com.st.microxplorer.plugins.ip.nvic.MultiNvicIntPanel[,0,0,0x0,invalid,layout=javax.swing.BoxLayout,alignmentX=0.0,alignmentY=0.0,border=,flags=9,maximumSize=,minimumSize=,preferredSize=]
+2025-04-08 01:19:07,071 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 788006912 Bytes (890241024)
+2025-04-08 01:19:08,208 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 364124096 Bytes (890241024)
+2025-04-08 01:19:09,947 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 377928896 Bytes (890241024)
+2025-04-08 01:19:10,357 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: SPI
+2025-04-08 01:19:10,358 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: TIM1_8F7
+2025-04-08 01:19:10,358 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: TIM1_8F7
+2025-04-08 01:19:10,358 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: TIM1_8F7
+2025-04-08 01:19:10,358 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: SYS
+2025-04-08 01:19:10,358 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: RCC
+2025-04-08 01:19:10,358 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: NVIC
+2025-04-08 01:19:10,358 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: TIM1_8F7
+2025-04-08 01:19:10,358 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: CORTEX_M7
+2025-04-08 01:19:10,358 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: GPIO
+2025-04-08 01:19:10,358 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: FATFS
+2025-04-08 01:19:10,359 [INFO] CodeGenerator:882 - code generatio: config db path: C:\ST\STM32CubeIDE_1.17.0\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_6.14.0.202502271554\\db\
+2025-04-08 01:19:10,496 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\license.tmp_save
+2025-04-08 01:19:10,565 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\license.tmp
+2025-04-08 01:19:10,590 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\gpio.tmp_save
+2025-04-08 01:19:10,655 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\gpio.tmp
+2025-04-08 01:19:10,800 [INFO] Middleware:1452 - No code input for Bsp Dependency
+2025-04-08 01:19:10,808 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\fatfs_HalInit.tmp_save
+2025-04-08 01:19:10,867 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\fatfs_HalInit.tmp
+2025-04-08 01:19:10,873 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\fatfs_vars.tmp_save
+2025-04-08 01:19:10,927 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\fatfs_vars.tmp
+2025-04-08 01:19:10,931 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\fatfs_ext_vars.tmp_save
+2025-04-08 01:19:10,977 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\fatfs_ext_vars.tmp
+2025-04-08 01:19:10,983 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\fatfs_inc.tmp_save
+2025-04-08 01:19:11,030 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\fatfs_inc.tmp
+2025-04-08 01:19:11,037 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\cortex.tmp_save
+2025-04-08 01:19:11,089 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\cortex.tmp
+2025-04-08 01:19:11,096 [INFO] Middleware:1452 - No code input for Bsp Dependency
+2025-04-08 01:19:11,103 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\fatfs_HalInit.tmp_save
+2025-04-08 01:19:11,156 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\fatfs_HalInit.tmp
+2025-04-08 01:19:11,160 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\fatfs_vars.tmp_save
+2025-04-08 01:19:11,208 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\fatfs_vars.tmp
+2025-04-08 01:19:11,212 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\fatfs_ext_vars.tmp_save
+2025-04-08 01:19:11,261 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\fatfs_ext_vars.tmp
+2025-04-08 01:19:11,267 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\fatfs_inc.tmp_save
+2025-04-08 01:19:11,317 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\fatfs_inc.tmp
+2025-04-08 01:19:11,322 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\FATFS\Target\ffconf.h_save
+2025-04-08 01:19:11,380 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\FATFS\Target\ffconf.h
+2025-04-08 01:19:11,385 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\FATFS\Target\user_diskio.c_save
+2025-04-08 01:19:11,442 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\FATFS\Target\user_diskio.c
+2025-04-08 01:19:11,447 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\FATFS\Target\user_diskio.h_save
+2025-04-08 01:19:11,503 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\FATFS\Target\user_diskio.h
+2025-04-08 01:19:11,513 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\FATFS\App\fatfs.c_save
+2025-04-08 01:19:11,571 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\FATFS\App\fatfs.c
+2025-04-08 01:19:11,576 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\FATFS\App\fatfs.h_save
+2025-04-08 01:19:11,634 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\FATFS\App\fatfs.h
+2025-04-08 01:19:11,656 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\Core\Src\stm32f7xx_it.c_save
+2025-04-08 01:19:11,731 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\Core\Src\stm32f7xx_it.c
+2025-04-08 01:19:11,736 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\Core\Inc\stm32f7xx_it.h_save
+2025-04-08 01:19:11,795 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\Core\Inc\stm32f7xx_it.h
+2025-04-08 01:19:11,820 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\Core\Src\stm32f7xx_hal_msp.c_save
+2025-04-08 01:19:11,906 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\Core\Src\stm32f7xx_hal_msp.c
+2025-04-08 01:19:11,910 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\system.tmp_save
+2025-04-08 01:19:11,962 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\system.tmp
+2025-04-08 01:19:11,991 [INFO] CodeEngine:319 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\Core\Inc\stm32f7xx_hal_conf.h_save
+2025-04-08 01:19:12,062 [INFO] CodeEngine:343 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\Core\Inc\stm32f7xx_hal_conf.h
+2025-04-08 01:19:12,077 [WARN] IPConfigManager:3747 - IP not found : TIM
+2025-04-08 01:19:12,077 [WARN] CodeGenerator:4198 - IP not found : null
+2025-04-08 01:19:12,084 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\Core\Inc\main.h_save
+2025-04-08 01:19:12,139 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\Core\Inc\main.h
+2025-04-08 01:19:12,144 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\Core\Src\main.c_save
+2025-04-08 01:19:12,244 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\Core\Src\main.c
+2025-04-08 01:19:12,611 [INFO] ProjectBuilder:3324 - Time for Copy HAL[1] : 203mS.
+2025-04-08 01:19:12,617 [INFO] ProjectBuilder:4912 - Project Generator version: 4.6.0-B36
+2025-04-08 01:19:12,688 [INFO] ConfigFileManager:1590 - The Die is : DIE449
+2025-04-08 01:19:13,558 [INFO] ProjectBuilder:5191 - Time for Generating toolchain IDE Files: 941mS.
+2025-04-08 01:19:13,560 [INFO] ProjectBuilder:3181 - Time for Copy CMSIS : 1mS.
+2025-04-08 01:19:13,566 [INFO] ProjectBuilder:3181 - Time for Copy CMSIS : 0mS.
+2025-04-08 01:19:56,280 [INFO] NvicIntPanel:101 - NVIC parent = com.st.microxplorer.plugins.ip.nvic.MultiNvicIntPanel[,0,0,0x0,invalid,layout=javax.swing.BoxLayout,alignmentX=0.0,alignmentY=0.0,border=,flags=9,maximumSize=,minimumSize=,preferredSize=]
+2025-04-08 01:20:16,576 [INFO] NvicIntPanel:101 - NVIC parent = com.st.microxplorer.plugins.ip.nvic.MultiNvicIntPanel[,0,0,0x0,invalid,layout=javax.swing.BoxLayout,alignmentX=0.0,alignmentY=0.0,border=,flags=9,maximumSize=,minimumSize=,preferredSize=]
+2025-04-08 01:20:23,574 [INFO] NvicIntPanel:101 - NVIC parent = com.st.microxplorer.plugins.ip.nvic.MultiNvicIntPanel[,0,0,0x0,invalid,layout=javax.swing.BoxLayout,alignmentX=0.0,alignmentY=0.0,border=,flags=9,maximumSize=,minimumSize=,preferredSize=]
+2025-04-08 01:21:27,782 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 360590864 Bytes (890241024)
+2025-04-08 01:21:29,828 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 395193872 Bytes (890241024)
+2025-04-08 01:21:33,460 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 517877264 Bytes (890241024)
+2025-04-08 01:21:33,997 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: SPI
+2025-04-08 01:21:33,997 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: TIM1_8F7
+2025-04-08 01:21:33,997 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: TIM1_8F7
+2025-04-08 01:21:33,997 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: TIM1_8F7
+2025-04-08 01:21:33,997 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: SYS
+2025-04-08 01:21:33,997 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: RCC
+2025-04-08 01:21:33,997 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: NVIC
+2025-04-08 01:21:33,997 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: TIM1_8F7
+2025-04-08 01:21:33,997 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: CORTEX_M7
+2025-04-08 01:21:33,998 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: GPIO
+2025-04-08 01:21:33,998 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: FATFS
+2025-04-08 01:21:33,999 [INFO] CodeGenerator:882 - code generatio: config db path: C:\ST\STM32CubeIDE_1.17.0\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_6.14.0.202502271554\\db\
+2025-04-08 01:21:34,114 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\license.tmp_save
+2025-04-08 01:21:34,165 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\license.tmp
+2025-04-08 01:21:34,183 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\gpio.tmp_save
+2025-04-08 01:21:34,243 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\gpio.tmp
+2025-04-08 01:21:34,376 [INFO] Middleware:1452 - No code input for Bsp Dependency
+2025-04-08 01:21:34,382 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\fatfs_HalInit.tmp_save
+2025-04-08 01:21:34,433 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\fatfs_HalInit.tmp
+2025-04-08 01:21:34,436 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\fatfs_vars.tmp_save
+2025-04-08 01:21:34,482 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\fatfs_vars.tmp
+2025-04-08 01:21:34,486 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\fatfs_ext_vars.tmp_save
+2025-04-08 01:21:34,534 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\fatfs_ext_vars.tmp
+2025-04-08 01:21:34,538 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\fatfs_inc.tmp_save
+2025-04-08 01:21:34,587 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\fatfs_inc.tmp
+2025-04-08 01:21:34,594 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\cortex.tmp_save
+2025-04-08 01:21:34,643 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\cortex.tmp
+2025-04-08 01:21:34,650 [INFO] Middleware:1452 - No code input for Bsp Dependency
+2025-04-08 01:21:34,656 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\fatfs_HalInit.tmp_save
+2025-04-08 01:21:34,705 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\fatfs_HalInit.tmp
+2025-04-08 01:21:34,709 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\fatfs_vars.tmp_save
+2025-04-08 01:21:34,760 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\fatfs_vars.tmp
+2025-04-08 01:21:34,765 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\fatfs_ext_vars.tmp_save
+2025-04-08 01:21:34,816 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\fatfs_ext_vars.tmp
+2025-04-08 01:21:34,820 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\fatfs_inc.tmp_save
+2025-04-08 01:21:34,894 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\fatfs_inc.tmp
+2025-04-08 01:21:34,900 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\FATFS\Target\ffconf.h_save
+2025-04-08 01:21:34,958 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\FATFS\Target\ffconf.h
+2025-04-08 01:21:34,962 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\FATFS\Target\user_diskio.c_save
+2025-04-08 01:21:35,019 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\FATFS\Target\user_diskio.c
+2025-04-08 01:21:35,024 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\FATFS\Target\user_diskio.h_save
+2025-04-08 01:21:35,078 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\FATFS\Target\user_diskio.h
+2025-04-08 01:21:35,083 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\FATFS\App\fatfs.c_save
+2025-04-08 01:21:35,136 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\FATFS\App\fatfs.c
+2025-04-08 01:21:35,140 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\FATFS\App\fatfs.h_save
+2025-04-08 01:21:35,193 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\FATFS\App\fatfs.h
+2025-04-08 01:21:35,212 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\Core\Src\stm32f7xx_it.c_save
+2025-04-08 01:21:35,284 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\Core\Src\stm32f7xx_it.c
+2025-04-08 01:21:35,289 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\Core\Inc\stm32f7xx_it.h_save
+2025-04-08 01:21:35,342 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\Core\Inc\stm32f7xx_it.h
+2025-04-08 01:21:35,361 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\Core\Src\stm32f7xx_hal_msp.c_save
+2025-04-08 01:21:35,436 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\Core\Src\stm32f7xx_hal_msp.c
+2025-04-08 01:21:35,440 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\system.tmp_save
+2025-04-08 01:21:35,492 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\system.tmp
+2025-04-08 01:21:35,501 [INFO] CodeEngine:319 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\Core\Inc\stm32f7xx_hal_conf.h_save
+2025-04-08 01:21:35,561 [INFO] CodeEngine:343 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\Core\Inc\stm32f7xx_hal_conf.h
+2025-04-08 01:21:35,576 [WARN] IPConfigManager:3747 - IP not found : TIM
+2025-04-08 01:21:35,577 [WARN] CodeGenerator:4198 - IP not found : null
+2025-04-08 01:21:35,585 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\Core\Inc\main.h_save
+2025-04-08 01:21:35,642 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\Core\Inc\main.h
+2025-04-08 01:21:35,649 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\Core\Src\main.c_save
+2025-04-08 01:21:35,748 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\Core\Src\main.c
+2025-04-08 01:21:36,292 [INFO] ProjectBuilder:3324 - Time for Copy HAL[1] : 208mS.
+2025-04-08 01:21:36,297 [INFO] ProjectBuilder:4912 - Project Generator version: 4.6.0-B36
+2025-04-08 01:21:36,378 [INFO] ConfigFileManager:1590 - The Die is : DIE449
+2025-04-08 01:21:37,203 [INFO] ProjectBuilder:5191 - Time for Generating toolchain IDE Files: 906mS.
+2025-04-08 01:21:37,203 [INFO] ProjectBuilder:3181 - Time for Copy CMSIS : 0mS.
+2025-04-08 01:21:37,209 [INFO] ProjectBuilder:3181 - Time for Copy CMSIS : 0mS.
+2025-04-08 01:22:34,834 [INFO] NvicIntPanel:101 - NVIC parent = com.st.microxplorer.plugins.ip.nvic.MultiNvicIntPanel[,0,0,0x0,invalid,layout=javax.swing.BoxLayout,alignmentX=0.0,alignmentY=0.0,border=,flags=9,maximumSize=,minimumSize=,preferredSize=]
+2025-04-08 01:22:40,221 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 597025376 Bytes (890241024)
+2025-04-08 01:22:41,417 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 630053472 Bytes (890241024)
+2025-04-08 01:22:43,342 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 748020320 Bytes (890241024)
+2025-04-08 01:22:43,736 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: SPI
+2025-04-08 01:22:43,736 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: TIM1_8F7
+2025-04-08 01:22:43,736 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: TIM1_8F7
+2025-04-08 01:22:43,737 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: TIM1_8F7
+2025-04-08 01:22:43,737 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: SYS
+2025-04-08 01:22:43,737 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: RCC
+2025-04-08 01:22:43,737 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: NVIC
+2025-04-08 01:22:43,737 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: TIM1_8F7
+2025-04-08 01:22:43,737 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: CORTEX_M7
+2025-04-08 01:22:43,737 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: GPIO
+2025-04-08 01:22:43,737 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: FATFS
+2025-04-08 01:22:43,738 [INFO] CodeGenerator:882 - code generatio: config db path: C:\ST\STM32CubeIDE_1.17.0\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_6.14.0.202502271554\\db\
+2025-04-08 01:22:43,845 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\license.tmp_save
+2025-04-08 01:22:43,902 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\license.tmp
+2025-04-08 01:22:43,919 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\gpio.tmp_save
+2025-04-08 01:22:43,973 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\gpio.tmp
+2025-04-08 01:22:44,089 [INFO] Middleware:1452 - No code input for Bsp Dependency
+2025-04-08 01:22:44,095 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\fatfs_HalInit.tmp_save
+2025-04-08 01:22:44,151 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\fatfs_HalInit.tmp
+2025-04-08 01:22:44,154 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\fatfs_vars.tmp_save
+2025-04-08 01:22:44,208 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\fatfs_vars.tmp
+2025-04-08 01:22:44,212 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\fatfs_ext_vars.tmp_save
+2025-04-08 01:22:44,265 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\fatfs_ext_vars.tmp
+2025-04-08 01:22:44,269 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\fatfs_inc.tmp_save
+2025-04-08 01:22:44,322 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\fatfs_inc.tmp
+2025-04-08 01:22:44,328 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\cortex.tmp_save
+2025-04-08 01:22:44,378 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\cortex.tmp
+2025-04-08 01:22:44,385 [INFO] Middleware:1452 - No code input for Bsp Dependency
+2025-04-08 01:22:44,391 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\fatfs_HalInit.tmp_save
+2025-04-08 01:22:44,447 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\fatfs_HalInit.tmp
+2025-04-08 01:22:44,453 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\fatfs_vars.tmp_save
+2025-04-08 01:22:44,511 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\fatfs_vars.tmp
+2025-04-08 01:22:44,516 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\fatfs_ext_vars.tmp_save
+2025-04-08 01:22:44,568 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\fatfs_ext_vars.tmp
+2025-04-08 01:22:44,572 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\fatfs_inc.tmp_save
+2025-04-08 01:22:44,622 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\fatfs_inc.tmp
+2025-04-08 01:22:44,627 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\FATFS\Target\ffconf.h_save
+2025-04-08 01:22:44,688 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\FATFS\Target\ffconf.h
+2025-04-08 01:22:44,692 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\FATFS\Target\user_diskio.c_save
+2025-04-08 01:22:44,750 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\FATFS\Target\user_diskio.c
+2025-04-08 01:22:44,754 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\FATFS\Target\user_diskio.h_save
+2025-04-08 01:22:44,808 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\FATFS\Target\user_diskio.h
+2025-04-08 01:22:44,812 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\FATFS\App\fatfs.c_save
+2025-04-08 01:22:44,869 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\FATFS\App\fatfs.c
+2025-04-08 01:22:44,873 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\FATFS\App\fatfs.h_save
+2025-04-08 01:22:44,926 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\FATFS\App\fatfs.h
+2025-04-08 01:22:44,943 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\Core\Src\stm32f7xx_it.c_save
+2025-04-08 01:22:45,015 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\Core\Src\stm32f7xx_it.c
+2025-04-08 01:22:45,020 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\Core\Inc\stm32f7xx_it.h_save
+2025-04-08 01:22:45,072 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\Core\Inc\stm32f7xx_it.h
+2025-04-08 01:22:45,090 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\Core\Src\stm32f7xx_hal_msp.c_save
+2025-04-08 01:22:45,167 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\Core\Src\stm32f7xx_hal_msp.c
+2025-04-08 01:22:45,170 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\system.tmp_save
+2025-04-08 01:22:45,219 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\system.tmp
+2025-04-08 01:22:45,228 [INFO] CodeEngine:319 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\Core\Inc\stm32f7xx_hal_conf.h_save
+2025-04-08 01:22:45,288 [INFO] CodeEngine:343 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\Core\Inc\stm32f7xx_hal_conf.h
+2025-04-08 01:22:45,304 [WARN] IPConfigManager:3747 - IP not found : TIM
+2025-04-08 01:22:45,304 [WARN] CodeGenerator:4198 - IP not found : null
+2025-04-08 01:22:45,312 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\Core\Inc\main.h_save
+2025-04-08 01:22:45,388 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\Core\Inc\main.h
+2025-04-08 01:22:45,393 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\Core\Src\main.c_save
+2025-04-08 01:22:45,492 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\Core\Src\main.c
+2025-04-08 01:22:45,921 [INFO] ProjectBuilder:3324 - Time for Copy HAL[1] : 143mS.
+2025-04-08 01:22:45,926 [INFO] ProjectBuilder:4912 - Project Generator version: 4.6.0-B36
+2025-04-08 01:22:46,003 [INFO] ConfigFileManager:1590 - The Die is : DIE449
+2025-04-08 01:22:46,766 [INFO] ProjectBuilder:5191 - Time for Generating toolchain IDE Files: 840mS.
+2025-04-08 01:22:46,766 [INFO] ProjectBuilder:3181 - Time for Copy CMSIS : 0mS.
+2025-04-08 01:22:46,771 [INFO] ProjectBuilder:3181 - Time for Copy CMSIS : 0mS.
+2025-04-08 01:26:22,471 [INFO] NvicIntPanel:101 - NVIC parent = com.st.microxplorer.plugins.ip.nvic.MultiNvicIntPanel[,0,0,0x0,invalid,layout=javax.swing.BoxLayout,alignmentX=0.0,alignmentY=0.0,border=,flags=9,maximumSize=,minimumSize=,preferredSize=]
+2025-04-08 01:26:24,760 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 508738728 Bytes (890241024)
+2025-04-08 01:26:26,152 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 541766824 Bytes (890241024)
+2025-04-08 01:26:27,671 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 659207336 Bytes (890241024)
+2025-04-08 01:26:28,038 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: SPI
+2025-04-08 01:26:28,038 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: TIM1_8F7
+2025-04-08 01:26:28,038 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: TIM1_8F7
+2025-04-08 01:26:28,038 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: TIM1_8F7
+2025-04-08 01:26:28,038 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: SYS
+2025-04-08 01:26:28,038 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: RCC
+2025-04-08 01:26:28,038 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: NVIC
+2025-04-08 01:26:28,038 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: TIM1_8F7
+2025-04-08 01:26:28,038 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: CORTEX_M7
+2025-04-08 01:26:28,039 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: GPIO
+2025-04-08 01:26:28,039 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: FATFS
+2025-04-08 01:26:28,040 [INFO] CodeGenerator:882 - code generatio: config db path: C:\ST\STM32CubeIDE_1.17.0\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_6.14.0.202502271554\\db\
+2025-04-08 01:26:28,151 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\license.tmp_save
+2025-04-08 01:26:28,204 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\license.tmp
+2025-04-08 01:26:28,221 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\gpio.tmp_save
+2025-04-08 01:26:28,279 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\gpio.tmp
+2025-04-08 01:26:28,419 [INFO] Middleware:1452 - No code input for Bsp Dependency
+2025-04-08 01:26:28,425 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\fatfs_HalInit.tmp_save
+2025-04-08 01:26:28,479 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\fatfs_HalInit.tmp
+2025-04-08 01:26:28,482 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\fatfs_vars.tmp_save
+2025-04-08 01:26:28,535 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\fatfs_vars.tmp
+2025-04-08 01:26:28,538 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\fatfs_ext_vars.tmp_save
+2025-04-08 01:26:28,586 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\fatfs_ext_vars.tmp
+2025-04-08 01:26:28,589 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\fatfs_inc.tmp_save
+2025-04-08 01:26:28,634 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\fatfs_inc.tmp
+2025-04-08 01:26:28,640 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\cortex.tmp_save
+2025-04-08 01:26:28,685 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\cortex.tmp
+2025-04-08 01:26:28,691 [INFO] Middleware:1452 - No code input for Bsp Dependency
+2025-04-08 01:26:28,698 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\fatfs_HalInit.tmp_save
+2025-04-08 01:26:28,745 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\fatfs_HalInit.tmp
+2025-04-08 01:26:28,749 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\fatfs_vars.tmp_save
+2025-04-08 01:26:28,796 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\fatfs_vars.tmp
+2025-04-08 01:26:28,800 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\fatfs_ext_vars.tmp_save
+2025-04-08 01:26:28,848 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\fatfs_ext_vars.tmp
+2025-04-08 01:26:28,852 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\fatfs_inc.tmp_save
+2025-04-08 01:26:28,901 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\fatfs_inc.tmp
+2025-04-08 01:26:28,905 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\FATFS\Target\ffconf.h_save
+2025-04-08 01:26:28,962 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\FATFS\Target\ffconf.h
+2025-04-08 01:26:28,967 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\FATFS\Target\user_diskio.c_save
+2025-04-08 01:26:29,020 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\FATFS\Target\user_diskio.c
+2025-04-08 01:26:29,026 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\FATFS\Target\user_diskio.h_save
+2025-04-08 01:26:29,079 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\FATFS\Target\user_diskio.h
+2025-04-08 01:26:29,083 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\FATFS\App\fatfs.c_save
+2025-04-08 01:26:29,138 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\FATFS\App\fatfs.c
+2025-04-08 01:26:29,143 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\FATFS\App\fatfs.h_save
+2025-04-08 01:26:29,195 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\FATFS\App\fatfs.h
+2025-04-08 01:26:29,214 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\Core\Src\stm32f7xx_it.c_save
+2025-04-08 01:26:29,283 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\Core\Src\stm32f7xx_it.c
+2025-04-08 01:26:29,287 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\Core\Inc\stm32f7xx_it.h_save
+2025-04-08 01:26:29,338 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\Core\Inc\stm32f7xx_it.h
+2025-04-08 01:26:29,356 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\Core\Src\stm32f7xx_hal_msp.c_save
+2025-04-08 01:26:29,432 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\Core\Src\stm32f7xx_hal_msp.c
+2025-04-08 01:26:29,436 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\system.tmp_save
+2025-04-08 01:26:29,485 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\system.tmp
+2025-04-08 01:26:29,494 [INFO] CodeEngine:319 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\Core\Inc\stm32f7xx_hal_conf.h_save
+2025-04-08 01:26:29,554 [INFO] CodeEngine:343 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\Core\Inc\stm32f7xx_hal_conf.h
+2025-04-08 01:26:29,568 [WARN] IPConfigManager:3747 - IP not found : TIM
+2025-04-08 01:26:29,569 [WARN] CodeGenerator:4198 - IP not found : null
+2025-04-08 01:26:29,576 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\Core\Inc\main.h_save
+2025-04-08 01:26:29,630 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\Core\Inc\main.h
+2025-04-08 01:26:29,635 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\Core\Src\main.c_save
+2025-04-08 01:26:29,732 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\Core\Src\main.c
+2025-04-08 01:26:30,144 [INFO] ProjectBuilder:3324 - Time for Copy HAL[1] : 165mS.
+2025-04-08 01:26:30,149 [INFO] ProjectBuilder:4912 - Project Generator version: 4.6.0-B36
+2025-04-08 01:26:30,223 [INFO] ConfigFileManager:1590 - The Die is : DIE449
+2025-04-08 01:26:31,021 [INFO] ProjectBuilder:5191 - Time for Generating toolchain IDE Files: 872mS.
+2025-04-08 01:26:31,022 [INFO] ProjectBuilder:3181 - Time for Copy CMSIS : 0mS.
+2025-04-08 01:26:31,026 [INFO] ProjectBuilder:3181 - Time for Copy CMSIS : 0mS.
+2025-04-08 01:28:00,790 [INFO] NvicIntPanel:101 - NVIC parent = com.st.microxplorer.plugins.ip.nvic.MultiNvicIntPanel[,0,0,0x0,invalid,layout=javax.swing.BoxLayout,alignmentX=0.0,alignmentY=0.0,border=,flags=9,maximumSize=,minimumSize=,preferredSize=]
+2025-04-08 01:28:02,543 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 584219416 Bytes (890241024)
+2025-04-08 01:28:04,056 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 617773848 Bytes (890241024)
+2025-04-08 01:28:05,581 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 734165784 Bytes (890241024)
+2025-04-08 01:28:05,977 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: SPI
+2025-04-08 01:28:05,977 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: TIM1_8F7
+2025-04-08 01:28:05,977 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: TIM1_8F7
+2025-04-08 01:28:05,977 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: TIM1_8F7
+2025-04-08 01:28:05,977 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: SYS
+2025-04-08 01:28:05,977 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: RCC
+2025-04-08 01:28:05,977 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: NVIC
+2025-04-08 01:28:05,977 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: TIM1_8F7
+2025-04-08 01:28:05,977 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: CORTEX_M7
+2025-04-08 01:28:05,978 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: GPIO
+2025-04-08 01:28:05,978 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: FATFS
+2025-04-08 01:28:05,978 [INFO] CodeGenerator:882 - code generatio: config db path: C:\ST\STM32CubeIDE_1.17.0\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_6.14.0.202502271554\\db\
+2025-04-08 01:28:06,153 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\license.tmp_save
+2025-04-08 01:28:06,225 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\license.tmp
+2025-04-08 01:28:06,267 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\gpio.tmp_save
+2025-04-08 01:28:06,333 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\gpio.tmp
+2025-04-08 01:28:06,459 [INFO] Middleware:1452 - No code input for Bsp Dependency
+2025-04-08 01:28:06,464 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\fatfs_HalInit.tmp_save
+2025-04-08 01:28:06,517 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\fatfs_HalInit.tmp
+2025-04-08 01:28:06,520 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\fatfs_vars.tmp_save
+2025-04-08 01:28:06,573 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\fatfs_vars.tmp
+2025-04-08 01:28:06,577 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\fatfs_ext_vars.tmp_save
+2025-04-08 01:28:06,629 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\fatfs_ext_vars.tmp
+2025-04-08 01:28:06,633 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\fatfs_inc.tmp_save
+2025-04-08 01:28:06,685 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\fatfs_inc.tmp
+2025-04-08 01:28:06,692 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\cortex.tmp_save
+2025-04-08 01:28:06,740 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\cortex.tmp
+2025-04-08 01:28:06,745 [INFO] Middleware:1452 - No code input for Bsp Dependency
+2025-04-08 01:28:06,751 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\fatfs_HalInit.tmp_save
+2025-04-08 01:28:06,799 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\fatfs_HalInit.tmp
+2025-04-08 01:28:06,804 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\fatfs_vars.tmp_save
+2025-04-08 01:28:06,849 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\fatfs_vars.tmp
+2025-04-08 01:28:06,855 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\fatfs_ext_vars.tmp_save
+2025-04-08 01:28:06,900 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\fatfs_ext_vars.tmp
+2025-04-08 01:28:06,904 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\fatfs_inc.tmp_save
+2025-04-08 01:28:06,951 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\fatfs_inc.tmp
+2025-04-08 01:28:06,955 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\FATFS\Target\ffconf.h_save
+2025-04-08 01:28:07,013 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\FATFS\Target\ffconf.h
+2025-04-08 01:28:07,018 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\FATFS\Target\user_diskio.c_save
+2025-04-08 01:28:07,069 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\FATFS\Target\user_diskio.c
+2025-04-08 01:28:07,074 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\FATFS\Target\user_diskio.h_save
+2025-04-08 01:28:07,129 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\FATFS\Target\user_diskio.h
+2025-04-08 01:28:07,135 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\FATFS\App\fatfs.c_save
+2025-04-08 01:28:07,192 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\FATFS\App\fatfs.c
+2025-04-08 01:28:07,197 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\FATFS\App\fatfs.h_save
+2025-04-08 01:28:07,253 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\FATFS\App\fatfs.h
+2025-04-08 01:28:07,270 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\Core\Src\stm32f7xx_it.c_save
+2025-04-08 01:28:07,337 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\Core\Src\stm32f7xx_it.c
+2025-04-08 01:28:07,341 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\Core\Inc\stm32f7xx_it.h_save
+2025-04-08 01:28:07,392 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\Core\Inc\stm32f7xx_it.h
+2025-04-08 01:28:07,409 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\Core\Src\stm32f7xx_hal_msp.c_save
+2025-04-08 01:28:07,482 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\Core\Src\stm32f7xx_hal_msp.c
+2025-04-08 01:28:07,485 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\system.tmp_save
+2025-04-08 01:28:07,533 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\system.tmp
+2025-04-08 01:28:07,543 [INFO] CodeEngine:319 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\Core\Inc\stm32f7xx_hal_conf.h_save
+2025-04-08 01:28:07,599 [INFO] CodeEngine:343 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\Core\Inc\stm32f7xx_hal_conf.h
+2025-04-08 01:28:07,613 [WARN] IPConfigManager:3747 - IP not found : TIM
+2025-04-08 01:28:07,613 [WARN] CodeGenerator:4198 - IP not found : null
+2025-04-08 01:28:07,619 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\Core\Inc\main.h_save
+2025-04-08 01:28:07,675 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\Core\Inc\main.h
+2025-04-08 01:28:07,679 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\Core\Src\main.c_save
+2025-04-08 01:28:07,775 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\Core\Src\main.c
+2025-04-08 01:28:08,067 [INFO] ProjectBuilder:3324 - Time for Copy HAL[1] : 125mS.
+2025-04-08 01:28:08,072 [INFO] ProjectBuilder:4912 - Project Generator version: 4.6.0-B36
+2025-04-08 01:28:08,163 [INFO] ConfigFileManager:1590 - The Die is : DIE449
+2025-04-08 01:28:08,988 [INFO] ProjectBuilder:5191 - Time for Generating toolchain IDE Files: 916mS.
+2025-04-08 01:28:08,989 [INFO] ProjectBuilder:3181 - Time for Copy CMSIS : 1mS.
+2025-04-08 01:28:08,994 [INFO] ProjectBuilder:3181 - Time for Copy CMSIS : 0mS.
+2025-04-08 01:33:00,372 [INFO] NvicIntPanel:101 - NVIC parent = com.st.microxplorer.plugins.ip.nvic.MultiNvicIntPanel[,0,0,0x0,invalid,layout=javax.swing.BoxLayout,alignmentX=0.0,alignmentY=0.0,border=,flags=9,maximumSize=,minimumSize=,preferredSize=]
+2025-04-08 01:33:19,975 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 692103488 Bytes (890241024)
+2025-04-08 01:33:21,526 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 725657920 Bytes (890241024)
+2025-04-08 01:33:23,197 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 379156704 Bytes (890241024)
+2025-04-08 01:33:23,615 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: SPI
+2025-04-08 01:33:23,616 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: TIM1_8F7
+2025-04-08 01:33:23,616 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: TIM1_8F7
+2025-04-08 01:33:23,616 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: TIM1_8F7
+2025-04-08 01:33:23,616 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: SYS
+2025-04-08 01:33:23,616 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: RCC
+2025-04-08 01:33:23,616 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: NVIC
+2025-04-08 01:33:23,616 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: TIM1_8F7
+2025-04-08 01:33:23,616 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: CORTEX_M7
+2025-04-08 01:33:23,617 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: GPIO
+2025-04-08 01:33:23,617 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: FATFS
+2025-04-08 01:33:23,618 [INFO] CodeGenerator:882 - code generatio: config db path: C:\ST\STM32CubeIDE_1.17.0\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_6.14.0.202502271554\\db\
+2025-04-08 01:33:23,728 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\license.tmp_save
+2025-04-08 01:33:23,779 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\license.tmp
+2025-04-08 01:33:23,796 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\gpio.tmp_save
+2025-04-08 01:33:23,854 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\gpio.tmp
+2025-04-08 01:33:23,959 [INFO] Middleware:1452 - No code input for Bsp Dependency
+2025-04-08 01:33:23,964 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\fatfs_HalInit.tmp_save
+2025-04-08 01:33:24,018 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\fatfs_HalInit.tmp
+2025-04-08 01:33:24,022 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\fatfs_vars.tmp_save
+2025-04-08 01:33:24,069 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\fatfs_vars.tmp
+2025-04-08 01:33:24,073 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\fatfs_ext_vars.tmp_save
+2025-04-08 01:33:24,122 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\fatfs_ext_vars.tmp
+2025-04-08 01:33:24,125 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\fatfs_inc.tmp_save
+2025-04-08 01:33:24,174 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\fatfs_inc.tmp
+2025-04-08 01:33:24,181 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\cortex.tmp_save
+2025-04-08 01:33:24,230 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\cortex.tmp
+2025-04-08 01:33:24,236 [INFO] Middleware:1452 - No code input for Bsp Dependency
+2025-04-08 01:33:24,242 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\fatfs_HalInit.tmp_save
+2025-04-08 01:33:24,292 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\fatfs_HalInit.tmp
+2025-04-08 01:33:24,296 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\fatfs_vars.tmp_save
+2025-04-08 01:33:24,350 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\fatfs_vars.tmp
+2025-04-08 01:33:24,354 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\fatfs_ext_vars.tmp_save
+2025-04-08 01:33:24,404 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\fatfs_ext_vars.tmp
+2025-04-08 01:33:24,408 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\fatfs_inc.tmp_save
+2025-04-08 01:33:24,458 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\fatfs_inc.tmp
+2025-04-08 01:33:24,463 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\FATFS\Target\ffconf.h_save
+2025-04-08 01:33:24,521 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\FATFS\Target\ffconf.h
+2025-04-08 01:33:24,526 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\FATFS\Target\user_diskio.c_save
+2025-04-08 01:33:24,582 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\FATFS\Target\user_diskio.c
+2025-04-08 01:33:24,587 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\FATFS\Target\user_diskio.h_save
+2025-04-08 01:33:24,642 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\FATFS\Target\user_diskio.h
+2025-04-08 01:33:24,646 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\FATFS\App\fatfs.c_save
+2025-04-08 01:33:24,700 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\FATFS\App\fatfs.c
+2025-04-08 01:33:24,705 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\FATFS\App\fatfs.h_save
+2025-04-08 01:33:24,759 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\FATFS\App\fatfs.h
+2025-04-08 01:33:24,780 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\Core\Src\stm32f7xx_it.c_save
+2025-04-08 01:33:24,853 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\Core\Src\stm32f7xx_it.c
+2025-04-08 01:33:24,858 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\Core\Inc\stm32f7xx_it.h_save
+2025-04-08 01:33:24,912 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\Core\Inc\stm32f7xx_it.h
+2025-04-08 01:33:24,934 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\Core\Src\stm32f7xx_hal_msp.c_save
+2025-04-08 01:33:25,014 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\Core\Src\stm32f7xx_hal_msp.c
+2025-04-08 01:33:25,017 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\system.tmp_save
+2025-04-08 01:33:25,066 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\system.tmp
+2025-04-08 01:33:25,076 [INFO] CodeEngine:319 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\Core\Inc\stm32f7xx_hal_conf.h_save
+2025-04-08 01:33:25,164 [INFO] CodeEngine:343 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\Core\Inc\stm32f7xx_hal_conf.h
+2025-04-08 01:33:25,178 [WARN] IPConfigManager:3747 - IP not found : TIM
+2025-04-08 01:33:25,179 [WARN] CodeGenerator:4198 - IP not found : null
+2025-04-08 01:33:25,184 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\Core\Inc\main.h_save
+2025-04-08 01:33:25,239 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\Core\Inc\main.h
+2025-04-08 01:33:25,244 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\Core\Src\main.c_save
+2025-04-08 01:33:25,343 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\Core\Src\main.c
+2025-04-08 01:33:25,768 [INFO] ProjectBuilder:3324 - Time for Copy HAL[1] : 173mS.
+2025-04-08 01:33:25,772 [INFO] ProjectBuilder:4912 - Project Generator version: 4.6.0-B36
+2025-04-08 01:33:25,848 [INFO] ConfigFileManager:1590 - The Die is : DIE449
+2025-04-08 01:33:26,565 [INFO] ProjectBuilder:5191 - Time for Generating toolchain IDE Files: 793mS.
+2025-04-08 01:33:26,566 [INFO] ProjectBuilder:3181 - Time for Copy CMSIS : 0mS.
+2025-04-08 01:33:26,571 [INFO] ProjectBuilder:3181 - Time for Copy CMSIS : 0mS.
+2025-04-08 01:34:34,407 [INFO] NvicIntPanel:101 - NVIC parent = com.st.microxplorer.plugins.ip.nvic.MultiNvicIntPanel[,0,0,0x0,invalid,layout=javax.swing.BoxLayout,alignmentX=0.0,alignmentY=0.0,border=,flags=9,maximumSize=,minimumSize=,preferredSize=]
+2025-04-08 01:34:39,313 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 782135152 Bytes (890241024)
+2025-04-08 01:34:40,592 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 365672064 Bytes (890241024)
+2025-04-08 01:34:42,358 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 358345312 Bytes (890241024)
+2025-04-08 01:34:42,791 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: SPI
+2025-04-08 01:34:42,791 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: TIM1_8F7
+2025-04-08 01:34:42,791 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: TIM1_8F7
+2025-04-08 01:34:42,791 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: TIM1_8F7
+2025-04-08 01:34:42,791 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: SYS
+2025-04-08 01:34:42,791 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: RCC
+2025-04-08 01:34:42,791 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: NVIC
+2025-04-08 01:34:42,792 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: TIM1_8F7
+2025-04-08 01:34:42,792 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: CORTEX_M7
+2025-04-08 01:34:42,792 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: GPIO
+2025-04-08 01:34:42,792 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: FATFS
+2025-04-08 01:34:42,792 [INFO] CodeGenerator:882 - code generatio: config db path: C:\ST\STM32CubeIDE_1.17.0\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_6.14.0.202502271554\\db\
+2025-04-08 01:34:42,895 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\license.tmp_save
+2025-04-08 01:34:42,946 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\license.tmp
+2025-04-08 01:34:42,962 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\gpio.tmp_save
+2025-04-08 01:34:43,013 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\gpio.tmp
+2025-04-08 01:34:43,119 [INFO] Middleware:1452 - No code input for Bsp Dependency
+2025-04-08 01:34:43,124 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\fatfs_HalInit.tmp_save
+2025-04-08 01:34:43,174 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\fatfs_HalInit.tmp
+2025-04-08 01:34:43,176 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\fatfs_vars.tmp_save
+2025-04-08 01:34:43,221 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\fatfs_vars.tmp
+2025-04-08 01:34:43,224 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\fatfs_ext_vars.tmp_save
+2025-04-08 01:34:43,270 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\fatfs_ext_vars.tmp
+2025-04-08 01:34:43,274 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\fatfs_inc.tmp_save
+2025-04-08 01:34:43,319 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\fatfs_inc.tmp
+2025-04-08 01:34:43,325 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\cortex.tmp_save
+2025-04-08 01:34:43,374 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\cortex.tmp
+2025-04-08 01:34:43,379 [INFO] Middleware:1452 - No code input for Bsp Dependency
+2025-04-08 01:34:43,385 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\fatfs_HalInit.tmp_save
+2025-04-08 01:34:43,434 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\fatfs_HalInit.tmp
+2025-04-08 01:34:43,438 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\fatfs_vars.tmp_save
+2025-04-08 01:34:43,488 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\fatfs_vars.tmp
+2025-04-08 01:34:43,492 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\fatfs_ext_vars.tmp_save
+2025-04-08 01:34:43,541 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\fatfs_ext_vars.tmp
+2025-04-08 01:34:43,545 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\fatfs_inc.tmp_save
+2025-04-08 01:34:43,593 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\fatfs_inc.tmp
+2025-04-08 01:34:43,597 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\FATFS\Target\ffconf.h_save
+2025-04-08 01:34:43,655 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\FATFS\Target\ffconf.h
+2025-04-08 01:34:43,659 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\FATFS\Target\user_diskio.c_save
+2025-04-08 01:34:43,710 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\FATFS\Target\user_diskio.c
+2025-04-08 01:34:43,714 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\FATFS\Target\user_diskio.h_save
+2025-04-08 01:34:43,766 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\FATFS\Target\user_diskio.h
+2025-04-08 01:34:43,771 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\FATFS\App\fatfs.c_save
+2025-04-08 01:34:43,820 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\FATFS\App\fatfs.c
+2025-04-08 01:34:43,824 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\FATFS\App\fatfs.h_save
+2025-04-08 01:34:43,877 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\FATFS\App\fatfs.h
+2025-04-08 01:34:43,894 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\Core\Src\stm32f7xx_it.c_save
+2025-04-08 01:34:43,964 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\Core\Src\stm32f7xx_it.c
+2025-04-08 01:34:43,969 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\Core\Inc\stm32f7xx_it.h_save
+2025-04-08 01:34:44,021 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\Core\Inc\stm32f7xx_it.h
+2025-04-08 01:34:44,039 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\Core\Src\stm32f7xx_hal_msp.c_save
+2025-04-08 01:34:44,114 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\Core\Src\stm32f7xx_hal_msp.c
+2025-04-08 01:34:44,118 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\system.tmp_save
+2025-04-08 01:34:44,166 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\system.tmp
+2025-04-08 01:34:44,174 [INFO] CodeEngine:319 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\Core\Inc\stm32f7xx_hal_conf.h_save
+2025-04-08 01:34:44,231 [INFO] CodeEngine:343 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\Core\Inc\stm32f7xx_hal_conf.h
+2025-04-08 01:34:44,266 [WARN] IPConfigManager:3747 - IP not found : TIM
+2025-04-08 01:34:44,266 [WARN] CodeGenerator:4198 - IP not found : null
+2025-04-08 01:34:44,274 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\Core\Inc\main.h_save
+2025-04-08 01:34:44,331 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\Core\Inc\main.h
+2025-04-08 01:34:44,336 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\Core\Src\main.c_save
+2025-04-08 01:34:44,435 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\Core\Src\main.c
+2025-04-08 01:34:44,727 [INFO] ProjectBuilder:3324 - Time for Copy HAL[1] : 124mS.
+2025-04-08 01:34:44,732 [INFO] ProjectBuilder:4912 - Project Generator version: 4.6.0-B36
+2025-04-08 01:34:44,810 [INFO] ConfigFileManager:1590 - The Die is : DIE449
+2025-04-08 01:34:45,570 [INFO] ProjectBuilder:5191 - Time for Generating toolchain IDE Files: 837mS.
+2025-04-08 01:34:45,571 [INFO] ProjectBuilder:3181 - Time for Copy CMSIS : 1mS.
+2025-04-08 01:34:45,575 [INFO] ProjectBuilder:3181 - Time for Copy CMSIS : 0mS.
+2025-04-08 01:36:20,944 [INFO] NvicIntPanel:101 - NVIC parent = com.st.microxplorer.plugins.ip.nvic.MultiNvicIntPanel[,0,0,0x0,invalid,layout=javax.swing.BoxLayout,alignmentX=0.0,alignmentY=0.0,border=,flags=9,maximumSize=,minimumSize=,preferredSize=]
+2025-04-08 01:36:22,672 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 446019200 Bytes (890241024)
+2025-04-08 01:36:24,586 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 482193024 Bytes (890241024)
+2025-04-08 01:36:27,392 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 361956848 Bytes (890241024)
+2025-04-08 01:36:27,790 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: SPI
+2025-04-08 01:36:27,791 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: TIM1_8F7
+2025-04-08 01:36:27,791 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: TIM1_8F7
+2025-04-08 01:36:27,791 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: TIM1_8F7
+2025-04-08 01:36:27,791 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: SYS
+2025-04-08 01:36:27,791 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: RCC
+2025-04-08 01:36:27,791 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: NVIC
+2025-04-08 01:36:27,791 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: TIM1_8F7
+2025-04-08 01:36:27,791 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: CORTEX_M7
+2025-04-08 01:36:27,791 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: GPIO
+2025-04-08 01:36:27,791 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: FATFS
+2025-04-08 01:36:27,792 [INFO] CodeGenerator:882 - code generatio: config db path: C:\ST\STM32CubeIDE_1.17.0\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_6.14.0.202502271554\\db\
+2025-04-08 01:36:27,908 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\license.tmp_save
+2025-04-08 01:36:27,960 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\license.tmp
+2025-04-08 01:36:27,975 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\gpio.tmp_save
+2025-04-08 01:36:28,027 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\gpio.tmp
+2025-04-08 01:36:28,132 [INFO] Middleware:1452 - No code input for Bsp Dependency
+2025-04-08 01:36:28,137 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\fatfs_HalInit.tmp_save
+2025-04-08 01:36:28,186 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\fatfs_HalInit.tmp
+2025-04-08 01:36:28,189 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\fatfs_vars.tmp_save
+2025-04-08 01:36:28,238 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\fatfs_vars.tmp
+2025-04-08 01:36:28,241 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\fatfs_ext_vars.tmp_save
+2025-04-08 01:36:28,289 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\fatfs_ext_vars.tmp
+2025-04-08 01:36:28,292 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\fatfs_inc.tmp_save
+2025-04-08 01:36:28,339 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\fatfs_inc.tmp
+2025-04-08 01:36:28,345 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\cortex.tmp_save
+2025-04-08 01:36:28,394 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\cortex.tmp
+2025-04-08 01:36:28,399 [INFO] Middleware:1452 - No code input for Bsp Dependency
+2025-04-08 01:36:28,406 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\fatfs_HalInit.tmp_save
+2025-04-08 01:36:28,454 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\fatfs_HalInit.tmp
+2025-04-08 01:36:28,459 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\fatfs_vars.tmp_save
+2025-04-08 01:36:28,509 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\fatfs_vars.tmp
+2025-04-08 01:36:28,513 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\fatfs_ext_vars.tmp_save
+2025-04-08 01:36:28,562 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\fatfs_ext_vars.tmp
+2025-04-08 01:36:28,565 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\fatfs_inc.tmp_save
+2025-04-08 01:36:28,611 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\fatfs_inc.tmp
+2025-04-08 01:36:28,615 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\FATFS\Target\ffconf.h_save
+2025-04-08 01:36:28,671 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\FATFS\Target\ffconf.h
+2025-04-08 01:36:28,676 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\FATFS\Target\user_diskio.c_save
+2025-04-08 01:36:28,730 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\FATFS\Target\user_diskio.c
+2025-04-08 01:36:28,735 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\FATFS\Target\user_diskio.h_save
+2025-04-08 01:36:28,789 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\FATFS\Target\user_diskio.h
+2025-04-08 01:36:28,794 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\FATFS\App\fatfs.c_save
+2025-04-08 01:36:28,848 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\FATFS\App\fatfs.c
+2025-04-08 01:36:28,852 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\FATFS\App\fatfs.h_save
+2025-04-08 01:36:28,904 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\FATFS\App\fatfs.h
+2025-04-08 01:36:28,922 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\Core\Src\stm32f7xx_it.c_save
+2025-04-08 01:36:28,992 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\Core\Src\stm32f7xx_it.c
+2025-04-08 01:36:28,997 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\Core\Inc\stm32f7xx_it.h_save
+2025-04-08 01:36:29,048 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\Core\Inc\stm32f7xx_it.h
+2025-04-08 01:36:29,073 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\Core\Src\stm32f7xx_hal_msp.c_save
+2025-04-08 01:36:29,145 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\Core\Src\stm32f7xx_hal_msp.c
+2025-04-08 01:36:29,148 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\system.tmp_save
+2025-04-08 01:36:29,195 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\system.tmp
+2025-04-08 01:36:29,203 [INFO] CodeEngine:319 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\Core\Inc\stm32f7xx_hal_conf.h_save
+2025-04-08 01:36:29,261 [INFO] CodeEngine:343 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\Core\Inc\stm32f7xx_hal_conf.h
+2025-04-08 01:36:29,293 [WARN] IPConfigManager:3747 - IP not found : TIM
+2025-04-08 01:36:29,293 [WARN] CodeGenerator:4198 - IP not found : null
+2025-04-08 01:36:29,299 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\Core\Inc\main.h_save
+2025-04-08 01:36:29,354 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\Core\Inc\main.h
+2025-04-08 01:36:29,359 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\Core\Src\main.c_save
+2025-04-08 01:36:29,460 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\Core\Src\main.c
+2025-04-08 01:36:29,753 [INFO] ProjectBuilder:3324 - Time for Copy HAL[1] : 127mS.
+2025-04-08 01:36:29,758 [INFO] ProjectBuilder:4912 - Project Generator version: 4.6.0-B36
+2025-04-08 01:36:29,829 [INFO] ConfigFileManager:1590 - The Die is : DIE449
+2025-04-08 01:36:30,508 [INFO] ProjectBuilder:5191 - Time for Generating toolchain IDE Files: 750mS.
+2025-04-08 01:36:30,508 [INFO] ProjectBuilder:3181 - Time for Copy CMSIS : 0mS.
+2025-04-08 01:36:30,512 [INFO] ProjectBuilder:3181 - Time for Copy CMSIS : 0mS.
+2025-04-08 01:37:32,526 [INFO] NvicIntPanel:101 - NVIC parent = com.st.microxplorer.plugins.ip.nvic.MultiNvicIntPanel[,0,0,0x0,invalid,layout=javax.swing.BoxLayout,alignmentX=0.0,alignmentY=0.0,border=,flags=9,maximumSize=,minimumSize=,preferredSize=]
+2025-04-08 01:37:34,430 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 704694096 Bytes (890241024)
+2025-04-08 01:37:35,611 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 738774864 Bytes (890241024)
+2025-04-08 01:37:37,751 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 384350944 Bytes (890241024)
+2025-04-08 01:37:38,239 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: SPI
+2025-04-08 01:37:38,239 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: TIM1_8F7
+2025-04-08 01:37:38,239 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: TIM1_8F7
+2025-04-08 01:37:38,239 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: TIM1_8F7
+2025-04-08 01:37:38,239 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: SYS
+2025-04-08 01:37:38,239 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: RCC
+2025-04-08 01:37:38,239 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: NVIC
+2025-04-08 01:37:38,239 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: TIM1_8F7
+2025-04-08 01:37:38,239 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: CORTEX_M7
+2025-04-08 01:37:38,240 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: GPIO
+2025-04-08 01:37:38,240 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: FATFS
+2025-04-08 01:37:38,241 [INFO] CodeGenerator:882 - code generatio: config db path: C:\ST\STM32CubeIDE_1.17.0\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_6.14.0.202502271554\\db\
+2025-04-08 01:37:38,345 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\license.tmp_save
+2025-04-08 01:37:38,396 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\license.tmp
+2025-04-08 01:37:38,412 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\gpio.tmp_save
+2025-04-08 01:37:38,464 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\gpio.tmp
+2025-04-08 01:37:38,568 [INFO] Middleware:1452 - No code input for Bsp Dependency
+2025-04-08 01:37:38,573 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\fatfs_HalInit.tmp_save
+2025-04-08 01:37:38,622 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\fatfs_HalInit.tmp
+2025-04-08 01:37:38,626 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\fatfs_vars.tmp_save
+2025-04-08 01:37:38,674 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\fatfs_vars.tmp
+2025-04-08 01:37:38,678 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\fatfs_ext_vars.tmp_save
+2025-04-08 01:37:38,725 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\fatfs_ext_vars.tmp
+2025-04-08 01:37:38,728 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\fatfs_inc.tmp_save
+2025-04-08 01:37:38,776 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\fatfs_inc.tmp
+2025-04-08 01:37:38,783 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\cortex.tmp_save
+2025-04-08 01:37:38,831 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\cortex.tmp
+2025-04-08 01:37:38,836 [INFO] Middleware:1452 - No code input for Bsp Dependency
+2025-04-08 01:37:38,842 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\fatfs_HalInit.tmp_save
+2025-04-08 01:37:38,890 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\fatfs_HalInit.tmp
+2025-04-08 01:37:38,895 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\fatfs_vars.tmp_save
+2025-04-08 01:37:38,943 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\fatfs_vars.tmp
+2025-04-08 01:37:38,947 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\fatfs_ext_vars.tmp_save
+2025-04-08 01:37:38,995 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\fatfs_ext_vars.tmp
+2025-04-08 01:37:38,999 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\fatfs_inc.tmp_save
+2025-04-08 01:37:39,049 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\fatfs_inc.tmp
+2025-04-08 01:37:39,053 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\FATFS\Target\ffconf.h_save
+2025-04-08 01:37:39,110 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\FATFS\Target\ffconf.h
+2025-04-08 01:37:39,114 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\FATFS\Target\user_diskio.c_save
+2025-04-08 01:37:39,169 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\FATFS\Target\user_diskio.c
+2025-04-08 01:37:39,173 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\FATFS\Target\user_diskio.h_save
+2025-04-08 01:37:39,226 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\FATFS\Target\user_diskio.h
+2025-04-08 01:37:39,230 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\FATFS\App\fatfs.c_save
+2025-04-08 01:37:39,282 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\FATFS\App\fatfs.c
+2025-04-08 01:37:39,286 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\FATFS\App\fatfs.h_save
+2025-04-08 01:37:39,337 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\FATFS\App\fatfs.h
+2025-04-08 01:37:39,354 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\Core\Src\stm32f7xx_it.c_save
+2025-04-08 01:37:39,422 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\Core\Src\stm32f7xx_it.c
+2025-04-08 01:37:39,427 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\Core\Inc\stm32f7xx_it.h_save
+2025-04-08 01:37:39,478 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\Core\Inc\stm32f7xx_it.h
+2025-04-08 01:37:39,495 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\Core\Src\stm32f7xx_hal_msp.c_save
+2025-04-08 01:37:39,568 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\Core\Src\stm32f7xx_hal_msp.c
+2025-04-08 01:37:39,572 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\system.tmp_save
+2025-04-08 01:37:39,642 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\system.tmp
+2025-04-08 01:37:39,650 [INFO] CodeEngine:319 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\Core\Inc\stm32f7xx_hal_conf.h_save
+2025-04-08 01:37:39,708 [INFO] CodeEngine:343 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\Core\Inc\stm32f7xx_hal_conf.h
+2025-04-08 01:37:39,722 [WARN] IPConfigManager:3747 - IP not found : TIM
+2025-04-08 01:37:39,723 [WARN] CodeGenerator:4198 - IP not found : null
+2025-04-08 01:37:39,730 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\Core\Inc\main.h_save
+2025-04-08 01:37:39,783 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\Core\Inc\main.h
+2025-04-08 01:37:39,788 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\Core\Src\main.c_save
+2025-04-08 01:37:39,884 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\Core\Src\main.c
+2025-04-08 01:37:40,167 [INFO] ProjectBuilder:3324 - Time for Copy HAL[1] : 118mS.
+2025-04-08 01:37:40,172 [INFO] ProjectBuilder:4912 - Project Generator version: 4.6.0-B36
+2025-04-08 01:37:40,246 [INFO] ConfigFileManager:1590 - The Die is : DIE449
+2025-04-08 01:37:40,978 [INFO] ProjectBuilder:5191 - Time for Generating toolchain IDE Files: 806mS.
+2025-04-08 01:37:40,980 [INFO] ProjectBuilder:3181 - Time for Copy CMSIS : 1mS.
+2025-04-08 01:37:40,985 [INFO] ProjectBuilder:3181 - Time for Copy CMSIS : 0mS.
+2025-04-08 01:38:58,996 [INFO] NvicIntPanel:101 - NVIC parent = com.st.microxplorer.plugins.ip.nvic.MultiNvicIntPanel[,0,0,0x0,invalid,layout=javax.swing.BoxLayout,alignmentX=0.0,alignmentY=0.0,border=,flags=9,maximumSize=,minimumSize=,preferredSize=]
+2025-04-08 01:39:01,960 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 786119840 Bytes (890241024)
+2025-04-08 01:39:04,387 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 821771424 Bytes (890241024)
+2025-04-08 01:39:06,022 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 372706560 Bytes (890241024)
+2025-04-08 01:39:06,452 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: SPI
+2025-04-08 01:39:06,452 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: TIM1_8F7
+2025-04-08 01:39:06,452 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: TIM1_8F7
+2025-04-08 01:39:06,452 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: TIM1_8F7
+2025-04-08 01:39:06,452 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: SYS
+2025-04-08 01:39:06,452 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: RCC
+2025-04-08 01:39:06,452 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: NVIC
+2025-04-08 01:39:06,452 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: TIM1_8F7
+2025-04-08 01:39:06,452 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: CORTEX_M7
+2025-04-08 01:39:06,453 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: GPIO
+2025-04-08 01:39:06,453 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: FATFS
+2025-04-08 01:39:06,453 [INFO] CodeGenerator:882 - code generatio: config db path: C:\ST\STM32CubeIDE_1.17.0\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_6.14.0.202502271554\\db\
+2025-04-08 01:39:06,559 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\license.tmp_save
+2025-04-08 01:39:06,611 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\license.tmp
+2025-04-08 01:39:06,626 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\gpio.tmp_save
+2025-04-08 01:39:06,679 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\gpio.tmp
+2025-04-08 01:39:06,781 [INFO] Middleware:1452 - No code input for Bsp Dependency
+2025-04-08 01:39:06,786 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\fatfs_HalInit.tmp_save
+2025-04-08 01:39:06,834 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\fatfs_HalInit.tmp
+2025-04-08 01:39:06,837 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\fatfs_vars.tmp_save
+2025-04-08 01:39:06,880 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\fatfs_vars.tmp
+2025-04-08 01:39:06,883 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\fatfs_ext_vars.tmp_save
+2025-04-08 01:39:06,929 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\fatfs_ext_vars.tmp
+2025-04-08 01:39:06,935 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\fatfs_inc.tmp_save
+2025-04-08 01:39:06,979 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\fatfs_inc.tmp
+2025-04-08 01:39:06,985 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\cortex.tmp_save
+2025-04-08 01:39:07,034 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\cortex.tmp
+2025-04-08 01:39:07,039 [INFO] Middleware:1452 - No code input for Bsp Dependency
+2025-04-08 01:39:07,045 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\fatfs_HalInit.tmp_save
+2025-04-08 01:39:07,093 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\fatfs_HalInit.tmp
+2025-04-08 01:39:07,098 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\fatfs_vars.tmp_save
+2025-04-08 01:39:07,146 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\fatfs_vars.tmp
+2025-04-08 01:39:07,150 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\fatfs_ext_vars.tmp_save
+2025-04-08 01:39:07,199 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\fatfs_ext_vars.tmp
+2025-04-08 01:39:07,204 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\fatfs_inc.tmp_save
+2025-04-08 01:39:07,252 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\fatfs_inc.tmp
+2025-04-08 01:39:07,256 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\FATFS\Target\ffconf.h_save
+2025-04-08 01:39:07,315 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\FATFS\Target\ffconf.h
+2025-04-08 01:39:07,320 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\FATFS\Target\user_diskio.c_save
+2025-04-08 01:39:07,371 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\FATFS\Target\user_diskio.c
+2025-04-08 01:39:07,375 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\FATFS\Target\user_diskio.h_save
+2025-04-08 01:39:07,426 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\FATFS\Target\user_diskio.h
+2025-04-08 01:39:07,431 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\FATFS\App\fatfs.c_save
+2025-04-08 01:39:07,482 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\FATFS\App\fatfs.c
+2025-04-08 01:39:07,486 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\FATFS\App\fatfs.h_save
+2025-04-08 01:39:07,537 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\FATFS\App\fatfs.h
+2025-04-08 01:39:07,554 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\Core\Src\stm32f7xx_it.c_save
+2025-04-08 01:39:07,624 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\Core\Src\stm32f7xx_it.c
+2025-04-08 01:39:07,629 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\Core\Inc\stm32f7xx_it.h_save
+2025-04-08 01:39:07,681 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\Core\Inc\stm32f7xx_it.h
+2025-04-08 01:39:07,698 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\Core\Src\stm32f7xx_hal_msp.c_save
+2025-04-08 01:39:07,774 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\Core\Src\stm32f7xx_hal_msp.c
+2025-04-08 01:39:07,777 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\system.tmp_save
+2025-04-08 01:39:07,825 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\system.tmp
+2025-04-08 01:39:07,834 [INFO] CodeEngine:319 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\Core\Inc\stm32f7xx_hal_conf.h_save
+2025-04-08 01:39:07,912 [INFO] CodeEngine:343 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\Core\Inc\stm32f7xx_hal_conf.h
+2025-04-08 01:39:07,926 [WARN] IPConfigManager:3747 - IP not found : TIM
+2025-04-08 01:39:07,926 [WARN] CodeGenerator:4198 - IP not found : null
+2025-04-08 01:39:07,933 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\Core\Inc\main.h_save
+2025-04-08 01:39:07,987 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\Core\Inc\main.h
+2025-04-08 01:39:07,991 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\Core\Src\main.c_save
+2025-04-08 01:39:08,087 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\Core\Src\main.c
+2025-04-08 01:39:08,371 [INFO] ProjectBuilder:3324 - Time for Copy HAL[1] : 121mS.
+2025-04-08 01:39:08,376 [INFO] ProjectBuilder:4912 - Project Generator version: 4.6.0-B36
+2025-04-08 01:39:08,450 [INFO] ConfigFileManager:1590 - The Die is : DIE449
+2025-04-08 01:39:09,153 [INFO] ProjectBuilder:5191 - Time for Generating toolchain IDE Files: 777mS.
+2025-04-08 01:39:09,153 [INFO] ProjectBuilder:3181 - Time for Copy CMSIS : 0mS.
+2025-04-08 01:39:09,158 [INFO] ProjectBuilder:3181 - Time for Copy CMSIS : 0mS.
+2025-04-08 01:40:40,103 [INFO] NvicIntPanel:101 - NVIC parent = com.st.microxplorer.plugins.ip.nvic.MultiNvicIntPanel[,0,0,0x0,invalid,layout=javax.swing.BoxLayout,alignmentX=0.0,alignmentY=0.0,border=,flags=9,maximumSize=,minimumSize=,preferredSize=]
+2025-04-08 01:40:42,012 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 752236616 Bytes (890241024)
+2025-04-08 01:40:43,255 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 785791048 Bytes (890241024)
+2025-04-08 01:40:45,005 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 376989728 Bytes (890241024)
+2025-04-08 01:40:45,465 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: SPI
+2025-04-08 01:40:45,465 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: TIM1_8F7
+2025-04-08 01:40:45,465 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: TIM1_8F7
+2025-04-08 01:40:45,465 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: TIM1_8F7
+2025-04-08 01:40:45,465 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: SYS
+2025-04-08 01:40:45,465 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: RCC
+2025-04-08 01:40:45,465 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: NVIC
+2025-04-08 01:40:45,465 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: TIM1_8F7
+2025-04-08 01:40:45,465 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: CORTEX_M7
+2025-04-08 01:40:45,465 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: GPIO
+2025-04-08 01:40:45,465 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: FATFS
+2025-04-08 01:40:45,466 [INFO] CodeGenerator:882 - code generatio: config db path: C:\ST\STM32CubeIDE_1.17.0\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_6.14.0.202502271554\\db\
+2025-04-08 01:40:45,588 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\license.tmp_save
+2025-04-08 01:40:45,642 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\license.tmp
+2025-04-08 01:40:45,658 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\gpio.tmp_save
+2025-04-08 01:40:45,711 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\gpio.tmp
+2025-04-08 01:40:45,817 [INFO] Middleware:1452 - No code input for Bsp Dependency
+2025-04-08 01:40:45,822 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\fatfs_HalInit.tmp_save
+2025-04-08 01:40:45,872 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\fatfs_HalInit.tmp
+2025-04-08 01:40:45,875 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\fatfs_vars.tmp_save
+2025-04-08 01:40:45,922 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\fatfs_vars.tmp
+2025-04-08 01:40:45,925 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\fatfs_ext_vars.tmp_save
+2025-04-08 01:40:45,973 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\fatfs_ext_vars.tmp
+2025-04-08 01:40:45,976 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\fatfs_inc.tmp_save
+2025-04-08 01:40:46,025 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\fatfs_inc.tmp
+2025-04-08 01:40:46,033 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\cortex.tmp_save
+2025-04-08 01:40:46,080 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\cortex.tmp
+2025-04-08 01:40:46,086 [INFO] Middleware:1452 - No code input for Bsp Dependency
+2025-04-08 01:40:46,091 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\fatfs_HalInit.tmp_save
+2025-04-08 01:40:46,143 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\fatfs_HalInit.tmp
+2025-04-08 01:40:46,147 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\fatfs_vars.tmp_save
+2025-04-08 01:40:46,197 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\fatfs_vars.tmp
+2025-04-08 01:40:46,201 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\fatfs_ext_vars.tmp_save
+2025-04-08 01:40:46,249 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\fatfs_ext_vars.tmp
+2025-04-08 01:40:46,254 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\fatfs_inc.tmp_save
+2025-04-08 01:40:46,302 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\fatfs_inc.tmp
+2025-04-08 01:40:46,306 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\FATFS\Target\ffconf.h_save
+2025-04-08 01:40:46,366 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\FATFS\Target\ffconf.h
+2025-04-08 01:40:46,371 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\FATFS\Target\user_diskio.c_save
+2025-04-08 01:40:46,424 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\FATFS\Target\user_diskio.c
+2025-04-08 01:40:46,429 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\FATFS\Target\user_diskio.h_save
+2025-04-08 01:40:46,483 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\FATFS\Target\user_diskio.h
+2025-04-08 01:40:46,487 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\FATFS\App\fatfs.c_save
+2025-04-08 01:40:46,540 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\FATFS\App\fatfs.c
+2025-04-08 01:40:46,544 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\FATFS\App\fatfs.h_save
+2025-04-08 01:40:46,595 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\FATFS\App\fatfs.h
+2025-04-08 01:40:46,613 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\Core\Src\stm32f7xx_it.c_save
+2025-04-08 01:40:46,681 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\Core\Src\stm32f7xx_it.c
+2025-04-08 01:40:46,686 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\Core\Inc\stm32f7xx_it.h_save
+2025-04-08 01:40:46,736 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\Core\Inc\stm32f7xx_it.h
+2025-04-08 01:40:46,754 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\Core\Src\stm32f7xx_hal_msp.c_save
+2025-04-08 01:40:46,829 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\Core\Src\stm32f7xx_hal_msp.c
+2025-04-08 01:40:46,833 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\system.tmp_save
+2025-04-08 01:40:46,881 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\system.tmp
+2025-04-08 01:40:46,911 [INFO] CodeEngine:319 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\Core\Inc\stm32f7xx_hal_conf.h_save
+2025-04-08 01:40:46,970 [INFO] CodeEngine:343 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\Core\Inc\stm32f7xx_hal_conf.h
+2025-04-08 01:40:46,983 [WARN] IPConfigManager:3747 - IP not found : TIM
+2025-04-08 01:40:46,984 [WARN] CodeGenerator:4198 - IP not found : null
+2025-04-08 01:40:46,990 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\Core\Inc\main.h_save
+2025-04-08 01:40:47,044 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\Core\Inc\main.h
+2025-04-08 01:40:47,049 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\Core\Src\main.c_save
+2025-04-08 01:40:47,145 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\Core\Src\main.c
+2025-04-08 01:40:47,432 [INFO] ProjectBuilder:3324 - Time for Copy HAL[1] : 122mS.
+2025-04-08 01:40:47,437 [INFO] ProjectBuilder:4912 - Project Generator version: 4.6.0-B36
+2025-04-08 01:40:47,509 [INFO] ConfigFileManager:1590 - The Die is : DIE449
+2025-04-08 01:40:48,191 [INFO] ProjectBuilder:5191 - Time for Generating toolchain IDE Files: 754mS.
+2025-04-08 01:40:48,192 [INFO] ProjectBuilder:3181 - Time for Copy CMSIS : 0mS.
+2025-04-08 01:40:48,219 [INFO] ProjectBuilder:3181 - Time for Copy CMSIS : 0mS.
+2025-04-08 01:42:41,622 [INFO] NvicIntPanel:101 - NVIC parent = com.st.microxplorer.plugins.ip.nvic.MultiNvicIntPanel[,0,0,0x0,invalid,layout=javax.swing.BoxLayout,alignmentX=0.0,alignmentY=0.0,border=,flags=9,maximumSize=,minimumSize=,preferredSize=]
+2025-04-08 01:42:43,183 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 603311280 Bytes (890241024)
+2025-04-08 01:42:44,425 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 637392048 Bytes (890241024)
+2025-04-08 01:42:46,407 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 380488880 Bytes (890241024)
+2025-04-08 01:42:46,869 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: SPI
+2025-04-08 01:42:46,869 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: TIM1_8F7
+2025-04-08 01:42:46,869 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: TIM1_8F7
+2025-04-08 01:42:46,869 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: TIM1_8F7
+2025-04-08 01:42:46,869 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: SYS
+2025-04-08 01:42:46,869 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: RCC
+2025-04-08 01:42:46,869 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: NVIC
+2025-04-08 01:42:46,869 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: TIM1_8F7
+2025-04-08 01:42:46,869 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: CORTEX_M7
+2025-04-08 01:42:46,870 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: GPIO
+2025-04-08 01:42:46,870 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: FATFS
+2025-04-08 01:42:46,870 [INFO] CodeGenerator:882 - code generatio: config db path: C:\ST\STM32CubeIDE_1.17.0\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_6.14.0.202502271554\\db\
+2025-04-08 01:42:46,973 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\license.tmp_save
+2025-04-08 01:42:47,024 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\license.tmp
+2025-04-08 01:42:47,039 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\gpio.tmp_save
+2025-04-08 01:42:47,092 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\gpio.tmp
+2025-04-08 01:42:47,197 [INFO] Middleware:1452 - No code input for Bsp Dependency
+2025-04-08 01:42:47,203 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\fatfs_HalInit.tmp_save
+2025-04-08 01:42:47,252 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\fatfs_HalInit.tmp
+2025-04-08 01:42:47,255 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\fatfs_vars.tmp_save
+2025-04-08 01:42:47,302 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\fatfs_vars.tmp
+2025-04-08 01:42:47,306 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\fatfs_ext_vars.tmp_save
+2025-04-08 01:42:47,354 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\fatfs_ext_vars.tmp
+2025-04-08 01:42:47,357 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\fatfs_inc.tmp_save
+2025-04-08 01:42:47,404 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\fatfs_inc.tmp
+2025-04-08 01:42:47,410 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\cortex.tmp_save
+2025-04-08 01:42:47,458 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\cortex.tmp
+2025-04-08 01:42:47,464 [INFO] Middleware:1452 - No code input for Bsp Dependency
+2025-04-08 01:42:47,470 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\fatfs_HalInit.tmp_save
+2025-04-08 01:42:47,518 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\fatfs_HalInit.tmp
+2025-04-08 01:42:47,522 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\fatfs_vars.tmp_save
+2025-04-08 01:42:47,570 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\fatfs_vars.tmp
+2025-04-08 01:42:47,574 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\fatfs_ext_vars.tmp_save
+2025-04-08 01:42:47,623 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\fatfs_ext_vars.tmp
+2025-04-08 01:42:47,626 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\fatfs_inc.tmp_save
+2025-04-08 01:42:47,675 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\fatfs_inc.tmp
+2025-04-08 01:42:47,679 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\FATFS\Target\ffconf.h_save
+2025-04-08 01:42:47,742 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\FATFS\Target\ffconf.h
+2025-04-08 01:42:47,745 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\FATFS\Target\user_diskio.c_save
+2025-04-08 01:42:47,809 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\FATFS\Target\user_diskio.c
+2025-04-08 01:42:47,813 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\FATFS\Target\user_diskio.h_save
+2025-04-08 01:42:47,873 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\FATFS\Target\user_diskio.h
+2025-04-08 01:42:47,877 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\FATFS\App\fatfs.c_save
+2025-04-08 01:42:47,931 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\FATFS\App\fatfs.c
+2025-04-08 01:42:47,936 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\FATFS\App\fatfs.h_save
+2025-04-08 01:42:47,986 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\FATFS\App\fatfs.h
+2025-04-08 01:42:48,002 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\Core\Src\stm32f7xx_it.c_save
+2025-04-08 01:42:48,069 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\Core\Src\stm32f7xx_it.c
+2025-04-08 01:42:48,073 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\Core\Inc\stm32f7xx_it.h_save
+2025-04-08 01:42:48,124 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\Core\Inc\stm32f7xx_it.h
+2025-04-08 01:42:48,142 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\Core\Src\stm32f7xx_hal_msp.c_save
+2025-04-08 01:42:48,216 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\Core\Src\stm32f7xx_hal_msp.c
+2025-04-08 01:42:48,219 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\system.tmp_save
+2025-04-08 01:42:48,266 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\system.tmp
+2025-04-08 01:42:48,275 [INFO] CodeEngine:319 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\Core\Inc\stm32f7xx_hal_conf.h_save
+2025-04-08 01:42:48,354 [INFO] CodeEngine:343 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\Core\Inc\stm32f7xx_hal_conf.h
+2025-04-08 01:42:48,369 [WARN] IPConfigManager:3747 - IP not found : TIM
+2025-04-08 01:42:48,370 [WARN] CodeGenerator:4198 - IP not found : null
+2025-04-08 01:42:48,376 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\Core\Inc\main.h_save
+2025-04-08 01:42:48,437 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\Core\Inc\main.h
+2025-04-08 01:42:48,442 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\Core\Src\main.c_save
+2025-04-08 01:42:48,545 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\Core\Src\main.c
+2025-04-08 01:42:48,826 [INFO] ProjectBuilder:3324 - Time for Copy HAL[1] : 121mS.
+2025-04-08 01:42:48,832 [INFO] ProjectBuilder:4912 - Project Generator version: 4.6.0-B36
+2025-04-08 01:42:48,904 [INFO] ConfigFileManager:1590 - The Die is : DIE449
+2025-04-08 01:42:49,579 [INFO] ProjectBuilder:5191 - Time for Generating toolchain IDE Files: 747mS.
+2025-04-08 01:42:49,580 [INFO] ProjectBuilder:3181 - Time for Copy CMSIS : 1mS.
+2025-04-08 01:42:49,584 [INFO] ProjectBuilder:3181 - Time for Copy CMSIS : 0mS.
+2025-04-08 01:43:27,586 [INFO] NvicIntPanel:101 - NVIC parent = com.st.microxplorer.plugins.ip.nvic.MultiNvicIntPanel[,0,0,0x0,invalid,layout=javax.swing.BoxLayout,alignmentX=0.0,alignmentY=0.0,border=,flags=9,maximumSize=,minimumSize=,preferredSize=]
+2025-04-08 01:43:29,061 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 663922832 Bytes (890241024)
+2025-04-08 01:43:30,299 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 696955024 Bytes (890241024)
+2025-04-08 01:43:31,764 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 811772048 Bytes (890241024)
+2025-04-08 01:43:32,250 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: SPI
+2025-04-08 01:43:32,250 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: TIM1_8F7
+2025-04-08 01:43:32,250 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: TIM1_8F7
+2025-04-08 01:43:32,250 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: TIM1_8F7
+2025-04-08 01:43:32,250 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: SYS
+2025-04-08 01:43:32,250 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: RCC
+2025-04-08 01:43:32,250 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: NVIC
+2025-04-08 01:43:32,250 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: TIM1_8F7
+2025-04-08 01:43:32,250 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: CORTEX_M7
+2025-04-08 01:43:32,250 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: GPIO
+2025-04-08 01:43:32,250 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: FATFS
+2025-04-08 01:43:32,251 [INFO] CodeGenerator:882 - code generatio: config db path: C:\ST\STM32CubeIDE_1.17.0\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_6.14.0.202502271554\\db\
+2025-04-08 01:43:32,367 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\license.tmp_save
+2025-04-08 01:43:32,420 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\license.tmp
+2025-04-08 01:43:32,436 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\gpio.tmp_save
+2025-04-08 01:43:32,490 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\gpio.tmp
+2025-04-08 01:43:32,596 [INFO] Middleware:1452 - No code input for Bsp Dependency
+2025-04-08 01:43:32,601 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\fatfs_HalInit.tmp_save
+2025-04-08 01:43:32,650 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\fatfs_HalInit.tmp
+2025-04-08 01:43:32,653 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\fatfs_vars.tmp_save
+2025-04-08 01:43:32,703 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\fatfs_vars.tmp
+2025-04-08 01:43:32,706 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\fatfs_ext_vars.tmp_save
+2025-04-08 01:43:32,753 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\fatfs_ext_vars.tmp
+2025-04-08 01:43:32,756 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\fatfs_inc.tmp_save
+2025-04-08 01:43:32,805 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\fatfs_inc.tmp
+2025-04-08 01:43:32,812 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\cortex.tmp_save
+2025-04-08 01:43:32,861 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\cortex.tmp
+2025-04-08 01:43:32,867 [INFO] Middleware:1452 - No code input for Bsp Dependency
+2025-04-08 01:43:32,872 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\fatfs_HalInit.tmp_save
+2025-04-08 01:43:32,921 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\fatfs_HalInit.tmp
+2025-04-08 01:43:32,925 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\fatfs_vars.tmp_save
+2025-04-08 01:43:32,975 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\fatfs_vars.tmp
+2025-04-08 01:43:32,980 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\fatfs_ext_vars.tmp_save
+2025-04-08 01:43:33,029 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\fatfs_ext_vars.tmp
+2025-04-08 01:43:33,033 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\fatfs_inc.tmp_save
+2025-04-08 01:43:33,081 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\fatfs_inc.tmp
+2025-04-08 01:43:33,086 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\FATFS\Target\ffconf.h_save
+2025-04-08 01:43:33,144 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\FATFS\Target\ffconf.h
+2025-04-08 01:43:33,149 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\FATFS\Target\user_diskio.c_save
+2025-04-08 01:43:33,205 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\FATFS\Target\user_diskio.c
+2025-04-08 01:43:33,209 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\FATFS\Target\user_diskio.h_save
+2025-04-08 01:43:33,262 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\FATFS\Target\user_diskio.h
+2025-04-08 01:43:33,267 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\FATFS\App\fatfs.c_save
+2025-04-08 01:43:33,324 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\FATFS\App\fatfs.c
+2025-04-08 01:43:33,328 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\FATFS\App\fatfs.h_save
+2025-04-08 01:43:33,389 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\FATFS\App\fatfs.h
+2025-04-08 01:43:33,409 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\Core\Src\stm32f7xx_it.c_save
+2025-04-08 01:43:33,483 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\Core\Src\stm32f7xx_it.c
+2025-04-08 01:43:33,487 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\Core\Inc\stm32f7xx_it.h_save
+2025-04-08 01:43:33,537 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\Core\Inc\stm32f7xx_it.h
+2025-04-08 01:43:33,553 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\Core\Src\stm32f7xx_hal_msp.c_save
+2025-04-08 01:43:33,627 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\Core\Src\stm32f7xx_hal_msp.c
+2025-04-08 01:43:33,630 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\system.tmp_save
+2025-04-08 01:43:33,678 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\system.tmp
+2025-04-08 01:43:33,687 [INFO] CodeEngine:319 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\Core\Inc\stm32f7xx_hal_conf.h_save
+2025-04-08 01:43:33,746 [INFO] CodeEngine:343 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\Core\Inc\stm32f7xx_hal_conf.h
+2025-04-08 01:43:33,759 [WARN] IPConfigManager:3747 - IP not found : TIM
+2025-04-08 01:43:33,760 [WARN] CodeGenerator:4198 - IP not found : null
+2025-04-08 01:43:33,767 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\Core\Inc\main.h_save
+2025-04-08 01:43:33,823 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\Core\Inc\main.h
+2025-04-08 01:43:33,827 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\Core\Src\main.c_save
+2025-04-08 01:43:33,939 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\Core\Src\main.c
+2025-04-08 01:43:34,221 [INFO] ProjectBuilder:3324 - Time for Copy HAL[1] : 118mS.
+2025-04-08 01:43:34,226 [INFO] ProjectBuilder:4912 - Project Generator version: 4.6.0-B36
+2025-04-08 01:43:34,299 [INFO] ConfigFileManager:1590 - The Die is : DIE449
+2025-04-08 01:43:34,979 [INFO] ProjectBuilder:5191 - Time for Generating toolchain IDE Files: 753mS.
+2025-04-08 01:43:34,980 [INFO] ProjectBuilder:3181 - Time for Copy CMSIS : 0mS.
+2025-04-08 01:43:34,985 [INFO] ProjectBuilder:3181 - Time for Copy CMSIS : 0mS.
+2025-04-08 01:44:23,382 [INFO] NvicIntPanel:101 - NVIC parent = com.st.microxplorer.plugins.ip.nvic.MultiNvicIntPanel[,0,0,0x0,invalid,layout=javax.swing.BoxLayout,alignmentX=0.0,alignmentY=0.0,border=,flags=9,maximumSize=,minimumSize=,preferredSize=]
+2025-04-08 01:44:26,494 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 495870312 Bytes (890241024)
+2025-04-08 01:44:27,825 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 529951080 Bytes (890241024)
+2025-04-08 01:44:29,381 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 372138344 Bytes (890241024)
+2025-04-08 01:44:29,851 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: SPI
+2025-04-08 01:44:29,851 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: TIM1_8F7
+2025-04-08 01:44:29,851 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: TIM1_8F7
+2025-04-08 01:44:29,851 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: TIM1_8F7
+2025-04-08 01:44:29,851 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: SYS
+2025-04-08 01:44:29,851 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: RCC
+2025-04-08 01:44:29,851 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: NVIC
+2025-04-08 01:44:29,851 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: TIM1_8F7
+2025-04-08 01:44:29,851 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: CORTEX_M7
+2025-04-08 01:44:29,852 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: GPIO
+2025-04-08 01:44:29,852 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: FATFS
+2025-04-08 01:44:29,853 [INFO] CodeGenerator:882 - code generatio: config db path: C:\ST\STM32CubeIDE_1.17.0\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_6.14.0.202502271554\\db\
+2025-04-08 01:44:29,959 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\license.tmp_save
+2025-04-08 01:44:30,011 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\license.tmp
+2025-04-08 01:44:30,027 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\gpio.tmp_save
+2025-04-08 01:44:30,079 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\gpio.tmp
+2025-04-08 01:44:30,184 [INFO] Middleware:1452 - No code input for Bsp Dependency
+2025-04-08 01:44:30,190 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\fatfs_HalInit.tmp_save
+2025-04-08 01:44:30,239 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\fatfs_HalInit.tmp
+2025-04-08 01:44:30,242 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\fatfs_vars.tmp_save
+2025-04-08 01:44:30,291 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\fatfs_vars.tmp
+2025-04-08 01:44:30,294 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\fatfs_ext_vars.tmp_save
+2025-04-08 01:44:30,343 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\fatfs_ext_vars.tmp
+2025-04-08 01:44:30,346 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\fatfs_inc.tmp_save
+2025-04-08 01:44:30,395 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\fatfs_inc.tmp
+2025-04-08 01:44:30,402 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\cortex.tmp_save
+2025-04-08 01:44:30,450 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\cortex.tmp
+2025-04-08 01:44:30,456 [INFO] Middleware:1452 - No code input for Bsp Dependency
+2025-04-08 01:44:30,461 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\fatfs_HalInit.tmp_save
+2025-04-08 01:44:30,511 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\fatfs_HalInit.tmp
+2025-04-08 01:44:30,515 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\fatfs_vars.tmp_save
+2025-04-08 01:44:30,564 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\fatfs_vars.tmp
+2025-04-08 01:44:30,569 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\fatfs_ext_vars.tmp_save
+2025-04-08 01:44:30,617 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\fatfs_ext_vars.tmp
+2025-04-08 01:44:30,622 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\fatfs_inc.tmp_save
+2025-04-08 01:44:30,672 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\fatfs_inc.tmp
+2025-04-08 01:44:30,676 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\FATFS\Target\ffconf.h_save
+2025-04-08 01:44:30,734 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\FATFS\Target\ffconf.h
+2025-04-08 01:44:30,739 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\FATFS\Target\user_diskio.c_save
+2025-04-08 01:44:30,794 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\FATFS\Target\user_diskio.c
+2025-04-08 01:44:30,799 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\FATFS\Target\user_diskio.h_save
+2025-04-08 01:44:30,853 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\FATFS\Target\user_diskio.h
+2025-04-08 01:44:30,857 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\FATFS\App\fatfs.c_save
+2025-04-08 01:44:30,909 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\FATFS\App\fatfs.c
+2025-04-08 01:44:30,913 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\FATFS\App\fatfs.h_save
+2025-04-08 01:44:30,966 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\FATFS\App\fatfs.h
+2025-04-08 01:44:30,983 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\Core\Src\stm32f7xx_it.c_save
+2025-04-08 01:44:31,051 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\Core\Src\stm32f7xx_it.c
+2025-04-08 01:44:31,056 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\Core\Inc\stm32f7xx_it.h_save
+2025-04-08 01:44:31,110 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\Core\Inc\stm32f7xx_it.h
+2025-04-08 01:44:31,127 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\Core\Src\stm32f7xx_hal_msp.c_save
+2025-04-08 01:44:31,204 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\Core\Src\stm32f7xx_hal_msp.c
+2025-04-08 01:44:31,207 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\system.tmp_save
+2025-04-08 01:44:31,257 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\system.tmp
+2025-04-08 01:44:31,266 [INFO] CodeEngine:319 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\Core\Inc\stm32f7xx_hal_conf.h_save
+2025-04-08 01:44:31,349 [INFO] CodeEngine:343 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\Core\Inc\stm32f7xx_hal_conf.h
+2025-04-08 01:44:31,367 [WARN] IPConfigManager:3747 - IP not found : TIM
+2025-04-08 01:44:31,367 [WARN] CodeGenerator:4198 - IP not found : null
+2025-04-08 01:44:31,374 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\Core\Inc\main.h_save
+2025-04-08 01:44:31,435 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\Core\Inc\main.h
+2025-04-08 01:44:31,440 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\Core\Src\main.c_save
+2025-04-08 01:44:31,538 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\Core\Src\main.c
+2025-04-08 01:44:31,821 [INFO] ProjectBuilder:3324 - Time for Copy HAL[1] : 119mS.
+2025-04-08 01:44:31,826 [INFO] ProjectBuilder:4912 - Project Generator version: 4.6.0-B36
+2025-04-08 01:44:31,899 [INFO] ConfigFileManager:1590 - The Die is : DIE449
+2025-04-08 01:44:32,546 [INFO] ProjectBuilder:5191 - Time for Generating toolchain IDE Files: 720mS.
+2025-04-08 01:44:32,546 [INFO] ProjectBuilder:3181 - Time for Copy CMSIS : 0mS.
+2025-04-08 01:44:32,550 [INFO] ProjectBuilder:3181 - Time for Copy CMSIS : 0mS.
+2025-04-08 01:47:44,410 [INFO] NvicIntPanel:101 - NVIC parent = com.st.microxplorer.plugins.ip.nvic.MultiNvicIntPanel[,0,0,0x0,invalid,layout=javax.swing.BoxLayout,alignmentX=0.0,alignmentY=0.0,border=,flags=9,maximumSize=,minimumSize=,preferredSize=]
+2025-04-08 01:47:50,847 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 534150528 Bytes (890241024)
+2025-04-08 01:47:52,230 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 567178624 Bytes (890241024)
+2025-04-08 01:47:54,042 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 686194048 Bytes (890241024)
+2025-04-08 01:47:54,471 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: SPI
+2025-04-08 01:47:54,471 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: TIM1_8F7
+2025-04-08 01:47:54,471 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: TIM1_8F7
+2025-04-08 01:47:54,471 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: TIM1_8F7
+2025-04-08 01:47:54,471 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: SYS
+2025-04-08 01:47:54,471 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: RCC
+2025-04-08 01:47:54,471 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: NVIC
+2025-04-08 01:47:54,471 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: TIM1_8F7
+2025-04-08 01:47:54,471 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: CORTEX_M7
+2025-04-08 01:47:54,472 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: GPIO
+2025-04-08 01:47:54,472 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: FATFS
+2025-04-08 01:47:54,473 [INFO] CodeGenerator:882 - code generatio: config db path: C:\ST\STM32CubeIDE_1.17.0\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_6.14.0.202502271554\\db\
+2025-04-08 01:47:54,595 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\license.tmp_save
+2025-04-08 01:47:54,651 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\license.tmp
+2025-04-08 01:47:54,668 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\gpio.tmp_save
+2025-04-08 01:47:54,726 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\gpio.tmp
+2025-04-08 01:47:54,853 [INFO] Middleware:1452 - No code input for Bsp Dependency
+2025-04-08 01:47:54,859 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\fatfs_HalInit.tmp_save
+2025-04-08 01:47:54,912 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\fatfs_HalInit.tmp
+2025-04-08 01:47:54,915 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\fatfs_vars.tmp_save
+2025-04-08 01:47:54,960 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\fatfs_vars.tmp
+2025-04-08 01:47:54,963 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\fatfs_ext_vars.tmp_save
+2025-04-08 01:47:55,011 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\fatfs_ext_vars.tmp
+2025-04-08 01:47:55,013 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\fatfs_inc.tmp_save
+2025-04-08 01:47:55,061 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\fatfs_inc.tmp
+2025-04-08 01:47:55,067 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\cortex.tmp_save
+2025-04-08 01:47:55,116 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\cortex.tmp
+2025-04-08 01:47:55,121 [INFO] Middleware:1452 - No code input for Bsp Dependency
+2025-04-08 01:47:55,127 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\fatfs_HalInit.tmp_save
+2025-04-08 01:47:55,176 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\fatfs_HalInit.tmp
+2025-04-08 01:47:55,180 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\fatfs_vars.tmp_save
+2025-04-08 01:47:55,228 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\fatfs_vars.tmp
+2025-04-08 01:47:55,232 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\fatfs_ext_vars.tmp_save
+2025-04-08 01:47:55,281 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\fatfs_ext_vars.tmp
+2025-04-08 01:47:55,285 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\fatfs_inc.tmp_save
+2025-04-08 01:47:55,335 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\fatfs_inc.tmp
+2025-04-08 01:47:55,339 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\FATFS\Target\ffconf.h_save
+2025-04-08 01:47:55,397 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\FATFS\Target\ffconf.h
+2025-04-08 01:47:55,401 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\FATFS\Target\user_diskio.c_save
+2025-04-08 01:47:55,458 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\FATFS\Target\user_diskio.c
+2025-04-08 01:47:55,462 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\FATFS\Target\user_diskio.h_save
+2025-04-08 01:47:55,515 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\FATFS\Target\user_diskio.h
+2025-04-08 01:47:55,519 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\FATFS\App\fatfs.c_save
+2025-04-08 01:47:55,573 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\FATFS\App\fatfs.c
+2025-04-08 01:47:55,577 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\FATFS\App\fatfs.h_save
+2025-04-08 01:47:55,634 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\FATFS\App\fatfs.h
+2025-04-08 01:47:55,652 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\Core\Src\stm32f7xx_it.c_save
+2025-04-08 01:47:55,722 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\Core\Src\stm32f7xx_it.c
+2025-04-08 01:47:55,727 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\Core\Inc\stm32f7xx_it.h_save
+2025-04-08 01:47:55,779 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\Core\Inc\stm32f7xx_it.h
+2025-04-08 01:47:55,796 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\Core\Src\stm32f7xx_hal_msp.c_save
+2025-04-08 01:47:55,879 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\Core\Src\stm32f7xx_hal_msp.c
+2025-04-08 01:47:55,883 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\system.tmp_save
+2025-04-08 01:47:55,938 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\system.tmp
+2025-04-08 01:47:55,947 [INFO] CodeEngine:319 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\Core\Inc\stm32f7xx_hal_conf.h_save
+2025-04-08 01:47:56,015 [INFO] CodeEngine:343 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\Core\Inc\stm32f7xx_hal_conf.h
+2025-04-08 01:47:56,030 [WARN] IPConfigManager:3747 - IP not found : TIM
+2025-04-08 01:47:56,031 [WARN] CodeGenerator:4198 - IP not found : null
+2025-04-08 01:47:56,037 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\Core\Inc\main.h_save
+2025-04-08 01:47:56,106 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\Core\Inc\main.h
+2025-04-08 01:47:56,112 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\Core\Src\main.c_save
+2025-04-08 01:47:56,216 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\Core\Src\main.c
+2025-04-08 01:47:56,501 [INFO] ProjectBuilder:3324 - Time for Copy HAL[1] : 121mS.
+2025-04-08 01:47:56,507 [INFO] ProjectBuilder:4912 - Project Generator version: 4.6.0-B36
+2025-04-08 01:47:56,579 [INFO] ConfigFileManager:1590 - The Die is : DIE449
+2025-04-08 01:47:57,415 [INFO] ProjectBuilder:5191 - Time for Generating toolchain IDE Files: 908mS.
+2025-04-08 01:47:57,416 [INFO] ProjectBuilder:3181 - Time for Copy CMSIS : 0mS.
+2025-04-08 01:47:57,420 [INFO] ProjectBuilder:3181 - Time for Copy CMSIS : 0mS.
+2025-04-08 01:49:02,152 [INFO] NvicIntPanel:101 - NVIC parent = com.st.microxplorer.plugins.ip.nvic.MultiNvicIntPanel[,0,0,0x0,invalid,layout=javax.swing.BoxLayout,alignmentX=0.0,alignmentY=0.0,border=,flags=9,maximumSize=,minimumSize=,preferredSize=]
+2025-04-08 01:49:07,335 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 527437776 Bytes (890241024)
+2025-04-08 01:49:08,726 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 560992208 Bytes (890241024)
+2025-04-08 01:49:10,224 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 676335568 Bytes (890241024)
+2025-04-08 01:49:10,638 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: SPI
+2025-04-08 01:49:10,638 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: TIM1_8F7
+2025-04-08 01:49:10,638 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: TIM1_8F7
+2025-04-08 01:49:10,638 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: TIM1_8F7
+2025-04-08 01:49:10,638 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: SYS
+2025-04-08 01:49:10,638 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: RCC
+2025-04-08 01:49:10,638 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: NVIC
+2025-04-08 01:49:10,638 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: TIM1_8F7
+2025-04-08 01:49:10,638 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: CORTEX_M7
+2025-04-08 01:49:10,639 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: GPIO
+2025-04-08 01:49:10,639 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: FATFS
+2025-04-08 01:49:10,639 [INFO] CodeGenerator:882 - code generatio: config db path: C:\ST\STM32CubeIDE_1.17.0\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_6.14.0.202502271554\\db\
+2025-04-08 01:49:10,753 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\license.tmp_save
+2025-04-08 01:49:10,811 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\license.tmp
+2025-04-08 01:49:10,826 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\gpio.tmp_save
+2025-04-08 01:49:10,907 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\gpio.tmp
+2025-04-08 01:49:11,010 [INFO] Middleware:1452 - No code input for Bsp Dependency
+2025-04-08 01:49:11,014 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\fatfs_HalInit.tmp_save
+2025-04-08 01:49:11,063 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\fatfs_HalInit.tmp
+2025-04-08 01:49:11,066 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\fatfs_vars.tmp_save
+2025-04-08 01:49:11,112 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\fatfs_vars.tmp
+2025-04-08 01:49:11,115 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\fatfs_ext_vars.tmp_save
+2025-04-08 01:49:11,162 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\fatfs_ext_vars.tmp
+2025-04-08 01:49:11,165 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\fatfs_inc.tmp_save
+2025-04-08 01:49:11,214 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\fatfs_inc.tmp
+2025-04-08 01:49:11,220 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\cortex.tmp_save
+2025-04-08 01:49:11,269 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\cortex.tmp
+2025-04-08 01:49:11,274 [INFO] Middleware:1452 - No code input for Bsp Dependency
+2025-04-08 01:49:11,280 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\fatfs_HalInit.tmp_save
+2025-04-08 01:49:11,329 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\fatfs_HalInit.tmp
+2025-04-08 01:49:11,334 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\fatfs_vars.tmp_save
+2025-04-08 01:49:11,383 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\fatfs_vars.tmp
+2025-04-08 01:49:11,387 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\fatfs_ext_vars.tmp_save
+2025-04-08 01:49:11,436 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\fatfs_ext_vars.tmp
+2025-04-08 01:49:11,439 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\fatfs_inc.tmp_save
+2025-04-08 01:49:11,488 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\fatfs_inc.tmp
+2025-04-08 01:49:11,492 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\FATFS\Target\ffconf.h_save
+2025-04-08 01:49:11,551 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\FATFS\Target\ffconf.h
+2025-04-08 01:49:11,555 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\FATFS\Target\user_diskio.c_save
+2025-04-08 01:49:11,610 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\FATFS\Target\user_diskio.c
+2025-04-08 01:49:11,614 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\FATFS\Target\user_diskio.h_save
+2025-04-08 01:49:11,667 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\FATFS\Target\user_diskio.h
+2025-04-08 01:49:11,671 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\FATFS\App\fatfs.c_save
+2025-04-08 01:49:11,724 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\FATFS\App\fatfs.c
+2025-04-08 01:49:11,728 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\FATFS\App\fatfs.h_save
+2025-04-08 01:49:11,782 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\FATFS\App\fatfs.h
+2025-04-08 01:49:11,799 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\Core\Src\stm32f7xx_it.c_save
+2025-04-08 01:49:11,866 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\Core\Src\stm32f7xx_it.c
+2025-04-08 01:49:11,872 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\Core\Inc\stm32f7xx_it.h_save
+2025-04-08 01:49:11,937 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\Core\Inc\stm32f7xx_it.h
+2025-04-08 01:49:11,954 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\Core\Src\stm32f7xx_hal_msp.c_save
+2025-04-08 01:49:12,030 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\Core\Src\stm32f7xx_hal_msp.c
+2025-04-08 01:49:12,033 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\system.tmp_save
+2025-04-08 01:49:12,082 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\MXTmpFiles\system.tmp
+2025-04-08 01:49:12,090 [INFO] CodeEngine:319 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\Core\Inc\stm32f7xx_hal_conf.h_save
+2025-04-08 01:49:12,147 [INFO] CodeEngine:343 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\Core\Inc\stm32f7xx_hal_conf.h
+2025-04-08 01:49:12,160 [WARN] IPConfigManager:3747 - IP not found : TIM
+2025-04-08 01:49:12,161 [WARN] CodeGenerator:4198 - IP not found : null
+2025-04-08 01:49:12,166 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\Core\Inc\main.h_save
+2025-04-08 01:49:12,222 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\Core\Inc\main.h
+2025-04-08 01:49:12,226 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\Core\Src\main.c_save
+2025-04-08 01:49:12,319 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\Core\Src\main.c
+2025-04-08 01:49:12,711 [INFO] ProjectBuilder:3324 - Time for Copy HAL[1] : 136mS.
+2025-04-08 01:49:12,716 [INFO] ProjectBuilder:4912 - Project Generator version: 4.6.0-B36
+2025-04-08 01:49:12,789 [INFO] ConfigFileManager:1590 - The Die is : DIE449
+2025-04-08 01:49:13,529 [INFO] ProjectBuilder:5191 - Time for Generating toolchain IDE Files: 813mS.
+2025-04-08 01:49:13,530 [INFO] ProjectBuilder:3181 - Time for Copy CMSIS : 0mS.
+2025-04-08 01:49:13,536 [INFO] ProjectBuilder:3181 - Time for Copy CMSIS : 0mS.
+2025-04-08 08:04:38,734 [INFO] WebApp:194 - Connection lost
+2025-04-08 08:04:39,323 [INFO] WebApp:191 - Connection restablished
