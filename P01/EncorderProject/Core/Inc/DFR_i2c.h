@@ -2,7 +2,7 @@
  * DFR_i2c.h
  *
  *  Created on: Apr 9, 2024
- * 
+ *
  */
 
 #ifndef INC_DFR_I2C_H_

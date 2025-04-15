@@ -1,0 +1,148 @@
+#include "DFR_i2c.h"
+
+// Utility function for microsecond delay (you can adjust this for your MCU)
+void Delay_us(uint32_t delay) {
+    uint32_t count = (SystemCoreClock / 1000000) * delay / 5;
+    while (count--) {
+        __NOP();
+    }
+}
+
+// Set SDA pin as output
+static void SDA_OUT(DFRobot_GP8XXX_IIC *gp8xxx) {
+    GPIO_InitTypeDef GPIO_InitStruct = {0};
+    GPIO_InitStruct.Pin = gp8xxx->I2C_sda_pin;
+    GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+    GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_HIGH;
+    HAL_GPIO_Init(gp8xxx->I2C_sda_port, &GPIO_InitStruct);
+}
+
+// Set SDA pin as input
+static void SDA_IN(DFRobot_GP8XXX_IIC *gp8xxx) {
+    GPIO_InitTypeDef GPIO_InitStruct = {0};
+    GPIO_InitStruct.Pin = gp8xxx->I2C_sda_pin;
+    GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
+    GPIO_InitStruct.Pull = GPIO_NOPULL;
+    HAL_GPIO_Init(gp8xxx->I2C_sda_port, &GPIO_InitStruct);
+}
+
+// Generate I2C start condition
+void dfr_i2c_start(DFRobot_GP8XXX_IIC *gp8xxx) {
+    SDA_OUT(gp8xxx);
+    HAL_GPIO_WritePin(gp8xxx->I2C_sda_port, gp8xxx->I2C_sda_pin, GPIO_PIN_SET);
+    HAL_GPIO_WritePin(gp8xxx->I2C_scl_port, gp8xxx->I2C_scl_pin, GPIO_PIN_SET);
+    Delay_us(I2C_CYCLE_BEFORE);
+    HAL_GPIO_WritePin(gp8xxx->I2C_sda_port, gp8xxx->I2C_sda_pin, GPIO_PIN_RESET);
+    Delay_us(I2C_CYCLE_AFTER);
+    HAL_GPIO_WritePin(gp8xxx->I2C_scl_port, gp8xxx->I2C_scl_pin, GPIO_PIN_RESET);
+}
+
+// Generate I2C stop condition
+void dfr_i2c_stop(DFRobot_GP8XXX_IIC *gp8xxx) {
+    SDA_OUT(gp8xxx);
+    HAL_GPIO_WritePin(gp8xxx->I2C_scl_port, gp8xxx->I2C_scl_pin, GPIO_PIN_RESET);
+    HAL_GPIO_WritePin(gp8xxx->I2C_sda_port, gp8xxx->I2C_sda_pin, GPIO_PIN_RESET);
+    Delay_us(I2C_CYCLE_BEFORE);
+    HAL_GPIO_WritePin(gp8xxx->I2C_scl_port, gp8xxx->I2C_scl_pin, GPIO_PIN_SET);
+    HAL_GPIO_WritePin(gp8xxx->I2C_sda_port, gp8xxx->I2C_sda_pin, GPIO_PIN_SET);
+    Delay_us(I2C_CYCLE_AFTER);
+}
+
+// Send one bit on I2C bus
+void dfr_i2c_write_1_bit(DFRobot_GP8XXX_IIC *gp8xxx, uint8_t bit) {
+    HAL_GPIO_WritePin(gp8xxx->I2C_scl_port, gp8xxx->I2C_scl_pin, GPIO_PIN_RESET);
+    if (bit) {
+        HAL_GPIO_WritePin(gp8xxx->I2C_sda_port, gp8xxx->I2C_sda_pin, GPIO_PIN_SET);
+    } else {
+        HAL_GPIO_WritePin(gp8xxx->I2C_sda_port, gp8xxx->I2C_sda_pin, GPIO_PIN_RESET);
+    }
+    Delay_us(I2C_CYCLE_BEFORE);
+    HAL_GPIO_WritePin(gp8xxx->I2C_scl_port, gp8xxx->I2C_scl_pin, GPIO_PIN_SET);
+    Delay_us(I2C_CYCLE_AFTER);
+    HAL_GPIO_WritePin(gp8xxx->I2C_scl_port, gp8xxx->I2C_scl_pin, GPIO_PIN_RESET);
+}
+
+// Send one byte and receive ACK
+HAL_StatusTypeDef dfr_i2c_write_byte(DFRobot_GP8XXX_IIC *gp8xxx, uint8_t data) {
+    SDA_OUT(gp8xxx);
+    for (int i = 0; i < 8; i++) {
+        dfr_i2c_write_1_bit(gp8xxx, (data & 0x80));
+        data <<= 1;
+    }
+
+    // Wait for ACK
+    SDA_IN(gp8xxx);
+    HAL_GPIO_WritePin(gp8xxx->I2C_scl_port, gp8xxx->I2C_scl_pin, GPIO_PIN_SET);
+    Delay_us(1);
+    uint16_t wait = I2C_CYCLE_WAIT_ACK;
+    while (HAL_GPIO_ReadPin(gp8xxx->I2C_sda_port, gp8xxx->I2C_sda_pin)) {
+        if (--wait == 0) {
+            dfr_i2c_stop(gp8xxx);
+            return HAL_ERROR;
+        }
+        Delay_us(1);
+    }
+    HAL_GPIO_WritePin(gp8xxx->I2C_scl_port, gp8xxx->I2C_scl_pin, GPIO_PIN_RESET);
+    return HAL_OK;
+}
+
+// Initialize the GP8XXX DAC
+void GP8XXX_IIC_begin(DFRobot_GP8XXX_IIC *gp8xxx, eDAC_Name_t dac_name,
+                      uint8_t Addr, GPIO_TypeDef *SCL_port, uint16_t SCL_pin,
+                      GPIO_TypeDef *SDA_port, uint16_t SDA_pin) {
+    gp8xxx->I2C_scl_port = SCL_port;
+    gp8xxx->I2C_scl_pin = SCL_pin;
+    gp8xxx->I2C_sda_port = SDA_port;
+    gp8xxx->I2C_sda_pin = SDA_pin;
+    gp8xxx->deviceAddr = Addr;
+    gp8xxx->DAC_Name = dac_name;
+
+    if (dac_name == GP8211_identifier || dac_name == GP8211S_identifier) {
+        gp8xxx->resolution = RESOLUTION_12_BIT;
+    } else {
+        gp8xxx->resolution = RESOLUTION_15_BIT;
+    }
+}
+
+// Set output voltage range (5V or 10V)
+int GP8XXX_IIC_setDACOutRange(DFRobot_GP8XXX_IIC *gp8xxx, eOutPutRange_t range) {
+    uint8_t value = (range == eOutputRange10V) ? 0x01 : 0x00;
+
+    dfr_i2c_start(gp8xxx);
+    if (dfr_i2c_write_byte(gp8xxx, (gp8xxx->deviceAddr << 1)) != HAL_OK) return -1;
+    if (dfr_i2c_write_byte(gp8xxx, GP8XXX_CONFIG_CURRENT_REG) != HAL_OK) return -2;
+    if (dfr_i2c_write_byte(gp8xxx, value) != HAL_OK) return -3;
+    dfr_i2c_stop(gp8xxx);
+    return 0;
+}
+
+// Set DAC output voltage value
+int GP8XXX_IIC_setDACOutVoltage(DFRobot_GP8XXX_IIC *gp8xxx, uint16_t voltage, uint8_t channel) {
+    if (voltage > gp8xxx->resolution) {
+        voltage = gp8xxx->resolution;
+    }
+
+    uint8_t dataH = (voltage >> 8) & 0xFF;
+    uint8_t dataL = voltage & 0xFF;
+
+    dfr_i2c_start(gp8xxx);
+    if (dfr_i2c_write_byte(gp8xxx, (gp8xxx->deviceAddr << 1)) != HAL_OK) return -1;
+    if (dfr_i2c_write_byte(gp8xxx, channel) != HAL_OK) return -2;
+    if (dfr_i2c_write_byte(gp8xxx, dataH) != HAL_OK) return -3;
+    if (dfr_i2c_write_byte(gp8xxx, dataL) != HAL_OK) return -4;
+    dfr_i2c_stop(gp8xxx);
+    return 0;
+}
+
+// Store the current DAC configuration (EEPROM write)
+int GP8XXX_IIC_store(DFRobot_GP8XXX_IIC *gp8xxx) {
+    dfr_i2c_start(gp8xxx);
+    if (dfr_i2c_write_byte(gp8xxx, (gp8xxx->deviceAddr << 1)) != HAL_OK) return -1;
+    if (dfr_i2c_write_byte(gp8xxx, GP8XXX_STORE_TIMING_ADDR) != HAL_OK) return -2;
+    if (dfr_i2c_write_byte(gp8xxx, GP8XXX_STORE_TIMING_CMD1) != HAL_OK) return -3;
+    if (dfr_i2c_write_byte(gp8xxx, GP8XXX_STORE_TIMING_CMD2) != HAL_OK) return -4;
+    dfr_i2c_stop(gp8xxx);
+
+    HAL_Delay(GP8XXX_STORE_TIMING_DELAY);
+    return 0;
+}

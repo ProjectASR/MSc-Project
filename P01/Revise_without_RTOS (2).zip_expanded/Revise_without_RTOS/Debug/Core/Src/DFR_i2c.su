@@ -1,0 +1,9 @@
+../Core/Src/DFR_i2c.c:10:6:Delay_us	24	static,ignoring_inline_asm
+../Core/Src/DFR_i2c.c:20:6:dfr_i2c_start	16	static
+../Core/Src/DFR_i2c.c:33:6:dfr_i2c_stop	16	static
+../Core/Src/DFR_i2c.c:45:6:dfr_i2c_write_1_bit	16	static
+../Core/Src/DFR_i2c.c:58:19:dfr_i2c_write_byte	24	static
+../Core/Src/DFR_i2c.c:93:6:GP8XXX_IIC_begin	136	static
+../Core/Src/DFR_i2c.c:227:5:GP8XXX_IIC_setDACOutRange	24	static
+../Core/Src/DFR_i2c.c:266:5:GP8XXX_IIC_setDACOutVoltage	24	static
+../Core/Src/DFR_i2c.c:349:5:GP8XXX_IIC_store	24	static

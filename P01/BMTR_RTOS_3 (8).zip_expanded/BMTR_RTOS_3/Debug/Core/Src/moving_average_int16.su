@@ -1,0 +1,2 @@
+../Core/Src/moving_average_int16.c:6:6:reset_average_filter	24	static
+../Core/Src/moving_average_int16.c:16:6:apply_average_filter	24	static

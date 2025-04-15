@@ -26,10 +26,13 @@
 #include "string.h"
 #include "stdio.h"
 #include <math.h>
+#include <stdint.h>
+#include <DFR_i2c.h>
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
 /* USER CODE BEGIN PTD */
+
 
 /* USER CODE END PTD */
 
@@ -152,10 +155,12 @@ float Idis1, Idis2;  // Disturbance-induced current (A)
 float Text1, Text2;  // External torque estimation (Nm)
 // External Torque Estimations
 float Text1, Text2;
+HAL_StatusTypeDef status;
+uint16_t OutputVref=5000;
+DFRobot_GP8XXX_IIC gp8xxx;
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim) {
     if (htim->Instance == TIM13) {
         SDCardCount++;
-
         if (EncoderUpdated == 1) {
             FRESULT fr;
             UINT bytes_written;
@@ -195,6 +200,7 @@ float applyLowPassFilterVelocity(float X, float Y_old) {
     // Return the filtered output
     return Y;
 }
+int result=0;
 /* USER CODE END 0 */
 
 /**
@@ -217,7 +223,6 @@ int main(void)
   HAL_Init();
 
   /* USER CODE BEGIN Init */
-
   /* USER CODE END Init */
 
   /* Configure the system clock */
@@ -255,6 +260,16 @@ int main(void)
           fresult = f_close(&fil);
       }
   }
+  DFRobot_GP8XXX_IIC gp8xxx;  // Declare the DAC object
+  GP8XXX_IIC_begin(&gp8xxx, GP8211S_identifier, 0x58, GPIOF, GPIO_PIN_1, GPIOF, GPIO_PIN_0);
+
+
+  // Set the DAC output voltage
+  GP8XXX_IIC_setDACOutVoltage(&gp8xxx, 5000, 0);  // Example voltage for 12-bit resolution
+
+  // Store the settings
+  GP8XXX_IIC_store(&gp8xxx);
+
 
   /* USER CODE END 2 */
 
@@ -267,6 +282,10 @@ int main(void)
     /* USER CODE BEGIN 3 */
 	  uint32_t time_start = __HAL_TIM_GET_COUNTER(&htim2);
 	  MainloopCount++;
+	  OutputVref++;
+	  if(OutputVref>30000){
+		  OutputVref=0;
+	  }
 	  EncoderUpdated = 0;
 	  encoder_ticks = __HAL_TIM_GET_COUNTER(&htim1);
 	  encoder_ticks2 = __HAL_TIM_GET_COUNTER(&htim4);
@@ -290,10 +309,8 @@ int main(void)
 
 	  // Apply low-pass filter on the velocity of Encoder 2
 	  velocity2 = applyLowPassFilterVelocity(velocity2, velocity2_prev);  // Filtered velocity
-
 	  theta2_prev = theta2;
 	  velocity2_prev = velocity2;
-
 	  // Disturbance Observers //
 	  Tdis1 = (Icmd1 * Ktn1 + velocity1 * Jn1 * Gdis1) * Gdis1 / (time_interval + Gdis1) - velocity1 * Jn1 * Gdis1;
 	  Tdis2 = (Icmd2 * Ktn2 + velocity2 * Jn2 * Gdis2) * Gdis2 / (time_interval + Gdis2) - velocity2 * Jn2 * Gdis2;
@@ -582,13 +599,24 @@ static void MX_GPIO_Init(void)
 
   /* GPIO Ports Clock Enable */
   __HAL_RCC_GPIOE_CLK_ENABLE();
+  __HAL_RCC_GPIOF_CLK_ENABLE();
   __HAL_RCC_GPIOH_CLK_ENABLE();
   __HAL_RCC_GPIOB_CLK_ENABLE();
   __HAL_RCC_GPIOD_CLK_ENABLE();
   __HAL_RCC_GPIOA_CLK_ENABLE();
 
   /*Configure GPIO pin Output Level */
+  HAL_GPIO_WritePin(GPIOF, GPIO_PIN_0|GPIO_PIN_1, GPIO_PIN_RESET);
+
+  /*Configure GPIO pin Output Level */
   HAL_GPIO_WritePin(GPIOB, GPIO_PIN_0, GPIO_PIN_RESET);
+
+  /*Configure GPIO pins : PF0 PF1 */
+  GPIO_InitStruct.Pin = GPIO_PIN_0|GPIO_PIN_1;
+  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+  HAL_GPIO_Init(GPIOF, &GPIO_InitStruct);
 
   /*Configure GPIO pin : PB0 */
   GPIO_InitStruct.Pin = GPIO_PIN_0;
