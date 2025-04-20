@@ -27,7 +27,7 @@
 #include "stdio.h"
 #include <math.h>
 #include <stdint.h>
-#include <DFR_i2c.h>
+uint16_t dac_value=1200;
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -47,6 +47,8 @@
 /* USER CODE END PM */
 
 /* Private variables ---------------------------------------------------------*/
+
+DAC_HandleTypeDef hdac;
 
 SPI_HandleTypeDef hspi4;
 
@@ -68,6 +70,7 @@ static void MX_TIM4_Init(void);
 static void MX_TIM13_Init(void);
 static void MX_SPI4_Init(void);
 static void MX_TIM2_Init(void);
+static void MX_DAC_Init(void);
 /* USER CODE BEGIN PFP */
 
 /* USER CODE END PFP */
@@ -157,7 +160,6 @@ float Text1, Text2;  // External torque estimation (Nm)
 float Text1, Text2;
 HAL_StatusTypeDef status;
 uint16_t OutputVref=5000;
-DFRobot_GP8XXX_IIC gp8xxx;
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim) {
     if (htim->Instance == TIM13) {
         SDCardCount++;
@@ -240,6 +242,7 @@ int main(void)
   MX_SPI4_Init();
   MX_FATFS_Init();
   MX_TIM2_Init();
+  MX_DAC_Init();
   /* USER CODE BEGIN 2 */
   // Start encoder timers
   HAL_TIM_Encoder_Start(&htim4, TIM_CHANNEL_ALL);
@@ -260,15 +263,9 @@ int main(void)
           fresult = f_close(&fil);
       }
   }
-  DFRobot_GP8XXX_IIC gp8xxx;  // Declare the DAC object
-  GP8XXX_IIC_begin(&gp8xxx, GP8211S_identifier, 0x58, GPIOF, GPIO_PIN_1, GPIOF, GPIO_PIN_0);
+  HAL_DAC_Start(&hdac, DAC_CHANNEL_1);
+  HAL_DAC_Start(&hdac, DAC_CHANNEL_2);
 
-
-  // Set the DAC output voltage
-  GP8XXX_IIC_setDACOutVoltage(&gp8xxx, 5000, 0);  // Example voltage for 12-bit resolution
-
-  // Store the settings
-  GP8XXX_IIC_store(&gp8xxx);
 
 
   /* USER CODE END 2 */
@@ -283,7 +280,7 @@ int main(void)
 	  uint32_t time_start = __HAL_TIM_GET_COUNTER(&htim2);
 	  MainloopCount++;
 	  OutputVref++;
-	  if(OutputVref>30000){
+	  if(OutputVref>4000){
 		  OutputVref=0;
 	  }
 	  EncoderUpdated = 0;
@@ -318,6 +315,9 @@ int main(void)
 	  Idis2=Tdis2*Kt2;
 	  Text1=(Icmd1*(1/Kt1)+velocity1 * Jn1 * Grtob1-(Fint+Ffric))*Grtob1/(time_interval + Grtob1)-velocity1 * Jn1 * Grtob1;
 	  Text2 = (Icmd2 * (1 / Kt2) + velocity2 * Jn2 * Grtob2 - (Fint2 + Ffric2)) * Grtob2 / (time_interval + Grtob2) - velocity2 * Jn2 * Grtob2;
+	  // Set the DAC output voltage
+	  HAL_DAC_SetValue(&hdac, DAC_CHANNEL_1, DAC_ALIGN_12B_R, dac_value);
+	  HAL_DAC_SetValue(&hdac, DAC_CHANNEL_2, DAC_ALIGN_12B_R, dac_value);
 	  uint32_t time_end = __HAL_TIM_GET_COUNTER(&htim2);
 	  time_interval = time_end - time_start;
   }
@@ -367,6 +367,53 @@ void SystemClock_Config(void)
   {
     Error_Handler();
   }
+}
+
+/**
+  * @brief DAC Initialization Function
+  * @param None
+  * @retval None
+  */
+static void MX_DAC_Init(void)
+{
+
+  /* USER CODE BEGIN DAC_Init 0 */
+
+  /* USER CODE END DAC_Init 0 */
+
+  DAC_ChannelConfTypeDef sConfig = {0};
+
+  /* USER CODE BEGIN DAC_Init 1 */
+
+  /* USER CODE END DAC_Init 1 */
+
+  /** DAC Initialization
+  */
+  hdac.Instance = DAC;
+  if (HAL_DAC_Init(&hdac) != HAL_OK)
+  {
+    Error_Handler();
+  }
+
+  /** DAC channel OUT1 config
+  */
+  sConfig.DAC_Trigger = DAC_TRIGGER_NONE;
+  sConfig.DAC_OutputBuffer = DAC_OUTPUTBUFFER_ENABLE;
+  if (HAL_DAC_ConfigChannel(&hdac, &sConfig, DAC_CHANNEL_1) != HAL_OK)
+  {
+    Error_Handler();
+  }
+
+  /** DAC channel OUT2 config
+  */
+  if (HAL_DAC_ConfigChannel(&hdac, &sConfig, DAC_CHANNEL_2) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  /* USER CODE BEGIN DAC_Init 2 */
+
+  /* USER CODE END DAC_Init 2 */
+
 }
 
 /**
@@ -479,7 +526,7 @@ static void MX_TIM2_Init(void)
 
   /* USER CODE END TIM2_Init 1 */
   htim2.Instance = TIM2;
-  htim2.Init.Prescaler = 71;
+  htim2.Init.Prescaler = 72*5-1;
   htim2.Init.CounterMode = TIM_COUNTERMODE_UP;
   htim2.Init.Period = 0xFFFFFFFF;
   htim2.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
@@ -601,15 +648,18 @@ static void MX_GPIO_Init(void)
   __HAL_RCC_GPIOE_CLK_ENABLE();
   __HAL_RCC_GPIOF_CLK_ENABLE();
   __HAL_RCC_GPIOH_CLK_ENABLE();
+  __HAL_RCC_GPIOA_CLK_ENABLE();
   __HAL_RCC_GPIOB_CLK_ENABLE();
   __HAL_RCC_GPIOD_CLK_ENABLE();
-  __HAL_RCC_GPIOA_CLK_ENABLE();
 
   /*Configure GPIO pin Output Level */
   HAL_GPIO_WritePin(GPIOF, GPIO_PIN_0|GPIO_PIN_1, GPIO_PIN_RESET);
 
   /*Configure GPIO pin Output Level */
   HAL_GPIO_WritePin(GPIOB, GPIO_PIN_0, GPIO_PIN_RESET);
+
+  /*Configure GPIO pin Output Level */
+  HAL_GPIO_WritePin(GPIOD, GPIO_PIN_0|GPIO_PIN_1, GPIO_PIN_RESET);
 
   /*Configure GPIO pins : PF0 PF1 */
   GPIO_InitStruct.Pin = GPIO_PIN_0|GPIO_PIN_1;
@@ -624,6 +674,13 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
   HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
+
+  /*Configure GPIO pins : PD0 PD1 */
+  GPIO_InitStruct.Pin = GPIO_PIN_0|GPIO_PIN_1;
+  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+  HAL_GPIO_Init(GPIOD, &GPIO_InitStruct);
 
   /* USER CODE BEGIN MX_GPIO_Init_2 */
 
