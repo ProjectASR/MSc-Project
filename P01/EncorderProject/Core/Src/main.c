@@ -27,7 +27,7 @@
 #include "stdio.h"
 #include <math.h>
 #include <stdint.h>
-uint16_t dac_value=1200;
+uint16_t dac_value=500;
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -87,6 +87,7 @@ uint32_t encoder_ticks2_prev = 0;  // Previous tick count from Encoder 2
 uint32_t MainloopCount = 0;            // Main counter to keep track of loop or events
 uint32_t SDCardCount=0;			   // Counter for SD card
 uint32_t record_number = 1;  // Counter for record numbers
+uint32_t communicationError=0;
 // Velocity and acceleration variables for Encoder 1
 
 // Timing variable to set the interval for calculation
@@ -107,9 +108,9 @@ UINT bw;                           // Bytes written to the file
 /////////// Test Variables  ////////
 FRESULT fresult2;
 volatile int EncoderUpdated = 0;
-
+int SDCardRecordMode = 0;
 /////////// Algorithm Code Varibles  ////////
-#define CPR 57692 //Counter Per Revolution
+#define CPR 28846 //Counter Per Revolution
 #define MAX_COUNT 65535
 uint32_t time_start=0;
 uint32_t time_end=0;
@@ -162,8 +163,9 @@ HAL_StatusTypeDef status;
 uint16_t OutputVref=5000;
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim) {
     if (htim->Instance == TIM13) {
-        SDCardCount++;
-        if (EncoderUpdated == 1) {
+    	if (SDCardRecordMode==1){
+/*        SDCardCount++;
+        if (EncoderUpdated == 1 && communicationError==0) {
             FRESULT fr;
             UINT bytes_written;
 
@@ -171,6 +173,7 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim) {
             fr = f_open(&fil, "Data.txt", FA_OPEN_APPEND | FA_WRITE);
             if (fr != FR_OK) {
                 // Optional: Handle error (blink LED, set flag, etc.)
+            	communicationError=1;
                 return;
             }
 
@@ -181,18 +184,27 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim) {
             fr = f_write(&fil, buffer, strlen(buffer), &bytes_written);
             if (fr != FR_OK || bytes_written == 0) {
                 f_close(&fil);  // Close anyway if open
+                communicationError=1;
                 return;
             }
 
             // Close the file
             fr = f_close(&fil);
             if (fr != FR_OK) {
+            	communicationError=1;
                 return;
             }
 
             EncoderUpdated = 0;
-            record_number++;
+            record_number++;*/
         }
+
+    		else {
+    			   // Send RGB values to ESP32
+    				uint8_t txData[3] = {100, 0, 0};
+    			    HAL_SPI_Transmit(&hspi4, txData, 3, HAL_MAX_DELAY);
+    			    HAL_Delay(500);  // Delay between transmissions for clarity
+    		}
     }
 }
 float applyLowPassFilterVelocity(float X, float Y_old) {
@@ -201,6 +213,17 @@ float applyLowPassFilterVelocity(float X, float Y_old) {
 
     // Return the filtered output
     return Y;
+}
+void ConfigureMotor01(int Enable, int Clockwise, uint16_t dac_value) {
+	HAL_GPIO_WritePin(GPIOB,GPIO_PIN_4, Clockwise);
+	HAL_GPIO_WritePin(GPIOB,GPIO_PIN_5, Enable);
+	HAL_DAC_SetValue(&hdac, DAC_CHANNEL_1, DAC_ALIGN_12B_R, dac_value);
+
+}
+void ConfigureMotor02(int Enable, int Clockwise, uint16_t dac_value) {
+	HAL_GPIO_WritePin(GPIOA,GPIO_PIN_2, Clockwise);
+	HAL_GPIO_WritePin(GPIOA,GPIO_PIN_3, Enable);
+	HAL_DAC_SetValue(&hdac, DAC_CHANNEL_2, DAC_ALIGN_12B_R, dac_value);
 }
 int result=0;
 /* USER CODE END 0 */
@@ -316,8 +339,8 @@ int main(void)
 	  Text1=(Icmd1*(1/Kt1)+velocity1 * Jn1 * Grtob1-(Fint+Ffric))*Grtob1/(time_interval + Grtob1)-velocity1 * Jn1 * Grtob1;
 	  Text2 = (Icmd2 * (1 / Kt2) + velocity2 * Jn2 * Grtob2 - (Fint2 + Ffric2)) * Grtob2 / (time_interval + Grtob2) - velocity2 * Jn2 * Grtob2;
 	  // Set the DAC output voltage
-	  HAL_DAC_SetValue(&hdac, DAC_CHANNEL_1, DAC_ALIGN_12B_R, dac_value);
-	  HAL_DAC_SetValue(&hdac, DAC_CHANNEL_2, DAC_ALIGN_12B_R, dac_value);
+	  ConfigureMotor01(1, 1, 2000);
+	  ConfigureMotor02(1, 0, 2000);
 	  uint32_t time_end = __HAL_TIM_GET_COUNTER(&htim2);
 	  time_interval = time_end - time_start;
   }
@@ -439,7 +462,7 @@ static void MX_SPI4_Init(void)
   hspi4.Init.CLKPolarity = SPI_POLARITY_LOW;
   hspi4.Init.CLKPhase = SPI_PHASE_1EDGE;
   hspi4.Init.NSS = SPI_NSS_SOFT;
-  hspi4.Init.BaudRatePrescaler = SPI_BAUDRATEPRESCALER_64;
+  hspi4.Init.BaudRatePrescaler = SPI_BAUDRATEPRESCALER_32;
   hspi4.Init.FirstBit = SPI_FIRSTBIT_MSB;
   hspi4.Init.TIMode = SPI_TIMODE_DISABLE;
   hspi4.Init.CRCCalculation = SPI_CRCCALCULATION_DISABLE;
@@ -656,7 +679,10 @@ static void MX_GPIO_Init(void)
   HAL_GPIO_WritePin(GPIOF, GPIO_PIN_0|GPIO_PIN_1, GPIO_PIN_RESET);
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(GPIOB, GPIO_PIN_0, GPIO_PIN_RESET);
+  HAL_GPIO_WritePin(GPIOA, GPIO_PIN_2|GPIO_PIN_3, GPIO_PIN_RESET);
+
+  /*Configure GPIO pin Output Level */
+  HAL_GPIO_WritePin(GPIOB, GPIO_PIN_0|GPIO_PIN_4|GPIO_PIN_5, GPIO_PIN_RESET);
 
   /*Configure GPIO pin Output Level */
   HAL_GPIO_WritePin(GPIOD, GPIO_PIN_0|GPIO_PIN_1, GPIO_PIN_RESET);
@@ -668,8 +694,15 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
   HAL_GPIO_Init(GPIOF, &GPIO_InitStruct);
 
-  /*Configure GPIO pin : PB0 */
-  GPIO_InitStruct.Pin = GPIO_PIN_0;
+  /*Configure GPIO pins : PA2 PA3 */
+  GPIO_InitStruct.Pin = GPIO_PIN_2|GPIO_PIN_3;
+  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+  HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
+
+  /*Configure GPIO pins : PB0 PB4 PB5 */
+  GPIO_InitStruct.Pin = GPIO_PIN_0|GPIO_PIN_4|GPIO_PIN_5;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
