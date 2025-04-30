@@ -108,9 +108,9 @@ UINT bw;                           // Bytes written to the file
 /////////// Test Variables  ////////
 FRESULT fresult2;
 volatile int EncoderUpdated = 0;
-int SDCardRecordMode = 1;
+int SDCardRecordMode = 0;
 /////////// Algorithm Code Varibles  ////////
-#define CPR 512*26*4 //Counter Per Revolution
+#define CPR 28846 //Counter Per Revolution
 #define MAX_COUNT 65535
 uint32_t time_start=0;
 uint32_t time_end=0;
@@ -130,22 +130,21 @@ float acceleration1 = 0.0, acceleration2 = 0.0;
 #define G 0.1f  // Smoothing factor (adjust 0 < G < 1)
 // Define constants and variables for both motors
 // Motor 1 Parameters
-float Icmd1 = 0;        // Commanded current (A)
-float Ktn1 = 0.0705;        // Torque constant (Nm/A)
-float Jn1 = +3069.1e-7;         // Motor inertia (kg·m^2)
-float Gdis1 = 10.0;      // Disturbance observer gain
-float Kt1 = 0.0705;         // Additional torque constant scaling
+float Icmd1 = 1.2;        // Commanded current (A)
+float Ktn1 = 0.05;        // Torque constant (Nm/A)
+float Jn1 = 0.01;         // Motor inertia (kg·m^2)
+float Gdis1 = 100.0;      // Disturbance observer gain
+float Kt1 = 0.05;        // Additional torque constant scaling
 float Grtob1 = 50.0;      // Reaction torque observer gain
 float Fint = 0.1;         // Internal force (Nm)
 float Ffric = 0.05;       // Friction force (Nm)
-float PPR = 512.0;       // Pulses per revolution
-float gear_ratio = 26.0; // Gear ratio
+
 // Motor 2 Parameters
 float Icmd2 = 1.1;        // Commanded current (A)
-float Ktn2 = 0.0705;         // Torque constant (Nm/A)
-float Jn2 = +3069.1e-7;      // Motor inertia (kg·m^2)
+float Ktn2 = 0.048;       // Torque constant (Nm/A)
+float Jn2 = 0.012;        // Motor inertia (kg·m^2)
 float Gdis2 = 95.0;       // Disturbance observer gain
-float Kt2 = 0.0705;          // Additional torque constant scaling
+float Kt2 = 0.048;        // Additional torque constant scaling
 float Grtob2 = 45.0;      // Reaction torque observer gain
 float Fint2 = 0.08;       // Internal force (Nm)
 float Ffric2 = 0.04;      // Friction force (Nm)
@@ -160,14 +159,12 @@ float Idis1, Idis2;  // Disturbance-induced current (A)
 float Text1, Text2;  // External torque estimation (Nm)
 // External Torque Estimations
 float Text1, Text2;
-//Acceleration Set points
-float Set_Accelaration1=10000;
 HAL_StatusTypeDef status;
 uint16_t OutputVref=5000;
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim) {
     if (htim->Instance == TIM13) {
     	if (SDCardRecordMode==1){
-        SDCardCount++;
+/*        SDCardCount++;
         if (EncoderUpdated == 1 && communicationError==0) {
             FRESULT fr;
             UINT bytes_written;
@@ -199,11 +196,14 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim) {
             }
 
             EncoderUpdated = 0;
-            record_number++;
+            record_number++;*/
         }
-    	}
-    		else {
 
+    		else {
+    			   // Send RGB values to ESP32
+//    				uint8_t txData[3] = {100, 0, 0};
+//    			    HAL_SPI_Transmit(&hspi4, txData, 3, HAL_MAX_DELAY);
+//    			    HAL_Delay(500);  // Delay between transmissions for clarity
     		}
     }
 }
@@ -240,7 +240,7 @@ int main(void)
   /* USER CODE END 1 */
 
   /* MPU Configuration--------------------------------------------------------*/
-	MPU_Config();
+  MPU_Config();
 
   /* MCU Configuration--------------------------------------------------------*/
 
@@ -288,6 +288,9 @@ int main(void)
   }
   HAL_DAC_Start(&hdac, DAC_CHANNEL_1);
   HAL_DAC_Start(&hdac, DAC_CHANNEL_2);
+
+
+
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -309,7 +312,7 @@ int main(void)
 	  EncoderUpdated = 1;
 	  secondFromStart=__HAL_TIM_GET_COUNTER(&htim2)/100000;
 	  // Compute **Encoder 1** Position, Velocity, & Acceleration
-	  theta1 = (float)(encoder_ticks) * 2.0f * M_PI / ((float)CPR * gear_ratio);
+	  theta1 = (float)(encoder_ticks) * 2.0f * M_PI / (float)CPR;
 	  velocity1 = (theta1 - theta1_prev) * 1000000  / time_interval;
 	  acceleration1 = (velocity1 - velocity1_prev) * 1000000  / time_interval;
 
@@ -320,7 +323,7 @@ int main(void)
 	  velocity1_prev = velocity1;
 
 	  // Compute **Encoder 2** Position, Velocity, & Acceleration
-	  theta2 = (float)(encoder_ticks2) * 2.0f * M_PI / ((float)CPR * gear_ratio);
+	  theta2 = (float)(encoder_ticks2) * 2.0f * M_PI / (float)CPR;
 	  velocity2 = (theta2 - theta2_prev) * 1000000  / time_interval;
 	  acceleration2 = (velocity2 - velocity2_prev) * 1000000  / time_interval;
 
@@ -329,19 +332,15 @@ int main(void)
 	  theta2_prev = theta2;
 	  velocity2_prev = velocity2;
 	  // Disturbance Observers //
-	  Icmd1=Jn1*Set_Accelaration1/Ktn1+Idis1;
 	  Tdis1 = (Icmd1 * Ktn1 + velocity1 * Jn1 * Gdis1) * Gdis1 / (time_interval + Gdis1) - velocity1 * Jn1 * Gdis1;
-	  Idis1=Tdis1*Kt1;
-	  // Set the DAC output voltage
-	  if(Icmd1>4.5){
-		  Icmd1=4.5;
-	  }
-	  ConfigureMotor02(1, 1, Icmd1*(4000)/4.5);
 	  Tdis2 = (Icmd2 * Ktn2 + velocity2 * Jn2 * Gdis2) * Gdis2 / (time_interval + Gdis2) - velocity2 * Jn2 * Gdis2;
-
+	  Idis1=Tdis1*Kt1;
 	  Idis2=Tdis2*Kt2;
-
-	  ConfigureMotor01(1, 1, 500);
+	  Text1=(Icmd1*(1/Kt1)+velocity1 * Jn1 * Grtob1-(Fint+Ffric))*Grtob1/(time_interval + Grtob1)-velocity1 * Jn1 * Grtob1;
+	  Text2 = (Icmd2 * (1 / Kt2) + velocity2 * Jn2 * Grtob2 - (Fint2 + Ffric2)) * Grtob2 / (time_interval + Grtob2) - velocity2 * Jn2 * Grtob2;
+	  // Set the DAC output voltage
+	  ConfigureMotor01(1, 1, 2000);
+	  ConfigureMotor02(1, 0, 2000);
 	  uint32_t time_end = __HAL_TIM_GET_COUNTER(&htim2);
 	  time_interval = time_end - time_start;
   }
@@ -463,7 +462,7 @@ static void MX_SPI4_Init(void)
   hspi4.Init.CLKPolarity = SPI_POLARITY_LOW;
   hspi4.Init.CLKPhase = SPI_PHASE_1EDGE;
   hspi4.Init.NSS = SPI_NSS_SOFT;
-  hspi4.Init.BaudRatePrescaler = SPI_BAUDRATEPRESCALER_64;
+  hspi4.Init.BaudRatePrescaler = SPI_BAUDRATEPRESCALER_32;
   hspi4.Init.FirstBit = SPI_FIRSTBIT_MSB;
   hspi4.Init.TIMode = SPI_TIMODE_DISABLE;
   hspi4.Init.CRCCalculation = SPI_CRCCALCULATION_DISABLE;

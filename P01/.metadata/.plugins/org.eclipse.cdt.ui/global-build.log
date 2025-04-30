@@ -166,3 +166,312 @@ Finished building: default.size.stdout
  
 Finished building: EncorderProject.list
  
+21:53:33 **** Incremental Build of configuration Debug for project EncorderProject ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F756xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "EncorderProject.elf" @"objects.list"   -mcpu=cortex-m7 -T"C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\STM32F756ZGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="EncorderProject.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: EncorderProject.elf
+ 
+arm-none-eabi-size  EncorderProject.elf 
+arm-none-eabi-objdump -h -S EncorderProject.elf  > "EncorderProject.list"
+   text	   data	    bss	    dec	    hex	filename
+  30220	    108	  10444	  40772	   9f44	EncorderProject.elf
+Finished building: default.size.stdout
+ 
+Finished building: EncorderProject.list
+ 
+21:54:57 **** Incremental Build of configuration Debug for project EncorderProject ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F756xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "EncorderProject.elf" @"objects.list"   -mcpu=cortex-m7 -T"C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\STM32F756ZGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="EncorderProject.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: EncorderProject.elf
+ 
+arm-none-eabi-size  EncorderProject.elf 
+arm-none-eabi-objdump -h -S EncorderProject.elf  > "EncorderProject.list"
+   text	   data	    bss	    dec	    hex	filename
+  33996	    196	  12828	  47020	   b7ac	EncorderProject.elf
+Finished building: default.size.stdout
+ 
+Finished building: EncorderProject.list
+ 
+22:06:44 **** Incremental Build of configuration Debug for project EncorderProject ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F756xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "EncorderProject.elf" @"objects.list"   -mcpu=cortex-m7 -T"C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\STM32F756ZGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="EncorderProject.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: EncorderProject.elf
+ 
+arm-none-eabi-size  EncorderProject.elf 
+arm-none-eabi-objdump -h -S EncorderProject.elf  > "EncorderProject.list"
+   text	   data	    bss	    dec	    hex	filename
+  33992	    196	  12828	  47016	   b7a8	EncorderProject.elf
+Finished building: default.size.stdout
+ 
+Finished building: EncorderProject.list
+ 
+22:11:03 **** Incremental Build of configuration Debug for project EncorderProject ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F756xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "EncorderProject.elf" @"objects.list"   -mcpu=cortex-m7 -T"C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\STM32F756ZGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="EncorderProject.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: EncorderProject.elf
+ 
+arm-none-eabi-size  EncorderProject.elf 
+arm-none-eabi-objdump -h -S EncorderProject.elf  > "EncorderProject.list"
+   text	   data	    bss	    dec	    hex	filename
+  33996	    196	  12828	  47020	   b7ac	EncorderProject.elf
+Finished building: default.size.stdout
+ 
+Finished building: EncorderProject.list
+ 
+22:11:43 **** Incremental Build of configuration Debug for project EncorderProject ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F756xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "EncorderProject.elf" @"objects.list"   -mcpu=cortex-m7 -T"C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\STM32F756ZGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="EncorderProject.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: EncorderProject.elf
+ 
+arm-none-eabi-size  EncorderProject.elf 
+arm-none-eabi-objdump -h -S EncorderProject.elf  > "EncorderProject.list"
+   text	   data	    bss	    dec	    hex	filename
+  33996	    196	  12828	  47020	   b7ac	EncorderProject.elf
+Finished building: default.size.stdout
+ 
+Finished building: EncorderProject.list
+ 
+22:13:12 **** Incremental Build of configuration Debug for project EncorderProject ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F756xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "EncorderProject.elf" @"objects.list"   -mcpu=cortex-m7 -T"C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\STM32F756ZGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="EncorderProject.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: EncorderProject.elf
+ 
+arm-none-eabi-size  EncorderProject.elf 
+arm-none-eabi-objdump -h -S EncorderProject.elf  > "EncorderProject.list"
+   text	   data	    bss	    dec	    hex	filename
+  33996	    196	  12828	  47020	   b7ac	EncorderProject.elf
+Finished building: default.size.stdout
+ 
+Finished building: EncorderProject.list
+ 
+22:20:08 **** Incremental Build of configuration Debug for project EncorderProject ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F756xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "EncorderProject.elf" @"objects.list"   -mcpu=cortex-m7 -T"C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\STM32F756ZGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="EncorderProject.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: EncorderProject.elf
+ 
+arm-none-eabi-size  EncorderProject.elf 
+arm-none-eabi-objdump -h -S EncorderProject.elf  > "EncorderProject.list"
+   text	   data	    bss	    dec	    hex	filename
+  33996	    196	  12828	  47020	   b7ac	EncorderProject.elf
+Finished building: default.size.stdout
+ 
+Finished building: EncorderProject.list
+ 
+22:34:34 **** Incremental Build of configuration Debug for project EncorderProject ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F756xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "EncorderProject.elf" @"objects.list"   -mcpu=cortex-m7 -T"C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\STM32F756ZGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="EncorderProject.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: EncorderProject.elf
+ 
+arm-none-eabi-size  EncorderProject.elf 
+arm-none-eabi-objdump -h -S EncorderProject.elf  > "EncorderProject.list"
+   text	   data	    bss	    dec	    hex	filename
+  34040	    196	  12828	  47064	   b7d8	EncorderProject.elf
+Finished building: default.size.stdout
+ 
+Finished building: EncorderProject.list
+ 
+22:37:58 **** Incremental Build of configuration Debug for project EncorderProject ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F756xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "EncorderProject.elf" @"objects.list"   -mcpu=cortex-m7 -T"C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\STM32F756ZGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="EncorderProject.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: EncorderProject.elf
+ 
+arm-none-eabi-size  EncorderProject.elf 
+arm-none-eabi-objdump -h -S EncorderProject.elf  > "EncorderProject.list"
+   text	   data	    bss	    dec	    hex	filename
+  34040	    196	  12828	  47064	   b7d8	EncorderProject.elf
+Finished building: default.size.stdout
+ 
+Finished building: EncorderProject.list
+ 
+22:39:10 **** Incremental Build of configuration Debug for project EncorderProject ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F756xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "EncorderProject.elf" @"objects.list"   -mcpu=cortex-m7 -T"C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\STM32F756ZGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="EncorderProject.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: EncorderProject.elf
+ 
+arm-none-eabi-size  EncorderProject.elf 
+arm-none-eabi-objdump -h -S EncorderProject.elf  > "EncorderProject.list"
+   text	   data	    bss	    dec	    hex	filename
+  34040	    196	  12828	  47064	   b7d8	EncorderProject.elf
+Finished building: default.size.stdout
+ 
+Finished building: EncorderProject.list
+ 
+22:45:00 **** Incremental Build of configuration Debug for project EncorderProject ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F756xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "EncorderProject.elf" @"objects.list"   -mcpu=cortex-m7 -T"C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\STM32F756ZGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="EncorderProject.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: EncorderProject.elf
+ 
+arm-none-eabi-size  EncorderProject.elf 
+arm-none-eabi-objdump -h -S EncorderProject.elf  > "EncorderProject.list"
+   text	   data	    bss	    dec	    hex	filename
+  34080	    196	  12828	  47104	   b800	EncorderProject.elf
+Finished building: default.size.stdout
+ 
+Finished building: EncorderProject.list
+ 
+22:49:02 **** Incremental Build of configuration Debug for project EncorderProject ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F756xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:310:84: error: expected ';' before 'velocity1'
+  310 |           theta1 = (float)(encoder_ticks) * 2.0f * M_PI / ((float)CPR * gear_ratio)
+      |                                                                                    ^
+      |                                                                                    ;
+  311 |           velocity1 = (theta1 - theta1_prev) * 1000000  / time_interval;
+      |           ~~~~~~~~~                                                                 
+../Core/Src/main.c:321:85: error: expected ';' before 'velocity2'
+  321 |           theta2 = (float)(encoder_ticks2) * 2.0f * M_PI / ((float)CPR * gear_ratio)
+      |                                                                                     ^
+      |                                                                                     ;
+  322 |           velocity2 = (theta2 - theta2_prev) * 1000000  / time_interval;
+      |           ~~~~~~~~~                                                                  
+make: *** [Core/Src/subdir.mk:40: Core/Src/main.o] Error 1
+"make -j12 all" terminated with exit code 2. Build might be incomplete.
+22:49:23 **** Incremental Build of configuration Debug for project EncorderProject ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F756xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "EncorderProject.elf" @"objects.list"   -mcpu=cortex-m7 -T"C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\STM32F756ZGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="EncorderProject.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: EncorderProject.elf
+ 
+arm-none-eabi-size  EncorderProject.elf 
+arm-none-eabi-objdump -h -S EncorderProject.elf  > "EncorderProject.list"
+   text	   data	    bss	    dec	    hex	filename
+  34052	    200	  12832	  47084	   b7ec	EncorderProject.elf
+Finished building: default.size.stdout
+ 
+Finished building: EncorderProject.list
+ 
+22:58:44 **** Incremental Build of configuration Debug for project EncorderProject ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F756xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "EncorderProject.elf" @"objects.list"   -mcpu=cortex-m7 -T"C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\STM32F756ZGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="EncorderProject.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: EncorderProject.elf
+ 
+arm-none-eabi-size  EncorderProject.elf 
+arm-none-eabi-objdump -h -S EncorderProject.elf  > "EncorderProject.list"
+   text	   data	    bss	    dec	    hex	filename
+  34052	    200	  12832	  47084	   b7ec	EncorderProject.elf
+Finished building: default.size.stdout
+ 
+Finished building: EncorderProject.list
+ 
+23:37:09 **** Incremental Build of configuration Debug for project EncorderProject ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F756xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c:164:1: warning: data definition has no type or storage class
+  164 | Set_Accelaration1=0;
+      | ^~~~~~~~~~~~~~~~~
+../Core/Src/main.c:164:1: warning: type defaults to 'int' in declaration of 'Set_Accelaration1' [-Wimplicit-int]
+arm-none-eabi-gcc -o "EncorderProject.elf" @"objects.list"   -mcpu=cortex-m7 -T"C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\STM32F756ZGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="EncorderProject.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: EncorderProject.elf
+ 
+arm-none-eabi-size  EncorderProject.elf 
+arm-none-eabi-objdump -h -S EncorderProject.elf  > "EncorderProject.list"
+   text	   data	    bss	    dec	    hex	filename
+  33724	    176	  12824	  46724	   b684	EncorderProject.elf
+Finished building: default.size.stdout
+ 
+Finished building: EncorderProject.list
+ 
+23:38:16 **** Incremental Build of configuration Debug for project EncorderProject ****
+make -j12 all 
+arm-none-eabi-size  EncorderProject.elf 
+   text	   data	    bss	    dec	    hex	filename
+  33724	    176	  12824	  46724	   b684	EncorderProject.elf
+Finished building: default.size.stdout
+ 
+23:41:11 **** Incremental Build of configuration Debug for project EncorderProject ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F756xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "EncorderProject.elf" @"objects.list"   -mcpu=cortex-m7 -T"C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\STM32F756ZGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="EncorderProject.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: EncorderProject.elf
+ 
+arm-none-eabi-size  EncorderProject.elf 
+arm-none-eabi-objdump -h -S EncorderProject.elf  > "EncorderProject.list"
+   text	   data	    bss	    dec	    hex	filename
+  33768	    176	  12824	  46768	   b6b0	EncorderProject.elf
+Finished building: default.size.stdout
+ 
+Finished building: EncorderProject.list
+ 
+23:43:44 **** Incremental Build of configuration Debug for project EncorderProject ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F756xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "EncorderProject.elf" @"objects.list"   -mcpu=cortex-m7 -T"C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\STM32F756ZGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="EncorderProject.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: EncorderProject.elf
+ 
+arm-none-eabi-size  EncorderProject.elf 
+arm-none-eabi-objdump -h -S EncorderProject.elf  > "EncorderProject.list"
+   text	   data	    bss	    dec	    hex	filename
+  33920	    176	  12824	  46920	   b748	EncorderProject.elf
+Finished building: default.size.stdout
+ 
+Finished building: EncorderProject.list
+ 
+23:45:12 **** Incremental Build of configuration Debug for project EncorderProject ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F756xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "EncorderProject.elf" @"objects.list"   -mcpu=cortex-m7 -T"C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\STM32F756ZGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="EncorderProject.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: EncorderProject.elf
+ 
+arm-none-eabi-size  EncorderProject.elf 
+arm-none-eabi-objdump -h -S EncorderProject.elf  > "EncorderProject.list"
+   text	   data	    bss	    dec	    hex	filename
+  33920	    176	  12824	  46920	   b748	EncorderProject.elf
+Finished building: default.size.stdout
+ 
+Finished building: EncorderProject.list
+ 
+23:46:16 **** Incremental Build of configuration Debug for project EncorderProject ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F756xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "EncorderProject.elf" @"objects.list"   -mcpu=cortex-m7 -T"C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\STM32F756ZGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="EncorderProject.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: EncorderProject.elf
+ 
+arm-none-eabi-size  EncorderProject.elf 
+arm-none-eabi-objdump -h -S EncorderProject.elf  > "EncorderProject.list"
+   text	   data	    bss	    dec	    hex	filename
+  33920	    180	  12820	  46920	   b748	EncorderProject.elf
+Finished building: default.size.stdout
+ 
+Finished building: EncorderProject.list
+ 
+23:49:50 **** Incremental Build of configuration Debug for project EncorderProject ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F756xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "EncorderProject.elf" @"objects.list"   -mcpu=cortex-m7 -T"C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\STM32F756ZGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="EncorderProject.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: EncorderProject.elf
+ 
+arm-none-eabi-size  EncorderProject.elf 
+arm-none-eabi-objdump -h -S EncorderProject.elf  > "EncorderProject.list"
+   text	   data	    bss	    dec	    hex	filename
+  33920	    176	  12824	  46920	   b748	EncorderProject.elf
+Finished building: default.size.stdout
+ 
+Finished building: EncorderProject.list
+ 
+23:51:01 **** Incremental Build of configuration Debug for project EncorderProject ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F756xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "EncorderProject.elf" @"objects.list"   -mcpu=cortex-m7 -T"C:\Users\ashen\Documents\GitHub\MSc-Project\P01\EncorderProject\STM32F756ZGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="EncorderProject.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: EncorderProject.elf
+ 
+arm-none-eabi-size  EncorderProject.elf 
+arm-none-eabi-objdump -h -S EncorderProject.elf  > "EncorderProject.list"
+   text	   data	    bss	    dec	    hex	filename
+  33920	    176	  12824	  46920	   b748	EncorderProject.elf
+Finished building: default.size.stdout
+ 
+Finished building: EncorderProject.list
+ 

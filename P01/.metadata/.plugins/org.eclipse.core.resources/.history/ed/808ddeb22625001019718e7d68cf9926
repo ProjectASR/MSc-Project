@@ -336,7 +336,7 @@ int main(void)
 	  if(Icmd1>4.5){
 		  Icmd1=4.5;
 	  }
-	  ConfigureMotor02(1, 1, Icmd1*(4000)/4.5);
+	  ConfigureMotor02(1, 1, Icmd1*(4096)/4.5);
 	  Tdis2 = (Icmd2 * Ktn2 + velocity2 * Jn2 * Gdis2) * Gdis2 / (time_interval + Gdis2) - velocity2 * Jn2 * Gdis2;
 
 	  Idis2=Tdis2*Kt2;

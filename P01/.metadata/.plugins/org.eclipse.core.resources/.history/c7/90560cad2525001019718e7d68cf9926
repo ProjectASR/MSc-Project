@@ -130,10 +130,10 @@ float acceleration1 = 0.0, acceleration2 = 0.0;
 #define G 0.1f  // Smoothing factor (adjust 0 < G < 1)
 // Define constants and variables for both motors
 // Motor 1 Parameters
-float Icmd1 = 0;        // Commanded current (A)
+float Icmd1 = 1.2;        // Commanded current (A)
 float Ktn1 = 0.0705;        // Torque constant (Nm/A)
 float Jn1 = +3069.1e-7;         // Motor inertia (kg·m^2)
-float Gdis1 = 10.0;      // Disturbance observer gain
+float Gdis1 = 100.0;      // Disturbance observer gain
 float Kt1 = 0.0705;         // Additional torque constant scaling
 float Grtob1 = 50.0;      // Reaction torque observer gain
 float Fint = 0.1;         // Internal force (Nm)
@@ -161,7 +161,7 @@ float Text1, Text2;  // External torque estimation (Nm)
 // External Torque Estimations
 float Text1, Text2;
 //Acceleration Set points
-float Set_Accelaration1=10000;
+float Set_Accelaration1=0;
 HAL_StatusTypeDef status;
 uint16_t OutputVref=5000;
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim) {
@@ -333,15 +333,12 @@ int main(void)
 	  Tdis1 = (Icmd1 * Ktn1 + velocity1 * Jn1 * Gdis1) * Gdis1 / (time_interval + Gdis1) - velocity1 * Jn1 * Gdis1;
 	  Idis1=Tdis1*Kt1;
 	  // Set the DAC output voltage
-	  if(Icmd1>4.5){
-		  Icmd1=4.5;
-	  }
-	  ConfigureMotor02(1, 1, Icmd1*(4000)/4.5);
+	  ConfigureMotor01(1, 1, Icmd1*(4096)/4.5);
 	  Tdis2 = (Icmd2 * Ktn2 + velocity2 * Jn2 * Gdis2) * Gdis2 / (time_interval + Gdis2) - velocity2 * Jn2 * Gdis2;
 
 	  Idis2=Tdis2*Kt2;
 
-	  ConfigureMotor01(1, 1, 500);
+	  ConfigureMotor02(1, 1, 500);
 	  uint32_t time_end = __HAL_TIM_GET_COUNTER(&htim2);
 	  time_interval = time_end - time_start;
   }
