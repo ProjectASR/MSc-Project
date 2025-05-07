@@ -82,48 +82,49 @@ void StartTask02(void const * argument);
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
-uint32_t MainTaskCount=0;
-uint32_t RecordTaskCount=0;
-// Variables to store encoder ticks for Encoder 1 and Encoder 2
-uint32_t encoder_ticks = 0;        // Current tick count from Encoder 1
-uint32_t encoder_ticks_prev = 0;   // Previous tick count from Encoder 1
-uint32_t encoder_ticks2 = 0;       // Current tick count from Encoder 2
-uint32_t encoder_ticks2_prev = 0;  // Previous tick count from Encoder 2
+// ────────────── ⏱ Timer & Counter Variables ──────────────
+uint32_t MainTaskCount    = 0;
+uint32_t RecordTaskCount  = 0;
 
-// Counters to track the number of timer interrupts or events
-uint32_t MainloopCount = 0;            // Main counter to keep track of loop or events
-uint32_t SDCardCount=0;			   // Counter for SD card
-uint32_t record_number = 1;  // Counter for record numbers
-uint32_t communicationError=0;
-// Velocity and acceleration variables for Encoder 1
+// ────────────── 📟 Encoder Tick Counters ──────────────
+uint32_t encoder_ticks    = 0;        // Current tick count from Encoder 1
+uint32_t encoder_ticks_prev = 0;     // Previous tick count from Encoder 1
+uint32_t encoder_ticks2   = 0;        // Current tick count from Encoder 2
+uint32_t encoder_ticks2_prev = 0;    // Previous tick count from Encoder 2
 
-// Timing variable to set the interval for calculation
-uint32_t time_interval = 5;        // Time interval in milliseconds (equivalent to 0.005 seconds at 20 kHz Timer)
+// ────────────── ⏲ Counters for Events ──────────────
+uint32_t MainloopCount    = 0;        // Main loop counter to track loop iterations or events
+uint32_t SDCardCount      = 0;        // SD card related counter
+uint32_t record_number    = 1;        // Record number counter
+uint32_t communicationError = 0;      // Counter for communication errors
 
-// File system and file handling variables for SD card operations
-FATFS fs;                          // FatFs structure to manage the file system
-FIL fil;                           // File object structure for handling files
+// ────────────── ⏳ Timing Variables ──────────────
+uint32_t time_interval    = 5;        // Time interval in milliseconds (0.005 seconds at 20 kHz Timer)
+uint32_t time_start       = 0;
+uint32_t time_end         = 0;
+uint32_t secondFromStart  = 0;
+
+// ────────────── 🗄 File System Variables ──────────────
+FATFS fs;                         // FatFs structure to manage the file system
+FIL fil;                          // File object structure for file operations
 FRESULT fresult;                  // Result variable to capture FatFs API function responses
 
-// General-purpose buffer for storing data to read/write to the SD card
-char buffer[2048];                 // Buffer to hold data for file operations
-
-// Variables to track bytes read and written
+// ────────────── 💾 Buffer for SD Card Operations ──────────────
+char buffer[2048];                // Buffer for storing data during SD card operations
 UINT br;                           // Bytes read from the file
 UINT bw;                           // Bytes written to the file
 
-/////////// Test Variables  ////////
+// ────────────── 🧪 Test & Algorithm Variables ──────────────
 FRESULT fresult2;
 volatile int EncoderUpdated = 0;
-int SDCardRecordMode = 1;
-/////////// Algorithm Code Varibles  ////////
-#define CPR 512*26*4 //Counter Per Revolution
+int SDCardRecordMode = 0;
+
+// ────────────── 🚀 Algorithm Code Variables ──────────────
+#define CPR (512 * 26 * 4)         // Counter Per Revolution
 #define MAX_COUNT 65535
-uint32_t time_start=0;
-uint32_t time_end=0;
-uint32_t secondFromStart;
-// Position (angles in rad)
-int16_t prev_ticks1 = 0, prev_ticks2 = 0;  // Previous counts for each encoder
+
+// Position (angles in rad) for Encoder 1 and Encoder 2
+int16_t prev_ticks1 = 0, prev_ticks2 = 0;    // Previous counts for each encoder
 float theta1 = 0.0, theta2 = 0.0;
 float theta1_prev = 0.0, theta2_prev = 0.0;
 
@@ -133,65 +134,88 @@ float velocity1_prev = 0.0, velocity2_prev = 0.0;
 
 // Acceleration calculations
 float acceleration1 = 0.0, acceleration2 = 0.0;
-// Parameters
-#define G 0.1f  // Smoothing factor (adjust 0 < G < 1)
-// Define constants and variables for both motors
-// Motor 1 Parameters
+
+// ────────────── 🛠 Parameters ──────────────
+#define G 0.1f      // Smoothing factor for velocity filter (0 < G < 1)
+
+// ────────────── ⚙️ Motor 1 Parameters ──────────────
 float Icmd1 = 0;        // Commanded current (A)
-float Ktn1 = 0.0705;        // Torque constant (Nm/A)
-float Jn1 = +3069.1e-7;         // Motor inertia (kg·m^2)
-float Gdis1 = 10.0;      // Disturbance observer gain
-float Kt1 = 0.0705;         // Additional torque constant scaling
-float Grtob1 = 50.0;      // Reaction torque observer gain
-float Fint = 0.1;         // Internal force (Nm)
-float Ffric = 0.05;       // Friction force (Nm)
-float PPR = 512.0;       // Pulses per revolution
+float Ktn1 = 0.0705;    // Torque constant (Nm/A)
+float Jn1 = +3069.1e-7; // Motor inertia (kg·m^2)
+float Gdis1 = 10.0;     // Disturbance observer gain
+float Kt1 = 0.0705;     // Additional torque constant scaling
+float Grtob1 = 50.0;    // Reaction torque observer gain
+float Fint = 0.1;       // Internal force (Nm)
+float Ffric = 0.05;     // Friction force (Nm)
+float PPR = 512.0;      // Pulses per revolution
 float gear_ratio = 26.0; // Gear ratio
-// Motor 2 Parameters
-float Icmd2 = 1.1;        // Commanded current (A)
-float Ktn2 = 0.0705;         // Torque constant (Nm/A)
-float Jn2 = +3069.1e-7;      // Motor inertia (kg·m^2)
-float Gdis2 = 95.0;       // Disturbance observer gain
-float Kt2 = 0.0705;          // Additional torque constant scaling
-float Grtob2 = 45.0;      // Reaction torque observer gain
-float Fint2 = 0.08;       // Internal force (Nm)
-float Ffric2 = 0.04;      // Friction force (Nm)
 
-// Disturbance Torque Variables
-float Tdis1, Tdis2;  // Disturbance torque estimation (Nm)
+// ────────────── ⚙️ Motor 2 Parameters ──────────────
+float Icmd2 = 1.1;      // Commanded current (A)
+float Ktn2 = 0.0705;    // Torque constant (Nm/A)
+float Jn2 = +3069.1e-7; // Motor inertia (kg·m^2)
+float Gdis2 = 95.0;     // Disturbance observer gain
+float Kt2 = 0.0705;     // Additional torque constant scaling
+float Grtob2 = 45.0;    // Reaction torque observer gain
+float Fint2 = 0.08;     // Internal force (Nm)
+float Ffric2 = 0.04;    // Friction force (Nm)
 
-// Disturbance-Induced Currents
-float Idis1, Idis2;  // Disturbance-induced current (A)
+// ────────────── ⚙️ Disturbance Observer Variables ──────────────
+float inertia_term;
+float motor_torque;
+float velocity_disturbance;
+float numerator;
+float denominator;
+float velocity_correction;
 
-// External Torque Estimations
-float Text1, Text2;  // External torque estimation (Nm)
-// External Torque Estimations
-float Text1, Text2;
-//Acceleration Set points
-float Set_Accelaration1=10000;
+// ────────────── ⚙️ Motor 2 Disturbance Observer ──────────────
+float inertia_term2         = 0.0f;
+float Idis2                 = 0.0f;
+float Tdis2                 = 0.0f;
+float motor_torque2         = 0.0f;
+float velocity_disturbance2 = 0.0f;
+float numerator2            = 0.0f;
+float denominator2          = 1.0f;  // Avoid division by zero
+float velocity_correction2  = 0.0f;
+
+// ────────────── 🔧 Disturbance Torque Variables ──────────────
+float Tdis1, Tdis2;    // Disturbance torque estimation (Nm)
+
+// ────────────── ⚡ Disturbance-Induced Currents ─────────────
+float Idis1, Idis2;    // Disturbance-induced current (A)
+
+// ────────────── 🌪 External Torque Estimations ──────────────
+float Text1, Text2;    // External torque estimation (Nm)
+
+// ────────────── 🚀 Acceleration Set Points ──────────────
+float Set_Accelaration1 = 10000;  // Desired acceleration
+
+// ────────────── HAL Status ──────────────
 HAL_StatusTypeDef status;
-uint16_t OutputVref=5000;
-uint32_t time_start;
-uint32_t time_end;
+uint16_t OutputVref = 5000;         // DAC output voltage reference value
+
+// ────────────── Low-pass Filter Function ──────────────
 float applyLowPassFilterVelocity(float X, float Y_old) {
     // Apply the first-order low-pass filter formula
-    float Y = Y_old + G * (X - Y_old);
-
-    // Return the filtered output
+    float Y = Y_old + G * (X - Y_old);  // Filtered value
     return Y;
 }
-void ConfigureMotor01(int Enable, int Clockwise, uint16_t dac_value) {
-	HAL_GPIO_WritePin(GPIOB,GPIO_PIN_4, Clockwise);
-	HAL_GPIO_WritePin(GPIOB,GPIO_PIN_5, Enable);
-	HAL_DAC_SetValue(&hdac, DAC_CHANNEL_1, DAC_ALIGN_12B_R, dac_value);
 
+// ────────────── Motor Control Functions ──────────────
+void ConfigureMotor01(int Enable, int Clockwise, uint16_t dac_value) {
+    HAL_GPIO_WritePin(GPIOB, GPIO_PIN_4, Clockwise);
+    HAL_GPIO_WritePin(GPIOB, GPIO_PIN_5, Enable);
+    HAL_DAC_SetValue(&hdac, DAC_CHANNEL_1, DAC_ALIGN_12B_R, dac_value);
 }
+
 void ConfigureMotor02(int Enable, int Clockwise, uint16_t dac_value) {
-	HAL_GPIO_WritePin(GPIOA,GPIO_PIN_2, Clockwise);
-	HAL_GPIO_WritePin(GPIOA,GPIO_PIN_3, Enable);
-	HAL_DAC_SetValue(&hdac, DAC_CHANNEL_2, DAC_ALIGN_12B_R, dac_value);
+    HAL_GPIO_WritePin(GPIOA, GPIO_PIN_2, Clockwise);
+    HAL_GPIO_WritePin(GPIOA, GPIO_PIN_3, Enable);
+    HAL_DAC_SetValue(&hdac, DAC_CHANNEL_2, DAC_ALIGN_12B_R, dac_value);
 }
-int result=0;
+
+int result = 0;
+
 /* USER CODE END 0 */
 
 /**
@@ -677,54 +701,97 @@ void StartDefaultTask(void const * argument)
   /* Infinite loop */
   for(;;)
   {
-	MainTaskCount++;
-  time_start = __HAL_TIM_GET_COUNTER(&htim2);
-  MainloopCount++;
-  OutputVref++;
-  if(OutputVref>4000){
-	  OutputVref=0;
-  }
-  EncoderUpdated = 0;
-  encoder_ticks = __HAL_TIM_GET_COUNTER(&htim1);
-  encoder_ticks2 = __HAL_TIM_GET_COUNTER(&htim4);
-  EncoderUpdated = 1;
-  secondFromStart=__HAL_TIM_GET_COUNTER(&htim2)/100000;
-  // Compute **Encoder 1** Position, Velocity, & Acceleration
-  theta1 = (float)(encoder_ticks) * 2.0f * M_PI / ((float)CPR * gear_ratio);
-  velocity1 = (theta1 - theta1_prev) * 1000000  / time_interval;
-  acceleration1 = (velocity1 - velocity1_prev) * 1000000  / time_interval;
+	  /*********************************************************
+	   *                  Main Task Counter Update              *
+	   *********************************************************/
+	  MainTaskCount++;
+	  time_start = __HAL_TIM_GET_COUNTER(&htim2);
+	  MainloopCount++;
+	  /*********************************************************
+	   *                Read Encoder Tick Counts               *
+	   *********************************************************/
+	  EncoderUpdated = 0;
+	  encoder_ticks = __HAL_TIM_GET_COUNTER(&htim1);   // Encoder 1
+	  encoder_ticks2 = __HAL_TIM_GET_COUNTER(&htim4);  // Encoder 2
+	  EncoderUpdated = 1;
 
-  // Apply low-pass filter on the velocity of Encoder 1
-  velocity1 = applyLowPassFilterVelocity(velocity1, velocity1_prev);  // Filtered velocity
+	  /*********************************************************
+	   *                 Time from Start (in sec)              *
+	   *********************************************************/
+	  secondFromStart = __HAL_TIM_GET_COUNTER(&htim2) / 100000;
 
-  theta1_prev = theta1;
-  velocity1_prev = velocity1;
+	  /*********************************************************
+	   *        Compute Position, Velocity, Acceleration       *
+	   *                    For Encoder 1                      *
+	   *********************************************************/
+	  theta1 = (float)(encoder_ticks) * 2.0f * M_PI / ((float)CPR * gear_ratio);
+	  velocity1 = (theta1 - theta1_prev) * 1000000 / time_interval;
+	  acceleration1 = (velocity1 - velocity1_prev) * 1000000 / time_interval;
+	  velocity1 = applyLowPassFilterVelocity(velocity1, velocity1_prev);  // Filter velocity
+	  theta1_prev = theta1;
+	  velocity1_prev = velocity1;
 
-  // Compute **Encoder 2** Position, Velocity, & Acceleration
-  theta2 = (float)(encoder_ticks2) * 2.0f * M_PI / ((float)CPR * gear_ratio);
-  velocity2 = (theta2 - theta2_prev) * 1000000  / time_interval;
-  acceleration2 = (velocity2 - velocity2_prev) * 1000000  / time_interval;
+	  /*********************************************************
+	   *        Compute Position, Velocity, Acceleration       *
+	   *                    For Encoder 2                      *
+	   *********************************************************/
+	  theta2 = (float)(encoder_ticks2) * 2.0f * M_PI / ((float)CPR * gear_ratio);
+	  velocity2 = (theta2 - theta2_prev) * 1000000 / time_interval;
+	  acceleration2 = (velocity2 - velocity2_prev) * 1000000 / time_interval;
+	  velocity2 = applyLowPassFilterVelocity(velocity2, velocity2_prev);  // Filter velocity
+	  theta2_prev = theta2;
+	  velocity2_prev = velocity2;
 
-  // Apply low-pass filter on the velocity of Encoder 2
-  velocity2 = applyLowPassFilterVelocity(velocity2, velocity2_prev);  // Filtered velocity
-  theta2_prev = theta2;
-  velocity2_prev = velocity2;
-  // Disturbance Observers //
-  Icmd1=Jn1*Set_Accelaration1/Ktn1+Idis1;
-  Tdis1 = (Icmd1 * Ktn1 + velocity1 * Jn1 * Gdis1) * Gdis1 / (time_interval + Gdis1) - velocity1 * Jn1 * Gdis1;
-  Idis1=Tdis1*Kt1;
-  // Set the DAC output voltage
-  if(Icmd1>4.5){
-	  Icmd1=4.5;
-  }
-  ConfigureMotor02(1, 1, Icmd1*(4000)/4.5);
-  Tdis2 = (Icmd2 * Ktn2 + velocity2 * Jn2 * Gdis2) * Gdis2 / (time_interval + Gdis2) - velocity2 * Jn2 * Gdis2;
+	  /*********************************************************
+	   *        Disturbance Observer for Motor 01             *
+	   *********************************************************/
+	  // Compute commanded current
+	  inertia_term = (Jn1 * Set_Accelaration1) / Ktn1;
+	  Icmd1 = inertia_term + Idis1;
 
-  Idis2=Tdis2*Kt2;
+	  // Torque disturbance calculation
+	  motor_torque = Icmd1 * Ktn1;
+	  velocity_disturbance = velocity1 * Jn1 * Gdis1;
+	  numerator = (motor_torque + velocity_disturbance) * Gdis1;
+	  denominator = time_interval + Gdis1;
+	  velocity_correction = velocity1 * Jn1 * Gdis1;
+	  Tdis1 = numerator / denominator - velocity_correction;
+	  Idis1 = Tdis1 * Kt1;
 
-  ConfigureMotor01(1, 1, 500);
-  time_end = __HAL_TIM_GET_COUNTER(&htim2);
-  time_interval = time_end - time_start;
+	  /*********************************************************
+	   *        Disturbance Observer for Motor 02             *
+	   *********************************************************/
+	  Icmd2 = inertia_term2 + Idis2;
+
+	  motor_torque2 = Icmd2 * Ktn2;
+	  velocity_disturbance2 = velocity2 * Jn2 * Gdis2;
+	  numerator2 = (motor_torque2 + velocity_disturbance2) * Gdis2;
+	  denominator2 = time_interval + Gdis2;
+	  velocity_correction2 = velocity2 * Jn2 * Gdis2;
+	  Tdis2 = numerator2 / denominator2 - velocity_correction2;
+	  Idis2 = Tdis2 * Kt2;
+
+	  /*********************************************************
+	   *         Motor Output Control & Saturation            *
+	   *********************************************************/
+	  if (Icmd1 > 4.5) {
+	      Icmd1 = 4.5;
+	  }
+	  ConfigureMotor02(1, 1, Icmd1 * (4000) / 4.5);
+
+	  // Redundant Tdis2 and Idis2 update (if needed)
+	  Tdis2 = (Icmd2 * Ktn2 + velocity2 * Jn2 * Gdis2) * Gdis2 / (time_interval + Gdis2)
+	          - velocity2 * Jn2 * Gdis2;
+	  Idis2 = Tdis2 * Kt2;
+
+	  ConfigureMotor01(1, 1, 500);
+
+	  /*********************************************************
+	   *               Update Time Interval                   *
+	   *********************************************************/
+	  time_end = __HAL_TIM_GET_COUNTER(&htim2);
+	  time_interval = time_end - time_start;
+
     osDelay(5);
   }
   /* USER CODE END 5 */
@@ -744,6 +811,47 @@ void StartTask02(void const * argument)
   for(;;)
   {
 	RecordTaskCount++;
+
+	if (SDCardRecordMode==1){
+    SDCardCount++;
+    if (EncoderUpdated == 1 && communicationError==0) {
+        FRESULT fr;
+        UINT bytes_written;
+
+        // Open the file for appending
+        fr = f_open(&fil, "Data.txt", FA_OPEN_APPEND | FA_WRITE);
+        if (fr != FR_OK) {
+            // Optional: Handle error (blink LED, set flag, etc.)
+        	communicationError=1;
+            return;
+        }
+
+        // Format the record number and encoder tick data into a string
+        sprintf(buffer, "R%lu: E1: %lu, E2: %lu\n", SDCardCount, encoder_ticks, encoder_ticks2);
+        //"R%lu: E1: %lu, E2: %lu\n"
+        // Write to the file
+        fr = f_write(&fil, buffer, strlen(buffer), &bytes_written);
+        if (fr != FR_OK || bytes_written == 0) {
+            f_close(&fil);  // Close anyway if open
+            communicationError=1;
+            return;
+        }
+
+        // Close the file
+        fr = f_close(&fil);
+        if (fr != FR_OK) {
+        	communicationError=1;
+            return;
+        }
+
+        EncoderUpdated = 0;
+        record_number++;
+    }
+	}
+		else {
+
+		}
+
     osDelay(5);
   }
   /* USER CODE END StartTask02 */
