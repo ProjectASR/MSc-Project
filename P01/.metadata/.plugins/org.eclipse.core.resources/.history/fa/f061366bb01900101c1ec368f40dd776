@@ -1,8 +1,0 @@
-#ifndef DFR_I2C_H
-#define DFR_I2C_H
-
-#include "stm32f7xx_hal.h" // Replace with your MCU family header if different
-
-HAL_StatusTypeDef DFR_I2C_Write2Bytes(uint8_t devAddr, uint8_t regAddr, uint16_t data);
-
-#endif // DFR_I2C_H

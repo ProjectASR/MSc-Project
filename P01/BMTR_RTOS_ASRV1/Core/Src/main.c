@@ -188,12 +188,13 @@ float Idis1, Idis2;    // Disturbance-induced current (A)
 float Text1, Text2;    // External torque estimation (Nm)
 
 // ────────────── 🚀 Acceleration Set Points ──────────────
-float Set_Accelaration1 = 10000;  // Desired acceleration
+float Set_Accelaration1 = 10;  // Desired acceleration
 
 // ────────────── HAL Status ──────────────
 HAL_StatusTypeDef status;
 uint16_t OutputVref = 5000;         // DAC output voltage reference value
-
+uint8_t txData[] = "Hello ESP";
+uint8_t rxData[20];
 // ────────────── Low-pass Filter Function ──────────────
 float applyLowPassFilterVelocity(float X, float Y_old) {
     // Apply the first-order low-pass filter formula
@@ -426,7 +427,7 @@ static void MX_SPI4_Init(void)
   hspi4.Init.CLKPolarity = SPI_POLARITY_LOW;
   hspi4.Init.CLKPhase = SPI_PHASE_1EDGE;
   hspi4.Init.NSS = SPI_NSS_SOFT;
-  hspi4.Init.BaudRatePrescaler = SPI_BAUDRATEPRESCALER_32;
+  hspi4.Init.BaudRatePrescaler = SPI_BAUDRATEPRESCALER_64;
   hspi4.Init.FirstBit = SPI_FIRSTBIT_MSB;
   hspi4.Init.TIMode = SPI_TIMODE_DISABLE;
   hspi4.Init.CRCCalculation = SPI_CRCCALCULATION_DISABLE;
@@ -849,7 +850,9 @@ void StartTask02(void const * argument)
     }
 	}
 		else {
-
+		    HAL_GPIO_WritePin(GPIOB, GPIO_PIN_0, GPIO_PIN_RESET); // CS LOW
+		    HAL_SPI_TransmitReceive(&hspi4, txData, rxData, sizeof(txData), HAL_MAX_DELAY);
+		    HAL_GPIO_WritePin(GPIOB, GPIO_PIN_0, GPIO_PIN_SET); // CS HIGH
 		}
 
     osDelay(5);

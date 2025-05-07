@@ -1,40 +1,51 @@
-#include <SPI.h>
+#define PIN_SCK   4
+#define PIN_MOSI  6
+#define PIN_MISO  5
+#define PIN_CS    7
 
-// Define custom SPI pins
-#define SCK_PIN 4
-#define MISO_PIN 5
-#define MOSI_PIN 6
-#define SS_PIN 7  // Chip Select (CS) Pin
+uint8_t recvBuf[20];  // Enough to store "Hello ESP" + null
 
 void setup() {
-  // Start the Serial Monitor for debugging
+  pinMode(PIN_SCK, INPUT);
+  pinMode(PIN_MOSI, INPUT);
+  pinMode(PIN_MISO, OUTPUT);
+  pinMode(PIN_CS, INPUT_PULLUP);
   Serial.begin(115200);
-  while (!Serial);  // Wait for the Serial Monitor to be ready
-
-  // Initialize SPI for ESP32 (Slave mode) with custom pins
-  pinMode(SS_PIN, INPUT_PULLUP);  // Set CS pin as input
-
-  // Initialize the SPI interface with custom pins
-  SPI.begin(SCK_PIN, MISO_PIN, MOSI_PIN, SS_PIN);
-
-  // Set SPI parameters (same as STM32 configuration)
-  SPI.beginTransaction(SPISettings(2250000, MSBFIRST, SPI_MODE0));  // 500kHz, MSB first, SPI Mode 0
-
-  Serial.println("ESP32 SPI Slave Initialized");
 }
 
 void loop() {
-  // Check if Chip Select (CS) pin is active (low)
-  if (digitalRead(SS_PIN) == LOW) {
-    // Receive data via SPI
-    byte incomingByte = SPI.transfer(0);  // Receive data (sending 0 as no data to send back)
+  // Wait for CS LOW (start of transaction)
+  while (digitalRead(PIN_CS) == HIGH);
 
-    // Print the received data to Serial Monitor
-    Serial.print("Received Data: ");
-    Serial.println(incomingByte, DEC);  // Print received byte as decimal
+  // Wait for SCK to go LOW before first bit
+  while (digitalRead(PIN_SCK) == HIGH);
 
-    // Optionally, you could send a response back to the master if needed
-    // byte responseByte = 0x01;  // Example response
-    // SPI.transfer(responseByte);  // Send response back
+  const int numBytes = 9; // Expecting "Hello ESP"
+  for (int byteIndex = 0; byteIndex < numBytes; byteIndex++) {
+    uint8_t receivedByte = 0;
+    uint8_t toSend = 0xA5; // Dummy byte to send back
+
+    for (int i = 0; i < 8; i++) {
+      // Wait for rising edge of SCK
+      while (digitalRead(PIN_SCK) == LOW);
+
+      // Sample MOSI
+      int bit = digitalRead(PIN_MOSI);
+      receivedByte = (receivedByte << 1) | bit;
+
+      // Write dummy bit to MISO
+      digitalWrite(PIN_MISO, (toSend & 0x80) ? HIGH : LOW);
+      toSend <<= 1;
+
+      // Wait for falling edge
+      while (digitalRead(PIN_SCK) == HIGH);
+    }
+
+    recvBuf[byteIndex] = receivedByte;
   }
+
+  recvBuf[numBytes] = '\0'; // Null terminate string
+
+  Serial.print("Received: ");
+  Serial.println((char*)recvBuf); // Should print: Hello ESP
 }
