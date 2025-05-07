@@ -1,0 +1,126 @@
+/* Includes ------------------------------------------------------------------*/
+#include "main.h"
+#include "cmsis_os.h"
+
+/* Private includes ----------------------------------------------------------*/
+/* USER CODE BEGIN Includes */
+#include <stdio.h>
+/* USER CODE END Includes */
+
+/* Private typedef -----------------------------------------------------------*/
+/* USER CODE BEGIN PTD */
+/* USER CODE END PTD */
+
+/* Private define ------------------------------------------------------------*/
+/* USER CODE BEGIN PD */
+/* USER CODE END PD */
+
+/* Private macro -------------------------------------------------------------*/
+/* USER CODE BEGIN PM */
+/* USER CODE END PM */
+
+/* Private variables ---------------------------------------------------------*/
+osThreadId_t Task1Handle;
+osThreadId_t Task2Handle;
+const osThreadAttr_t Task1_attributes = {
+  .name = "Task1",
+  .priority = (osPriority_t) osPriorityNormal,
+  .stack_size = 128 * 4
+};
+const osThreadAttr_t Task2_attributes = {
+  .name = "Task2",
+  .priority = (osPriority_t) osPriorityLow,
+  .stack_size = 128 * 4
+};
+
+/* Task Counters */
+volatile uint32_t Task1_Counter = 0;
+volatile uint32_t Task2_Counter = 0;
+
+/* Private function prototypes -----------------------------------------------*/
+void SystemClock_Config(void);
+static void MX_GPIO_Init(void);
+void StartTask01(void *argument);
+void StartTask02(void *argument);
+
+/* USER CODE BEGIN 0 */
+/* USER CODE END 0 */
+
+/**
+  * @brief  The application entry point.
+  * @retval int
+  */
+int main(void)
+{
+  HAL_Init();
+  SystemClock_Config();
+  MX_GPIO_Init();
+
+  osKernelInitialize();
+
+  Task1Handle = osThreadNew(StartTask01, NULL, &Task1_attributes);
+  Task2Handle = osThreadNew(StartTask02, NULL, &Task2_attributes);
+
+  osKernelStart();
+
+  while (1)
+  {
+    // Should never reach here
+  }
+}
+
+/**
+  * @brief  Function implementing Task1 thread.
+  * @param  argument: Not used
+  * @retval None
+  */
+void StartTask01(void *argument)
+{
+  for(;;)
+  {
+    Task1_Counter++;  // Increment Task1 counter
+    osDelay(5);
+  }
+}
+
+/**
+  * @brief  Function implementing Task2 thread.
+  * @param  argument: Not used
+  * @retval None
+  */
+void StartTask02(void *argument)
+{
+  for(;;)
+  {
+    Task2_Counter++;  // Increment Task2 counter
+    osDelay(10);
+  }
+}
+
+/**
+  * @brief System Clock Configuration
+  * @retval None
+  */
+void SystemClock_Config(void)
+{
+  // ... Your clock config here ...
+}
+
+/**
+  * @brief GPIO Initialization Function
+  * @param None
+  * @retval None
+  */
+static void MX_GPIO_Init(void)
+{
+  __HAL_RCC_GPIOB_CLK_ENABLE();
+
+  GPIO_InitTypeDef GPIO_InitStruct = {0};
+
+  GPIO_InitStruct.Pin = GPIO_PIN_0 | GPIO_PIN_14;
+  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+
+  HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
+}
