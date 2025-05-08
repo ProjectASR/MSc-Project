@@ -1,155 +1,101 @@
-<<<<<<< HEAD
-#define PIN_SCK   4   // SPI Clock Pin
-#define PIN_MOSI  6   // Master Out Slave In Pin
-#define PIN_MISO  5   // Master In Slave Out Pin
-#define PIN_CS    7   // Chip Select Pin
+#include <Adafruit_NeoPixel.h>
 
-uint8_t recvBuf[25];         // Buffer to store 24 bytes + 1 CRC
-const int numBytes = 25;     // 6 floats * 4 bytes + 1 CRC byte
+// NeoPixel configuration
+#define NEOPIXEL_PIN 8
+#define NUMPIXELS    1
+Adafruit_NeoPixel pixels(NUMPIXELS, NEOPIXEL_PIN, NEO_GRB + NEO_KHZ800);
 
-// CRC-8 Calculator (Polynomial: 0x07)
-uint8_t crc8(const uint8_t *data, size_t len) {
-  uint8_t crc = 0x00;
-  for (size_t i = 0; i < len; i++) {
-    crc ^= data[i];
-    for (uint8_t j = 0; j < 8; j++) {
-      crc = (crc & 0x80) ? (crc << 1) ^ 0x07 : (crc << 1);
-    }
-  }
-  return crc;
-}
+// Bit-banged SPI pins
+#define PIN_SCK   4
+#define PIN_MOSI  6
+#define PIN_MISO  5
+#define PIN_CS    7
+
+uint8_t recvBuf[24];  // 6 floats x 4 bytes each = 24 bytes
 
 void setup() {
+  // NeoPixel setup
+  pixels.begin();
+  pixels.setBrightness(50);
+
+  // Bit-banged SPI pin setup
   pinMode(PIN_SCK, INPUT);
   pinMode(PIN_MOSI, INPUT);
   pinMode(PIN_MISO, OUTPUT);
   pinMode(PIN_CS, INPUT_PULLUP);
 
-  // Start Serial communication for debugging
+  // Start serial communication
   Serial.begin(115200);
-  Serial.println("Setup complete. Waiting for SPI data...");
 }
 
 void loop() {
-  // Wait for transaction start (CS pin goes low)
-  Serial.println("Waiting for CS to go LOW...");
-  while (digitalRead(PIN_CS) == HIGH) {
-    delay(10);  // Small delay to prevent excessive CPU usage
-  }
-  Serial.println("CS is LOW. Start receiving data.");
+  // Bit-banged SPI slave read
+  while (digitalRead(PIN_CS) == HIGH);  // Wait for transaction start
+  while (digitalRead(PIN_SCK) == HIGH); // Wait for SCK LOW before bit start
 
-  // Wait for SCK to go LOW before the first bit
-  Serial.println("Waiting for SCK to go LOW...");
-  while (digitalRead(PIN_SCK) == HIGH) {
-    delay(10);  // Small delay to prevent excessive CPU usage
-  }
-
-  // Receive data byte by byte
-  Serial.println("Receiving data...");
-  for (int byteIndex = 0; byteIndex < numBytes; byteIndex++) {
+  // Receive 24 bytes (6 floats)
+  for (int byteIndex = 0; byteIndex < 24; byteIndex++) {
     uint8_t receivedByte = 0;
-    uint8_t toSend = 0xA5;  // Dummy byte to send back
+    uint8_t toSend = 0xA5;
 
     for (int i = 0; i < 8; i++) {
-      // Wait for rising edge of SCK (start of bit transmission)
-      while (digitalRead(PIN_SCK) == LOW);
-      
+      while (digitalRead(PIN_SCK) == LOW);  // Wait for rising edge of SCK
       int bit = digitalRead(PIN_MOSI);
       receivedByte = (receivedByte << 1) | bit;
-      
-      // Send dummy bit to MISO
-      digitalWrite(PIN_MISO, (toSend & 0x80) ? HIGH : LOW);
-      toSend <<= 1;  // Shift toSend to prepare the next bit
 
-      // Wait for falling edge of SCK (end of bit transmission)
-      while (digitalRead(PIN_SCK) == HIGH);
+      // Send dummy byte to MISO
+      digitalWrite(PIN_MISO, (toSend & 0x80) ? HIGH : LOW);
+      toSend <<= 1;
+
+      while (digitalRead(PIN_SCK) == HIGH);  // Wait for falling edge of SCK
     }
 
     recvBuf[byteIndex] = receivedByte;
-    // Debugging received byte
-    Serial.print("Byte ");
-    Serial.print(byteIndex);
-    Serial.print(": ");
-    Serial.println(receivedByte, HEX);
   }
 
-  // Calculate CRC over the received data (excluding the last byte, which is the CRC)
-  uint8_t receivedCRC = recvBuf[numBytes - 1];
-  uint8_t calculatedCRC = crc8(recvBuf, numBytes - 1);
+  // Convert the byte buffer to float values
+  float Icmd1, Icmd2, velocity1, velocity2, theta1, theta2;
+  memcpy(&Icmd1, &recvBuf[0], sizeof(float));
+  memcpy(&Icmd2, &recvBuf[4], sizeof(float));
+  memcpy(&velocity1, &recvBuf[8], sizeof(float));
+  memcpy(&velocity2, &recvBuf[12], sizeof(float));
+  memcpy(&theta1, &recvBuf[16], sizeof(float));
+  memcpy(&theta2, &recvBuf[20], sizeof(float));
 
-  // Debugging CRC values
-  Serial.print("Received CRC: ");
-  Serial.println(receivedCRC, HEX);
-  Serial.print("Calculated CRC: ");
-  Serial.println(calculatedCRC, HEX);
+  // Print received values to the serial plotter
+  Serial.print("Icmd1: ");
+  Serial.print(Icmd1);
+  Serial.print("\t");
 
-  // Check if the calculated CRC matches the received CRC
-  if (calculatedCRC == receivedCRC) {
-    Serial.println("Valid CRC - Received Data:");
+  Serial.print("Icmd2: ");
+  Serial.print(Icmd2);
+  Serial.print("\t");
 
-    // Extract the 6 float values from the buffer
-    float Icmd1, Icmd2, velocity1, velocity2, theta1, theta2;
+  Serial.print("Velocity1: ");
+  Serial.print(velocity1);
+  Serial.print("\t");
 
-    memcpy(&Icmd1,     &recvBuf[0],  sizeof(float));
-    memcpy(&Icmd2,     &recvBuf[4],  sizeof(float));
-    memcpy(&velocity1, &recvBuf[8],  sizeof(float));
-    memcpy(&velocity2, &recvBuf[12], sizeof(float));
-    memcpy(&theta1,    &recvBuf[16], sizeof(float));
-    memcpy(&theta2,    &recvBuf[20], sizeof(float));
+  Serial.print("Velocity2: ");
+  Serial.print(velocity2);
+  Serial.print("\t");
 
-    // Print the received float values
-    Serial.print("Icmd1: "); Serial.println(Icmd1, 5);
-    Serial.print("Icmd2: "); Serial.println(Icmd2, 5);
-    Serial.print("Vel1 : "); Serial.println(velocity1, 5);
-    Serial.print("Vel2 : "); Serial.println(velocity2, 5);
-    Serial.print("Pos1 : "); Serial.println(theta1, 5);
-    Serial.print("Pos2 : "); Serial.println(theta2, 5);
-    Serial.println();
-  } else {
-    Serial.println("CRC mismatch! Data discarded.");
-  }
+  Serial.print("Theta1: ");
+  Serial.print(theta1);
+  Serial.print("\t");
 
-  // Small delay before next loop iteration
-  delay(2);
-=======
-#include <SPI.h>
+  Serial.print("Theta2: ");
+  Serial.println(theta2);
 
-// Define custom SPI pins
-#define SCK_PIN 4
-#define MISO_PIN 5
-#define MOSI_PIN 6
-#define SS_PIN 7  // Chip Select (CS) Pin
-
-void setup() {
-  // Start the Serial Monitor for debugging
-  Serial.begin(115200);
-  while (!Serial);  // Wait for the Serial Monitor to be ready
-
-  // Initialize SPI for ESP32 (Slave mode) with custom pins
-  pinMode(SS_PIN, INPUT_PULLUP);  // Set CS pin as input
-
-  // Initialize the SPI interface with custom pins
-  SPI.begin(SCK_PIN, MISO_PIN, MOSI_PIN, SS_PIN);
-
-  // Set SPI parameters (same as STM32 configuration)
-  SPI.beginTransaction(SPISettings(2250000, MSBFIRST, SPI_MODE0));  // 500kHz, MSB first, SPI Mode 0
-
-  Serial.println("ESP32 SPI Slave Initialized");
-}
-
-void loop() {
-  // Check if Chip Select (CS) pin is active (low)
-  if (digitalRead(SS_PIN) == LOW) {
-    // Receive data via SPI
-    byte incomingByte = SPI.transfer(0);  // Receive data (sending 0 as no data to send back)
-
-    // Print the received data to Serial Monitor
-    Serial.print("Received Data: ");
-    Serial.println(incomingByte, DEC);  // Print received byte as decimal
-
-    // Optionally, you could send a response back to the master if needed
-    // byte responseByte = 0x01;  // Example response
-    // SPI.transfer(responseByte);  // Send response back
-  }
->>>>>>> parent of 1f04b3b (ESP 32 Communication ADDED For both ESP32 code and STM32 code)
+  // Flash RGB LED after reception
+  pixels.setPixelColor(0, pixels.Color(255, 0, 0)); // Red
+  pixels.show();
+  delay(200);
+  pixels.setPixelColor(0, pixels.Color(0, 255, 0)); // Green
+  pixels.show();
+  delay(200);
+  pixels.setPixelColor(0, pixels.Color(0, 0, 255)); // Blue
+  pixels.show();
+  delay(200);
+  pixels.clear();
+  pixels.show();
 }

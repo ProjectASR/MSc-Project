@@ -41,7 +41,7 @@
 /* #define HAL_ADC_MODULE_ENABLED */
 /* #define HAL_CAN_MODULE_ENABLED */
 /* #define HAL_CEC_MODULE_ENABLED */
-#define HAL_CRC_MODULE_ENABLED
+/* #define HAL_CRC_MODULE_ENABLED */
 #define HAL_DAC_MODULE_ENABLED
 /* #define HAL_DCMI_MODULE_ENABLED */
 /* #define HAL_DMA2D_MODULE_ENABLED */
@@ -260,7 +260,7 @@
 * Deactivated: CRC code cleaned from driver
 */
 
-#define USE_SPI_CRC                     1U
+#define USE_SPI_CRC                     0U
 
 /* Includes ------------------------------------------------------------------*/
 /**
