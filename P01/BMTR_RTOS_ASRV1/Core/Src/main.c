@@ -48,6 +48,8 @@ uint16_t dac_value=500;
 
 /* Private variables ---------------------------------------------------------*/
 
+CRC_HandleTypeDef hcrc;
+
 DAC_HandleTypeDef hdac;
 
 SPI_HandleTypeDef hspi4;
@@ -73,6 +75,7 @@ static void MX_TIM13_Init(void);
 static void MX_SPI4_Init(void);
 static void MX_DAC_Init(void);
 static void MX_TIM2_Init(void);
+static void MX_CRC_Init(void);
 void StartDefaultTask(void const * argument);
 void StartTask02(void const * argument);
 
@@ -193,8 +196,9 @@ float Set_Accelaration1 = 10;  // Desired acceleration
 // ────────────── HAL Status ──────────────
 HAL_StatusTypeDef status;
 uint16_t OutputVref = 5000;         // DAC output voltage reference value
-uint8_t txData[] = "Hello ESP";
-uint8_t rxData[20];
+
+
+
 // ────────────── Low-pass Filter Function ──────────────
 float applyLowPassFilterVelocity(float X, float Y_old) {
     // Apply the first-order low-pass filter formula
@@ -258,6 +262,7 @@ int main(void)
   MX_FATFS_Init();
   MX_DAC_Init();
   MX_TIM2_Init();
+  MX_CRC_Init();
   /* USER CODE BEGIN 2 */
   HAL_TIM_Encoder_Start(&htim4, TIM_CHANNEL_ALL);
   HAL_TIM_Encoder_Start(&htim1, TIM_CHANNEL_ALL);
@@ -358,6 +363,37 @@ void SystemClock_Config(void)
 }
 
 /**
+  * @brief CRC Initialization Function
+  * @param None
+  * @retval None
+  */
+static void MX_CRC_Init(void)
+{
+
+  /* USER CODE BEGIN CRC_Init 0 */
+
+  /* USER CODE END CRC_Init 0 */
+
+  /* USER CODE BEGIN CRC_Init 1 */
+
+  /* USER CODE END CRC_Init 1 */
+  hcrc.Instance = CRC;
+  hcrc.Init.DefaultPolynomialUse = DEFAULT_POLYNOMIAL_ENABLE;
+  hcrc.Init.DefaultInitValueUse = DEFAULT_INIT_VALUE_ENABLE;
+  hcrc.Init.InputDataInversionMode = CRC_INPUTDATA_INVERSION_NONE;
+  hcrc.Init.OutputDataInversionMode = CRC_OUTPUTDATA_INVERSION_DISABLE;
+  hcrc.InputDataFormat = CRC_INPUTDATA_FORMAT_BYTES;
+  if (HAL_CRC_Init(&hcrc) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  /* USER CODE BEGIN CRC_Init 2 */
+
+  /* USER CODE END CRC_Init 2 */
+
+}
+
+/**
   * @brief DAC Initialization Function
   * @param None
   * @retval None
@@ -430,9 +466,9 @@ static void MX_SPI4_Init(void)
   hspi4.Init.BaudRatePrescaler = SPI_BAUDRATEPRESCALER_64;
   hspi4.Init.FirstBit = SPI_FIRSTBIT_MSB;
   hspi4.Init.TIMode = SPI_TIMODE_DISABLE;
-  hspi4.Init.CRCCalculation = SPI_CRCCALCULATION_DISABLE;
+  hspi4.Init.CRCCalculation = SPI_CRCCALCULATION_ENABLE;
   hspi4.Init.CRCPolynomial = 7;
-  hspi4.Init.CRCLength = SPI_CRC_LENGTH_DATASIZE;
+  hspi4.Init.CRCLength = SPI_CRC_LENGTH_8BIT;
   hspi4.Init.NSSPMode = SPI_NSS_PULSE_ENABLE;
   if (HAL_SPI_Init(&hspi4) != HAL_OK)
   {
@@ -811,7 +847,7 @@ void StartTask02(void const * argument)
   /* Infinite loop */
   for(;;)
   {
-	RecordTaskCount++;
+
 
 	if (SDCardRecordMode==1){
     SDCardCount++;
@@ -850,9 +886,32 @@ void StartTask02(void const * argument)
     }
 	}
 		else {
-		    HAL_GPIO_WritePin(GPIOB, GPIO_PIN_0, GPIO_PIN_RESET); // CS LOW
-		    HAL_SPI_TransmitReceive(&hspi4, txData, rxData, sizeof(txData), HAL_MAX_DELAY);
-		    HAL_GPIO_WritePin(GPIOB, GPIO_PIN_0, GPIO_PIN_SET); // CS HIGH
+			RecordTaskCount++;
+		    uint8_t txBuf[25];  // 6 floats = 24 bytes + 1 byte for CRC
+		    uint8_t rxBuf[25];
+
+		    memcpy(&txBuf[0],  &Icmd1,     sizeof(float));
+		    memcpy(&txBuf[4],  &Icmd2,     sizeof(float));
+		    memcpy(&txBuf[8],  &velocity1, sizeof(float));
+		    memcpy(&txBuf[12], &velocity2, sizeof(float));
+		    memcpy(&txBuf[16], &theta1,    sizeof(float));
+		    memcpy(&txBuf[20], &theta2,    sizeof(float));
+
+		    // CRC-8 calculation (same polynomial: 0x07)
+		    uint8_t crc = 0x00;
+		    for (int i = 0; i < 24; i++) {
+		        crc ^= txBuf[i];
+		        for (uint8_t j = 0; j < 8; j++) {
+		            crc = (crc & 0x80) ? (crc << 1) ^ 0x07 : (crc << 1);
+		        }
+		    }
+
+		    txBuf[24] = crc;  // Add CRC to the last byte
+
+		    // SPI Transaction
+		    HAL_GPIO_WritePin(GPIOB, GPIO_PIN_0, GPIO_PIN_RESET);  // CS LOW
+		    HAL_SPI_TransmitReceive(&hspi4, txBuf, rxBuf, sizeof(txBuf), HAL_MAX_DELAY);
+		    HAL_GPIO_WritePin(GPIOB, GPIO_PIN_0, GPIO_PIN_SET);    // CS HIGH
 		}
 
     osDelay(5);
