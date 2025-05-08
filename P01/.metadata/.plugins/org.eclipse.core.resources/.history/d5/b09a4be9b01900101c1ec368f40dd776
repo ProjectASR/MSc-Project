@@ -1,0 +1,67 @@
+/*
+ * DFR_i2c.c
+ *
+ *  Created on: Apr 9, 2024
+ *
+ */
+
+#include "DFR_i2c.h"
+#include "stm32f7xx_hal.h"
+
+// Function to begin I2C communication
+void GP8XXX_IIC_begin(DFRobot_GP8XXX_IIC *gp8xxx, eDAC_Name_t dac_name, uint8_t Addr) {
+    // Set DAC parameters
+    gp8xxx->DAC_Name = dac_name;
+    gp8xxx->deviceAddr = Addr;
+
+    // Initialize I2C peripheral here, assuming that I2C initialization is done elsewhere
+    // Example: HAL_I2C_Init(&hi2c1);
+}
+
+// Function to set the output range for the DAC
+int GP8XXX_IIC_setDACOutRange(DFRobot_GP8XXX_IIC *gp8xxx, eOutPutRange_t range) {
+    uint8_t data[2];
+
+    data[0] = GP8XXX_REG_DAC_RANGE;
+    data[1] = (uint8_t)range;
+
+    // Send the range configuration via I2C
+    if (HAL_I2C_Master_Transmit(&hi2c2, gp8xxx->deviceAddr << 1, data, 2, 1000) != HAL_OK) {
+        return -1;  // Error transmitting
+    }
+    return 0;  // Success
+}
+
+// Function to set the output voltage for the DAC
+int GP8XXX_IIC_setDACOutVoltage(DFRobot_GP8XXX_IIC *gp8xxx, uint16_t voltage, uint8_t channel) {
+    uint8_t data[3];
+
+    data[0] = GP8XXX_REG_DAC_OUTPUT_VOLTAGE;
+    data[1] = (uint8_t)(voltage >> 8);   // High byte of voltage
+    data[2] = (uint8_t)(voltage & 0xFF); // Low byte of voltage
+
+    // If channel-specific control is implemented, modify accordingly.
+    // Example: If channel == 0 or 1, adjust behavior.
+
+    // Send the voltage configuration via I2C
+    if (HAL_I2C_Master_Transmit(&hi2c2, gp8xxx->deviceAddr << 1, data, 3, 1000) != HAL_OK) {
+        return -1;  // Error transmitting
+    }
+    return 0;  // Success
+}
+
+// Function to store the voltage value
+int GP8XXX_IIC_store(DFRobot_GP8XXX_IIC *gp8xxx) {
+    uint8_t data[2];
+
+    data[0] = GP8XXX_STORE_TIMING_CMD1;
+    data[1] = GP8XXX_STORE_TIMING_CMD2;
+
+    // Send the store command via I2C
+    if (HAL_I2C_Master_Transmit(&hi2c2, gp8xxx->deviceAddr << 1, data, 2, 1000) != HAL_OK) {
+        return -1;  // Error transmitting
+    }
+
+    HAL_Delay(GP8XXX_STORE_TIMING_DELAY);  // Wait for the store procedure to complete
+    return 0;  // Success
+}

@@ -6,6 +6,7 @@ SDCardCount
 status
 result
 secondFromStart
+<<<<<<< HEAD
 Idis2
 Idis1
 velocity1
@@ -13,3 +14,5 @@ Icmd1
 inertia_term
 Jn1
 RecordTaskCount
+=======
+>>>>>>> parent of 1f04b3b (ESP 32 Communication ADDED For both ESP32 code and STM32 code)

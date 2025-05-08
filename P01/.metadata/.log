@@ -3394,6 +3394,7 @@ java.io.FileNotFoundException: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\B
 	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1054)
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$1.run(DebugUIPlugin.java:1257)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+<<<<<<< HEAD
 !SESSION 2025-05-08 00:27:34.461 -----------------------------------------------
 eclipse.buildId=Version 1.18.0
 java.version=21.0.3
@@ -3443,3 +3444,5 @@ java.io.FileNotFoundException: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\B
 
 !ENTRY org.eclipse.help.base 2 0 2025-05-08 02:26:48.098
 !MESSAGE Unable to consume Lucene index from bundle 'org.eclipse.cdt.doc.user_11.6.1.202406241230 [523]'. The index should be rebuilt with Lucene 9.11.1
+=======
+>>>>>>> parent of 1f04b3b (ESP 32 Communication ADDED For both ESP32 code and STM32 code)

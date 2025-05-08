@@ -136,7 +136,7 @@ ProjectManager.FreePins=false
 ProjectManager.HalAssertFull=false
 ProjectManager.HeapSize=0x200
 ProjectManager.KeepUserCode=true
-ProjectManager.LastFirmware=false
+ProjectManager.LastFirmware=true
 ProjectManager.LibraryCopy=1
 ProjectManager.MainLocation=Core/Src
 ProjectManager.NoMain=false
@@ -224,11 +224,15 @@ SH.S_TIM4_CH1.0=TIM4_CH1,Encoder_Interface
 SH.S_TIM4_CH1.ConfNb=1
 SH.S_TIM4_CH2.0=TIM4_CH2,Encoder_Interface
 SH.S_TIM4_CH2.ConfNb=1
-SPI4.BaudRatePrescaler=SPI_BAUDRATEPRESCALER_64
+SPI4.BaudRatePrescaler=SPI_BAUDRATEPRESCALER_32
 SPI4.CLKPhase=SPI_PHASE_1EDGE
+<<<<<<< HEAD
 SPI4.CRCCalculation=SPI_CRCCALCULATION_ENABLE
 SPI4.CRCLength=SPI_CRC_LENGTH_8BIT
 SPI4.CalculateBaudRate=1.125 MBits/s
+=======
+SPI4.CalculateBaudRate=2.25 MBits/s
+>>>>>>> parent of 1f04b3b (ESP 32 Communication ADDED For both ESP32 code and STM32 code)
 SPI4.DataSize=SPI_DATASIZE_8BIT
 SPI4.Direction=SPI_DIRECTION_2LINES
 SPI4.IPParameters=VirtualType,Mode,Direction,CalculateBaudRate,DataSize,BaudRatePrescaler,CLKPhase,CRCCalculation,CRCLength

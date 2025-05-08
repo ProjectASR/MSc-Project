@@ -1,10 +1,22 @@
+<<<<<<< HEAD
 01:49:57 **** Incremental Build of configuration Debug for project BMTR_RTOS_ASRV1 ****
+=======
+09:32:46 **** Incremental Build of configuration Debug for project BMTR_RTOS_ASRV1 ****
+>>>>>>> parent of 1f04b3b (ESP 32 Communication ADDED For both ESP32 code and STM32 code)
 make -j12 all 
 arm-none-eabi-size  BMTR_RTOS_ASRV1.elf 
    text	   data	    bss	    dec	    hex	filename
+<<<<<<< HEAD
   42664	    172	  25140	  67976	  10988	BMTR_RTOS_ASRV1.elf
+=======
+  39272	    172	  25100	  64544	   fc20	BMTR_RTOS_ASRV1.elf
+>>>>>>> parent of 1f04b3b (ESP 32 Communication ADDED For both ESP32 code and STM32 code)
 Finished building: default.size.stdout
  
 
+<<<<<<< HEAD
 01:49:57 Build Finished. 0 errors, 0 warnings. (took 880ms)
+=======
+09:32:47 Build Finished. 0 errors, 0 warnings. (took 1s.62ms)
+>>>>>>> parent of 1f04b3b (ESP 32 Communication ADDED For both ESP32 code and STM32 code)
 
