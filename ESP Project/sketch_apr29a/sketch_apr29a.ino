@@ -62,28 +62,28 @@ void loop() {
   memcpy(&theta1, &recvBuf[16], sizeof(float));
   memcpy(&theta2, &recvBuf[20], sizeof(float));
 
-  // Print received values to the serial plotter
-  Serial.print("Icmd1: ");
+  // Print received values to Serial Plotter
+  Serial.print("Icmd1:");
   Serial.print(Icmd1);
   Serial.print("\t");
 
-  Serial.print("Icmd2: ");
+  Serial.print("Icmd2:");
   Serial.print(Icmd2);
   Serial.print("\t");
 
-  Serial.print("Velocity1: ");
+  Serial.print("Velocity1:");
   Serial.print(velocity1);
   Serial.print("\t");
 
-  Serial.print("Velocity2: ");
+  Serial.print("Velocity2:");
   Serial.print(velocity2);
   Serial.print("\t");
 
-  Serial.print("Theta1: ");
+  Serial.print("Theta1:");
   Serial.print(theta1);
   Serial.print("\t");
 
-  Serial.print("Theta2: ");
+  Serial.print("Theta2:");
   Serial.println(theta2);
 
   // Flash RGB LED after reception
@@ -97,5 +97,5 @@ void loop() {
   pixels.show();
   delay(200);
   pixels.clear();
-  pixels.show();
+  pixels.show();  
 }

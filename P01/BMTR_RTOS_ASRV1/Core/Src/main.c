@@ -120,7 +120,7 @@ volatile int EncoderUpdated = 0;
 int SDCardRecordMode = 0;
 
 // ────────────── 🚀 Algorithm Code Variables ──────────────
-#define CPR (512 * 26 * 4)         // Counter Per Revolution
+#define CPR (2048*26)         // Counter Per Revolution
 #define MAX_COUNT 65535
 
 // Position (angles in rad) for Encoder 1 and Encoder 2
@@ -131,22 +131,22 @@ float theta1_prev = 0.0, theta2_prev = 0.0;
 // Velocity calculations
 float velocity1 = 0.0, velocity2 = 0.0;
 float velocity1_prev = 0.0, velocity2_prev = 0.0;
-
+float velocity1Filtered=0.0,velocity2Filtered=0.0;
 // Acceleration calculations
 float acceleration1 = 0.0, acceleration2 = 0.0;
-
+float acceleration1_prev=0;
 // ────────────── 🛠 Parameters ──────────────
-#define G 0.1f      // Smoothing factor for velocity filter (0 < G < 1)
+#define G 0.6f      // Smoothing factor for velocity filter (0 < G < 1)
 
 // ────────────── ⚙️ Motor 1 Parameters ──────────────
 float Icmd1 = 0;        // Commanded current (A)
 float Ktn1 = 0.0705;    // Torque constant (Nm/A)
 float Jn1 = +3069.1e-7; // Motor inertia (kg·m^2)
-float Gdis1 = 10.0;     // Disturbance observer gain
+float Gdis1 = 3000000.0;     // Disturbance observer gain
 float Kt1 = 0.0705;     // Additional torque constant scaling
-float Grtob1 = 50.0;    // Reaction torque observer gain
-float Fint = 0.1;       // Internal force (Nm)
-float Ffric = 0.05;     // Friction force (Nm)
+float Grtob1 = 100.0;    // Reaction torque observer gain
+float Fint = 0;       // Internal force (Nm)
+float Ffric = 0;     // Friction force (Nm)
 float PPR = 512.0;      // Pulses per revolution
 float gear_ratio = 26.0; // Gear ratio
 
@@ -188,12 +188,12 @@ float Idis1, Idis2;    // Disturbance-induced current (A)
 float Text1, Text2;    // External torque estimation (Nm)
 
 // ────────────── 🚀 Acceleration Set Points ──────────────
-float Set_Accelaration1 = 10000;  // Desired acceleration
+float Set_Accelaration1 = 500;  // Desired acceleration
 
 // ────────────── HAL Status ──────────────
 HAL_StatusTypeDef status;
 uint16_t OutputVref = 5000;         // DAC output voltage reference value
-
+uint16_t ENABLEmOTOR = 0;         // DAC output voltage reference value
 
 // ────────────── Low-pass Filter Function ──────────────
 float applyLowPassFilterVelocity(float X, float Y_old) {
@@ -201,7 +201,10 @@ float applyLowPassFilterVelocity(float X, float Y_old) {
     float Y = Y_old + G * (X - Y_old);  // Filtered value
     return Y;
 }
-
+float applyLowPassFilterAcceleration(float X, float Y_old) {
+    float alpha = 0.05f;  // Adjust as needed (lower = smoother, higher = faster response)
+    return Y_old + alpha * (X - Y_old);
+}
 // ────────────── Motor Control Functions ──────────────
 void ConfigureMotor01(int Enable, int Clockwise, uint16_t dac_value) {
     HAL_GPIO_WritePin(GPIOB, GPIO_PIN_4, Clockwise);
@@ -708,14 +711,22 @@ void StartDefaultTask(void const * argument)
 	  MainTaskCount++;
 	  time_start = __HAL_TIM_GET_COUNTER(&htim2);
 	  MainloopCount++;
+	  if (time_interval == 0) time_interval = 1;  // Safety check (avoid division by zero)
 	  /*********************************************************
 	   *                Read Encoder Tick Counts               *
 	   *********************************************************/
 	  EncoderUpdated = 0;
+      if(encoder_ticks>CPR){
+    	  __HAL_TIM_SET_COUNTER(&htim1, 0);
+    	  theta1_prev=0;
+      }
+      if(encoder_ticks2>CPR){
+    	  __HAL_TIM_SET_COUNTER(&htim4, 0);
+    	  theta2_prev = 0;
+      }
 	  encoder_ticks = __HAL_TIM_GET_COUNTER(&htim1);   // Encoder 1
 	  encoder_ticks2 = __HAL_TIM_GET_COUNTER(&htim4);  // Encoder 2
 	  EncoderUpdated = 1;
-
 	  /*********************************************************
 	   *                 Time from Start (in sec)              *
 	   *********************************************************/
@@ -725,13 +736,14 @@ void StartDefaultTask(void const * argument)
 	   *        Compute Position, Velocity, Acceleration       *
 	   *                    For Encoder 1                      *
 	   *********************************************************/
-	  theta1 = (float)(encoder_ticks) * 2.0f * M_PI / ((float)CPR * gear_ratio);
-	  velocity1 = (theta1 - theta1_prev) * 1000000 / time_interval;
+	  theta1 = (float)(encoder_ticks) * 2.0f * M_PI / ((float)CPR);
+	  velocity1 = (theta1 - theta1_prev)* 1000000 / time_interval;
 	  acceleration1 = (velocity1 - velocity1_prev) * 1000000 / time_interval;
-	  velocity1 = applyLowPassFilterVelocity(velocity1, velocity1_prev);  // Filter velocity
+	  velocity1Filtered = applyLowPassFilterVelocity(velocity1, velocity1_prev);  // Filter velocity
 	  theta1_prev = theta1;
 	  velocity1_prev = velocity1;
-
+	  acceleration1 = applyLowPassFilterAcceleration(acceleration1, acceleration1_prev);
+	  acceleration1_prev = acceleration1;
 	  /*********************************************************
 	   *        Compute Position, Velocity, Acceleration       *
 	   *                    For Encoder 2                      *
@@ -739,7 +751,7 @@ void StartDefaultTask(void const * argument)
 	  theta2 = (float)(encoder_ticks2) * 2.0f * M_PI / ((float)CPR * gear_ratio);
 	  velocity2 = (theta2 - theta2_prev) * 1000000 / time_interval;
 	  acceleration2 = (velocity2 - velocity2_prev) * 1000000 / time_interval;
-	  velocity2 = applyLowPassFilterVelocity(velocity2, velocity2_prev);  // Filter velocity
+	  velocity2Filtered = applyLowPassFilterVelocity(velocity2, velocity2_prev);  // Filter velocity
 	  theta2_prev = theta2;
 	  velocity2_prev = velocity2;
 
@@ -747,18 +759,29 @@ void StartDefaultTask(void const * argument)
 	   *        Disturbance Observer for Motor 01             *
 	   *********************************************************/
 	  // Compute commanded current
-	  inertia_term = (Jn1 * Set_Accelaration1) / Ktn1;
-	  Icmd1 = inertia_term + Idis1;
+
 
 	  // Torque disturbance calculation
 	  motor_torque = Icmd1 * Ktn1;
 	  velocity_disturbance = velocity1 * Jn1 * Gdis1;
 	  numerator = (motor_torque + velocity_disturbance) * Gdis1;
-	  denominator = time_interval + Gdis1;
+	  denominator = time_interval* 1e-6 + Gdis1;
 	  velocity_correction = velocity1 * Jn1 * Gdis1;
 	  Tdis1 = numerator / denominator - velocity_correction;
 	  Idis1 = Tdis1 * Kt1;
+	  float dt_s = (float)time_interval * 1e-6f;  // Convert to seconds safely
 
+	  // Compute commanded torque from current
+	  float motor_torqueNEW = Icmd1 * (Kt1);
+
+	  // Compute estimated reaction torque (discrete-time observer with LPF)
+	  float reaction_input = motor_torqueNEW + velocity1 * Jn1*Grtob1 - (Fint + Ffric);
+
+	  // RTOB with discrete LPF (stable form)
+	  Text1 =(Grtob1 / (dt_s + Grtob1)) * (reaction_input)-velocity1 * Jn1*Grtob1;
+	  Set_Accelaration1=(0.08-Text1)*3200;
+	  inertia_term = (Jn1 * Set_Accelaration1) / Ktn1;
+	  Icmd1 = inertia_term + Idis1;
 	  /*********************************************************
 	   *        Disturbance Observer for Motor 02             *
 	   *********************************************************/
@@ -775,25 +798,24 @@ void StartDefaultTask(void const * argument)
 	  /*********************************************************
 	   *         Motor Output Control & Saturation            *
 	   *********************************************************/
-	  if (Icmd1 > 4.5) {
-	      Icmd1 = 4.5;
+	  if (Icmd1 > 3.5) {
+	      Icmd1 = 3.5;
 	  }
-	  ConfigureMotor02(1, 1, Icmd1 * (4000) / 4.5);
+	  ConfigureMotor02(ENABLEmOTOR, 1, Icmd1 * (4096) / 3.5);
 
 	  // Redundant Tdis2 and Idis2 update (if needed)
 	  Tdis2 = (Icmd2 * Ktn2 + velocity2 * Jn2 * Gdis2) * Gdis2 / (time_interval + Gdis2)
 	          - velocity2 * Jn2 * Gdis2;
 	  Idis2 = Tdis2 * Kt2;
 
-	  ConfigureMotor01(1, 1, 500);
+	  ConfigureMotor01(ENABLEmOTOR, 1, Icmd1 * (4096) / 3.5);
 
 	  /*********************************************************
 	   *               Update Time Interval                   *
 	   *********************************************************/
+	  osDelay(5);
 	  time_end = __HAL_TIM_GET_COUNTER(&htim2);
 	  time_interval = time_end - time_start;
-
-    osDelay(5);
   }
   /* USER CODE END 5 */
 }
