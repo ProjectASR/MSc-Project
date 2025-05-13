@@ -779,7 +779,7 @@ void StartDefaultTask(void const * argument)
 
 	  // RTOB with discrete LPF (stable form)
 	  Text1 =(Grtob1 / (dt_s + Grtob1)) * (reaction_input)-velocity1 * Jn1*Grtob1;
-	  Set_Accelaration1=(0.05-Text1)*3200;
+	  Set_Accelaration1=(0.08-Text1)*3200;
 	  inertia_term = (Jn1 * Set_Accelaration1) / Ktn1;
 	  Icmd1 = inertia_term + Idis1;
 	  /*********************************************************
