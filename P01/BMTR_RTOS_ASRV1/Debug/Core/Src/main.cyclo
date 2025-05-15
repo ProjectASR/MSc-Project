@@ -12,7 +12,7 @@
 ../Core/Src/main.c:609:13:MX_TIM13_Init	2
 ../Core/Src/main.c:640:13:MX_GPIO_Init	1
 ../Core/Src/main.c:711:6:StartDefaultTask	5
-../Core/Src/main.c:843:6:StartTask02	11
-../Core/Src/main.c:925:6:MPU_Config	1
-../Core/Src/main.c:960:6:HAL_TIM_PeriodElapsedCallback	2
-../Core/Src/main.c:978:6:Error_Handler	1
+../Core/Src/main.c:841:6:StartTask02	11
+../Core/Src/main.c:923:6:MPU_Config	1
+../Core/Src/main.c:958:6:HAL_TIM_PeriodElapsedCallback	2
+../Core/Src/main.c:976:6:Error_Handler	1

@@ -207,7 +207,7 @@ uint16_t ENABLEmOTOR = 0;         // DAC output voltage reference value
 // ────────────── Low-pass Filter Function ──────────────
 float applyLowPassFilterVelocity(float X, float Y_old) {
     // Apply the first-order low-pass filter formula
-    float Y = Y_old + G *time_interval* (X - Y_old);  // Filtered value
+    float Y = Y_old + G *dt* (X - Y_old);  // Filtered value
     return Y;
 }
 float applyLowPassFilterAcceleration(float X, float Y_old) {
@@ -778,8 +778,9 @@ void StartDefaultTask(void const * argument)
 	  // Apply the first-order low-pass filter using the difference equation
 	  FilteredInputForFilterDOB = FilteredInputForFilterDOBPrev + (Gdis1 * dt_s / (1 + Gdis1 * dt_s)) * (InputForFilterDOB - FilteredInputForFilterDOBPrev);
 	  FilteredInputForFilterDOBPrev = FilteredInputForFilterDOB;  // Update the previous output for next iteration
-	  Tdis1 = FilteredInputForFilterDOB - velocity_disturbance;
-	  Idis1 = Tdis1 *1/Kt1;
+	  velocity_correction = velocity1 * Jn1 * Gdis1;
+	  Tdis1 = FilteredInputForFilterDOB - velocity_correction;
+	  Idis1 = Tdis1 * Kt1;
 
 
 	  // Compute commanded torque from current
