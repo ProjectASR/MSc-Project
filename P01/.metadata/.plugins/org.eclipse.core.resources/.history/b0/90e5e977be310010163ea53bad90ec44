@@ -808,12 +808,12 @@ void StartDefaultTask(void const * argument)
 	  /*********************************************************
 	   *         Motor Output Control & Saturation            *
 	   *********************************************************/
-	  if (Icmd1 > 3.0) {
-	      Icmd1 = 3.0;
+	  if (Icmd1 > 3.5) {
+	      Icmd1 = 3.5;
 	      Motor1DirB = 1;
 	  }
-	  else if (Icmd1 < -3.0) {
-	      Icmd1 = -3.0;
+	  else if (Icmd1 < -3.5) {
+	      Icmd1 = -3.5;
 	      Motor1DirB = 0;
 	  }
 	  else {
@@ -825,10 +825,10 @@ void StartDefaultTask(void const * argument)
 	      }
 	  }
 	  if(Icmd1>0){
-		  ConfigureMotor02(ENABLEmOTOR, 1, Icmd1 * (4000) / 3.0);
+		  ConfigureMotor02(ENABLEmOTOR, 1, Icmd1 * (4096) / 3.5);
 	  }
 	  else{
-		  ConfigureMotor02(ENABLEmOTOR, 1, -1*Icmd1 * (4000) / 3.0);
+		  ConfigureMotor02(ENABLEmOTOR, 1, -1*Icmd1 * (4096) / 3.5);
 	  }
 
 

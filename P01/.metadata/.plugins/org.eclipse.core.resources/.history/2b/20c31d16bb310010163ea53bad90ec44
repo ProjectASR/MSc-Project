@@ -808,36 +808,25 @@ void StartDefaultTask(void const * argument)
 	  /*********************************************************
 	   *         Motor Output Control & Saturation            *
 	   *********************************************************/
-	  if (Icmd1 > 3.0) {
-	      Icmd1 = 3.0;
-	      Motor1DirB = 1;
+	  if (Icmd1 > 3.5) {
+	      Icmd1 = 3.5;
+	      Motor1DirB=1;
 	  }
-	  else if (Icmd1 < -3.0) {
-	      Icmd1 = -3.0;
-	      Motor1DirB = 0;
-	  }
-	  else {
-	      // Icmd1 is within -3.5 to 3.5, maintain value but set direction by sign
-	      if (Icmd1 >= 0) {
-	          Motor1DirB = 1;
-	      } else {
-	          Motor1DirB = 0;
-	      }
-	  }
-	  if(Icmd1>0){
-		  ConfigureMotor02(ENABLEmOTOR, 1, Icmd1 * (4000) / 3.0);
+	  else if (Icmd1< -3.5){
+		  Icmd1 = -3.5;
+		  Motor1DirB=0;
 	  }
 	  else{
-		  ConfigureMotor02(ENABLEmOTOR, 1, -1*Icmd1 * (4000) / 3.0);
+		  Icmd1=Icmd1;
 	  }
-
+	  ConfigureMotor02(ENABLEmOTOR, Motor1DirB, Icmd1 * (4096) / 3.5);
 
 	  // Redundant Tdis2 and Idis2 update (if needed)
 	  Tdis2 = (Icmd2 * Ktn2 + velocity2 * Jn2 * Gdis2) * Gdis2 / (time_interval + Gdis2)
 	          - velocity2 * Jn2 * Gdis2;
 	  Idis2 = Tdis2 * Kt2;
 
-	  ConfigureMotor01(ENABLEmOTOR, Motor1DirB, Icmd1 * (4096) / 3.5);
+	  ConfigureMotor01(ENABLEmOTOR, 1, Icmd1 * (4096) / 3.5);
 
 	  /*********************************************************
 	   *               Update Time Interval                   *

@@ -825,10 +825,10 @@ void StartDefaultTask(void const * argument)
 	      }
 	  }
 	  if(Icmd1>0){
-		  ConfigureMotor02(ENABLEmOTOR, 1, Icmd1 * (4000) / 3.0);
+		  ConfigureMotor02(ENABLEmOTOR, 1, Icmd1 * (4096) / 3.0);
 	  }
 	  else{
-		  ConfigureMotor02(ENABLEmOTOR, 1, -1*Icmd1 * (4000) / 3.0);
+		  ConfigureMotor02(ENABLEmOTOR, 1, -1*Icmd1 * (4096) / 3.0);
 	  }
 
 
