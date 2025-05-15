@@ -136,15 +136,15 @@ float velocity1Filtered=0.0,velocity2Filtered=0.0;
 float acceleration1 = 0.0, acceleration2 = 0.0;
 float acceleration1_prev=0;
 // ────────────── 🛠 Parameters ──────────────
-#define G 10      // Smoothing factor for velocity filter (0 < G < 1)
+#define G 30      // Smoothing factor for velocity filter (0 < G < 1)
 
 // ────────────── ⚙️ Motor 1 Parameters ──────────────
 float Icmd1 = 0;        // Commanded current (A)
 float Ktn1 = 0.0705;    // Torque constant (Nm/A)
 float Jn1 = +3069.1e-7; // Motor inertia (kg·m^2)    // Disturbance observer gain
 float Kt1 = 0.0705;     // Additional torque constant scaling
-float Gdis1 = 10;   // Cutoff at ~20Hz (lower if shaking persists)
-float Grtob1 =10;  // Cutoff at ~15Hz (lower if reaction torque shakes)    // Reaction torque observer gain
+float Gdis1 = 30;   // Cutoff at ~20Hz (lower if shaking persists)
+float Grtob1 =30;  // Cutoff at ~15Hz (lower if reaction torque shakes)    // Reaction torque observer gain
 float Fint = 0.0129;       // Internal force (Nm)
 float Ffric = 0.0003;     // Friction force (Nm)
 float PPR = 512.0;      // Pulses per revolution
@@ -747,17 +747,19 @@ void StartDefaultTask(void const * argument)
 	   *                    For Encoder 1                      *
 	   *********************************************************/
 	  theta1 = (float)(encoder_ticks) * 2.0f * M_PI / ((float)CPR);
-	  velocity1 = (theta1 - theta1_prev)/ dt_s;
-	  acceleration1 = (velocity1 - velocity1_prev)/ dt_s;
+	  velocity1 = (theta1 - theta1_prev)* 1000000 / time_interval;
+	  acceleration1 = (velocity1 - velocity1_prev) * 1000000 / time_interval;
 	  velocity1Filtered = applyLowPassFilterVelocity(velocity1, velocity1_prev);  // Filter velocity
 	  theta1_prev = theta1;
 	  velocity1_prev = velocity1;
+	  acceleration1 = applyLowPassFilterAcceleration(acceleration1, acceleration1_prev);
+	  acceleration1_prev = acceleration1;
 	  /*********************************************************
 	   *        Compute Position, Velocity, Acceleration       *
 	   *                    For Encoder 2                      *
 	   *********************************************************/
 	  theta2 = (float)(encoder_ticks2) * 2.0f * M_PI / ((float)CPR * gear_ratio);
-	  velocity2 = (theta2 - theta2_prev) * dt_s;
+	  velocity2 = (theta2 - theta2_prev) * 1000000 / time_interval;
 	  acceleration2 = (velocity2 - velocity2_prev) * 1000000 / time_interval;
 	  velocity2Filtered = applyLowPassFilterVelocity(velocity2, velocity2_prev);  // Filter velocity
 	  theta2_prev = theta2;

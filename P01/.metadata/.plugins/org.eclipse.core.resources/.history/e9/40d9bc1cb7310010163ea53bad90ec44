@@ -748,16 +748,18 @@ void StartDefaultTask(void const * argument)
 	   *********************************************************/
 	  theta1 = (float)(encoder_ticks) * 2.0f * M_PI / ((float)CPR);
 	  velocity1 = (theta1 - theta1_prev)/ dt_s;
-	  acceleration1 = (velocity1 - velocity1_prev)/ dt_s;
+	  acceleration1 = (velocity1 - velocity1_prev) * 1000000 / time_interval;
 	  velocity1Filtered = applyLowPassFilterVelocity(velocity1, velocity1_prev);  // Filter velocity
 	  theta1_prev = theta1;
 	  velocity1_prev = velocity1;
+	  acceleration1 = applyLowPassFilterAcceleration(acceleration1, acceleration1_prev);
+	  acceleration1_prev = acceleration1;
 	  /*********************************************************
 	   *        Compute Position, Velocity, Acceleration       *
 	   *                    For Encoder 2                      *
 	   *********************************************************/
 	  theta2 = (float)(encoder_ticks2) * 2.0f * M_PI / ((float)CPR * gear_ratio);
-	  velocity2 = (theta2 - theta2_prev) * dt_s;
+	  velocity2 = (theta2 - theta2_prev) * 1000000 / time_interval;
 	  acceleration2 = (velocity2 - velocity2_prev) * 1000000 / time_interval;
 	  velocity2Filtered = applyLowPassFilterVelocity(velocity2, velocity2_prev);  // Filter velocity
 	  theta2_prev = theta2;

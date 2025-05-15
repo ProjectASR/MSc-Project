@@ -752,6 +752,8 @@ void StartDefaultTask(void const * argument)
 	  velocity1Filtered = applyLowPassFilterVelocity(velocity1, velocity1_prev);  // Filter velocity
 	  theta1_prev = theta1;
 	  velocity1_prev = velocity1;
+	  acceleration1 = applyLowPassFilterAcceleration(acceleration1, acceleration1_prev);
+	  acceleration1_prev = acceleration1;
 	  /*********************************************************
 	   *        Compute Position, Velocity, Acceleration       *
 	   *                    For Encoder 2                      *
