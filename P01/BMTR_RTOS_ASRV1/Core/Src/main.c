@@ -141,10 +141,10 @@ float acceleration1_prev=0;
 // ────────────── ⚙️ Motor 1 Parameters ──────────────
 float Icmd1 = 0;        // Commanded current (A)
 float Ktn1 = 0.0705;    // Torque constant (Nm/A)
-float Jn1 = +3069.1e-7; // Motor inertia (kg·m^2)
-float Gdis1 = 0.000007;     // Disturbance observer gain
+float Jn1 = +3069.1e-7; // Motor inertia (kg·m^2)    // Disturbance observer gain
 float Kt1 = 0.0705;     // Additional torque constant scaling
-float Grtob1 = 0.000007;    // Reaction torque observer gain
+float Gdis1 = 1;   // Cutoff at ~20Hz (lower if shaking persists)
+float Grtob1 =1;  // Cutoff at ~15Hz (lower if reaction torque shakes)    // Reaction torque observer gain
 float Fint = 0;       // Internal force (Nm)
 float Ffric = 0;     // Friction force (Nm)
 float PPR = 512.0;      // Pulses per revolution
@@ -167,6 +167,14 @@ float velocity_disturbance;
 float numerator;
 float denominator;
 float velocity_correction;
+// Filter related variables for disturbance observer (DOB)
+float InputForFilterDOB = 0.0f;
+float FilteredInputForFilterDOB = 0.0f;
+float FilteredInputForFilterDOBPrev = 0.0f;
+
+// Filter related variables for reaction torque observer (RTOB)
+float Text1Filtered = 0.0f;
+float Text1Filteredprev = 0.0f;
 
 // ────────────── ⚙️ Motor 2 Disturbance Observer ──────────────
 float inertia_term2         = 0.0f;
@@ -189,7 +197,8 @@ float Text1, Text2;    // External torque estimation (Nm)
 
 // ────────────── 🚀 Acceleration Set Points ──────────────
 float Set_Accelaration1 = 500;  // Desired acceleration
-
+float Set_Torque1 = 0;  // Desired acceleration
+float dt_s = 0;  // Convert to seconds safely
 // ────────────── HAL Status ──────────────
 HAL_StatusTypeDef status;
 uint16_t OutputVref = 5000;         // DAC output voltage reference value
@@ -712,6 +721,7 @@ void StartDefaultTask(void const * argument)
 	  time_start = __HAL_TIM_GET_COUNTER(&htim2);
 	  MainloopCount++;
 	  if (time_interval == 0) time_interval = 1;  // Safety check (avoid division by zero)
+	  dt_s = (float)time_interval * 1e-6f;
 	  /*********************************************************
 	   *                Read Encoder Tick Counts               *
 	   *********************************************************/
@@ -764,22 +774,25 @@ void StartDefaultTask(void const * argument)
 	  // Torque disturbance calculation
 	  motor_torque = Icmd1 * Ktn1;
 	  velocity_disturbance = velocity1 * Jn1 * Gdis1;
-	  numerator = (motor_torque + velocity_disturbance) * Gdis1;
-	  denominator = time_interval* 1e-6 + Gdis1;
+	  InputForFilterDOB = (motor_torque + velocity_disturbance);
+	  // Apply the first-order low-pass filter using the difference equation
+	  FilteredInputForFilterDOB = FilteredInputForFilterDOBPrev + (Gdis1 * dt_s / (1 + Gdis1 * dt_s)) * (InputForFilterDOB - FilteredInputForFilterDOBPrev);
+	  FilteredInputForFilterDOBPrev = FilteredInputForFilterDOB;  // Update the previous output for next iteration
 	  velocity_correction = velocity1 * Jn1 * Gdis1;
-	  Tdis1 = numerator / denominator - velocity_correction;
+	  Tdis1 = FilteredInputForFilterDOB - velocity_correction;
 	  Idis1 = Tdis1 * Kt1;
-	  float dt_s = (float)time_interval * 1e-6f;  // Convert to seconds safely
+
 
 	  // Compute commanded torque from current
 	  float motor_torqueNEW = Icmd1 * (Kt1);
 
 	  // Compute estimated reaction torque (discrete-time observer with LPF)
 	  float reaction_input = motor_torqueNEW + velocity1 * Jn1*Grtob1 - (Fint + Ffric);
+	    // Apply the first-order low-pass filter using the difference equation
+	  Text1Filtered = Text1Filteredprev + (Grtob1 * dt_s / (1 + Grtob1 * dt_s )) * (reaction_input - Text1Filteredprev);
+	  Text1Filteredprev = Text1Filtered;  // Update the previous output for next iteration
 
-	  // RTOB with discrete LPF (stable form)
-	  Text1 =(Grtob1 / (dt_s + Grtob1)) * (reaction_input)-velocity1 * Jn1*Grtob1;
-	  Set_Accelaration1=(0.05-Text1)*3200;
+	  Set_Accelaration1=(Set_Torque1-Text1Filtered)*2500;
 	  inertia_term = (Jn1 * Set_Accelaration1) / Ktn1;
 	  Icmd1 = inertia_term + Idis1;
 	  /*********************************************************
@@ -813,7 +826,7 @@ void StartDefaultTask(void const * argument)
 	  /*********************************************************
 	   *               Update Time Interval                   *
 	   *********************************************************/
-	  osDelay(5);
+	  osDelay(1);
 	  time_end = __HAL_TIM_GET_COUNTER(&htim2);
 	  time_interval = time_end - time_start;
   }
@@ -902,7 +915,7 @@ void StartTask02(void const * argument)
 
 		}
 
-    osDelay(5);
+    osDelay(1);
   }
   /* USER CODE END StartTask02 */
 }

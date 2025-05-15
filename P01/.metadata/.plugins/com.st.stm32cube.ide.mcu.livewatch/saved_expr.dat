@@ -1,18 +1,20 @@
-OutputVref
-MainloopCount
-fresult
-time_interval
-SDCardCount
-status
-result
-secondFromStart
-<<<<<<< HEAD
-Idis2
-Idis1
+theta1
+encoder_ticks
 velocity1
+time_interval
+__HAL_TIM_GET_COUNTER(&htim2)
+secondFromStart
+ENABLEmOTOR
+Set_Accelaration1
+acceleration1
 Icmd1
-inertia_term
-Jn1
-RecordTaskCount
-=======
->>>>>>> parent of 1f04b3b (ESP 32 Communication ADDED For both ESP32 code and STM32 code)
+motor_torque
+Tdis1
+Text1
+Set_Accelaration1/800+Text1
+Grtob1
+Icmd1 * (Kt1)
+Fint
+Tdis1
+Text1Filtered
+Set_Torque1
