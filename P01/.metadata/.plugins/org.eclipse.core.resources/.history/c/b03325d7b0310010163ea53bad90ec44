@@ -198,7 +198,7 @@ float Text1, Text2;    // External torque estimation (Nm)
 // ────────────── 🚀 Acceleration Set Points ──────────────
 float Set_Accelaration1 = 500;  // Desired acceleration
 float Set_Torque1 = 0;  // Desired acceleration
-float dt_s = time_interval * 1e-6f;
+float dt_s = 0;  // Convert to seconds safely
 // ────────────── HAL Status ──────────────
 HAL_StatusTypeDef status;
 uint16_t OutputVref = 5000;         // DAC output voltage reference value
@@ -207,7 +207,7 @@ uint16_t ENABLEmOTOR = 0;         // DAC output voltage reference value
 // ────────────── Low-pass Filter Function ──────────────
 float applyLowPassFilterVelocity(float X, float Y_old) {
     // Apply the first-order low-pass filter formula
-    float Y = Y_old + G *dt_s* (X - Y_old);  // Filtered value
+    float Y = Y_old + G *time_interval* (X - Y_old);  // Filtered value
     return Y;
 }
 float applyLowPassFilterAcceleration(float X, float Y_old) {
@@ -721,7 +721,7 @@ void StartDefaultTask(void const * argument)
 	  time_start = __HAL_TIM_GET_COUNTER(&htim2);
 	  MainloopCount++;
 	  if (time_interval == 0) time_interval = 1;  // Safety check (avoid division by zero)
-
+	  dt_s = (float)time_interval * 1e-6f;
 	  /*********************************************************
 	   *                Read Encoder Tick Counts               *
 	   *********************************************************/
@@ -776,7 +776,7 @@ void StartDefaultTask(void const * argument)
 	  velocity_disturbance = velocity1 * Jn1 * Gdis1;
 	  InputForFilterDOB = (motor_torque + velocity_disturbance);
 	  // Apply the first-order low-pass filter using the difference equation
-	  FilteredInputForFilterDOB = FilteredInputForFilterDOBPrev + (Gdis1 * dt_s) * (InputForFilterDOB - FilteredInputForFilterDOBPrev);
+	  FilteredInputForFilterDOB = FilteredInputForFilterDOBPrev + (Gdis1 * dt_s / (1 + Gdis1 * dt_s)) * (InputForFilterDOB - FilteredInputForFilterDOBPrev);
 	  FilteredInputForFilterDOBPrev = FilteredInputForFilterDOB;  // Update the previous output for next iteration
 	  Tdis1 = FilteredInputForFilterDOB - velocity_disturbance;
 	  Idis1 = Tdis1 *1/Kt1;
@@ -786,11 +786,10 @@ void StartDefaultTask(void const * argument)
 	  float motor_torqueNEW = Icmd1 * (Kt1);
 
 	  // Compute estimated reaction torque (discrete-time observer with LPF)
-	  float reaction_input = motor_torqueNEW + velocity1 * Jn1*Grtob1 - (Fint + Ffric*velocity1);
+	  float reaction_input = motor_torqueNEW + velocity1 * Jn1*Grtob1 - (Fint + Ffric);
 	    // Apply the first-order low-pass filter using the difference equation
-	  Text1Filtered = Text1Filteredprev + (Grtob1 * dt_s) * (reaction_input - Text1Filteredprev);
+	  Text1Filtered = Text1Filteredprev + (Grtob1 * dt_s / (1 + Grtob1 * dt_s )) * (reaction_input - Text1Filteredprev);
 	  Text1Filteredprev = Text1Filtered;  // Update the previous output for next iteration
-	  Text1Filtered=Text1Filtered-velocity1 * Jn1*Grtob1;
 	  Set_Accelaration1=(Set_Torque1-Text1Filtered)*2500;
 	  inertia_term = (Jn1 * Set_Accelaration1) / Ktn1;
 	  Icmd1 = inertia_term + Idis1;

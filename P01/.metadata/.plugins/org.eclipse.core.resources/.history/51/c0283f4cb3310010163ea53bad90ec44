@@ -198,7 +198,8 @@ float Text1, Text2;    // External torque estimation (Nm)
 // ────────────── 🚀 Acceleration Set Points ──────────────
 float Set_Accelaration1 = 500;  // Desired acceleration
 float Set_Torque1 = 0;  // Desired acceleration
-float dt_s = time_interval * 1e-6f;
+ dt_s = 0;  // Convert to seconds safely
+ float dt_s = time_interval * 1e-6f;
 // ────────────── HAL Status ──────────────
 HAL_StatusTypeDef status;
 uint16_t OutputVref = 5000;         // DAC output voltage reference value
