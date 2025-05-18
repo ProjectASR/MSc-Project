@@ -54,48 +54,30 @@ void loop() {
   }
 
   // Convert the byte buffer to float values
-  float Icmd1, Icmd2, velocity1, velocity2, theta1, theta2;
-  memcpy(&Icmd1, &recvBuf[0], sizeof(float));
-  memcpy(&Icmd2, &recvBuf[4], sizeof(float));
+  float reaction_torque_input, desired_torque, velocity1, velocity2, theta1, theta2;
+  memcpy(&reaction_torque_input, &recvBuf[0], sizeof(float));
+  memcpy(&desired_torque, &recvBuf[4], sizeof(float));
   memcpy(&velocity1, &recvBuf[8], sizeof(float));
   memcpy(&velocity2, &recvBuf[12], sizeof(float));
   memcpy(&theta1, &recvBuf[16], sizeof(float));
   memcpy(&theta2, &recvBuf[20], sizeof(float));
 
   // Print received values to Serial Plotter
-  Serial.print("Icmd1:");
-  Serial.print(Icmd1);
+  Serial.print("reaction_torque_input:");
+  Serial.print(reaction_torque_input);
   Serial.print("\t");
 
-  Serial.print("Icmd2:");
-  Serial.print(Icmd2);
+  Serial.print("desired_torque:");
+  Serial.print(desired_torque);
   Serial.print("\t");
-
-  Serial.print("Velocity1:");
-  Serial.print(velocity1);
-  Serial.print("\t");
-
-  Serial.print("Velocity2:");
-  Serial.print(velocity2);
-  Serial.print("\t");
-
-  Serial.print("Theta1:");
-  Serial.print(theta1);
-  Serial.print("\t");
-
-  Serial.print("Theta2:");
-  Serial.println(theta2);
-
+  Serial.println("");
+  if(reaction_torque_input-desired_torque < 0.2){
+  pixels.setPixelColor(0, pixels.Color(0, 255, 0)); // Green
+  pixels.show();
+  }
+  else{
   // Flash RGB LED after reception
   pixels.setPixelColor(0, pixels.Color(255, 0, 0)); // Red
   pixels.show();
-  delay(200);
-  pixels.setPixelColor(0, pixels.Color(0, 255, 0)); // Green
-  pixels.show();
-  delay(200);
-  pixels.setPixelColor(0, pixels.Color(0, 0, 255)); // Blue
-  pixels.show();
-  delay(200);
-  pixels.clear();
-  pixels.show();  
+ }
 }
