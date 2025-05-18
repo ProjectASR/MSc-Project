@@ -144,13 +144,13 @@ float Ktn1 = 0.0705;    // Torque constant (Nm/A)
 float Jn1 = +3069.1e-7; // Motor inertia (kg·m^2)    // Disturbance observer gain
 float Kt1 = 0.0705;     // Additional torque constant scaling
 float Gdis1 = 10;   // Cutoff at ~20Hz (lower if shaking persists)
-float Grtob1 =15;  // Cutoff at ~15Hz (lower if reaction torque shakes)    // Reaction torque observer gain
+float Grtob1 =30;  // Cutoff at ~15Hz (lower if reaction torque shakes)    // Reaction torque observer gain
 float Fint = 0.0129;       // Internal force (Nm)
 float Ffric = 0.0003;     // Friction force (Nm)
 float PPR = 512.0;      // Pulses per revolution
 float gear_ratio = 26.0; // Gear ratio
 int Motor1DirB=0;
-float kp=20.0 ,ki=0.08;
+float kp=10.0 ,ki=0.1;
 float errorPreviousI1=0.0;
 // ────────────── ⚙️ Motor 2 Parameters ──────────────
 float Icmd2 = 1.1;      // Commanded current (A)
@@ -825,7 +825,7 @@ void StartDefaultTask(void const * argument)
 		  ConfigureMotor01(ENABLEmOTOR, Motor1DirB, Icmd1 * (4096) / 3.3);
 	  }
 	  else{
-		  ConfigureMotor01(ENABLEmOTOR, Motor1DirB, -1*Icmd1 * (4096) / 3.3);
+		  ConfigureMotor01(ENABLEmOTOR, Motor1DirB, Icmd1 * (4096) / 3.3);
 	  }
 
 
