@@ -136,20 +136,22 @@ float velocity1Filtered=0.0,velocity2Filtered=0.0;
 float acceleration1 = 0.0, acceleration2 = 0.0;
 float acceleration1_prev=0.0;
 // ────────────── 🛠 Parameters ──────────────
-#define G 10      // Smoothing factor for velocity filter (0 < G < 1)
+#define G 10      // Smoothing factor for velocity filter
 
 // ────────────── ⚙️ Motor 1 Parameters ──────────────
 float Icmd1 = 0.0;        // Commanded current (A)
 float Ktn1 = 0.0705;    // Torque constant (Nm/A)
 float Jn1 = +3069.1e-7; // Motor inertia (kg·m^2)    // Disturbance observer gain
 float Kt1 = 0.0705;     // Additional torque constant scaling
-float Gdis1 = 1;   // Cutoff at ~20Hz (lower if shaking persists)
-float Grtob1 =10;  // Cutoff at ~15Hz (lower if reaction torque shakes)    // Reaction torque observer gain
+float Gdis1 = 10;   // Cutoff at ~20Hz (lower if shaking persists)
+float Grtob1 =30;  // Cutoff at ~15Hz (lower if reaction torque shakes)    // Reaction torque observer gain
 float Fint = 0.0129;       // Internal force (Nm)
 float Ffric = 0.0003;     // Friction force (Nm)
 float PPR = 512.0;      // Pulses per revolution
 float gear_ratio = 26.0; // Gear ratio
 int Motor1DirB=0;
+float kp=10.0 ,ki=0.1;
+float errorPreviousI1=0.0;
 // ────────────── ⚙️ Motor 2 Parameters ──────────────
 float Icmd2 = 1.1;      // Commanded current (A)
 float Ktn2 = 0.0705;    // Torque constant (Nm/A)
@@ -769,7 +771,7 @@ void StartDefaultTask(void const * argument)
 	  FilteredInputForFilterDOB = FilteredInputForFilterDOBPrev + (Gdis1 * dt_s) * (InputForFilterDOB - FilteredInputForFilterDOBPrev);
 	  FilteredInputForFilterDOBPrev = FilteredInputForFilterDOB;  // Update the previous output for next iteration
 	  Tdis1 = FilteredInputForFilterDOB - velocity_disturbance;
-	  Idis1 = Tdis1 *1/Kt1;
+	  Idis1 = Tdis1/Kt1;
 
 
 	  // Compute commanded torque from current
@@ -780,8 +782,11 @@ void StartDefaultTask(void const * argument)
 	    // Apply the first-order low-pass filter using the difference equation
 	  Text1Filtered = Text1Filteredprev + (Grtob1 * dt_s) * (reaction_input - Text1Filteredprev);
 	  Text1Filteredprev = Text1Filtered;  // Update the previous output for next iteration
-	  Text1Filtered=Text1Filtered-velocity1 * Jn1*Grtob1;
-	  //Set_Accelaration1=(Set_Torque1-Text1Filtered)*2.5;
+	  Text1Filtered=Text1Filtered-(velocity1 * Jn1*Grtob1);
+	  float error1 = Set_Torque1 - Text1Filtered;
+	  float I_error1 = (error1 * dt_s + errorPreviousI1);
+	  errorPreviousI1 = I_error1;
+	  Set_Accelaration1 = (kp * error1) + (ki * I_error1);
 	  inertia_term = (Jn1 * Set_Accelaration1) / Ktn1;
 	  Icmd1 = inertia_term + Idis1;
 	  /*********************************************************
@@ -817,10 +822,10 @@ void StartDefaultTask(void const * argument)
 	      }
 	  }
 	  if(Icmd1>0){
-		  ConfigureMotor02(ENABLEmOTOR, 1, Icmd1 * (4000) / 3.0);
+		  ConfigureMotor01(ENABLEmOTOR, Motor1DirB, Icmd1 * (4096) / 3.3);
 	  }
 	  else{
-		  ConfigureMotor02(ENABLEmOTOR, 1, -1*Icmd1 * (4000) / 3.0);
+		  ConfigureMotor01(ENABLEmOTOR, Motor1DirB, Icmd1 * (4096) / 3.3);
 	  }
 
 
@@ -829,7 +834,7 @@ void StartDefaultTask(void const * argument)
 	          - velocity2 * Jn2 * Gdis2;
 	  Idis2 = Tdis2 * Kt2;
 
-	  ConfigureMotor01(ENABLEmOTOR, Motor1DirB, Icmd1 * (4096) / 3.5);
+	  //ConfigureMotor02(ENABLEmOTOR, Motor1DirB, Icmd1 * (4096) / 3.3);
 
 	  /*********************************************************
 	   *               Update Time Interval                   *
