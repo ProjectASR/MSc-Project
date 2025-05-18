@@ -143,7 +143,7 @@ float Icmd1 = 0.0;        // Commanded current (A)
 float Ktn1 = 0.0705;    // Torque constant (Nm/A)
 float Jn1 = +3069.1e-7; // Motor inertia (kg·m^2)    // Disturbance observer gain
 float Kt1 = 0.0705;     // Additional torque constant scaling
-float Gdis1 = 10;   // Cutoff at ~20Hz (lower if shaking persists)
+float Gdis1 = 1;   // Cutoff at ~20Hz (lower if shaking persists)
 float Grtob1 =10;  // Cutoff at ~15Hz (lower if reaction torque shakes)    // Reaction torque observer gain
 float Fint = 0.0129;       // Internal force (Nm)
 float Ffric = 0.0003;     // Friction force (Nm)
@@ -726,14 +726,6 @@ void StartDefaultTask(void const * argument)
 	   *                Read Encoder Tick Counts               *
 	   *********************************************************/
 	  EncoderUpdated = 0;
-      if(encoder_ticks>CPR){
-    	  __HAL_TIM_SET_COUNTER(&htim1, 0);
-    	  theta1_prev=0;
-      }
-      if(encoder_ticks2>CPR){
-    	  __HAL_TIM_SET_COUNTER(&htim4, 0);
-    	  theta2_prev = 0;
-      }
 	  encoder_ticks = __HAL_TIM_GET_COUNTER(&htim1);   // Encoder 1
 	  encoder_ticks2 = __HAL_TIM_GET_COUNTER(&htim4);  // Encoder 2
 	  EncoderUpdated = 1;
@@ -789,7 +781,7 @@ void StartDefaultTask(void const * argument)
 	  Text1Filtered = Text1Filteredprev + (Grtob1 * dt_s) * (reaction_input - Text1Filteredprev);
 	  Text1Filteredprev = Text1Filtered;  // Update the previous output for next iteration
 	  Text1Filtered=Text1Filtered-velocity1 * Jn1*Grtob1;
-	  Set_Accelaration1=(Set_Torque1-Text1Filtered)*25;
+	  //Set_Accelaration1=(Set_Torque1-Text1Filtered)*2.5;
 	  inertia_term = (Jn1 * Set_Accelaration1) / Ktn1;
 	  Icmd1 = inertia_term + Idis1;
 	  /*********************************************************
