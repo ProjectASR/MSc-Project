@@ -137,6 +137,7 @@ float acceleration1 = 0.0, acceleration2 = 0.0;
 float acceleration1_prev=0.0;
 // ────────────── 🛠 Parameters ──────────────
 #define G 10      // Smoothing factor for velocity filter
+#define G2 100      // Smoothing factor for velocity filter
 // ────────────── ⚙️ Motor 2 Parameters ──────────────
 float Icmd2 = 1.1;      // Commanded current (A)
 float Ktn2 = 0.0705;    // Torque constant (Nm/A)
@@ -191,7 +192,7 @@ float filtered_reaction_torque = 0.0f;
 float filtered_reaction_torque_prev = 0.0f;
 
 // ────────────── ⚙️ Control Error Terms ──────────────
-float desired_torque = 0.0f;                // Set externally per control target
+float desired_torque = 0.1f;                // Set externally per control target
 float torque_error = 0.0f;
 float torque_error_integral = 0.0f;
 float motor_velocity = 0.0f;                // Set from encoder/sensor
@@ -209,11 +210,11 @@ float motor02_gear_ratio = 26.0f;                    // Gear ratio
 int motor02_direction_flag = 0;                       // Motor direction flag
 
 // PI Controller gains for acceleration control
-float motor02_proportional_gain = 20.0f;            // kp
+float motor02_proportional_gain = 25.0f;            // kp
 float motor02_integral_gain = 0.08f;                 // ki
 
 // ────────────── ⏲️ Timing and Sampling ──────────────
-float motor02_sampling_time = 0.0f;                  // dt_s (set appropriately)
+float motor02_sampling_time = 0.001f;                  // dt_s (set appropriately)
 
 // ────────────── 📊 Observer and Control State Variables ──────────────
 float motor02_previous_torque_error_integral = 0.0f; // Integral error accumulator
@@ -246,15 +247,21 @@ float motor02_motor_velocity = 0.0f;                  // From encoder/sensor
 float Set_Accelaration1 = 500;  // Desired acceleration
 float Set_Torque1 = 0;  // Desired acceleration
 float dt_s = 1000 * 1e-6f;
+float ks=0.1;
 // ────────────── HAL Status ──────────────
 HAL_StatusTypeDef status;
 uint16_t OutputVref = 5000;         // DAC output voltage reference value
-uint16_t ENABLEmOTOR = 0;         // DAC output voltage reference value
+uint16_t ENABLEmOTOR = 1;         // DAC output voltage reference value
 
 // ────────────── Low-pass Filter Function ──────────────
 float applyLowPassFilterVelocity(float X, float Y_old) {
     // Apply the first-order low-pass filter formula
     float Y = Y_old + G *dt_s* (X - Y_old);  // Filtered value
+    return Y;
+}
+float applyLowPassFilterVelocity2(float X, float Y_old) {
+    // Apply the first-order low-pass filter formula
+    float Y = Y_old + G2 *dt_s* (X - Y_old);  // Filtered value
     return Y;
 }
 float applyLowPassFilterAcceleration(float X, float Y_old) {
@@ -899,19 +906,20 @@ void StartDefaultTask(void const * argument)
 	  acceleration1 = (velocity1 - velocity1_prev)/ dt_s;
 	  motor_velocity = applyLowPassFilterVelocity(velocity1, velocity1_prev);  // Filter velocity
 	  theta1_prev = theta1;
-	  velocity1_prev = velocity1;
+	  velocity1_prev = motor_velocity;
 	  /*********************************************************
 	   *        Compute Position, Velocity, Acceleration       *
 	   *                    For Encoder 2                      *
 	   *********************************************************/
-	  theta2 = (float)(encoder_ticks2) * 2.0f * M_PI / ((float)CPR * gear_ratio);
+	  theta2 = (float)(encoder_ticks2) * 2.0f * M_PI / ((float)CPR);
 	  velocity2 = (theta2 - theta2_prev) /dt_s;
-	  acceleration2 = (velocity2 - velocity2_prev) * 1000000 / time_interval;
-	  velocity2Filtered = applyLowPassFilterVelocity(velocity2, velocity2_prev);  // Filter velocity
+	  acceleration2 = (velocity2 - velocity2_prev)/ dt_s;
+	  motor02_motor_velocity = applyLowPassFilterVelocity2(velocity2, velocity2_prev);  // Filter velocity
 	  theta2_prev = theta2;
-	  velocity2_prev = velocity2;
+	  velocity2_prev = motor02_motor_velocity;
 	  UpdateMotor01CommandedCurrent();
 	  UpdateMotor02CommandedCurrent();
+	  motor02_desired_torque=ks*(theta1-theta2);
 	  /*********************************************************
 	   *         Motor Output Control & Saturation            *
 	   *********************************************************/
@@ -919,10 +927,12 @@ void StartDefaultTask(void const * argument)
 	  if (commanded_current > 3.0f) {
 	      commanded_current = 3.0f;
 	      motor_direction_flag = 1;  // Forward
+	      voltage_reference_1 = (4096.0f / 3.3f) * fabsf(commanded_current);
 	  }
 	  else if (commanded_current < -3.0f) {
 	      commanded_current = -3.0f;
 	      motor_direction_flag = 0;  // Reverse
+	      voltage_reference_1 = (4096.0f / 3.3f) * fabsf(-1*commanded_current);
 	  }
 	  else {
 	      // Current is within safe bounds; determine direction by sign
@@ -944,32 +954,39 @@ void StartDefaultTask(void const * argument)
 	  if (motor02_commanded_current > 3.0f) {
 		  motor02_commanded_current = 3.0f;
 		  motor02_direction_flag = 1;  // Forward direction
+		  voltage_reference_2 = (4096.0f / 3.3f) * fabsf(motor02_commanded_current);
 	  }
 	  else if (motor02_commanded_current < -3.0f) {
 		  motor02_commanded_current = -3.0f;
 		  motor02_direction_flag = 0;  // Reverse direction
+		  voltage_reference_2 = (4096.0f / 3.3f) * fabsf(-1*motor02_commanded_current);
 	  }
 	  else {
-	      // Current within safe bounds; set direction based on sign
-		  motor02_direction_flag = (motor02_commanded_current >= 0.0f) ? 1 : 0;
+	      // Current is within safe bounds; determine direction by sign
+	      if (motor02_commanded_current >= 0.0f) {
+	    	  motor02_direction_flag = 1;  // Forward
+	    	  voltage_reference_2 = (4096.0f / 3.3f) * fabsf(motor02_commanded_current);
+	      } else {
+	    	  motor02_direction_flag = 0;  // Reverse
+	          voltage_reference_2 = (4096.0f / 3.3f) * fabsf(-1*motor02_commanded_current);
+	      }
 	  }
 
 	  // Convert commanded current to PWM duty cycle (12-bit scale)
 	  // Assuming 3.3V corresponds to max current of 3A
-	  voltage_reference_2 = (4096.0f / 3.3f) * fabsf(motor02_commanded_current);
+	  //voltage_reference_2 = (4096.0f / 3.3f) * fabsf(motor02_commanded_current);
 
-
-	  // Apply output using reference voltage and direction
 	  ConfigureMotor02(ENABLEmOTOR, motor02_direction_flag, voltage_reference_2);
-
+	  // Apply output using reference voltage and direction
 	  //ConfigureMotor02(ENABLEmOTOR, Motor1DirB, Icmd1 * (4096) / 3.3);
 
 	  /*********************************************************
 	   *               Update Time Interval                   *
 	   *********************************************************/
+
 	  osDelay(5);
 	  time_end = __HAL_TIM_GET_COUNTER(&htim2);
-	  time_interval = time_end - time_start;
+
   }
   /* USER CODE END 5 */
 }
