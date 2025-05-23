@@ -247,7 +247,7 @@ float motor02_motor_velocity = 0.0f;                  // From encoder/sensor
 float Set_Accelaration1 = 500;  // Desired acceleration
 float Set_Torque1 = 0;  // Desired acceleration
 float dt_s = 1000 * 1e-6f;
-float ks=40.0;
+float ks=35.0;
 // ────────────── HAL Status ──────────────
 HAL_StatusTypeDef status;
 uint16_t OutputVref = 5000;         // DAC output voltage reference value
@@ -920,7 +920,7 @@ void StartDefaultTask(void const * argument)
 	  velocity2_prev = motor02_motor_velocity;
 	  UpdateMotor01CommandedCurrent();
 	  UpdateMotor02CommandedCurrent();
-	  motor02_desired_torque=(-1)*(desired_torque)-ks*(theta1-theta2);
+	  motor02_desired_torque=desired_torque-ks*(theta1-theta2);
 	  /*********************************************************
 	   *         Motor Output Control & Saturation            *
 	   *********************************************************/

@@ -920,7 +920,7 @@ void StartDefaultTask(void const * argument)
 	  velocity2_prev = motor02_motor_velocity;
 	  UpdateMotor01CommandedCurrent();
 	  UpdateMotor02CommandedCurrent();
-	  motor02_desired_torque=(-1)*(desired_torque)-ks*(theta1-theta2);
+	  motor02_desired_torque=-1*desired_torque-ks*(theta1-theta2);
 	  /*********************************************************
 	   *         Motor Output Control & Saturation            *
 	   *********************************************************/

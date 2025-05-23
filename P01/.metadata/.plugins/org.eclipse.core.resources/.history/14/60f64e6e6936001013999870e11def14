@@ -136,7 +136,7 @@ float velocity1Filtered=0.0,velocity2Filtered=0.0;
 float acceleration1 = 0.0, acceleration2 = 0.0;
 float acceleration1_prev=0.0;
 // ────────────── 🛠 Parameters ──────────────
-#define G 100      // Smoothing factor for velocity filter
+#define G 10      // Smoothing factor for velocity filter
 #define G2 100      // Smoothing factor for velocity filter
 // ────────────── ⚙️ Motor 2 Parameters ──────────────
 float Icmd2 = 1.1;      // Commanded current (A)
@@ -247,7 +247,7 @@ float motor02_motor_velocity = 0.0f;                  // From encoder/sensor
 float Set_Accelaration1 = 500;  // Desired acceleration
 float Set_Torque1 = 0;  // Desired acceleration
 float dt_s = 1000 * 1e-6f;
-float ks=40.0;
+float ks=0.1;
 // ────────────── HAL Status ──────────────
 HAL_StatusTypeDef status;
 uint16_t OutputVref = 5000;         // DAC output voltage reference value
@@ -920,7 +920,7 @@ void StartDefaultTask(void const * argument)
 	  velocity2_prev = motor02_motor_velocity;
 	  UpdateMotor01CommandedCurrent();
 	  UpdateMotor02CommandedCurrent();
-	  motor02_desired_torque=(-1)*(desired_torque)-ks*(theta1-theta2);
+	  motor02_desired_torque=desired_torque-ks*(theta1-theta2);
 	  /*********************************************************
 	   *         Motor Output Control & Saturation            *
 	   *********************************************************/
