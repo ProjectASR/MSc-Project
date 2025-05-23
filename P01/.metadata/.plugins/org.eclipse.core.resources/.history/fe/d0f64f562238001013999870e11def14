@@ -136,7 +136,7 @@ float velocity1Filtered=0.0,velocity2Filtered=0.0;
 float acceleration1 = 0.0, acceleration2 = 0.0;
 float acceleration1_prev=0.0;
 // ────────────── 🛠 Parameters ──────────────
-#define G 100      // Smoothing factor for velocity filter
+#define G 50      // Smoothing factor for velocity filter
 #define G2 100      // Smoothing factor for velocity filter
 // ────────────── ⚙️ Motor 2 Parameters ──────────────
 float Icmd2 = 1.1;      // Commanded current (A)
@@ -332,7 +332,7 @@ void UpdateMotor01CommandedCurrent(void)
 
     // Final commanded current is inertia compensation + disturbance compensation
     //commanded_current = inertia_compensation_current + disturbance_current;
-    commanded_current = inertia_compensation_current+ disturbance_current; //added for DOB tuning
+    commanded_current = disturbance_current; //added for DOB tuning
 }
 void UpdateMotor02CommandedCurrent(void)
 {
@@ -903,25 +903,9 @@ void StartDefaultTask(void const * argument)
 	   *        Compute Position, Velocity, Acceleration       *
 	   *                    For Encoder 1                      *
 	   *********************************************************/
-	  // Persistent variables
-	  static int16_t prev_ticks = 0;
-
-	  // In your update function (e.g., every 10 ms)
-	  int16_t curr_ticks = __HAL_TIM_GET_COUNTER(&htim1);
-	  int16_t delta_ticks = (int16_t)(curr_ticks - prev_ticks);  // handles overflow
-
-	  prev_ticks = curr_ticks;
-
-	  // Convert tick delta to angle delta (in radians)
-	  float delta_theta = ((float)delta_ticks) * 2*M_PI / CPR;
-	  // Accumulate theta
-	  theta1 += delta_theta;
+	  theta1 = (float)(encoder_ticks) * 2.0f * M_PI / ((float)CPR);
 	  velocity1 = (theta1 - theta1_prev)/ dt_s;
-	  // Calculate raw acceleration
-	  float raw_acceleration = (velocity1 - velocity1_prev) / dt_s;
-
-	  // Apply low-pass filter to smooth acceleration
-	  acceleration1 = (1 - 0.1) * acceleration1 + 0.1 * raw_acceleration;
+	  acceleration1 = (velocity1 - velocity1_prev)/ dt_s;
 	  motor_velocity = applyLowPassFilterVelocity(velocity1, velocity1_prev);  // Filter velocity
 	  theta1_prev = theta1;
 	  velocity1_prev = motor_velocity;
@@ -945,21 +929,21 @@ void StartDefaultTask(void const * argument)
 	  if (commanded_current > 1.0f) {
 	      commanded_current = 1.0f;
 	      motor_direction_flag = 1;  // Forward
-	      voltage_reference_1 = (4096.0f / 1.2f) * fabsf(commanded_current);
+	      voltage_reference_1 = (4096.0f / 3.3f) * fabsf(commanded_current);
 	  }
 	  else if (commanded_current < -1.0f) {
 	      commanded_current = -1.0f;
 	      motor_direction_flag = 0;  // Reverse
-	      voltage_reference_1 = (4096.0f / 1.2f) * fabsf(-1*commanded_current);
+	      voltage_reference_1 = (4096.0f / 3.3f) * fabsf(-1*commanded_current);
 	  }
 	  else {
 	      // Current is within safe bounds; determine direction by sign
 	      if (commanded_current >= 0.0f) {
 	          motor_direction_flag = 1;  // Forward
-	          voltage_reference_1 = (4096.0f / 1.2f) * fabsf(commanded_current);
+	          voltage_reference_1 = (4096.0f / 3.3f) * fabsf(commanded_current);
 	      } else {
 	          motor_direction_flag = 0;  // Reverse
-	          voltage_reference_1 = (4096.0f / 1.2f) * fabsf(-1*commanded_current);
+	          voltage_reference_1 = (4096.0f / 3.3f) * fabsf(-1*commanded_current);
 	      }
 	  }
 

@@ -921,7 +921,7 @@ void StartDefaultTask(void const * argument)
 	  float raw_acceleration = (velocity1 - velocity1_prev) / dt_s;
 
 	  // Apply low-pass filter to smooth acceleration
-	  acceleration1 = (1 - 0.1) * acceleration1 + 0.1 * raw_acceleration;
+	  acceleration1 = (1 - 0.1) * acceleration1 + ALPHA * raw_acceleration;
 	  motor_velocity = applyLowPassFilterVelocity(velocity1, velocity1_prev);  // Filter velocity
 	  theta1_prev = theta1;
 	  velocity1_prev = motor_velocity;

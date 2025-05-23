@@ -917,11 +917,7 @@ void StartDefaultTask(void const * argument)
 	  // Accumulate theta
 	  theta1 += delta_theta;
 	  velocity1 = (theta1 - theta1_prev)/ dt_s;
-	  // Calculate raw acceleration
-	  float raw_acceleration = (velocity1 - velocity1_prev) / dt_s;
-
-	  // Apply low-pass filter to smooth acceleration
-	  acceleration1 = (1 - 0.1) * acceleration1 + 0.1 * raw_acceleration;
+	  acceleration1 = (velocity1 - velocity1_prev)/ dt_s;
 	  motor_velocity = applyLowPassFilterVelocity(velocity1, velocity1_prev);  // Filter velocity
 	  theta1_prev = theta1;
 	  velocity1_prev = motor_velocity;
