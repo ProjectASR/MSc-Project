@@ -153,8 +153,8 @@ float commanded_current = 0.0f;             // Icmd1: Commanded current (A)
 float torque_constant_motor = 0.0705f;      // Ktn1: Motor torque constant (Nm/A)
 float motor_inertia = 3069.1e-7f;           // Jn1: Motor inertia (kg·m²)
 float torque_constant_load = 0.0705f;       // Kt1: Load-side torque constant (Nm/A)
-float disturbance_gain = 0.1f;             // Gdis1: DOB gain (~20Hz cutoff)
-float reaction_gain = 0.1f;                // Grtob1: RTOB gain (~15Hz cutoff)
+float disturbance_gain = 100.0f;             // Gdis1: DOB gain (~20Hz cutoff)
+float reaction_gain = 15.0f;                // Grtob1: RTOB gain (~15Hz cutoff)
 float internal_friction = 0.0129f;          // Fint: Internal friction torque (Nm)
 float viscous_friction = 0.0003f;           // Ffric: Viscous friction torque (Nm)
 float pulses_per_revolution = 512.0f;       // PPR: Encoder pulses per revolution
@@ -165,7 +165,7 @@ uint16_t voltage_reference_2=0;
 // PI Controller gains for acceleration control
 float proportional_gain = 25.0f;            // kp
 float integral_gain = 0.08f;                // ki
-float motor1MaxCurrent=3.20f;
+
 // ────────────── ⏲️ Timing and Sampling ──────────────
 float sampling_time = 0.001f;                 // dt_s: Set this appropriately in your loop
 
@@ -325,7 +325,7 @@ void UpdateMotor01CommandedCurrent(void)
     torque_error_integral = torque_error * sampling_time + previous_torque_error_integral;
     previous_torque_error_integral = torque_error_integral;
 
-    commanded_acceleration = proportional_gain * torque_error + integral_gain * torque_error_integral;
+    //commanded_acceleration = proportional_gain * torque_error + integral_gain * torque_error_integral;
 
     // Compute inertia-driven current command
     inertia_compensation_current = (motor_inertia * commanded_acceleration) / torque_constant_motor;
@@ -942,24 +942,24 @@ void StartDefaultTask(void const * argument)
 	   *         Motor Output Control & Saturation            *
 	   *********************************************************/
 	  // Limit commanded current to ±3.0 A and set motor direction
-	  if (commanded_current > motor1MaxCurrent) {
-	      commanded_current = motor1MaxCurrent;
+	  if (commanded_current > 1.0f) {
+	      commanded_current = 1.0f;
 	      motor_direction_flag = 1;  // Forward
-	      voltage_reference_1 = (4095.0f / motor1MaxCurrent) * fabsf(commanded_current);
+	      voltage_reference_1 = (4096.0f / 1.2f) * fabsf(commanded_current);
 	  }
 	  else if (commanded_current < -1.0f) {
 	      commanded_current = -1.0f;
 	      motor_direction_flag = 0;  // Reverse
-	      voltage_reference_1 = (4095.0f / motor1MaxCurrent) * fabsf(-1*commanded_current);
+	      voltage_reference_1 = (4096.0f / 1.2f) * fabsf(-1*commanded_current);
 	  }
 	  else {
 	      // Current is within safe bounds; determine direction by sign
 	      if (commanded_current >= 0.0f) {
 	          motor_direction_flag = 1;  // Forward
-	          voltage_reference_1 = (4095.0f /motor1MaxCurrent) * fabsf(commanded_current);
+	          voltage_reference_1 = (4096.0f / 1.2f) * fabsf(commanded_current);
 	      } else {
 	          motor_direction_flag = 0;  // Reverse
-	          voltage_reference_1 = (4095.0f / motor1MaxCurrent) * fabsf(-1*commanded_current);
+	          voltage_reference_1 = (4096.0f / 1.2f) * fabsf(-1*commanded_current);
 	      }
 	  }
 
