@@ -192,7 +192,7 @@ float filtered_reaction_torque = 0.0f;
 float filtered_reaction_torque_prev = 0.0f;
 
 // ────────────── ⚙️ Control Error Terms ──────────────
-float desired_torque = 0.0f;                // Set externally per control target
+float desired_torque = 0.1f;                // Set externally per control target
 float torque_error = 0.0f;
 float torque_error_integral = 0.0f;
 float motor_velocity = 0.0f;                // Set from encoder/sensor
@@ -210,8 +210,8 @@ float motor02_gear_ratio = 26.0f;                    // Gear ratio
 int motor02_direction_flag = 0;                       // Motor direction flag
 
 // PI Controller gains for acceleration control
-float motor02_proportional_gain = 5.0f;            // kp
-float motor02_integral_gain = 0.0f;                 // ki
+float motor02_proportional_gain = 20.0f;            // kp
+float motor02_integral_gain = 0.08f;                 // ki
 
 // ────────────── ⏲️ Timing and Sampling ──────────────
 float motor02_sampling_time = 0.001f;                  // dt_s (set appropriately)
@@ -247,7 +247,7 @@ float motor02_motor_velocity = 0.0f;                  // From encoder/sensor
 float Set_Accelaration1 = 500;  // Desired acceleration
 float Set_Torque1 = 0;  // Desired acceleration
 float dt_s = 1000 * 1e-6f;
-float ks=0.1f;
+float ks=0.01;
 // ────────────── HAL Status ──────────────
 HAL_StatusTypeDef status;
 uint16_t OutputVref = 5000;         // DAC output voltage reference value
@@ -937,7 +937,7 @@ void StartDefaultTask(void const * argument)
 	  static int16_t prev_ticks2 = 0;
 
 	  // Read current encoder count
-	  int16_t curr_ticks2 = __HAL_TIM_GET_COUNTER(&htim4);
+	  int16_t curr_ticks2 = __HAL_TIM_GET_COUNTER(&htim2);
 	  int16_t delta_ticks2 = (int16_t)(curr_ticks2 - prev_ticks2);  // Handles overflow
 	  prev_ticks2 = curr_ticks2;
 
@@ -993,21 +993,21 @@ void StartDefaultTask(void const * argument)
 	  if (motor02_commanded_current > 3.0f) {
 		  motor02_commanded_current = 3.0f;
 		  motor02_direction_flag = 1;  // Forward direction
-		  voltage_reference_2 = (4095.0f / 3.0f) * fabsf(motor02_commanded_current);
+		  voltage_reference_2 = (4096.0f / 3.3f) * fabsf(motor02_commanded_current);
 	  }
 	  else if (motor02_commanded_current < -3.0f) {
 		  motor02_commanded_current = -3.0f;
 		  motor02_direction_flag = 0;  // Reverse direction
-		  voltage_reference_2 = (4095.0f / 3.0f) * fabsf(-1*motor02_commanded_current);
+		  voltage_reference_2 = (4096.0f / 3.3f) * fabsf(-1*motor02_commanded_current);
 	  }
 	  else {
 	      // Current is within safe bounds; determine direction by sign
 	      if (motor02_commanded_current >= 0.0f) {
 	    	  motor02_direction_flag = 1;  // Forward
-	    	  voltage_reference_2 = (4095.0f / 3.0f) * fabsf(motor02_commanded_current);
+	    	  voltage_reference_2 = (4096.0f / 3.3f) * fabsf(motor02_commanded_current);
 	      } else {
 	    	  motor02_direction_flag = 0;  // Reverse
-	          voltage_reference_2 = (4095.0f / 3.0f) * fabsf(-1*motor02_commanded_current);
+	          voltage_reference_2 = (4096.0f / 3.3f) * fabsf(-1*motor02_commanded_current);
 	      }
 	  }
 

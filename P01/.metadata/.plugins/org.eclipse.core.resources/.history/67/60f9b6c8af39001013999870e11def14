@@ -192,7 +192,7 @@ float filtered_reaction_torque = 0.0f;
 float filtered_reaction_torque_prev = 0.0f;
 
 // ────────────── ⚙️ Control Error Terms ──────────────
-float desired_torque = 0.0f;                // Set externally per control target
+float desired_torque = 0.1f;                // Set externally per control target
 float torque_error = 0.0f;
 float torque_error_integral = 0.0f;
 float motor_velocity = 0.0f;                // Set from encoder/sensor

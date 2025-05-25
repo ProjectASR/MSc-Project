@@ -192,7 +192,7 @@ float filtered_reaction_torque = 0.0f;
 float filtered_reaction_torque_prev = 0.0f;
 
 // ────────────── ⚙️ Control Error Terms ──────────────
-float desired_torque = 0.0f;                // Set externally per control target
+float desired_torque = 0.1f;                // Set externally per control target
 float torque_error = 0.0f;
 float torque_error_integral = 0.0f;
 float motor_velocity = 0.0f;                // Set from encoder/sensor
@@ -247,7 +247,7 @@ float motor02_motor_velocity = 0.0f;                  // From encoder/sensor
 float Set_Accelaration1 = 500;  // Desired acceleration
 float Set_Torque1 = 0;  // Desired acceleration
 float dt_s = 1000 * 1e-6f;
-float ks=0.1f;
+float ks=0.01;
 // ────────────── HAL Status ──────────────
 HAL_StatusTypeDef status;
 uint16_t OutputVref = 5000;         // DAC output voltage reference value
@@ -958,7 +958,7 @@ void StartDefaultTask(void const * argument)
 	  velocity2_prev = motor02_motor_velocity;
 	  UpdateMotor01CommandedCurrent();
 	  UpdateMotor02CommandedCurrent();
-	  motor02_desired_torque=desired_torque-ks*(theta1-theta2);
+	  //motor02_desired_torque=desired_torque-ks*(theta1-theta2);
 	  /*********************************************************
 	   *         Motor Output Control & Saturation            *
 	   *********************************************************/
