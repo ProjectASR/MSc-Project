@@ -247,7 +247,7 @@ float motor02_motor_velocity = 0.0f;                  // From encoder/sensor
 float Set_Accelaration1 = 500;  // Desired acceleration
 float Set_Torque1 = 0;  // Desired acceleration
 float dt_s = 1000 * 1e-6f;
-float ks=0.1f;
+float ks=0.2f;
 // ────────────── HAL Status ──────────────
 HAL_StatusTypeDef status;
 uint16_t OutputVref = 5000;         // DAC output voltage reference value
