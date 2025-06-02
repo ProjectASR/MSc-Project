@@ -1087,10 +1087,10 @@ void StartTask02(void const * argument)
 		    uint8_t txBuf[25];  // 6 floats = 24 bytes + 1 byte for CRC
 		    uint8_t rxBuf[25];
 
-		    memcpy(&txBuf[0],  &desired_torque,     sizeof(float));
-		    memcpy(&txBuf[4],  &filtered_reaction_torque,     sizeof(float));
-		    memcpy(&txBuf[8],  &SDCardCount, sizeof(float));
-		    memcpy(&txBuf[12], &torque_error, sizeof(float));
+		    memcpy(&txBuf[0],  &reaction_torque_input,     sizeof(float));
+		    memcpy(&txBuf[4],  &desired_torque,     sizeof(float));
+		    memcpy(&txBuf[8],  &velocity1, sizeof(float));
+		    memcpy(&txBuf[12], &velocity2, sizeof(float));
 		    memcpy(&txBuf[16], &theta1,    sizeof(float));
 		    memcpy(&txBuf[20], &theta2,    sizeof(float));
 

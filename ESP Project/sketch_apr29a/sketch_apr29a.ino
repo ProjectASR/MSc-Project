@@ -54,24 +54,24 @@ void loop() {
   }
 
   // Convert the byte buffer to float values
-  float reaction_torque_input, desired_torque, velocity1, velocity2, theta1, theta2;
-  memcpy(&reaction_torque_input, &recvBuf[0], sizeof(float));
-  memcpy(&desired_torque, &recvBuf[4], sizeof(float));
-  memcpy(&velocity1, &recvBuf[8], sizeof(float));
-  memcpy(&velocity2, &recvBuf[12], sizeof(float));
+  float desired_torque, filtered_reaction_torque, SDCardCount, torque_error, theta1, theta2;
+  memcpy(&desired_torque, &recvBuf[0], sizeof(float));
+  memcpy(&filtered_reaction_torque, &recvBuf[4], sizeof(float));
+  memcpy(&SDCardCount, &recvBuf[8], sizeof(float));
+  memcpy(&torque_error, &recvBuf[12], sizeof(float));
   memcpy(&theta1, &recvBuf[16], sizeof(float));
   memcpy(&theta2, &recvBuf[20], sizeof(float));
 
   // Print received values to Serial Plotter
-  Serial.print("reaction_torque_input:");
-  Serial.print(reaction_torque_input);
-  Serial.print("\t");
-
   Serial.print("desired_torque:");
   Serial.print(desired_torque);
   Serial.print("\t");
+
+  Serial.print("filtered_reaction_torque:");
+  Serial.print(filtered_reaction_torque);
+  Serial.print("\t");
   Serial.println("");
-  if(reaction_torque_input-desired_torque < 0.2){
+  if(desired_torque-filtered_reaction_torque < 0.2){
   pixels.setPixelColor(0, pixels.Color(0, 255, 0)); // Green
   pixels.show();
   }
