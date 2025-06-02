@@ -1,4 +1,4 @@
-18:55:15 **** Incremental Build of configuration Debug for project BMTR_RTOS_ASRV1 ****
+18:08:03 **** Incremental Build of configuration Debug for project BMTR_RTOS_ASRV1 ****
 make -j12 all 
 arm-none-eabi-gcc "../Middlewares/Third_Party/FreeRTOS/Source/tasks.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F756xx -c -I../FATFS/Target -I../FATFS/App -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FatFs/src -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM7/r0p1 -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Middlewares/Third_Party/FreeRTOS/Source/tasks.d" -MT"Middlewares/Third_Party/FreeRTOS/Source/tasks.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Middlewares/Third_Party/FreeRTOS/Source/tasks.o"
 arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F756xx -c -I../FATFS/Target -I../FATFS/App -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FatFs/src -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM7/r0p1 -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
@@ -13,21 +13,7 @@ Finished building: default.size.stdout
  
 Finished building: BMTR_RTOS_ASRV1.list
  
-18:55:46 **** Incremental Build of configuration Debug for project BMTR_RTOS_ASRV1 ****
-make -j12 all 
-arm-none-eabi-size  BMTR_RTOS_ASRV1.elf 
-   text	   data	    bss	    dec	    hex	filename
-  42648	    204	  25220	  68072	  109e8	BMTR_RTOS_ASRV1.elf
-Finished building: default.size.stdout
- 
-18:59:19 **** Incremental Build of configuration Debug for project BMTR_RTOS_ASRV1 ****
-make -j12 all 
-arm-none-eabi-size  BMTR_RTOS_ASRV1.elf 
-   text	   data	    bss	    dec	    hex	filename
-  42648	    204	  25220	  68072	  109e8	BMTR_RTOS_ASRV1.elf
-Finished building: default.size.stdout
- 
-19:06:34 **** Incremental Build of configuration Debug for project BMTR_RTOS_ASRV1 ****
+18:15:27 **** Incremental Build of configuration Debug for project BMTR_RTOS_ASRV1 ****
 make -j12 all 
 arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F756xx -c -I../FATFS/Target -I../FATFS/App -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FatFs/src -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM7/r0p1 -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
 arm-none-eabi-gcc -o "BMTR_RTOS_ASRV1.elf" @"objects.list"   -mcpu=cortex-m7 -T"C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\STM32F756ZGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="BMTR_RTOS_ASRV1.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
@@ -41,7 +27,7 @@ Finished building: default.size.stdout
  
 Finished building: BMTR_RTOS_ASRV1.list
  
-19:10:07 **** Incremental Build of configuration Debug for project BMTR_RTOS_ASRV1 ****
+18:17:44 **** Incremental Build of configuration Debug for project BMTR_RTOS_ASRV1 ****
 make -j12 all 
 arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F756xx -c -I../FATFS/Target -I../FATFS/App -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FatFs/src -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM7/r0p1 -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
 arm-none-eabi-gcc -o "BMTR_RTOS_ASRV1.elf" @"objects.list"   -mcpu=cortex-m7 -T"C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\STM32F756ZGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="BMTR_RTOS_ASRV1.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
@@ -55,7 +41,7 @@ Finished building: default.size.stdout
  
 Finished building: BMTR_RTOS_ASRV1.list
  
-19:11:45 **** Incremental Build of configuration Debug for project BMTR_RTOS_ASRV1 ****
+18:19:20 **** Incremental Build of configuration Debug for project BMTR_RTOS_ASRV1 ****
 make -j12 all 
 arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F756xx -c -I../FATFS/Target -I../FATFS/App -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FatFs/src -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM7/r0p1 -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
 arm-none-eabi-gcc -o "BMTR_RTOS_ASRV1.elf" @"objects.list"   -mcpu=cortex-m7 -T"C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\STM32F756ZGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="BMTR_RTOS_ASRV1.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
@@ -69,7 +55,7 @@ Finished building: default.size.stdout
  
 Finished building: BMTR_RTOS_ASRV1.list
  
-19:14:15 **** Incremental Build of configuration Debug for project BMTR_RTOS_ASRV1 ****
+18:30:04 **** Incremental Build of configuration Debug for project BMTR_RTOS_ASRV1 ****
 make -j12 all 
 arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F756xx -c -I../FATFS/Target -I../FATFS/App -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FatFs/src -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM7/r0p1 -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
 arm-none-eabi-gcc -o "BMTR_RTOS_ASRV1.elf" @"objects.list"   -mcpu=cortex-m7 -T"C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\STM32F756ZGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="BMTR_RTOS_ASRV1.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
@@ -82,4 +68,223 @@ arm-none-eabi-objdump -h -S BMTR_RTOS_ASRV1.elf  > "BMTR_RTOS_ASRV1.list"
 Finished building: default.size.stdout
  
 Finished building: BMTR_RTOS_ASRV1.list
+ 
+22:00:16 **** Incremental Build of configuration Debug for project BMTR_RTOS_ASRV1 ****
+make -j12 all 
+arm-none-eabi-gcc "../Middlewares/Third_Party/FreeRTOS/Source/tasks.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F756xx -c -I../FATFS/Target -I../FATFS/App -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FatFs/src -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM7/r0p1 -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Middlewares/Third_Party/FreeRTOS/Source/tasks.d" -MT"Middlewares/Third_Party/FreeRTOS/Source/tasks.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Middlewares/Third_Party/FreeRTOS/Source/tasks.o"
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F756xx -c -I../FATFS/Target -I../FATFS/App -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FatFs/src -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM7/r0p1 -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "BMTR_RTOS_ASRV1.elf" @"objects.list"   -mcpu=cortex-m7 -T"C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\STM32F756ZGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="BMTR_RTOS_ASRV1.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: BMTR_RTOS_ASRV1.elf
+ 
+arm-none-eabi-size  BMTR_RTOS_ASRV1.elf 
+arm-none-eabi-objdump -h -S BMTR_RTOS_ASRV1.elf  > "BMTR_RTOS_ASRV1.list"
+   text	   data	    bss	    dec	    hex	filename
+  42648	    204	  25220	  68072	  109e8	BMTR_RTOS_ASRV1.elf
+Finished building: default.size.stdout
+ 
+Finished building: BMTR_RTOS_ASRV1.list
+ 
+22:01:40 **** Incremental Build of configuration Debug for project BMTR_RTOS_ASRV1 ****
+make -j12 all 
+arm-none-eabi-size  BMTR_RTOS_ASRV1.elf 
+   text	   data	    bss	    dec	    hex	filename
+  42648	    204	  25220	  68072	  109e8	BMTR_RTOS_ASRV1.elf
+Finished building: default.size.stdout
+ 
+22:03:13 **** Incremental Build of configuration Debug for project BMTR_RTOS_ASRV1 ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F756xx -c -I../FATFS/Target -I../FATFS/App -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FatFs/src -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM7/r0p1 -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "BMTR_RTOS_ASRV1.elf" @"objects.list"   -mcpu=cortex-m7 -T"C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\STM32F756ZGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="BMTR_RTOS_ASRV1.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: BMTR_RTOS_ASRV1.elf
+ 
+arm-none-eabi-size  BMTR_RTOS_ASRV1.elf 
+arm-none-eabi-objdump -h -S BMTR_RTOS_ASRV1.elf  > "BMTR_RTOS_ASRV1.list"
+   text	   data	    bss	    dec	    hex	filename
+  42648	    204	  25220	  68072	  109e8	BMTR_RTOS_ASRV1.elf
+Finished building: default.size.stdout
+ 
+Finished building: BMTR_RTOS_ASRV1.list
+ 
+22:05:28 **** Incremental Build of configuration Debug for project BMTR_RTOS_ASRV1 ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F756xx -c -I../FATFS/Target -I../FATFS/App -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FatFs/src -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM7/r0p1 -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "BMTR_RTOS_ASRV1.elf" @"objects.list"   -mcpu=cortex-m7 -T"C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\STM32F756ZGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="BMTR_RTOS_ASRV1.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: BMTR_RTOS_ASRV1.elf
+ 
+arm-none-eabi-size  BMTR_RTOS_ASRV1.elf 
+arm-none-eabi-objdump -h -S BMTR_RTOS_ASRV1.elf  > "BMTR_RTOS_ASRV1.list"
+   text	   data	    bss	    dec	    hex	filename
+  42648	    204	  25220	  68072	  109e8	BMTR_RTOS_ASRV1.elf
+Finished building: default.size.stdout
+ 
+Finished building: BMTR_RTOS_ASRV1.list
+ 
+22:09:32 **** Incremental Build of configuration Debug for project BMTR_RTOS_ASRV1 ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F756xx -c -I../FATFS/Target -I../FATFS/App -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FatFs/src -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM7/r0p1 -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c:250:10: error: invalid suffix "f" on integer constant
+  250 | float ks=1f;
+      |          ^~
+make: *** [Core/Src/subdir.mk:43: Core/Src/main.o] Error 1
+"make -j12 all" terminated with exit code 2. Build might be incomplete.
+22:09:41 **** Incremental Build of configuration Debug for project BMTR_RTOS_ASRV1 ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F756xx -c -I../FATFS/Target -I../FATFS/App -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FatFs/src -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM7/r0p1 -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "BMTR_RTOS_ASRV1.elf" @"objects.list"   -mcpu=cortex-m7 -T"C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\STM32F756ZGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="BMTR_RTOS_ASRV1.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: BMTR_RTOS_ASRV1.elf
+ 
+arm-none-eabi-size  BMTR_RTOS_ASRV1.elf 
+arm-none-eabi-objdump -h -S BMTR_RTOS_ASRV1.elf  > "BMTR_RTOS_ASRV1.list"
+   text	   data	    bss	    dec	    hex	filename
+  42648	    204	  25220	  68072	  109e8	BMTR_RTOS_ASRV1.elf
+Finished building: default.size.stdout
+ 
+Finished building: BMTR_RTOS_ASRV1.list
+ 
+22:11:13 **** Incremental Build of configuration Debug for project BMTR_RTOS_ASRV1 ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F756xx -c -I../FATFS/Target -I../FATFS/App -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FatFs/src -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM7/r0p1 -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "BMTR_RTOS_ASRV1.elf" @"objects.list"   -mcpu=cortex-m7 -T"C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\STM32F756ZGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="BMTR_RTOS_ASRV1.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: BMTR_RTOS_ASRV1.elf
+ 
+arm-none-eabi-size  BMTR_RTOS_ASRV1.elf 
+arm-none-eabi-objdump -h -S BMTR_RTOS_ASRV1.elf  > "BMTR_RTOS_ASRV1.list"
+   text	   data	    bss	    dec	    hex	filename
+  42648	    204	  25220	  68072	  109e8	BMTR_RTOS_ASRV1.elf
+Finished building: default.size.stdout
+ 
+Finished building: BMTR_RTOS_ASRV1.list
+ 
+22:12:27 **** Incremental Build of configuration Debug for project BMTR_RTOS_ASRV1 ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F756xx -c -I../FATFS/Target -I../FATFS/App -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FatFs/src -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM7/r0p1 -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "BMTR_RTOS_ASRV1.elf" @"objects.list"   -mcpu=cortex-m7 -T"C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\STM32F756ZGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="BMTR_RTOS_ASRV1.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: BMTR_RTOS_ASRV1.elf
+ 
+arm-none-eabi-size  BMTR_RTOS_ASRV1.elf 
+arm-none-eabi-objdump -h -S BMTR_RTOS_ASRV1.elf  > "BMTR_RTOS_ASRV1.list"
+   text	   data	    bss	    dec	    hex	filename
+  42648	    204	  25220	  68072	  109e8	BMTR_RTOS_ASRV1.elf
+Finished building: default.size.stdout
+ 
+Finished building: BMTR_RTOS_ASRV1.list
+ 
+22:13:41 **** Incremental Build of configuration Debug for project BMTR_RTOS_ASRV1 ****
+make -j12 all 
+arm-none-eabi-size  BMTR_RTOS_ASRV1.elf 
+   text	   data	    bss	    dec	    hex	filename
+  42648	    204	  25220	  68072	  109e8	BMTR_RTOS_ASRV1.elf
+Finished building: default.size.stdout
+ 
+22:14:58 **** Incremental Build of configuration Debug for project BMTR_RTOS_ASRV1 ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F756xx -c -I../FATFS/Target -I../FATFS/App -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FatFs/src -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM7/r0p1 -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "BMTR_RTOS_ASRV1.elf" @"objects.list"   -mcpu=cortex-m7 -T"C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\STM32F756ZGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="BMTR_RTOS_ASRV1.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: BMTR_RTOS_ASRV1.elf
+ 
+arm-none-eabi-size  BMTR_RTOS_ASRV1.elf 
+arm-none-eabi-objdump -h -S BMTR_RTOS_ASRV1.elf  > "BMTR_RTOS_ASRV1.list"
+   text	   data	    bss	    dec	    hex	filename
+  42648	    204	  25220	  68072	  109e8	BMTR_RTOS_ASRV1.elf
+Finished building: default.size.stdout
+ 
+Finished building: BMTR_RTOS_ASRV1.list
+ 
+22:16:13 **** Incremental Build of configuration Debug for project BMTR_RTOS_ASRV1 ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F756xx -c -I../FATFS/Target -I../FATFS/App -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FatFs/src -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM7/r0p1 -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "BMTR_RTOS_ASRV1.elf" @"objects.list"   -mcpu=cortex-m7 -T"C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\STM32F756ZGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="BMTR_RTOS_ASRV1.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: BMTR_RTOS_ASRV1.elf
+ 
+arm-none-eabi-size  BMTR_RTOS_ASRV1.elf 
+arm-none-eabi-objdump -h -S BMTR_RTOS_ASRV1.elf  > "BMTR_RTOS_ASRV1.list"
+   text	   data	    bss	    dec	    hex	filename
+  42648	    204	  25220	  68072	  109e8	BMTR_RTOS_ASRV1.elf
+Finished building: default.size.stdout
+ 
+Finished building: BMTR_RTOS_ASRV1.list
+ 
+22:17:49 **** Incremental Build of configuration Debug for project BMTR_RTOS_ASRV1 ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F756xx -c -I../FATFS/Target -I../FATFS/App -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FatFs/src -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM7/r0p1 -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "BMTR_RTOS_ASRV1.elf" @"objects.list"   -mcpu=cortex-m7 -T"C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\STM32F756ZGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="BMTR_RTOS_ASRV1.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: BMTR_RTOS_ASRV1.elf
+ 
+arm-none-eabi-size  BMTR_RTOS_ASRV1.elf 
+arm-none-eabi-objdump -h -S BMTR_RTOS_ASRV1.elf  > "BMTR_RTOS_ASRV1.list"
+   text	   data	    bss	    dec	    hex	filename
+  42648	    204	  25220	  68072	  109e8	BMTR_RTOS_ASRV1.elf
+Finished building: default.size.stdout
+ 
+Finished building: BMTR_RTOS_ASRV1.list
+ 
+22:21:48 **** Incremental Build of configuration Debug for project BMTR_RTOS_ASRV1 ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F756xx -c -I../FATFS/Target -I../FATFS/App -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FatFs/src -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM7/r0p1 -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "BMTR_RTOS_ASRV1.elf" @"objects.list"   -mcpu=cortex-m7 -T"C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\STM32F756ZGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="BMTR_RTOS_ASRV1.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: BMTR_RTOS_ASRV1.elf
+ 
+arm-none-eabi-size  BMTR_RTOS_ASRV1.elf 
+arm-none-eabi-objdump -h -S BMTR_RTOS_ASRV1.elf  > "BMTR_RTOS_ASRV1.list"
+   text	   data	    bss	    dec	    hex	filename
+  42648	    204	  25220	  68072	  109e8	BMTR_RTOS_ASRV1.elf
+Finished building: default.size.stdout
+ 
+Finished building: BMTR_RTOS_ASRV1.list
+ 
+22:23:07 **** Incremental Build of configuration Debug for project BMTR_RTOS_ASRV1 ****
+make -j12 all 
+arm-none-eabi-size  BMTR_RTOS_ASRV1.elf 
+   text	   data	    bss	    dec	    hex	filename
+  42648	    204	  25220	  68072	  109e8	BMTR_RTOS_ASRV1.elf
+Finished building: default.size.stdout
+ 
+22:24:11 **** Incremental Build of configuration Debug for project BMTR_RTOS_ASRV1 ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F756xx -c -I../FATFS/Target -I../FATFS/App -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FatFs/src -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM7/r0p1 -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "BMTR_RTOS_ASRV1.elf" @"objects.list"   -mcpu=cortex-m7 -T"C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\STM32F756ZGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="BMTR_RTOS_ASRV1.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: BMTR_RTOS_ASRV1.elf
+ 
+arm-none-eabi-size  BMTR_RTOS_ASRV1.elf 
+arm-none-eabi-objdump -h -S BMTR_RTOS_ASRV1.elf  > "BMTR_RTOS_ASRV1.list"
+   text	   data	    bss	    dec	    hex	filename
+  42648	    204	  25220	  68072	  109e8	BMTR_RTOS_ASRV1.elf
+Finished building: default.size.stdout
+ 
+Finished building: BMTR_RTOS_ASRV1.list
+ 
+22:28:00 **** Incremental Build of configuration Debug for project BMTR_RTOS_ASRV1 ****
+make -j12 all 
+arm-none-eabi-size  BMTR_RTOS_ASRV1.elf 
+   text	   data	    bss	    dec	    hex	filename
+  42648	    204	  25220	  68072	  109e8	BMTR_RTOS_ASRV1.elf
+Finished building: default.size.stdout
+ 
+22:46:23 **** Incremental Build of configuration Debug for project BMTR_RTOS_ASRV1 ****
+make -j12 all 
+arm-none-eabi-size  BMTR_RTOS_ASRV1.elf 
+   text	   data	    bss	    dec	    hex	filename
+  42648	    204	  25220	  68072	  109e8	BMTR_RTOS_ASRV1.elf
+Finished building: default.size.stdout
+ 
+22:49:22 **** Incremental Build of configuration Debug for project BMTR_RTOS_ASRV1 ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F756xx -c -I../FATFS/Target -I../FATFS/App -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FatFs/src -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM7/r0p1 -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "BMTR_RTOS_ASRV1.elf" @"objects.list"   -mcpu=cortex-m7 -T"C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\STM32F756ZGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="BMTR_RTOS_ASRV1.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: BMTR_RTOS_ASRV1.elf
+ 
+arm-none-eabi-size  BMTR_RTOS_ASRV1.elf 
+arm-none-eabi-objdump -h -S BMTR_RTOS_ASRV1.elf  > "BMTR_RTOS_ASRV1.list"
+   text	   data	    bss	    dec	    hex	filename
+  42648	    204	  25220	  68072	  109e8	BMTR_RTOS_ASRV1.elf
+Finished building: default.size.stdout
+ 
+Finished building: BMTR_RTOS_ASRV1.list
+ 
+22:50:27 **** Incremental Build of configuration Debug for project BMTR_RTOS_ASRV1 ****
+make -j12 all 
+arm-none-eabi-size  BMTR_RTOS_ASRV1.elf 
+   text	   data	    bss	    dec	    hex	filename
+  42648	    204	  25220	  68072	  109e8	BMTR_RTOS_ASRV1.elf
+Finished building: default.size.stdout
  

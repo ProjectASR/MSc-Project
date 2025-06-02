@@ -153,9 +153,9 @@ float gear_ratio = 26.0f;                   // Gear ratio
 float commanded_current = 0.0f;             // Icmd1: Commanded current (A)
 float torque_constant_motor = 0.0705f;      // Ktn1: Motor torque constant (Nm/A)
 float motor_inertia = 3069.1e-7f*26*26;           // Jn1: Motor inertia (kg·m²)
-float torque_constant_load = 0.0705f;       // Kt1: Load-side torque constant (Nm/A)
-float disturbance_gain = 0.1f;             // Gdis1: DOB gain (~20Hz cutoff)
-float reaction_gain = 0.1f;                // Grtob1: RTOB gain (~15Hz cutoff)
+float torque_constant_load = 0.0705f*26;       // Kt1: Load-side torque constant (Nm/A)
+float disturbance_gain = 30.0f;             // Gdis1: DOB gain (~20Hz cutoff)
+float reaction_gain = 30.0f;                // Grtob1: RTOB gain (~15Hz cutoff)
 float internal_friction = 0.0129f;          // Fint: Internal friction torque (Nm)
 float viscous_friction = 0.0003f;           // Ffric: Viscous friction torque (Nm)
 float pulses_per_revolution = 512.0f;       // PPR: Encoder pulses per revolution
@@ -198,11 +198,11 @@ float torque_error_integral = 0.0f;
 float motor_velocity = 0.0f;                // Set from encoder/sensor
 // ────────────── ⚙️ Motor 2 Physical and Control Parameters ──────────────
 float motor02_commanded_current = 0.0f;             // Commanded current (A)
-float motor02_torque_constant = 0.0705f;            // Motor torque constant (Nm/A)
+float motor02_torque_constant = 0.0705f*26;            // Motor torque constant (Nm/A)
 float motor02_inertia = 3069.1e-7f*26*26;                 // Motor inertia (kg·m²)
 float motor02_torque_constant_load = 0.0705f;       // Load-side torque constant (Nm/A)
-float motor02_disturbance_gain = 0.1f;             // DOB gain (~20Hz cutoff)
-float motor02_reaction_gain = 0.1f;                 // RTOB gain (~15Hz cutoff)
+float motor02_disturbance_gain = 30.0f;             // DOB gain (~20Hz cutoff)
+float motor02_reaction_gain = 30.0f;                 // RTOB gain (~15Hz cutoff)
 float motor02_internal_friction = 0.0129f;          // Internal friction torque (Nm)
 float motor02_viscous_friction = 0.0003f;           // Viscous friction torque (Nm)
 float motor02_pulses_per_revolution = 512.0f;       // Encoder pulses per revolution
@@ -247,7 +247,7 @@ float motor02_motor_velocity = 0.0f;                  // From encoder/sensor
 float Set_Accelaration1 = 500;  // Desired acceleration
 float Set_Torque1 = 0;  // Desired acceleration
 float dt_s = 1000 * 1e-6f;
-float ks=0.2f;
+float ks=10.0f;
 // ────────────── HAL Status ──────────────
 HAL_StatusTypeDef status;
 uint16_t OutputVref = 5000;         // DAC output voltage reference value
@@ -913,7 +913,7 @@ void StartDefaultTask(void const * argument)
 	  prev_ticks1 = curr_ticks1;
 
 	  // Compute delta angle and accumulate
-	  float delta_theta1 = ((float)delta_ticks1) * 2.0f * M_PI / CPR;
+	  float delta_theta1 = -1*((float)delta_ticks1) * 2.0f * M_PI / CPR;
 	  theta1 += delta_theta1;
 
 	  // Velocity and acceleration
