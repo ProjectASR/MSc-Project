@@ -154,8 +154,8 @@ float commanded_current = 0.0f;             // Icmd1: Commanded current (A)
 float torque_constant_motor = 0.0705f;      // Ktn1: Motor torque constant (Nm/A)
 float motor_inertia = 3069.1e-7f*26*26;           // Jn1: Motor inertia (kg·m²)
 float torque_constant_load = 0.0705f;       // Kt1: Load-side torque constant (Nm/A)
-float disturbance_gain = 0.1f;             // Gdis1: DOB gain (~20Hz cutoff)
-float reaction_gain = 0.1f;                // Grtob1: RTOB gain (~15Hz cutoff)
+float disturbance_gain = 5.0f;             // Gdis1: DOB gain (~20Hz cutoff)
+float reaction_gain = 5.0f;                // Grtob1: RTOB gain (~15Hz cutoff)
 float internal_friction = 0.0129f;          // Fint: Internal friction torque (Nm)
 float viscous_friction = 0.0003f;           // Ffric: Viscous friction torque (Nm)
 float pulses_per_revolution = 512.0f;       // PPR: Encoder pulses per revolution
@@ -407,7 +407,8 @@ int main(void)
   /* USER CODE END 1 */
 
   /* MPU Configuration--------------------------------------------------------*/
-  MPU_Config();
+
+	MPU_Config();
 
   /* MCU Configuration--------------------------------------------------------*/
 
@@ -603,7 +604,7 @@ static void MX_SPI4_Init(void)
   hspi4.Init.CLKPolarity = SPI_POLARITY_LOW;
   hspi4.Init.CLKPhase = SPI_PHASE_1EDGE;
   hspi4.Init.NSS = SPI_NSS_SOFT;
-  hspi4.Init.BaudRatePrescaler = SPI_BAUDRATEPRESCALER_256;
+  hspi4.Init.BaudRatePrescaler = SPI_BAUDRATEPRESCALER_64;
   hspi4.Init.FirstBit = SPI_FIRSTBIT_MSB;
   hspi4.Init.TIMode = SPI_TIMODE_DISABLE;
   hspi4.Init.CRCCalculation = SPI_CRCCALCULATION_DISABLE;
@@ -1081,41 +1082,40 @@ void StartTask02(void const * argument)
     }
 	}
 		else {
-			uint8_t txBuf[25];
-			    uint8_t rxBuf[25];
 
-			    // Start marker
-			    txBuf[0] = 0xAA;
+			RecordTaskCount++;
+		    uint8_t txBuf[25];  // 6 floats = 24 bytes + 1 byte for CRC
+		    uint8_t rxBuf[25];
 
-			    // Pack floats after start marker (start from txBuf[1])
-			    memcpy(&txBuf[1],  &reaction_torque_input, sizeof(float));
-			    memcpy(&txBuf[5],  &desired_torque,        sizeof(float));
-			    memcpy(&txBuf[9],  &velocity1,             sizeof(float));
-			    memcpy(&txBuf[13], &velocity2,             sizeof(float));
-			    memcpy(&txBuf[17], &theta1,                sizeof(float));
-			    memcpy(&txBuf[21], &theta2,                sizeof(float));
+		    memcpy(&txBuf[0],  &reaction_torque_input,     sizeof(float));
+		    memcpy(&txBuf[4],  &desired_torque,     sizeof(float));
+		    memcpy(&txBuf[8],  &velocity1, sizeof(float));
+		    memcpy(&txBuf[12], &velocity2, sizeof(float));
+		    memcpy(&txBuf[16], &theta1,    sizeof(float));
+		    memcpy(&txBuf[20], &theta2,    sizeof(float));
 
-			    // No CRC now
+		    // CRC-8 calculation (same polynomial: 0x07)
+		    uint8_t crc = 0x00;
+		    for (int i = 0; i < 24; i++) {
+		        crc ^= txBuf[i];
+		        for (uint8_t j = 0; j < 8; j++) {
+		            crc = (crc & 0x80) ? (crc << 1) ^ 0x07 : (crc << 1);
+		        }
+		    }
 
-			    // CS LOW
-			    HAL_GPIO_WritePin(GPIOB, GPIO_PIN_0, GPIO_PIN_RESET);
-			    HAL_Delay(1); // small delay before transfer
+		    txBuf[24] = crc;  // Add CRC to the last byte
 
-			    // Transmit full 25 bytes (blocking)
-			    HAL_SPI_TransmitReceive(&hspi4, txBuf, rxBuf, sizeof(txBuf), HAL_MAX_DELAY);
+		    // SPI Transaction
+		    HAL_GPIO_WritePin(GPIOB, GPIO_PIN_0, GPIO_PIN_RESET);  // CS LOW
+		    HAL_SPI_TransmitReceive(&hspi4, txBuf, rxBuf, sizeof(txBuf), HAL_MAX_DELAY);
+		    HAL_GPIO_WritePin(GPIOB, GPIO_PIN_0, GPIO_PIN_SET);    // CS HIGH
 
-			    HAL_Delay(1); // small delay after transfer
-
-			    // CS HIGH
-			    HAL_GPIO_WritePin(GPIOB, GPIO_PIN_0, GPIO_PIN_SET);
-
-			    HAL_Delay(5); // extra delay between packets
-			}
+		}
 
     osDelay(5);
   }
-}
   /* USER CODE END StartTask02 */
+}
 
  /* MPU Configuration */
 

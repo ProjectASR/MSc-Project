@@ -11,79 +11,70 @@ void setup() {
   pinMode(PIN_MISO, OUTPUT);
   pinMode(PIN_CS, INPUT_PULLUP);
 
-  digitalWrite(PIN_MISO, LOW);  // Ensure line is LOW by default
+  digitalWrite(PIN_MISO, LOW);  // Default LOW
+
   Serial.begin(115200);
 }
 
-// Robust SPI byte reader with timeout (prevents lockup)
-uint8_t ReadByteSPI(unsigned long timeout_us = 2000) {
+// Robust SPI bit reader
+uint8_t ReadByteSPI() {
   uint8_t receivedByte = 0;
-  uint8_t toSend = 0xA5;
+  uint8_t toSend = 0xA5;  // Dummy data to send back
 
   for (int i = 0; i < 8; i++) {
-    unsigned long startTime = micros();
-    while (digitalRead(PIN_SCK) == LOW) {
-      if (micros() - startTime > timeout_us) return 0xFF; // timeout
-    }
+    // Wait for clock rising edge
+    while (digitalRead(PIN_SCK) == LOW);
+    delayMicroseconds(1); // Ensure MOSI line is stable
 
-    delayMicroseconds(1);  // MOSI stabilizing time
     int bit = digitalRead(PIN_MOSI);
     receivedByte = (receivedByte << 1) | (bit & 0x01);
 
+    // Drive MISO line for next bit
     digitalWrite(PIN_MISO, (toSend & 0x80) ? HIGH : LOW);
     toSend <<= 1;
 
-    startTime = micros();
-    while (digitalRead(PIN_SCK) == HIGH) {
-      if (micros() - startTime > timeout_us) return 0xFF;
-    }
+    // Wait for clock falling edge
+    while (digitalRead(PIN_SCK) == HIGH);
   }
 
   return receivedByte;
 }
 
-bool WaitForCSLow(unsigned long timeout_ms = 100) {
-  unsigned long start = millis();
-  while (digitalRead(PIN_CS) == HIGH) {
-    if (millis() - start > timeout_ms) return false;
-  }
-  return true;
-}
-
-bool WaitForCSHigh(unsigned long timeout_ms = 100) {
-  unsigned long start = millis();
-  while (digitalRead(PIN_CS) == LOW) {
-    if (millis() - start > timeout_ms) return false;
-  }
-  return true;
-}
-
 void loop() {
-  if (!WaitForCSLow()) return;
+  // Wait for chip select LOW to begin transaction
+  while (digitalRead(PIN_CS) == HIGH);
 
-  // Wait for 0xAA start byte
+  // Look for start byte 0xAA to sync
   uint8_t startByte = 0;
   do {
     startByte = ReadByteSPI();
   } while (startByte != 0xAA && digitalRead(PIN_CS) == LOW);
 
+  // If CS goes high prematurely, abort
   if (startByte != 0xAA || digitalRead(PIN_CS) == HIGH) return;
 
-  // Read remaining 24 bytes
+  // Receive 24 bytes (6 floats)
   for (int i = 0; i < 24; i++) {
-    uint8_t byte = ReadByteSPI();
-    if (byte == 0xFF && digitalRead(PIN_CS) == LOW) {
-      //Serial.println("Timeout on byte read.");
-      return;
-    }
-    recvBuf[i] = byte;
+    recvBuf[i] = ReadByteSPI();
   }
 
-  // Wait for CS to go HIGH
-  if (!WaitForCSHigh()) return;
+  // Optional checksum read and validation
+  /*
+  uint8_t checksumByte = ReadByteSPI();
+  uint8_t calcChecksum = 0;
+  for (int i = 0; i < 24; i++) calcChecksum ^= recvBuf[i];
+  if (checksumByte != calcChecksum) {
+    Serial.println("Checksum error.");
+    return; // discard packet
+  }
+  */
+
+  // Wait until transaction ends
+  while (digitalRead(PIN_CS) == LOW);
 
   // Extract float values
   float reaction_torque_input, desired_torque, velocity1, velocity2, theta1, theta2;
+
   memcpy(&reaction_torque_input, &recvBuf[0],  sizeof(float));
   memcpy(&desired_torque,        &recvBuf[4],  sizeof(float));
   memcpy(&velocity1,             &recvBuf[8],  sizeof(float));
@@ -91,7 +82,7 @@ void loop() {
   memcpy(&theta1,                &recvBuf[16], sizeof(float));
   memcpy(&theta2,                &recvBuf[20], sizeof(float));
 
-  // Debug output
+  // Print values
   Serial.print("reaction_torque_input: "); Serial.print(reaction_torque_input, 4); Serial.print("\t");
   Serial.print("desired_torque: ");        Serial.print(desired_torque, 4);        Serial.print("\t");
   Serial.print("velocity1: ");             Serial.print(velocity1, 4);             Serial.print("\t");
@@ -99,6 +90,8 @@ void loop() {
   Serial.print("theta1: ");                Serial.print(theta1, 4);                Serial.print("\t");
   Serial.print("theta2: ");                Serial.println(theta2, 4);
 
+  // Clear buffer for safety
   memset(recvBuf, 0, sizeof(recvBuf));
-  delay(5);
+
+  delay(5); // Let SPI master finish cleanup
 }

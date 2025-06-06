@@ -1,10 +1,10 @@
-16:31:46 **** Incremental Build of configuration Debug for project BMTR_RTOS_ASRV1 ****
+18:59:46 **** Incremental Build of configuration Debug for project BMTR_RTOS_ASRV1 ****
 make -j12 all 
 arm-none-eabi-size  BMTR_RTOS_ASRV1.elf 
    text	   data	    bss	    dec	    hex	filename
-  42648	    204	  25220	  68072	  109e8	BMTR_RTOS_ASRV1.elf
+  42632	    204	  25212	  68048	  109d0	BMTR_RTOS_ASRV1.elf
 Finished building: default.size.stdout
  
 
-16:31:47 Build Finished. 0 errors, 0 warnings. (took 300ms)
+18:59:47 Build Finished. 0 errors, 0 warnings. (took 422ms)
 

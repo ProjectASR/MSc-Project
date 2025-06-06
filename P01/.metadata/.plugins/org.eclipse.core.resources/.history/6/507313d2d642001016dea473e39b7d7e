@@ -154,8 +154,8 @@ float commanded_current = 0.0f;             // Icmd1: Commanded current (A)
 float torque_constant_motor = 0.0705f;      // Ktn1: Motor torque constant (Nm/A)
 float motor_inertia = 3069.1e-7f*26*26;           // Jn1: Motor inertia (kg·m²)
 float torque_constant_load = 0.0705f;       // Kt1: Load-side torque constant (Nm/A)
-float disturbance_gain = 0.1f;             // Gdis1: DOB gain (~20Hz cutoff)
-float reaction_gain = 0.1f;                // Grtob1: RTOB gain (~15Hz cutoff)
+float disturbance_gain = 5.0f;             // Gdis1: DOB gain (~20Hz cutoff)
+float reaction_gain = 5.0f;                // Grtob1: RTOB gain (~15Hz cutoff)
 float internal_friction = 0.0129f;          // Fint: Internal friction torque (Nm)
 float viscous_friction = 0.0003f;           // Ffric: Viscous friction torque (Nm)
 float pulses_per_revolution = 512.0f;       // PPR: Encoder pulses per revolution
@@ -201,8 +201,8 @@ float motor02_commanded_current = 0.0f;             // Commanded current (A)
 float motor02_torque_constant = 0.0705f;            // Motor torque constant (Nm/A)
 float motor02_inertia = 3069.1e-7f*26*26;                 // Motor inertia (kg·m²)
 float motor02_torque_constant_load = 0.0705f;       // Load-side torque constant (Nm/A)
-float motor02_disturbance_gain = 0.1f;             // DOB gain (~20Hz cutoff)
-float motor02_reaction_gain = 0.1f;                 // RTOB gain (~15Hz cutoff)
+float motor02_disturbance_gain = 5.0f;             // DOB gain (~20Hz cutoff)
+float motor02_reaction_gain = 5.0f;                 // RTOB gain (~15Hz cutoff)
 float motor02_internal_friction = 0.0129f;          // Internal friction torque (Nm)
 float motor02_viscous_friction = 0.0003f;           // Viscous friction torque (Nm)
 float motor02_pulses_per_revolution = 512.0f;       // Encoder pulses per revolution
@@ -1081,41 +1081,39 @@ void StartTask02(void const * argument)
     }
 	}
 		else {
-			uint8_t txBuf[25];
-			    uint8_t rxBuf[25];
+			RecordTaskCount++;
+			uint8_t txBuf[24];
+			uint8_t rxBuf[24];
 
-			    // Start marker
-			    txBuf[0] = 0xAA;
+			// Example float values
+			reaction_torque_input = 1.1;
+			desired_torque        = 2.2;
+			velocity1             = 3.3;
+			velocity2             = 4.4;
+			theta1                = 5.5;
+			theta2                = 6.6;
 
-			    // Pack floats after start marker (start from txBuf[1])
-			    memcpy(&txBuf[1],  &reaction_torque_input, sizeof(float));
-			    memcpy(&txBuf[5],  &desired_torque,        sizeof(float));
-			    memcpy(&txBuf[9],  &velocity1,             sizeof(float));
-			    memcpy(&txBuf[13], &velocity2,             sizeof(float));
-			    memcpy(&txBuf[17], &theta1,                sizeof(float));
-			    memcpy(&txBuf[21], &theta2,                sizeof(float));
+			void sendSPI() {
+			    // Pack float values into txBuf
+			    memcpy(&txBuf[0],  &reaction_torque_input, sizeof(float));
+			    memcpy(&txBuf[4],  &desired_torque,        sizeof(float));
+			    memcpy(&txBuf[8],  &velocity1,             sizeof(float));
+			    memcpy(&txBuf[12], &velocity2,             sizeof(float));
+			    memcpy(&txBuf[16], &theta1,                sizeof(float));
+			    memcpy(&txBuf[20], &theta2,                sizeof(float));
 
-			    // No CRC now
-
-			    // CS LOW
+			    // CS LOW -> Start SPI
 			    HAL_GPIO_WritePin(GPIOB, GPIO_PIN_0, GPIO_PIN_RESET);
-			    HAL_Delay(1); // small delay before transfer
-
-			    // Transmit full 25 bytes (blocking)
 			    HAL_SPI_TransmitReceive(&hspi4, txBuf, rxBuf, sizeof(txBuf), HAL_MAX_DELAY);
-
-			    HAL_Delay(1); // small delay after transfer
-
-			    // CS HIGH
-			    HAL_GPIO_WritePin(GPIOB, GPIO_PIN_0, GPIO_PIN_SET);
-
-			    HAL_Delay(5); // extra delay between packets
+			    HAL_GPIO_WritePin(GPIOB, GPIO_PIN_0, GPIO_PIN_SET);  // CS HIGH
 			}
+
+		}
 
     osDelay(5);
   }
-}
   /* USER CODE END StartTask02 */
+}
 
  /* MPU Configuration */
 

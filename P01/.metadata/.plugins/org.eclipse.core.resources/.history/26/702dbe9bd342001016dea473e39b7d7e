@@ -154,8 +154,8 @@ float commanded_current = 0.0f;             // Icmd1: Commanded current (A)
 float torque_constant_motor = 0.0705f;      // Ktn1: Motor torque constant (Nm/A)
 float motor_inertia = 3069.1e-7f*26*26;           // Jn1: Motor inertia (kg·m²)
 float torque_constant_load = 0.0705f;       // Kt1: Load-side torque constant (Nm/A)
-float disturbance_gain = 0.1f;             // Gdis1: DOB gain (~20Hz cutoff)
-float reaction_gain = 0.1f;                // Grtob1: RTOB gain (~15Hz cutoff)
+float disturbance_gain = 5.0f;             // Gdis1: DOB gain (~20Hz cutoff)
+float reaction_gain = 5.0f;                // Grtob1: RTOB gain (~15Hz cutoff)
 float internal_friction = 0.0129f;          // Fint: Internal friction torque (Nm)
 float viscous_friction = 0.0003f;           // Ffric: Viscous friction torque (Nm)
 float pulses_per_revolution = 512.0f;       // PPR: Encoder pulses per revolution
@@ -201,8 +201,8 @@ float motor02_commanded_current = 0.0f;             // Commanded current (A)
 float motor02_torque_constant = 0.0705f;            // Motor torque constant (Nm/A)
 float motor02_inertia = 3069.1e-7f*26*26;                 // Motor inertia (kg·m²)
 float motor02_torque_constant_load = 0.0705f;       // Load-side torque constant (Nm/A)
-float motor02_disturbance_gain = 0.1f;             // DOB gain (~20Hz cutoff)
-float motor02_reaction_gain = 0.1f;                 // RTOB gain (~15Hz cutoff)
+float motor02_disturbance_gain = 5.0f;             // DOB gain (~20Hz cutoff)
+float motor02_reaction_gain = 5.0f;                 // RTOB gain (~15Hz cutoff)
 float motor02_internal_friction = 0.0129f;          // Internal friction torque (Nm)
 float motor02_viscous_friction = 0.0003f;           // Viscous friction torque (Nm)
 float motor02_pulses_per_revolution = 512.0f;       // Encoder pulses per revolution
@@ -1081,41 +1081,73 @@ void StartTask02(void const * argument)
     }
 	}
 		else {
+
+			RecordTaskCount++;
+
+			// Test data (replace with real values)
+			float reaction_torque_input = 1.23;
+			float desired_torque        = 2.34;
+			float velocity1             = 3.45;
+			float velocity2             = 4.56;
+			float theta1                = 5.67;
+			float theta2                = 6.78;
+
 			uint8_t txBuf[25];
-			    uint8_t rxBuf[25];
+			uint8_t rxBuf[25];
 
-			    // Start marker
-			    txBuf[0] = 0xAA;
+			// Pack floats
+			memcpy(&txBuf[0],  &reaction_torque_input, sizeof(float));
+			memcpy(&txBuf[4],  &desired_torque,        sizeof(float));
+			memcpy(&txBuf[8],  &velocity1,             sizeof(float));
+			memcpy(&txBuf[12], &velocity2,             sizeof(float));
+			memcpy(&txBuf[16], &theta1,                sizeof(float));
+			memcpy(&txBuf[20], &theta2,                sizeof(float));
 
-			    // Pack floats after start marker (start from txBuf[1])
-			    memcpy(&txBuf[1],  &reaction_torque_input, sizeof(float));
-			    memcpy(&txBuf[5],  &desired_torque,        sizeof(float));
-			    memcpy(&txBuf[9],  &velocity1,             sizeof(float));
-			    memcpy(&txBuf[13], &velocity2,             sizeof(float));
-			    memcpy(&txBuf[17], &theta1,                sizeof(float));
-			    memcpy(&txBuf[21], &theta2,                sizeof(float));
-
-			    // No CRC now
-
-			    // CS LOW
-			    HAL_GPIO_WritePin(GPIOB, GPIO_PIN_0, GPIO_PIN_RESET);
-			    HAL_Delay(1); // small delay before transfer
-
-			    // Transmit full 25 bytes (blocking)
-			    HAL_SPI_TransmitReceive(&hspi4, txBuf, rxBuf, sizeof(txBuf), HAL_MAX_DELAY);
-
-			    HAL_Delay(1); // small delay after transfer
-
-			    // CS HIGH
-			    HAL_GPIO_WritePin(GPIOB, GPIO_PIN_0, GPIO_PIN_SET);
-
-			    HAL_Delay(5); // extra delay between packets
+			// Compute CRC-8
+			uint8_t crc = 0x00;
+			for (int i = 0; i < 24; i++) {
+			    crc ^= txBuf[i];
+			    for (uint8_t j = 0; j < 8; j++) {
+			        crc = (crc & 0x80) ? (crc << 1) ^ 0x07 : (crc << 1);
+			    }
 			}
+			txBuf[24] = crc;
+
+			// Debug: Print packed data and CRC
+			printf("TX CRC: 0x%02X\n", crc);
+			for (int i = 0; i < 25; i++) {
+			    printf("0x%02X ", txBuf[i]);
+			}
+			printf("\n");
+
+			// Small delay before toggling CS
+			HAL_Delay(1);
+
+			// SPI Transaction
+			HAL_GPIO_WritePin(GPIOB, GPIO_PIN_0, GPIO_PIN_RESET);  // CS LOW
+			HAL_Delay(1);  // Allow slave to detect CS
+
+			HAL_StatusTypeDef status = HAL_SPI_TransmitReceive(&hspi4, txBuf, rxBuf, sizeof(txBuf), HAL_MAX_DELAY);
+
+			HAL_GPIO_WritePin(GPIOB, GPIO_PIN_0, GPIO_PIN_SET);    // CS HIGH
+
+			// Debug: Print RX buffer
+			if (status == HAL_OK) {
+			    printf("RX OK: ");
+			    for (int i = 0; i < 25; i++) {
+			        printf("0x%02X ", rxBuf[i]);
+			    }
+			    printf("\n");
+			} else {
+			    printf("SPI Error: %d\n", status);
+			}
+
+		}
 
     osDelay(5);
   }
-}
   /* USER CODE END StartTask02 */
+}
 
  /* MPU Configuration */
 

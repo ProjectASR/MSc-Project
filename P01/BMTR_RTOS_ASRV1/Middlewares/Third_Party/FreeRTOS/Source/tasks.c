@@ -3596,6 +3596,7 @@ static void prvCheckTasksWaitingTermination( void )
 				--uxDeletedTasksWaitingCleanUp;
 			}
 			taskEXIT_CRITICAL();
+
 			prvDeleteTCB( pxTCB );
 		}
 	}
