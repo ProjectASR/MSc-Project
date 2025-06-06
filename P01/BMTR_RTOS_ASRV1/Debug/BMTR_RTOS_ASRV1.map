@@ -6327,11 +6327,11 @@ LOAD C:/ST/STM32CubeIDE_1.17.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.ext
  .text.MX_GPIO_Init
                 0x0800197c      0x15c ./Core/Src/main.o
  .text.StartDefaultTask
-                0x08001ad8      0x5bc ./Core/Src/main.o
+                0x08001ad8      0x5b8 ./Core/Src/main.o
                 0x08001ad8                StartDefaultTask
  .text.StartTask02
-                0x08002094      0x1f0 ./Core/Src/main.o
-                0x08002094                StartTask02
+                0x08002090      0x1f4 ./Core/Src/main.o
+                0x08002090                StartTask02
  .text.MPU_Config
                 0x08002284       0x58 ./Core/Src/main.o
  .text.HAL_TIM_PeriodElapsedCallback
@@ -7906,35 +7906,35 @@ LOAD C:/ST/STM32CubeIDE_1.17.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.ext
  .debug_macro   0x00005db1      0x184 ./Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM7/r0p1/port.o
  .debug_macro   0x00005f35      0x1ae ./Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.o
 
-.debug_line     0x00000000    0x1c2ff
+.debug_line     0x00000000    0x1c2fc
  .debug_line    0x00000000      0x8a3 ./Core/Src/freertos.o
- .debug_line    0x000008a3     0x1326 ./Core/Src/main.o
- .debug_line    0x00001bc9      0x90f ./Core/Src/stm32f7xx_hal_msp.o
- .debug_line    0x000024d8      0x81e ./Core/Src/stm32f7xx_hal_timebase_tim.o
- .debug_line    0x00002cf6      0x841 ./Core/Src/stm32f7xx_it.o
- .debug_line    0x00003537      0x588 ./Core/Src/sysmem.o
- .debug_line    0x00003abf      0x823 ./Core/Src/system_stm32f7xx.o
- .debug_line    0x000042e2       0x7a ./Core/Startup/startup_stm32f756zgtx.o
- .debug_line    0x0000435c      0xac7 ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal.o
- .debug_line    0x00004e23      0xd47 ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_cortex.o
- .debug_line    0x00005b6a      0xba1 ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_dac.o
- .debug_line    0x0000670b      0xc21 ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_gpio.o
- .debug_line    0x0000732c      0xfba ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_rcc.o
- .debug_line    0x000082e6     0x212b ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_spi.o
- .debug_line    0x0000a411     0x3d6a ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_tim.o
- .debug_line    0x0000e17b     0x1af5 ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_tim_ex.o
- .debug_line    0x0000fc70      0x9c0 ./FATFS/App/fatfs.o
- .debug_line    0x00010630      0xb4a ./FATFS/Target/user_diskio.o
- .debug_line    0x0001117a      0xa2b ./Middlewares/Third_Party/FatFs/src/diskio.o
- .debug_line    0x00011ba5     0x3959 ./Middlewares/Third_Party/FatFs/src/ff.o
- .debug_line    0x000154fe      0xa49 ./Middlewares/Third_Party/FatFs/src/ff_gen_drv.o
- .debug_line    0x00015f47      0xa0a ./Middlewares/Third_Party/FatFs/src/option/syscall.o
- .debug_line    0x00016951     0x1304 ./Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.o
- .debug_line    0x00017c55      0x790 ./Middlewares/Third_Party/FreeRTOS/Source/list.o
- .debug_line    0x000183e5     0x1521 ./Middlewares/Third_Party/FreeRTOS/Source/queue.o
- .debug_line    0x00019906     0x18ab ./Middlewares/Third_Party/FreeRTOS/Source/tasks.o
- .debug_line    0x0001b1b1      0x803 ./Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM7/r0p1/port.o
- .debug_line    0x0001b9b4      0x94b ./Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.o
+ .debug_line    0x000008a3     0x1323 ./Core/Src/main.o
+ .debug_line    0x00001bc6      0x90f ./Core/Src/stm32f7xx_hal_msp.o
+ .debug_line    0x000024d5      0x81e ./Core/Src/stm32f7xx_hal_timebase_tim.o
+ .debug_line    0x00002cf3      0x841 ./Core/Src/stm32f7xx_it.o
+ .debug_line    0x00003534      0x588 ./Core/Src/sysmem.o
+ .debug_line    0x00003abc      0x823 ./Core/Src/system_stm32f7xx.o
+ .debug_line    0x000042df       0x7a ./Core/Startup/startup_stm32f756zgtx.o
+ .debug_line    0x00004359      0xac7 ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal.o
+ .debug_line    0x00004e20      0xd47 ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_cortex.o
+ .debug_line    0x00005b67      0xba1 ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_dac.o
+ .debug_line    0x00006708      0xc21 ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_gpio.o
+ .debug_line    0x00007329      0xfba ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_rcc.o
+ .debug_line    0x000082e3     0x212b ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_spi.o
+ .debug_line    0x0000a40e     0x3d6a ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_tim.o
+ .debug_line    0x0000e178     0x1af5 ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_tim_ex.o
+ .debug_line    0x0000fc6d      0x9c0 ./FATFS/App/fatfs.o
+ .debug_line    0x0001062d      0xb4a ./FATFS/Target/user_diskio.o
+ .debug_line    0x00011177      0xa2b ./Middlewares/Third_Party/FatFs/src/diskio.o
+ .debug_line    0x00011ba2     0x3959 ./Middlewares/Third_Party/FatFs/src/ff.o
+ .debug_line    0x000154fb      0xa49 ./Middlewares/Third_Party/FatFs/src/ff_gen_drv.o
+ .debug_line    0x00015f44      0xa0a ./Middlewares/Third_Party/FatFs/src/option/syscall.o
+ .debug_line    0x0001694e     0x1304 ./Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.o
+ .debug_line    0x00017c52      0x790 ./Middlewares/Third_Party/FreeRTOS/Source/list.o
+ .debug_line    0x000183e2     0x1521 ./Middlewares/Third_Party/FreeRTOS/Source/queue.o
+ .debug_line    0x00019903     0x18ab ./Middlewares/Third_Party/FreeRTOS/Source/tasks.o
+ .debug_line    0x0001b1ae      0x803 ./Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM7/r0p1/port.o
+ .debug_line    0x0001b9b1      0x94b ./Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.o
 
 .debug_str      0x00000000    0xfc311
  .debug_str     0x00000000    0xfc311 ./Core/Src/freertos.o

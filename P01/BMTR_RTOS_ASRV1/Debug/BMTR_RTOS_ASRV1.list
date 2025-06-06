@@ -37,15 +37,15 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, READONLY, DEBUGGING, OCTETS
  16 .debug_macro  000060e3  00000000  00000000  0002985b  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 17 .debug_line   0001c2ff  00000000  00000000  0002f93e  2**0
+ 17 .debug_line   0001c2fc  00000000  00000000  0002f93e  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 18 .debug_str    000fc311  00000000  00000000  0004bc3d  2**0
+ 18 .debug_str    000fc311  00000000  00000000  0004bc3a  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 19 .comment      00000043  00000000  00000000  00147f4e  2**0
+ 19 .comment      00000043  00000000  00000000  00147f4b  2**0
                   CONTENTS, READONLY
- 20 .debug_frame  000061cc  00000000  00000000  00147f94  2**2
+ 20 .debug_frame  000061cc  00000000  00000000  00147f90  2**2
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 21 .debug_line_str 0000006e  00000000  00000000  0014e160  2**0
+ 21 .debug_line_str 0000006e  00000000  00000000  0014e15c  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
 
 Disassembly of section .text:
@@ -3006,257 +3006,257 @@ void StartDefaultTask(void const * argument)
  8001b5c:	8013      	strh	r3, [r2, #0]
 
 	  // Compute delta angle and accumulate
-	  float delta_theta1 = -1*((float)delta_ticks1) * 2.0f * M_PI / CPR;
+	  float delta_theta1 = ((float)delta_ticks1) * 2.0f * M_PI / CPR;
  8001b5e:	f9b7 301c 	ldrsh.w	r3, [r7, #28]
  8001b62:	ee07 3a90 	vmov	s15, r3
  8001b66:	eef8 7ae7 	vcvt.f32.s32	s15, s15
- 8001b6a:	eef1 7a67 	vneg.f32	s15, s15
- 8001b6e:	ee77 7aa7 	vadd.f32	s15, s15, s15
- 8001b72:	ee17 0a90 	vmov	r0, s15
- 8001b76:	f7fe fd07 	bl	8000588 <__aeabi_f2d>
- 8001b7a:	a393      	add	r3, pc, #588	@ (adr r3, 8001dc8 <StartDefaultTask+0x2f0>)
- 8001b7c:	e9d3 2300 	ldrd	r2, r3, [r3]
- 8001b80:	f7fe fd5a 	bl	8000638 <__aeabi_dmul>
- 8001b84:	4602      	mov	r2, r0
- 8001b86:	460b      	mov	r3, r1
- 8001b88:	4610      	mov	r0, r2
- 8001b8a:	4619      	mov	r1, r3
- 8001b8c:	f04f 0200 	mov.w	r2, #0
- 8001b90:	4b9c      	ldr	r3, [pc, #624]	@ (8001e04 <StartDefaultTask+0x32c>)
- 8001b92:	f7fe fe7b 	bl	800088c <__aeabi_ddiv>
- 8001b96:	4602      	mov	r2, r0
- 8001b98:	460b      	mov	r3, r1
- 8001b9a:	4610      	mov	r0, r2
- 8001b9c:	4619      	mov	r1, r3
- 8001b9e:	f7fe ff5d 	bl	8000a5c <__aeabi_d2f>
- 8001ba2:	4603      	mov	r3, r0
- 8001ba4:	61bb      	str	r3, [r7, #24]
+ 8001b6a:	ee77 7aa7 	vadd.f32	s15, s15, s15
+ 8001b6e:	ee17 0a90 	vmov	r0, s15
+ 8001b72:	f7fe fd09 	bl	8000588 <__aeabi_f2d>
+ 8001b76:	a394      	add	r3, pc, #592	@ (adr r3, 8001dc8 <StartDefaultTask+0x2f0>)
+ 8001b78:	e9d3 2300 	ldrd	r2, r3, [r3]
+ 8001b7c:	f7fe fd5c 	bl	8000638 <__aeabi_dmul>
+ 8001b80:	4602      	mov	r2, r0
+ 8001b82:	460b      	mov	r3, r1
+ 8001b84:	4610      	mov	r0, r2
+ 8001b86:	4619      	mov	r1, r3
+ 8001b88:	f04f 0200 	mov.w	r2, #0
+ 8001b8c:	4b9d      	ldr	r3, [pc, #628]	@ (8001e04 <StartDefaultTask+0x32c>)
+ 8001b8e:	f7fe fe7d 	bl	800088c <__aeabi_ddiv>
+ 8001b92:	4602      	mov	r2, r0
+ 8001b94:	460b      	mov	r3, r1
+ 8001b96:	4610      	mov	r0, r2
+ 8001b98:	4619      	mov	r1, r3
+ 8001b9a:	f7fe ff5f 	bl	8000a5c <__aeabi_d2f>
+ 8001b9e:	4603      	mov	r3, r0
+ 8001ba0:	61bb      	str	r3, [r7, #24]
 	  theta1 += delta_theta1;
- 8001ba6:	4b98      	ldr	r3, [pc, #608]	@ (8001e08 <StartDefaultTask+0x330>)
- 8001ba8:	ed93 7a00 	vldr	s14, [r3]
- 8001bac:	edd7 7a06 	vldr	s15, [r7, #24]
- 8001bb0:	ee77 7a27 	vadd.f32	s15, s14, s15
- 8001bb4:	4b94      	ldr	r3, [pc, #592]	@ (8001e08 <StartDefaultTask+0x330>)
- 8001bb6:	edc3 7a00 	vstr	s15, [r3]
+ 8001ba2:	4b99      	ldr	r3, [pc, #612]	@ (8001e08 <StartDefaultTask+0x330>)
+ 8001ba4:	ed93 7a00 	vldr	s14, [r3]
+ 8001ba8:	edd7 7a06 	vldr	s15, [r7, #24]
+ 8001bac:	ee77 7a27 	vadd.f32	s15, s14, s15
+ 8001bb0:	4b95      	ldr	r3, [pc, #596]	@ (8001e08 <StartDefaultTask+0x330>)
+ 8001bb2:	edc3 7a00 	vstr	s15, [r3]
 
 	  // Velocity and acceleration
 	  velocity1 = (theta1 - theta1_prev) / dt_s;
- 8001bba:	4b93      	ldr	r3, [pc, #588]	@ (8001e08 <StartDefaultTask+0x330>)
- 8001bbc:	ed93 7a00 	vldr	s14, [r3]
- 8001bc0:	4b92      	ldr	r3, [pc, #584]	@ (8001e0c <StartDefaultTask+0x334>)
- 8001bc2:	edd3 7a00 	vldr	s15, [r3]
- 8001bc6:	ee77 6a67 	vsub.f32	s13, s14, s15
- 8001bca:	4b91      	ldr	r3, [pc, #580]	@ (8001e10 <StartDefaultTask+0x338>)
- 8001bcc:	ed93 7a00 	vldr	s14, [r3]
- 8001bd0:	eec6 7a87 	vdiv.f32	s15, s13, s14
- 8001bd4:	4b8f      	ldr	r3, [pc, #572]	@ (8001e14 <StartDefaultTask+0x33c>)
- 8001bd6:	edc3 7a00 	vstr	s15, [r3]
+ 8001bb6:	4b94      	ldr	r3, [pc, #592]	@ (8001e08 <StartDefaultTask+0x330>)
+ 8001bb8:	ed93 7a00 	vldr	s14, [r3]
+ 8001bbc:	4b93      	ldr	r3, [pc, #588]	@ (8001e0c <StartDefaultTask+0x334>)
+ 8001bbe:	edd3 7a00 	vldr	s15, [r3]
+ 8001bc2:	ee77 6a67 	vsub.f32	s13, s14, s15
+ 8001bc6:	4b92      	ldr	r3, [pc, #584]	@ (8001e10 <StartDefaultTask+0x338>)
+ 8001bc8:	ed93 7a00 	vldr	s14, [r3]
+ 8001bcc:	eec6 7a87 	vdiv.f32	s15, s13, s14
+ 8001bd0:	4b90      	ldr	r3, [pc, #576]	@ (8001e14 <StartDefaultTask+0x33c>)
+ 8001bd2:	edc3 7a00 	vstr	s15, [r3]
 	  float raw_acceleration1 = (velocity1 - velocity1_prev) / dt_s;
- 8001bda:	4b8e      	ldr	r3, [pc, #568]	@ (8001e14 <StartDefaultTask+0x33c>)
- 8001bdc:	ed93 7a00 	vldr	s14, [r3]
- 8001be0:	4b8d      	ldr	r3, [pc, #564]	@ (8001e18 <StartDefaultTask+0x340>)
- 8001be2:	edd3 7a00 	vldr	s15, [r3]
- 8001be6:	ee77 6a67 	vsub.f32	s13, s14, s15
- 8001bea:	4b89      	ldr	r3, [pc, #548]	@ (8001e10 <StartDefaultTask+0x338>)
- 8001bec:	ed93 7a00 	vldr	s14, [r3]
- 8001bf0:	eec6 7a87 	vdiv.f32	s15, s13, s14
- 8001bf4:	edc7 7a05 	vstr	s15, [r7, #20]
+ 8001bd6:	4b8f      	ldr	r3, [pc, #572]	@ (8001e14 <StartDefaultTask+0x33c>)
+ 8001bd8:	ed93 7a00 	vldr	s14, [r3]
+ 8001bdc:	4b8e      	ldr	r3, [pc, #568]	@ (8001e18 <StartDefaultTask+0x340>)
+ 8001bde:	edd3 7a00 	vldr	s15, [r3]
+ 8001be2:	ee77 6a67 	vsub.f32	s13, s14, s15
+ 8001be6:	4b8a      	ldr	r3, [pc, #552]	@ (8001e10 <StartDefaultTask+0x338>)
+ 8001be8:	ed93 7a00 	vldr	s14, [r3]
+ 8001bec:	eec6 7a87 	vdiv.f32	s15, s13, s14
+ 8001bf0:	edc7 7a05 	vstr	s15, [r7, #20]
 	  acceleration1 = (1 - 0.1f) * acceleration1 + 0.1f * raw_acceleration1;  // Low-pass filter
- 8001bf8:	4b88      	ldr	r3, [pc, #544]	@ (8001e1c <StartDefaultTask+0x344>)
- 8001bfa:	edd3 7a00 	vldr	s15, [r3]
- 8001bfe:	ed9f 7a88 	vldr	s14, [pc, #544]	@ 8001e20 <StartDefaultTask+0x348>
- 8001c02:	ee27 7a87 	vmul.f32	s14, s15, s14
- 8001c06:	edd7 7a05 	vldr	s15, [r7, #20]
- 8001c0a:	eddf 6a86 	vldr	s13, [pc, #536]	@ 8001e24 <StartDefaultTask+0x34c>
- 8001c0e:	ee67 7aa6 	vmul.f32	s15, s15, s13
- 8001c12:	ee77 7a27 	vadd.f32	s15, s14, s15
- 8001c16:	4b81      	ldr	r3, [pc, #516]	@ (8001e1c <StartDefaultTask+0x344>)
- 8001c18:	edc3 7a00 	vstr	s15, [r3]
+ 8001bf4:	4b89      	ldr	r3, [pc, #548]	@ (8001e1c <StartDefaultTask+0x344>)
+ 8001bf6:	edd3 7a00 	vldr	s15, [r3]
+ 8001bfa:	ed9f 7a89 	vldr	s14, [pc, #548]	@ 8001e20 <StartDefaultTask+0x348>
+ 8001bfe:	ee27 7a87 	vmul.f32	s14, s15, s14
+ 8001c02:	edd7 7a05 	vldr	s15, [r7, #20]
+ 8001c06:	eddf 6a87 	vldr	s13, [pc, #540]	@ 8001e24 <StartDefaultTask+0x34c>
+ 8001c0a:	ee67 7aa6 	vmul.f32	s15, s15, s13
+ 8001c0e:	ee77 7a27 	vadd.f32	s15, s14, s15
+ 8001c12:	4b82      	ldr	r3, [pc, #520]	@ (8001e1c <StartDefaultTask+0x344>)
+ 8001c14:	edc3 7a00 	vstr	s15, [r3]
 
 	  // Apply velocity filter
 	  motor_velocity = applyLowPassFilterVelocity(velocity1, velocity1_prev);
- 8001c1c:	4b7d      	ldr	r3, [pc, #500]	@ (8001e14 <StartDefaultTask+0x33c>)
- 8001c1e:	edd3 7a00 	vldr	s15, [r3]
- 8001c22:	4b7d      	ldr	r3, [pc, #500]	@ (8001e18 <StartDefaultTask+0x340>)
- 8001c24:	ed93 7a00 	vldr	s14, [r3]
- 8001c28:	eef0 0a47 	vmov.f32	s1, s14
- 8001c2c:	eeb0 0a67 	vmov.f32	s0, s15
- 8001c30:	f7ff f914 	bl	8000e5c <applyLowPassFilterVelocity>
- 8001c34:	eef0 7a40 	vmov.f32	s15, s0
- 8001c38:	4b7b      	ldr	r3, [pc, #492]	@ (8001e28 <StartDefaultTask+0x350>)
- 8001c3a:	edc3 7a00 	vstr	s15, [r3]
+ 8001c18:	4b7e      	ldr	r3, [pc, #504]	@ (8001e14 <StartDefaultTask+0x33c>)
+ 8001c1a:	edd3 7a00 	vldr	s15, [r3]
+ 8001c1e:	4b7e      	ldr	r3, [pc, #504]	@ (8001e18 <StartDefaultTask+0x340>)
+ 8001c20:	ed93 7a00 	vldr	s14, [r3]
+ 8001c24:	eef0 0a47 	vmov.f32	s1, s14
+ 8001c28:	eeb0 0a67 	vmov.f32	s0, s15
+ 8001c2c:	f7ff f916 	bl	8000e5c <applyLowPassFilterVelocity>
+ 8001c30:	eef0 7a40 	vmov.f32	s15, s0
+ 8001c34:	4b7c      	ldr	r3, [pc, #496]	@ (8001e28 <StartDefaultTask+0x350>)
+ 8001c36:	edc3 7a00 	vstr	s15, [r3]
 
 	  // Update previous states
 	  theta1_prev = theta1;
- 8001c3e:	4b72      	ldr	r3, [pc, #456]	@ (8001e08 <StartDefaultTask+0x330>)
- 8001c40:	681b      	ldr	r3, [r3, #0]
- 8001c42:	4a72      	ldr	r2, [pc, #456]	@ (8001e0c <StartDefaultTask+0x334>)
- 8001c44:	6013      	str	r3, [r2, #0]
+ 8001c3a:	4b73      	ldr	r3, [pc, #460]	@ (8001e08 <StartDefaultTask+0x330>)
+ 8001c3c:	681b      	ldr	r3, [r3, #0]
+ 8001c3e:	4a73      	ldr	r2, [pc, #460]	@ (8001e0c <StartDefaultTask+0x334>)
+ 8001c40:	6013      	str	r3, [r2, #0]
 	  velocity1_prev = motor_velocity;
- 8001c46:	4b78      	ldr	r3, [pc, #480]	@ (8001e28 <StartDefaultTask+0x350>)
- 8001c48:	681b      	ldr	r3, [r3, #0]
- 8001c4a:	4a73      	ldr	r2, [pc, #460]	@ (8001e18 <StartDefaultTask+0x340>)
- 8001c4c:	6013      	str	r3, [r2, #0]
+ 8001c42:	4b79      	ldr	r3, [pc, #484]	@ (8001e28 <StartDefaultTask+0x350>)
+ 8001c44:	681b      	ldr	r3, [r3, #0]
+ 8001c46:	4a74      	ldr	r2, [pc, #464]	@ (8001e18 <StartDefaultTask+0x340>)
+ 8001c48:	6013      	str	r3, [r2, #0]
 
 	  // Persistent variable
 	  static int16_t prev_ticks2 = 0;
 
 	  // Read current encoder count
 	  int16_t curr_ticks2 = __HAL_TIM_GET_COUNTER(&htim4);
- 8001c4e:	4b68      	ldr	r3, [pc, #416]	@ (8001df0 <StartDefaultTask+0x318>)
- 8001c50:	681b      	ldr	r3, [r3, #0]
- 8001c52:	6a5b      	ldr	r3, [r3, #36]	@ 0x24
- 8001c54:	827b      	strh	r3, [r7, #18]
+ 8001c4a:	4b69      	ldr	r3, [pc, #420]	@ (8001df0 <StartDefaultTask+0x318>)
+ 8001c4c:	681b      	ldr	r3, [r3, #0]
+ 8001c4e:	6a5b      	ldr	r3, [r3, #36]	@ 0x24
+ 8001c50:	827b      	strh	r3, [r7, #18]
 	  int16_t delta_ticks2 = (int16_t)(curr_ticks2 - prev_ticks2);  // Handles overflow
- 8001c56:	8a7a      	ldrh	r2, [r7, #18]
- 8001c58:	4b74      	ldr	r3, [pc, #464]	@ (8001e2c <StartDefaultTask+0x354>)
- 8001c5a:	f9b3 3000 	ldrsh.w	r3, [r3]
+ 8001c52:	8a7a      	ldrh	r2, [r7, #18]
+ 8001c54:	4b75      	ldr	r3, [pc, #468]	@ (8001e2c <StartDefaultTask+0x354>)
+ 8001c56:	f9b3 3000 	ldrsh.w	r3, [r3]
+ 8001c5a:	b29b      	uxth	r3, r3
+ 8001c5c:	1ad3      	subs	r3, r2, r3
  8001c5e:	b29b      	uxth	r3, r3
- 8001c60:	1ad3      	subs	r3, r2, r3
- 8001c62:	b29b      	uxth	r3, r3
- 8001c64:	823b      	strh	r3, [r7, #16]
+ 8001c60:	823b      	strh	r3, [r7, #16]
 	  prev_ticks2 = curr_ticks2;
- 8001c66:	4a71      	ldr	r2, [pc, #452]	@ (8001e2c <StartDefaultTask+0x354>)
- 8001c68:	8a7b      	ldrh	r3, [r7, #18]
- 8001c6a:	8013      	strh	r3, [r2, #0]
+ 8001c62:	4a72      	ldr	r2, [pc, #456]	@ (8001e2c <StartDefaultTask+0x354>)
+ 8001c64:	8a7b      	ldrh	r3, [r7, #18]
+ 8001c66:	8013      	strh	r3, [r2, #0]
 
 	  // Compute delta angle and accumulate
 	  float delta_theta2 = ((float)delta_ticks2) * 2.0f * M_PI / CPR;
- 8001c6c:	f9b7 3010 	ldrsh.w	r3, [r7, #16]
- 8001c70:	ee07 3a90 	vmov	s15, r3
- 8001c74:	eef8 7ae7 	vcvt.f32.s32	s15, s15
- 8001c78:	ee77 7aa7 	vadd.f32	s15, s15, s15
- 8001c7c:	ee17 0a90 	vmov	r0, s15
- 8001c80:	f7fe fc82 	bl	8000588 <__aeabi_f2d>
- 8001c84:	a350      	add	r3, pc, #320	@ (adr r3, 8001dc8 <StartDefaultTask+0x2f0>)
- 8001c86:	e9d3 2300 	ldrd	r2, r3, [r3]
- 8001c8a:	f7fe fcd5 	bl	8000638 <__aeabi_dmul>
- 8001c8e:	4602      	mov	r2, r0
- 8001c90:	460b      	mov	r3, r1
- 8001c92:	4610      	mov	r0, r2
- 8001c94:	4619      	mov	r1, r3
- 8001c96:	f04f 0200 	mov.w	r2, #0
- 8001c9a:	4b5a      	ldr	r3, [pc, #360]	@ (8001e04 <StartDefaultTask+0x32c>)
- 8001c9c:	f7fe fdf6 	bl	800088c <__aeabi_ddiv>
- 8001ca0:	4602      	mov	r2, r0
- 8001ca2:	460b      	mov	r3, r1
- 8001ca4:	4610      	mov	r0, r2
- 8001ca6:	4619      	mov	r1, r3
- 8001ca8:	f7fe fed8 	bl	8000a5c <__aeabi_d2f>
- 8001cac:	4603      	mov	r3, r0
- 8001cae:	60fb      	str	r3, [r7, #12]
+ 8001c68:	f9b7 3010 	ldrsh.w	r3, [r7, #16]
+ 8001c6c:	ee07 3a90 	vmov	s15, r3
+ 8001c70:	eef8 7ae7 	vcvt.f32.s32	s15, s15
+ 8001c74:	ee77 7aa7 	vadd.f32	s15, s15, s15
+ 8001c78:	ee17 0a90 	vmov	r0, s15
+ 8001c7c:	f7fe fc84 	bl	8000588 <__aeabi_f2d>
+ 8001c80:	a351      	add	r3, pc, #324	@ (adr r3, 8001dc8 <StartDefaultTask+0x2f0>)
+ 8001c82:	e9d3 2300 	ldrd	r2, r3, [r3]
+ 8001c86:	f7fe fcd7 	bl	8000638 <__aeabi_dmul>
+ 8001c8a:	4602      	mov	r2, r0
+ 8001c8c:	460b      	mov	r3, r1
+ 8001c8e:	4610      	mov	r0, r2
+ 8001c90:	4619      	mov	r1, r3
+ 8001c92:	f04f 0200 	mov.w	r2, #0
+ 8001c96:	4b5b      	ldr	r3, [pc, #364]	@ (8001e04 <StartDefaultTask+0x32c>)
+ 8001c98:	f7fe fdf8 	bl	800088c <__aeabi_ddiv>
+ 8001c9c:	4602      	mov	r2, r0
+ 8001c9e:	460b      	mov	r3, r1
+ 8001ca0:	4610      	mov	r0, r2
+ 8001ca2:	4619      	mov	r1, r3
+ 8001ca4:	f7fe feda 	bl	8000a5c <__aeabi_d2f>
+ 8001ca8:	4603      	mov	r3, r0
+ 8001caa:	60fb      	str	r3, [r7, #12]
 	  theta2 += delta_theta2;
- 8001cb0:	4b5f      	ldr	r3, [pc, #380]	@ (8001e30 <StartDefaultTask+0x358>)
- 8001cb2:	ed93 7a00 	vldr	s14, [r3]
- 8001cb6:	edd7 7a03 	vldr	s15, [r7, #12]
- 8001cba:	ee77 7a27 	vadd.f32	s15, s14, s15
- 8001cbe:	4b5c      	ldr	r3, [pc, #368]	@ (8001e30 <StartDefaultTask+0x358>)
- 8001cc0:	edc3 7a00 	vstr	s15, [r3]
+ 8001cac:	4b60      	ldr	r3, [pc, #384]	@ (8001e30 <StartDefaultTask+0x358>)
+ 8001cae:	ed93 7a00 	vldr	s14, [r3]
+ 8001cb2:	edd7 7a03 	vldr	s15, [r7, #12]
+ 8001cb6:	ee77 7a27 	vadd.f32	s15, s14, s15
+ 8001cba:	4b5d      	ldr	r3, [pc, #372]	@ (8001e30 <StartDefaultTask+0x358>)
+ 8001cbc:	edc3 7a00 	vstr	s15, [r3]
 
 	  // Velocity and acceleration
 	  velocity2 = (theta2 - theta2_prev) / dt_s;
- 8001cc4:	4b5a      	ldr	r3, [pc, #360]	@ (8001e30 <StartDefaultTask+0x358>)
- 8001cc6:	ed93 7a00 	vldr	s14, [r3]
- 8001cca:	4b5a      	ldr	r3, [pc, #360]	@ (8001e34 <StartDefaultTask+0x35c>)
- 8001ccc:	edd3 7a00 	vldr	s15, [r3]
- 8001cd0:	ee77 6a67 	vsub.f32	s13, s14, s15
- 8001cd4:	4b4e      	ldr	r3, [pc, #312]	@ (8001e10 <StartDefaultTask+0x338>)
- 8001cd6:	ed93 7a00 	vldr	s14, [r3]
- 8001cda:	eec6 7a87 	vdiv.f32	s15, s13, s14
- 8001cde:	4b56      	ldr	r3, [pc, #344]	@ (8001e38 <StartDefaultTask+0x360>)
- 8001ce0:	edc3 7a00 	vstr	s15, [r3]
+ 8001cc0:	4b5b      	ldr	r3, [pc, #364]	@ (8001e30 <StartDefaultTask+0x358>)
+ 8001cc2:	ed93 7a00 	vldr	s14, [r3]
+ 8001cc6:	4b5b      	ldr	r3, [pc, #364]	@ (8001e34 <StartDefaultTask+0x35c>)
+ 8001cc8:	edd3 7a00 	vldr	s15, [r3]
+ 8001ccc:	ee77 6a67 	vsub.f32	s13, s14, s15
+ 8001cd0:	4b4f      	ldr	r3, [pc, #316]	@ (8001e10 <StartDefaultTask+0x338>)
+ 8001cd2:	ed93 7a00 	vldr	s14, [r3]
+ 8001cd6:	eec6 7a87 	vdiv.f32	s15, s13, s14
+ 8001cda:	4b57      	ldr	r3, [pc, #348]	@ (8001e38 <StartDefaultTask+0x360>)
+ 8001cdc:	edc3 7a00 	vstr	s15, [r3]
 	  float raw_acceleration2 = (velocity2 - velocity2_prev) / dt_s;
- 8001ce4:	4b54      	ldr	r3, [pc, #336]	@ (8001e38 <StartDefaultTask+0x360>)
- 8001ce6:	ed93 7a00 	vldr	s14, [r3]
- 8001cea:	4b54      	ldr	r3, [pc, #336]	@ (8001e3c <StartDefaultTask+0x364>)
- 8001cec:	edd3 7a00 	vldr	s15, [r3]
- 8001cf0:	ee77 6a67 	vsub.f32	s13, s14, s15
- 8001cf4:	4b46      	ldr	r3, [pc, #280]	@ (8001e10 <StartDefaultTask+0x338>)
- 8001cf6:	ed93 7a00 	vldr	s14, [r3]
- 8001cfa:	eec6 7a87 	vdiv.f32	s15, s13, s14
- 8001cfe:	edc7 7a02 	vstr	s15, [r7, #8]
+ 8001ce0:	4b55      	ldr	r3, [pc, #340]	@ (8001e38 <StartDefaultTask+0x360>)
+ 8001ce2:	ed93 7a00 	vldr	s14, [r3]
+ 8001ce6:	4b55      	ldr	r3, [pc, #340]	@ (8001e3c <StartDefaultTask+0x364>)
+ 8001ce8:	edd3 7a00 	vldr	s15, [r3]
+ 8001cec:	ee77 6a67 	vsub.f32	s13, s14, s15
+ 8001cf0:	4b47      	ldr	r3, [pc, #284]	@ (8001e10 <StartDefaultTask+0x338>)
+ 8001cf2:	ed93 7a00 	vldr	s14, [r3]
+ 8001cf6:	eec6 7a87 	vdiv.f32	s15, s13, s14
+ 8001cfa:	edc7 7a02 	vstr	s15, [r7, #8]
 	  acceleration2 = (1 - 0.1f) * acceleration2 + 0.1f * raw_acceleration2;  // Low-pass filter
- 8001d02:	4b4f      	ldr	r3, [pc, #316]	@ (8001e40 <StartDefaultTask+0x368>)
- 8001d04:	edd3 7a00 	vldr	s15, [r3]
- 8001d08:	ed9f 7a45 	vldr	s14, [pc, #276]	@ 8001e20 <StartDefaultTask+0x348>
- 8001d0c:	ee27 7a87 	vmul.f32	s14, s15, s14
- 8001d10:	edd7 7a02 	vldr	s15, [r7, #8]
- 8001d14:	eddf 6a43 	vldr	s13, [pc, #268]	@ 8001e24 <StartDefaultTask+0x34c>
- 8001d18:	ee67 7aa6 	vmul.f32	s15, s15, s13
- 8001d1c:	ee77 7a27 	vadd.f32	s15, s14, s15
- 8001d20:	4b47      	ldr	r3, [pc, #284]	@ (8001e40 <StartDefaultTask+0x368>)
- 8001d22:	edc3 7a00 	vstr	s15, [r3]
+ 8001cfe:	4b50      	ldr	r3, [pc, #320]	@ (8001e40 <StartDefaultTask+0x368>)
+ 8001d00:	edd3 7a00 	vldr	s15, [r3]
+ 8001d04:	ed9f 7a46 	vldr	s14, [pc, #280]	@ 8001e20 <StartDefaultTask+0x348>
+ 8001d08:	ee27 7a87 	vmul.f32	s14, s15, s14
+ 8001d0c:	edd7 7a02 	vldr	s15, [r7, #8]
+ 8001d10:	eddf 6a44 	vldr	s13, [pc, #272]	@ 8001e24 <StartDefaultTask+0x34c>
+ 8001d14:	ee67 7aa6 	vmul.f32	s15, s15, s13
+ 8001d18:	ee77 7a27 	vadd.f32	s15, s14, s15
+ 8001d1c:	4b48      	ldr	r3, [pc, #288]	@ (8001e40 <StartDefaultTask+0x368>)
+ 8001d1e:	edc3 7a00 	vstr	s15, [r3]
 
 	  // Apply velocity filter
 	  motor02_motor_velocity = applyLowPassFilterVelocity2(velocity2, velocity2_prev);
- 8001d26:	4b44      	ldr	r3, [pc, #272]	@ (8001e38 <StartDefaultTask+0x360>)
- 8001d28:	edd3 7a00 	vldr	s15, [r3]
- 8001d2c:	4b43      	ldr	r3, [pc, #268]	@ (8001e3c <StartDefaultTask+0x364>)
- 8001d2e:	ed93 7a00 	vldr	s14, [r3]
- 8001d32:	eef0 0a47 	vmov.f32	s1, s14
- 8001d36:	eeb0 0a67 	vmov.f32	s0, s15
- 8001d3a:	f7ff f8b9 	bl	8000eb0 <applyLowPassFilterVelocity2>
- 8001d3e:	eef0 7a40 	vmov.f32	s15, s0
- 8001d42:	4b40      	ldr	r3, [pc, #256]	@ (8001e44 <StartDefaultTask+0x36c>)
- 8001d44:	edc3 7a00 	vstr	s15, [r3]
+ 8001d22:	4b45      	ldr	r3, [pc, #276]	@ (8001e38 <StartDefaultTask+0x360>)
+ 8001d24:	edd3 7a00 	vldr	s15, [r3]
+ 8001d28:	4b44      	ldr	r3, [pc, #272]	@ (8001e3c <StartDefaultTask+0x364>)
+ 8001d2a:	ed93 7a00 	vldr	s14, [r3]
+ 8001d2e:	eef0 0a47 	vmov.f32	s1, s14
+ 8001d32:	eeb0 0a67 	vmov.f32	s0, s15
+ 8001d36:	f7ff f8bb 	bl	8000eb0 <applyLowPassFilterVelocity2>
+ 8001d3a:	eef0 7a40 	vmov.f32	s15, s0
+ 8001d3e:	4b41      	ldr	r3, [pc, #260]	@ (8001e44 <StartDefaultTask+0x36c>)
+ 8001d40:	edc3 7a00 	vstr	s15, [r3]
 
 	  // Update previous states
 	  theta2_prev = theta2;
- 8001d48:	4b39      	ldr	r3, [pc, #228]	@ (8001e30 <StartDefaultTask+0x358>)
- 8001d4a:	681b      	ldr	r3, [r3, #0]
- 8001d4c:	4a39      	ldr	r2, [pc, #228]	@ (8001e34 <StartDefaultTask+0x35c>)
- 8001d4e:	6013      	str	r3, [r2, #0]
+ 8001d44:	4b3a      	ldr	r3, [pc, #232]	@ (8001e30 <StartDefaultTask+0x358>)
+ 8001d46:	681b      	ldr	r3, [r3, #0]
+ 8001d48:	4a3a      	ldr	r2, [pc, #232]	@ (8001e34 <StartDefaultTask+0x35c>)
+ 8001d4a:	6013      	str	r3, [r2, #0]
 	  velocity2_prev = motor02_motor_velocity;
- 8001d50:	4b3c      	ldr	r3, [pc, #240]	@ (8001e44 <StartDefaultTask+0x36c>)
- 8001d52:	681b      	ldr	r3, [r3, #0]
- 8001d54:	4a39      	ldr	r2, [pc, #228]	@ (8001e3c <StartDefaultTask+0x364>)
- 8001d56:	6013      	str	r3, [r2, #0]
+ 8001d4c:	4b3d      	ldr	r3, [pc, #244]	@ (8001e44 <StartDefaultTask+0x36c>)
+ 8001d4e:	681b      	ldr	r3, [r3, #0]
+ 8001d50:	4a3a      	ldr	r2, [pc, #232]	@ (8001e3c <StartDefaultTask+0x364>)
+ 8001d52:	6013      	str	r3, [r2, #0]
 	  UpdateMotor01CommandedCurrent();
- 8001d58:	f7ff f91c 	bl	8000f94 <UpdateMotor01CommandedCurrent>
+ 8001d54:	f7ff f91e 	bl	8000f94 <UpdateMotor01CommandedCurrent>
 	  UpdateMotor02CommandedCurrent();
- 8001d5c:	f7ff fa66 	bl	800122c <UpdateMotor02CommandedCurrent>
+ 8001d58:	f7ff fa68 	bl	800122c <UpdateMotor02CommandedCurrent>
 	  motor02_desired_torque=desired_torque-ks*(theta1-theta2);
- 8001d60:	4b39      	ldr	r3, [pc, #228]	@ (8001e48 <StartDefaultTask+0x370>)
- 8001d62:	ed93 7a00 	vldr	s14, [r3]
- 8001d66:	4b28      	ldr	r3, [pc, #160]	@ (8001e08 <StartDefaultTask+0x330>)
- 8001d68:	edd3 6a00 	vldr	s13, [r3]
- 8001d6c:	4b30      	ldr	r3, [pc, #192]	@ (8001e30 <StartDefaultTask+0x358>)
- 8001d6e:	edd3 7a00 	vldr	s15, [r3]
- 8001d72:	ee76 6ae7 	vsub.f32	s13, s13, s15
- 8001d76:	4b35      	ldr	r3, [pc, #212]	@ (8001e4c <StartDefaultTask+0x374>)
- 8001d78:	edd3 7a00 	vldr	s15, [r3]
- 8001d7c:	ee66 7aa7 	vmul.f32	s15, s13, s15
- 8001d80:	ee77 7a67 	vsub.f32	s15, s14, s15
- 8001d84:	4b32      	ldr	r3, [pc, #200]	@ (8001e50 <StartDefaultTask+0x378>)
- 8001d86:	edc3 7a00 	vstr	s15, [r3]
+ 8001d5c:	4b3a      	ldr	r3, [pc, #232]	@ (8001e48 <StartDefaultTask+0x370>)
+ 8001d5e:	ed93 7a00 	vldr	s14, [r3]
+ 8001d62:	4b29      	ldr	r3, [pc, #164]	@ (8001e08 <StartDefaultTask+0x330>)
+ 8001d64:	edd3 6a00 	vldr	s13, [r3]
+ 8001d68:	4b31      	ldr	r3, [pc, #196]	@ (8001e30 <StartDefaultTask+0x358>)
+ 8001d6a:	edd3 7a00 	vldr	s15, [r3]
+ 8001d6e:	ee76 6ae7 	vsub.f32	s13, s13, s15
+ 8001d72:	4b36      	ldr	r3, [pc, #216]	@ (8001e4c <StartDefaultTask+0x374>)
+ 8001d74:	edd3 7a00 	vldr	s15, [r3]
+ 8001d78:	ee66 7aa7 	vmul.f32	s15, s13, s15
+ 8001d7c:	ee77 7a67 	vsub.f32	s15, s14, s15
+ 8001d80:	4b33      	ldr	r3, [pc, #204]	@ (8001e50 <StartDefaultTask+0x378>)
+ 8001d82:	edc3 7a00 	vstr	s15, [r3]
 	  /*********************************************************
 	   *         Motor Output Control & Saturation            *
 	   *********************************************************/
 	  // Limit commanded current to ±3.0 A and set motor direction
 	  if (commanded_current > motor1MaxCurrent) {
- 8001d8a:	4b32      	ldr	r3, [pc, #200]	@ (8001e54 <StartDefaultTask+0x37c>)
- 8001d8c:	ed93 7a00 	vldr	s14, [r3]
- 8001d90:	4b31      	ldr	r3, [pc, #196]	@ (8001e58 <StartDefaultTask+0x380>)
- 8001d92:	edd3 7a00 	vldr	s15, [r3]
- 8001d96:	eeb4 7ae7 	vcmpe.f32	s14, s15
- 8001d9a:	eef1 fa10 	vmrs	APSR_nzcv, fpscr
- 8001d9e:	dd6d      	ble.n	8001e7c <StartDefaultTask+0x3a4>
+ 8001d86:	4b33      	ldr	r3, [pc, #204]	@ (8001e54 <StartDefaultTask+0x37c>)
+ 8001d88:	ed93 7a00 	vldr	s14, [r3]
+ 8001d8c:	4b32      	ldr	r3, [pc, #200]	@ (8001e58 <StartDefaultTask+0x380>)
+ 8001d8e:	edd3 7a00 	vldr	s15, [r3]
+ 8001d92:	eeb4 7ae7 	vcmpe.f32	s14, s15
+ 8001d96:	eef1 fa10 	vmrs	APSR_nzcv, fpscr
+ 8001d9a:	dd6d      	ble.n	8001e78 <StartDefaultTask+0x3a0>
 	      commanded_current = motor1MaxCurrent;
- 8001da0:	4b2d      	ldr	r3, [pc, #180]	@ (8001e58 <StartDefaultTask+0x380>)
- 8001da2:	681b      	ldr	r3, [r3, #0]
- 8001da4:	4a2b      	ldr	r2, [pc, #172]	@ (8001e54 <StartDefaultTask+0x37c>)
- 8001da6:	6013      	str	r3, [r2, #0]
+ 8001d9c:	4b2e      	ldr	r3, [pc, #184]	@ (8001e58 <StartDefaultTask+0x380>)
+ 8001d9e:	681b      	ldr	r3, [r3, #0]
+ 8001da0:	4a2c      	ldr	r2, [pc, #176]	@ (8001e54 <StartDefaultTask+0x37c>)
+ 8001da2:	6013      	str	r3, [r2, #0]
 	      motor_direction_flag = 1;  // Forward
- 8001da8:	4b2c      	ldr	r3, [pc, #176]	@ (8001e5c <StartDefaultTask+0x384>)
- 8001daa:	2201      	movs	r2, #1
- 8001dac:	601a      	str	r2, [r3, #0]
+ 8001da4:	4b2d      	ldr	r3, [pc, #180]	@ (8001e5c <StartDefaultTask+0x384>)
+ 8001da6:	2201      	movs	r2, #1
+ 8001da8:	601a      	str	r2, [r3, #0]
 	      voltage_reference_1 = (4095.0f / motor1MaxCurrent) * fabsf(commanded_current);
- 8001dae:	4b2a      	ldr	r3, [pc, #168]	@ (8001e58 <StartDefaultTask+0x380>)
- 8001db0:	edd3 7a00 	vldr	s15, [r3]
- 8001db4:	eddf 6a2a 	vldr	s13, [pc, #168]	@ 8001e60 <StartDefaultTask+0x388>
- 8001db8:	ee86 7aa7 	vdiv.f32	s14, s13, s15
- 8001dbc:	4b25      	ldr	r3, [pc, #148]	@ (8001e54 <StartDefaultTask+0x37c>)
- 8001dbe:	edd3 7a00 	vldr	s15, [r3]
+ 8001daa:	4b2b      	ldr	r3, [pc, #172]	@ (8001e58 <StartDefaultTask+0x380>)
+ 8001dac:	edd3 7a00 	vldr	s15, [r3]
+ 8001db0:	eddf 6a2b 	vldr	s13, [pc, #172]	@ 8001e60 <StartDefaultTask+0x388>
+ 8001db4:	ee86 7aa7 	vdiv.f32	s14, s13, s15
+ 8001db8:	4b26      	ldr	r3, [pc, #152]	@ (8001e54 <StartDefaultTask+0x37c>)
+ 8001dba:	edd3 7a00 	vldr	s15, [r3]
+ 8001dbe:	eef0 7ae7 	vabs.f32	s15, s15
  8001dc2:	e04f      	b.n	8001e64 <StartDefaultTask+0x38c>
  8001dc4:	f3af 8000 	nop.w
  8001dc8:	54442d18 	.word	0x54442d18
@@ -3298,526 +3298,526 @@ void StartDefaultTask(void const * argument)
  8001e58:	20000028 	.word	0x20000028
  8001e5c:	20001d78 	.word	0x20001d78
  8001e60:	457ff000 	.word	0x457ff000
- 8001e64:	eef0 7ae7 	vabs.f32	s15, s15
- 8001e68:	ee67 7a27 	vmul.f32	s15, s14, s15
- 8001e6c:	eefc 7ae7 	vcvt.u32.f32	s15, s15
- 8001e70:	ee17 3a90 	vmov	r3, s15
- 8001e74:	b29a      	uxth	r2, r3
- 8001e76:	4b78      	ldr	r3, [pc, #480]	@ (8002058 <StartDefaultTask+0x580>)
- 8001e78:	801a      	strh	r2, [r3, #0]
- 8001e7a:	e05e      	b.n	8001f3a <StartDefaultTask+0x462>
+ 8001e64:	ee67 7a27 	vmul.f32	s15, s14, s15
+ 8001e68:	eefc 7ae7 	vcvt.u32.f32	s15, s15
+ 8001e6c:	ee17 3a90 	vmov	r3, s15
+ 8001e70:	b29a      	uxth	r2, r3
+ 8001e72:	4b78      	ldr	r3, [pc, #480]	@ (8002054 <StartDefaultTask+0x57c>)
+ 8001e74:	801a      	strh	r2, [r3, #0]
+ 8001e76:	e05e      	b.n	8001f36 <StartDefaultTask+0x45e>
 	  }
 	  else if (commanded_current < -1.0f) {
- 8001e7c:	4b77      	ldr	r3, [pc, #476]	@ (800205c <StartDefaultTask+0x584>)
- 8001e7e:	edd3 7a00 	vldr	s15, [r3]
- 8001e82:	eebf 7a00 	vmov.f32	s14, #240	@ 0xbf800000 -1.0
- 8001e86:	eef4 7ac7 	vcmpe.f32	s15, s14
- 8001e8a:	eef1 fa10 	vmrs	APSR_nzcv, fpscr
- 8001e8e:	d51b      	bpl.n	8001ec8 <StartDefaultTask+0x3f0>
+ 8001e78:	4b77      	ldr	r3, [pc, #476]	@ (8002058 <StartDefaultTask+0x580>)
+ 8001e7a:	edd3 7a00 	vldr	s15, [r3]
+ 8001e7e:	eebf 7a00 	vmov.f32	s14, #240	@ 0xbf800000 -1.0
+ 8001e82:	eef4 7ac7 	vcmpe.f32	s15, s14
+ 8001e86:	eef1 fa10 	vmrs	APSR_nzcv, fpscr
+ 8001e8a:	d51b      	bpl.n	8001ec4 <StartDefaultTask+0x3ec>
 	      commanded_current = -1.0f;
- 8001e90:	4b72      	ldr	r3, [pc, #456]	@ (800205c <StartDefaultTask+0x584>)
- 8001e92:	4a73      	ldr	r2, [pc, #460]	@ (8002060 <StartDefaultTask+0x588>)
- 8001e94:	601a      	str	r2, [r3, #0]
+ 8001e8c:	4b72      	ldr	r3, [pc, #456]	@ (8002058 <StartDefaultTask+0x580>)
+ 8001e8e:	4a73      	ldr	r2, [pc, #460]	@ (800205c <StartDefaultTask+0x584>)
+ 8001e90:	601a      	str	r2, [r3, #0]
 	      motor_direction_flag = 0;  // Reverse
- 8001e96:	4b73      	ldr	r3, [pc, #460]	@ (8002064 <StartDefaultTask+0x58c>)
- 8001e98:	2200      	movs	r2, #0
- 8001e9a:	601a      	str	r2, [r3, #0]
+ 8001e92:	4b73      	ldr	r3, [pc, #460]	@ (8002060 <StartDefaultTask+0x588>)
+ 8001e94:	2200      	movs	r2, #0
+ 8001e96:	601a      	str	r2, [r3, #0]
 	      voltage_reference_1 = (4095.0f / motor1MaxCurrent) * fabsf(-1*commanded_current);
- 8001e9c:	4b72      	ldr	r3, [pc, #456]	@ (8002068 <StartDefaultTask+0x590>)
- 8001e9e:	edd3 7a00 	vldr	s15, [r3]
- 8001ea2:	eddf 6a72 	vldr	s13, [pc, #456]	@ 800206c <StartDefaultTask+0x594>
- 8001ea6:	ee86 7aa7 	vdiv.f32	s14, s13, s15
- 8001eaa:	4b6c      	ldr	r3, [pc, #432]	@ (800205c <StartDefaultTask+0x584>)
- 8001eac:	edd3 7a00 	vldr	s15, [r3]
- 8001eb0:	eef0 7ae7 	vabs.f32	s15, s15
- 8001eb4:	ee67 7a27 	vmul.f32	s15, s14, s15
- 8001eb8:	eefc 7ae7 	vcvt.u32.f32	s15, s15
- 8001ebc:	ee17 3a90 	vmov	r3, s15
- 8001ec0:	b29a      	uxth	r2, r3
- 8001ec2:	4b65      	ldr	r3, [pc, #404]	@ (8002058 <StartDefaultTask+0x580>)
- 8001ec4:	801a      	strh	r2, [r3, #0]
- 8001ec6:	e038      	b.n	8001f3a <StartDefaultTask+0x462>
+ 8001e98:	4b72      	ldr	r3, [pc, #456]	@ (8002064 <StartDefaultTask+0x58c>)
+ 8001e9a:	edd3 7a00 	vldr	s15, [r3]
+ 8001e9e:	eddf 6a72 	vldr	s13, [pc, #456]	@ 8002068 <StartDefaultTask+0x590>
+ 8001ea2:	ee86 7aa7 	vdiv.f32	s14, s13, s15
+ 8001ea6:	4b6c      	ldr	r3, [pc, #432]	@ (8002058 <StartDefaultTask+0x580>)
+ 8001ea8:	edd3 7a00 	vldr	s15, [r3]
+ 8001eac:	eef0 7ae7 	vabs.f32	s15, s15
+ 8001eb0:	ee67 7a27 	vmul.f32	s15, s14, s15
+ 8001eb4:	eefc 7ae7 	vcvt.u32.f32	s15, s15
+ 8001eb8:	ee17 3a90 	vmov	r3, s15
+ 8001ebc:	b29a      	uxth	r2, r3
+ 8001ebe:	4b65      	ldr	r3, [pc, #404]	@ (8002054 <StartDefaultTask+0x57c>)
+ 8001ec0:	801a      	strh	r2, [r3, #0]
+ 8001ec2:	e038      	b.n	8001f36 <StartDefaultTask+0x45e>
 	  }
 	  else {
 	      // Current is within safe bounds; determine direction by sign
 	      if (commanded_current >= 0.0f) {
- 8001ec8:	4b64      	ldr	r3, [pc, #400]	@ (800205c <StartDefaultTask+0x584>)
- 8001eca:	edd3 7a00 	vldr	s15, [r3]
- 8001ece:	eef5 7ac0 	vcmpe.f32	s15, #0.0
- 8001ed2:	eef1 fa10 	vmrs	APSR_nzcv, fpscr
- 8001ed6:	db18      	blt.n	8001f0a <StartDefaultTask+0x432>
+ 8001ec4:	4b64      	ldr	r3, [pc, #400]	@ (8002058 <StartDefaultTask+0x580>)
+ 8001ec6:	edd3 7a00 	vldr	s15, [r3]
+ 8001eca:	eef5 7ac0 	vcmpe.f32	s15, #0.0
+ 8001ece:	eef1 fa10 	vmrs	APSR_nzcv, fpscr
+ 8001ed2:	db18      	blt.n	8001f06 <StartDefaultTask+0x42e>
 	          motor_direction_flag = 1;  // Forward
- 8001ed8:	4b62      	ldr	r3, [pc, #392]	@ (8002064 <StartDefaultTask+0x58c>)
- 8001eda:	2201      	movs	r2, #1
- 8001edc:	601a      	str	r2, [r3, #0]
+ 8001ed4:	4b62      	ldr	r3, [pc, #392]	@ (8002060 <StartDefaultTask+0x588>)
+ 8001ed6:	2201      	movs	r2, #1
+ 8001ed8:	601a      	str	r2, [r3, #0]
 	          voltage_reference_1 = (4095.0f /motor1MaxCurrent) * fabsf(commanded_current);
- 8001ede:	4b62      	ldr	r3, [pc, #392]	@ (8002068 <StartDefaultTask+0x590>)
- 8001ee0:	edd3 7a00 	vldr	s15, [r3]
- 8001ee4:	eddf 6a61 	vldr	s13, [pc, #388]	@ 800206c <StartDefaultTask+0x594>
- 8001ee8:	ee86 7aa7 	vdiv.f32	s14, s13, s15
- 8001eec:	4b5b      	ldr	r3, [pc, #364]	@ (800205c <StartDefaultTask+0x584>)
- 8001eee:	edd3 7a00 	vldr	s15, [r3]
- 8001ef2:	eef0 7ae7 	vabs.f32	s15, s15
- 8001ef6:	ee67 7a27 	vmul.f32	s15, s14, s15
- 8001efa:	eefc 7ae7 	vcvt.u32.f32	s15, s15
- 8001efe:	ee17 3a90 	vmov	r3, s15
- 8001f02:	b29a      	uxth	r2, r3
- 8001f04:	4b54      	ldr	r3, [pc, #336]	@ (8002058 <StartDefaultTask+0x580>)
- 8001f06:	801a      	strh	r2, [r3, #0]
- 8001f08:	e017      	b.n	8001f3a <StartDefaultTask+0x462>
+ 8001eda:	4b62      	ldr	r3, [pc, #392]	@ (8002064 <StartDefaultTask+0x58c>)
+ 8001edc:	edd3 7a00 	vldr	s15, [r3]
+ 8001ee0:	eddf 6a61 	vldr	s13, [pc, #388]	@ 8002068 <StartDefaultTask+0x590>
+ 8001ee4:	ee86 7aa7 	vdiv.f32	s14, s13, s15
+ 8001ee8:	4b5b      	ldr	r3, [pc, #364]	@ (8002058 <StartDefaultTask+0x580>)
+ 8001eea:	edd3 7a00 	vldr	s15, [r3]
+ 8001eee:	eef0 7ae7 	vabs.f32	s15, s15
+ 8001ef2:	ee67 7a27 	vmul.f32	s15, s14, s15
+ 8001ef6:	eefc 7ae7 	vcvt.u32.f32	s15, s15
+ 8001efa:	ee17 3a90 	vmov	r3, s15
+ 8001efe:	b29a      	uxth	r2, r3
+ 8001f00:	4b54      	ldr	r3, [pc, #336]	@ (8002054 <StartDefaultTask+0x57c>)
+ 8001f02:	801a      	strh	r2, [r3, #0]
+ 8001f04:	e017      	b.n	8001f36 <StartDefaultTask+0x45e>
 	      } else {
 	          motor_direction_flag = 0;  // Reverse
- 8001f0a:	4b56      	ldr	r3, [pc, #344]	@ (8002064 <StartDefaultTask+0x58c>)
- 8001f0c:	2200      	movs	r2, #0
- 8001f0e:	601a      	str	r2, [r3, #0]
+ 8001f06:	4b56      	ldr	r3, [pc, #344]	@ (8002060 <StartDefaultTask+0x588>)
+ 8001f08:	2200      	movs	r2, #0
+ 8001f0a:	601a      	str	r2, [r3, #0]
 	          voltage_reference_1 = (4095.0f / motor1MaxCurrent) * fabsf(-1*commanded_current);
- 8001f10:	4b55      	ldr	r3, [pc, #340]	@ (8002068 <StartDefaultTask+0x590>)
- 8001f12:	edd3 7a00 	vldr	s15, [r3]
- 8001f16:	eddf 6a55 	vldr	s13, [pc, #340]	@ 800206c <StartDefaultTask+0x594>
- 8001f1a:	ee86 7aa7 	vdiv.f32	s14, s13, s15
- 8001f1e:	4b4f      	ldr	r3, [pc, #316]	@ (800205c <StartDefaultTask+0x584>)
- 8001f20:	edd3 7a00 	vldr	s15, [r3]
- 8001f24:	eef0 7ae7 	vabs.f32	s15, s15
- 8001f28:	ee67 7a27 	vmul.f32	s15, s14, s15
- 8001f2c:	eefc 7ae7 	vcvt.u32.f32	s15, s15
- 8001f30:	ee17 3a90 	vmov	r3, s15
- 8001f34:	b29a      	uxth	r2, r3
- 8001f36:	4b48      	ldr	r3, [pc, #288]	@ (8002058 <StartDefaultTask+0x580>)
- 8001f38:	801a      	strh	r2, [r3, #0]
+ 8001f0c:	4b55      	ldr	r3, [pc, #340]	@ (8002064 <StartDefaultTask+0x58c>)
+ 8001f0e:	edd3 7a00 	vldr	s15, [r3]
+ 8001f12:	eddf 6a55 	vldr	s13, [pc, #340]	@ 8002068 <StartDefaultTask+0x590>
+ 8001f16:	ee86 7aa7 	vdiv.f32	s14, s13, s15
+ 8001f1a:	4b4f      	ldr	r3, [pc, #316]	@ (8002058 <StartDefaultTask+0x580>)
+ 8001f1c:	edd3 7a00 	vldr	s15, [r3]
+ 8001f20:	eef0 7ae7 	vabs.f32	s15, s15
+ 8001f24:	ee67 7a27 	vmul.f32	s15, s14, s15
+ 8001f28:	eefc 7ae7 	vcvt.u32.f32	s15, s15
+ 8001f2c:	ee17 3a90 	vmov	r3, s15
+ 8001f30:	b29a      	uxth	r2, r3
+ 8001f32:	4b48      	ldr	r3, [pc, #288]	@ (8002054 <StartDefaultTask+0x57c>)
+ 8001f34:	801a      	strh	r2, [r3, #0]
 
 	  // Convert current to PWM duty cycle (12-bit scale), store in voltage_reference_1
 
 
 	  // Apply output using reference voltage and direction
 	  ConfigureMotor01(ENABLEmOTOR, motor_direction_flag, voltage_reference_1);
- 8001f3a:	4b4d      	ldr	r3, [pc, #308]	@ (8002070 <StartDefaultTask+0x598>)
- 8001f3c:	881b      	ldrh	r3, [r3, #0]
- 8001f3e:	4618      	mov	r0, r3
- 8001f40:	4b48      	ldr	r3, [pc, #288]	@ (8002064 <StartDefaultTask+0x58c>)
- 8001f42:	681b      	ldr	r3, [r3, #0]
- 8001f44:	4a44      	ldr	r2, [pc, #272]	@ (8002058 <StartDefaultTask+0x580>)
- 8001f46:	8812      	ldrh	r2, [r2, #0]
- 8001f48:	4619      	mov	r1, r3
- 8001f4a:	f7fe ffdb 	bl	8000f04 <ConfigureMotor01>
+ 8001f36:	4b4d      	ldr	r3, [pc, #308]	@ (800206c <StartDefaultTask+0x594>)
+ 8001f38:	881b      	ldrh	r3, [r3, #0]
+ 8001f3a:	4618      	mov	r0, r3
+ 8001f3c:	4b48      	ldr	r3, [pc, #288]	@ (8002060 <StartDefaultTask+0x588>)
+ 8001f3e:	681b      	ldr	r3, [r3, #0]
+ 8001f40:	4a44      	ldr	r2, [pc, #272]	@ (8002054 <StartDefaultTask+0x57c>)
+ 8001f42:	8812      	ldrh	r2, [r2, #0]
+ 8001f44:	4619      	mov	r1, r3
+ 8001f46:	f7fe ffdd 	bl	8000f04 <ConfigureMotor01>
 	  // Limit commanded current to ±3.0 A and set motor direction
 	  if (motor02_commanded_current > 3.0f) {
- 8001f4e:	4b49      	ldr	r3, [pc, #292]	@ (8002074 <StartDefaultTask+0x59c>)
- 8001f50:	edd3 7a00 	vldr	s15, [r3]
- 8001f54:	eeb0 7a08 	vmov.f32	s14, #8	@ 0x40400000  3.0
- 8001f58:	eef4 7ac7 	vcmpe.f32	s15, s14
- 8001f5c:	eef1 fa10 	vmrs	APSR_nzcv, fpscr
- 8001f60:	dd16      	ble.n	8001f90 <StartDefaultTask+0x4b8>
+ 8001f4a:	4b49      	ldr	r3, [pc, #292]	@ (8002070 <StartDefaultTask+0x598>)
+ 8001f4c:	edd3 7a00 	vldr	s15, [r3]
+ 8001f50:	eeb0 7a08 	vmov.f32	s14, #8	@ 0x40400000  3.0
+ 8001f54:	eef4 7ac7 	vcmpe.f32	s15, s14
+ 8001f58:	eef1 fa10 	vmrs	APSR_nzcv, fpscr
+ 8001f5c:	dd16      	ble.n	8001f8c <StartDefaultTask+0x4b4>
 		  motor02_commanded_current = 3.0f;
- 8001f62:	4b44      	ldr	r3, [pc, #272]	@ (8002074 <StartDefaultTask+0x59c>)
- 8001f64:	4a44      	ldr	r2, [pc, #272]	@ (8002078 <StartDefaultTask+0x5a0>)
- 8001f66:	601a      	str	r2, [r3, #0]
+ 8001f5e:	4b44      	ldr	r3, [pc, #272]	@ (8002070 <StartDefaultTask+0x598>)
+ 8001f60:	4a44      	ldr	r2, [pc, #272]	@ (8002074 <StartDefaultTask+0x59c>)
+ 8001f62:	601a      	str	r2, [r3, #0]
 		  motor02_direction_flag = 1;  // Forward direction
- 8001f68:	4b44      	ldr	r3, [pc, #272]	@ (800207c <StartDefaultTask+0x5a4>)
- 8001f6a:	2201      	movs	r2, #1
- 8001f6c:	601a      	str	r2, [r3, #0]
+ 8001f64:	4b44      	ldr	r3, [pc, #272]	@ (8002078 <StartDefaultTask+0x5a0>)
+ 8001f66:	2201      	movs	r2, #1
+ 8001f68:	601a      	str	r2, [r3, #0]
 		  voltage_reference_2 = (4095.0f / 3.0f) * fabsf(motor02_commanded_current);
- 8001f6e:	4b41      	ldr	r3, [pc, #260]	@ (8002074 <StartDefaultTask+0x59c>)
- 8001f70:	edd3 7a00 	vldr	s15, [r3]
- 8001f74:	eef0 7ae7 	vabs.f32	s15, s15
- 8001f78:	ed9f 7a41 	vldr	s14, [pc, #260]	@ 8002080 <StartDefaultTask+0x5a8>
- 8001f7c:	ee67 7a87 	vmul.f32	s15, s15, s14
- 8001f80:	eefc 7ae7 	vcvt.u32.f32	s15, s15
- 8001f84:	ee17 3a90 	vmov	r3, s15
- 8001f88:	b29a      	uxth	r2, r3
- 8001f8a:	4b3e      	ldr	r3, [pc, #248]	@ (8002084 <StartDefaultTask+0x5ac>)
- 8001f8c:	801a      	strh	r2, [r3, #0]
- 8001f8e:	e04f      	b.n	8002030 <StartDefaultTask+0x558>
+ 8001f6a:	4b41      	ldr	r3, [pc, #260]	@ (8002070 <StartDefaultTask+0x598>)
+ 8001f6c:	edd3 7a00 	vldr	s15, [r3]
+ 8001f70:	eef0 7ae7 	vabs.f32	s15, s15
+ 8001f74:	ed9f 7a41 	vldr	s14, [pc, #260]	@ 800207c <StartDefaultTask+0x5a4>
+ 8001f78:	ee67 7a87 	vmul.f32	s15, s15, s14
+ 8001f7c:	eefc 7ae7 	vcvt.u32.f32	s15, s15
+ 8001f80:	ee17 3a90 	vmov	r3, s15
+ 8001f84:	b29a      	uxth	r2, r3
+ 8001f86:	4b3e      	ldr	r3, [pc, #248]	@ (8002080 <StartDefaultTask+0x5a8>)
+ 8001f88:	801a      	strh	r2, [r3, #0]
+ 8001f8a:	e04f      	b.n	800202c <StartDefaultTask+0x554>
 	  }
 	  else if (motor02_commanded_current < -3.0f) {
- 8001f90:	4b38      	ldr	r3, [pc, #224]	@ (8002074 <StartDefaultTask+0x59c>)
- 8001f92:	edd3 7a00 	vldr	s15, [r3]
- 8001f96:	eeb8 7a08 	vmov.f32	s14, #136	@ 0xc0400000 -3.0
- 8001f9a:	eef4 7ac7 	vcmpe.f32	s15, s14
- 8001f9e:	eef1 fa10 	vmrs	APSR_nzcv, fpscr
- 8001fa2:	d516      	bpl.n	8001fd2 <StartDefaultTask+0x4fa>
+ 8001f8c:	4b38      	ldr	r3, [pc, #224]	@ (8002070 <StartDefaultTask+0x598>)
+ 8001f8e:	edd3 7a00 	vldr	s15, [r3]
+ 8001f92:	eeb8 7a08 	vmov.f32	s14, #136	@ 0xc0400000 -3.0
+ 8001f96:	eef4 7ac7 	vcmpe.f32	s15, s14
+ 8001f9a:	eef1 fa10 	vmrs	APSR_nzcv, fpscr
+ 8001f9e:	d516      	bpl.n	8001fce <StartDefaultTask+0x4f6>
 		  motor02_commanded_current = -3.0f;
- 8001fa4:	4b33      	ldr	r3, [pc, #204]	@ (8002074 <StartDefaultTask+0x59c>)
- 8001fa6:	4a38      	ldr	r2, [pc, #224]	@ (8002088 <StartDefaultTask+0x5b0>)
- 8001fa8:	601a      	str	r2, [r3, #0]
+ 8001fa0:	4b33      	ldr	r3, [pc, #204]	@ (8002070 <StartDefaultTask+0x598>)
+ 8001fa2:	4a38      	ldr	r2, [pc, #224]	@ (8002084 <StartDefaultTask+0x5ac>)
+ 8001fa4:	601a      	str	r2, [r3, #0]
 		  motor02_direction_flag = 0;  // Reverse direction
- 8001faa:	4b34      	ldr	r3, [pc, #208]	@ (800207c <StartDefaultTask+0x5a4>)
- 8001fac:	2200      	movs	r2, #0
- 8001fae:	601a      	str	r2, [r3, #0]
+ 8001fa6:	4b34      	ldr	r3, [pc, #208]	@ (8002078 <StartDefaultTask+0x5a0>)
+ 8001fa8:	2200      	movs	r2, #0
+ 8001faa:	601a      	str	r2, [r3, #0]
 		  voltage_reference_2 = (4095.0f / 3.0f) * fabsf(-1*motor02_commanded_current);
- 8001fb0:	4b30      	ldr	r3, [pc, #192]	@ (8002074 <StartDefaultTask+0x59c>)
- 8001fb2:	edd3 7a00 	vldr	s15, [r3]
- 8001fb6:	eef0 7ae7 	vabs.f32	s15, s15
- 8001fba:	ed9f 7a31 	vldr	s14, [pc, #196]	@ 8002080 <StartDefaultTask+0x5a8>
- 8001fbe:	ee67 7a87 	vmul.f32	s15, s15, s14
- 8001fc2:	eefc 7ae7 	vcvt.u32.f32	s15, s15
- 8001fc6:	ee17 3a90 	vmov	r3, s15
- 8001fca:	b29a      	uxth	r2, r3
- 8001fcc:	4b2d      	ldr	r3, [pc, #180]	@ (8002084 <StartDefaultTask+0x5ac>)
- 8001fce:	801a      	strh	r2, [r3, #0]
- 8001fd0:	e02e      	b.n	8002030 <StartDefaultTask+0x558>
+ 8001fac:	4b30      	ldr	r3, [pc, #192]	@ (8002070 <StartDefaultTask+0x598>)
+ 8001fae:	edd3 7a00 	vldr	s15, [r3]
+ 8001fb2:	eef0 7ae7 	vabs.f32	s15, s15
+ 8001fb6:	ed9f 7a31 	vldr	s14, [pc, #196]	@ 800207c <StartDefaultTask+0x5a4>
+ 8001fba:	ee67 7a87 	vmul.f32	s15, s15, s14
+ 8001fbe:	eefc 7ae7 	vcvt.u32.f32	s15, s15
+ 8001fc2:	ee17 3a90 	vmov	r3, s15
+ 8001fc6:	b29a      	uxth	r2, r3
+ 8001fc8:	4b2d      	ldr	r3, [pc, #180]	@ (8002080 <StartDefaultTask+0x5a8>)
+ 8001fca:	801a      	strh	r2, [r3, #0]
+ 8001fcc:	e02e      	b.n	800202c <StartDefaultTask+0x554>
 	  }
 	  else {
 	      // Current is within safe bounds; determine direction by sign
 	      if (motor02_commanded_current >= 0.0f) {
- 8001fd2:	4b28      	ldr	r3, [pc, #160]	@ (8002074 <StartDefaultTask+0x59c>)
- 8001fd4:	edd3 7a00 	vldr	s15, [r3]
- 8001fd8:	eef5 7ac0 	vcmpe.f32	s15, #0.0
- 8001fdc:	eef1 fa10 	vmrs	APSR_nzcv, fpscr
- 8001fe0:	db13      	blt.n	800200a <StartDefaultTask+0x532>
+ 8001fce:	4b28      	ldr	r3, [pc, #160]	@ (8002070 <StartDefaultTask+0x598>)
+ 8001fd0:	edd3 7a00 	vldr	s15, [r3]
+ 8001fd4:	eef5 7ac0 	vcmpe.f32	s15, #0.0
+ 8001fd8:	eef1 fa10 	vmrs	APSR_nzcv, fpscr
+ 8001fdc:	db13      	blt.n	8002006 <StartDefaultTask+0x52e>
 	    	  motor02_direction_flag = 1;  // Forward
- 8001fe2:	4b26      	ldr	r3, [pc, #152]	@ (800207c <StartDefaultTask+0x5a4>)
- 8001fe4:	2201      	movs	r2, #1
- 8001fe6:	601a      	str	r2, [r3, #0]
+ 8001fde:	4b26      	ldr	r3, [pc, #152]	@ (8002078 <StartDefaultTask+0x5a0>)
+ 8001fe0:	2201      	movs	r2, #1
+ 8001fe2:	601a      	str	r2, [r3, #0]
 	    	  voltage_reference_2 = (4095.0f / 3.0f) * fabsf(motor02_commanded_current);
- 8001fe8:	4b22      	ldr	r3, [pc, #136]	@ (8002074 <StartDefaultTask+0x59c>)
- 8001fea:	edd3 7a00 	vldr	s15, [r3]
- 8001fee:	eef0 7ae7 	vabs.f32	s15, s15
- 8001ff2:	ed9f 7a23 	vldr	s14, [pc, #140]	@ 8002080 <StartDefaultTask+0x5a8>
- 8001ff6:	ee67 7a87 	vmul.f32	s15, s15, s14
- 8001ffa:	eefc 7ae7 	vcvt.u32.f32	s15, s15
- 8001ffe:	ee17 3a90 	vmov	r3, s15
- 8002002:	b29a      	uxth	r2, r3
- 8002004:	4b1f      	ldr	r3, [pc, #124]	@ (8002084 <StartDefaultTask+0x5ac>)
- 8002006:	801a      	strh	r2, [r3, #0]
- 8002008:	e012      	b.n	8002030 <StartDefaultTask+0x558>
+ 8001fe4:	4b22      	ldr	r3, [pc, #136]	@ (8002070 <StartDefaultTask+0x598>)
+ 8001fe6:	edd3 7a00 	vldr	s15, [r3]
+ 8001fea:	eef0 7ae7 	vabs.f32	s15, s15
+ 8001fee:	ed9f 7a23 	vldr	s14, [pc, #140]	@ 800207c <StartDefaultTask+0x5a4>
+ 8001ff2:	ee67 7a87 	vmul.f32	s15, s15, s14
+ 8001ff6:	eefc 7ae7 	vcvt.u32.f32	s15, s15
+ 8001ffa:	ee17 3a90 	vmov	r3, s15
+ 8001ffe:	b29a      	uxth	r2, r3
+ 8002000:	4b1f      	ldr	r3, [pc, #124]	@ (8002080 <StartDefaultTask+0x5a8>)
+ 8002002:	801a      	strh	r2, [r3, #0]
+ 8002004:	e012      	b.n	800202c <StartDefaultTask+0x554>
 	      } else {
 	    	  motor02_direction_flag = 0;  // Reverse
- 800200a:	4b1c      	ldr	r3, [pc, #112]	@ (800207c <StartDefaultTask+0x5a4>)
- 800200c:	2200      	movs	r2, #0
- 800200e:	601a      	str	r2, [r3, #0]
+ 8002006:	4b1c      	ldr	r3, [pc, #112]	@ (8002078 <StartDefaultTask+0x5a0>)
+ 8002008:	2200      	movs	r2, #0
+ 800200a:	601a      	str	r2, [r3, #0]
 	          voltage_reference_2 = (4095.0f / 3.0f) * fabsf(-1*motor02_commanded_current);
- 8002010:	4b18      	ldr	r3, [pc, #96]	@ (8002074 <StartDefaultTask+0x59c>)
- 8002012:	edd3 7a00 	vldr	s15, [r3]
- 8002016:	eef0 7ae7 	vabs.f32	s15, s15
- 800201a:	ed9f 7a19 	vldr	s14, [pc, #100]	@ 8002080 <StartDefaultTask+0x5a8>
- 800201e:	ee67 7a87 	vmul.f32	s15, s15, s14
- 8002022:	eefc 7ae7 	vcvt.u32.f32	s15, s15
- 8002026:	ee17 3a90 	vmov	r3, s15
- 800202a:	b29a      	uxth	r2, r3
- 800202c:	4b15      	ldr	r3, [pc, #84]	@ (8002084 <StartDefaultTask+0x5ac>)
- 800202e:	801a      	strh	r2, [r3, #0]
+ 800200c:	4b18      	ldr	r3, [pc, #96]	@ (8002070 <StartDefaultTask+0x598>)
+ 800200e:	edd3 7a00 	vldr	s15, [r3]
+ 8002012:	eef0 7ae7 	vabs.f32	s15, s15
+ 8002016:	ed9f 7a19 	vldr	s14, [pc, #100]	@ 800207c <StartDefaultTask+0x5a4>
+ 800201a:	ee67 7a87 	vmul.f32	s15, s15, s14
+ 800201e:	eefc 7ae7 	vcvt.u32.f32	s15, s15
+ 8002022:	ee17 3a90 	vmov	r3, s15
+ 8002026:	b29a      	uxth	r2, r3
+ 8002028:	4b15      	ldr	r3, [pc, #84]	@ (8002080 <StartDefaultTask+0x5a8>)
+ 800202a:	801a      	strh	r2, [r3, #0]
 
 	  // Convert commanded current to PWM duty cycle (12-bit scale)
 	  // Assuming 3.3V corresponds to max current of 3A
 	  //voltage_reference_2 = (4096.0f / 3.3f) * fabsf(motor02_commanded_current);
 
 	  ConfigureMotor02(ENABLEmOTOR, motor02_direction_flag, voltage_reference_2);
- 8002030:	4b0f      	ldr	r3, [pc, #60]	@ (8002070 <StartDefaultTask+0x598>)
- 8002032:	881b      	ldrh	r3, [r3, #0]
- 8002034:	4618      	mov	r0, r3
- 8002036:	4b11      	ldr	r3, [pc, #68]	@ (800207c <StartDefaultTask+0x5a4>)
- 8002038:	681b      	ldr	r3, [r3, #0]
- 800203a:	4a12      	ldr	r2, [pc, #72]	@ (8002084 <StartDefaultTask+0x5ac>)
- 800203c:	8812      	ldrh	r2, [r2, #0]
- 800203e:	4619      	mov	r1, r3
- 8002040:	f7fe ff84 	bl	8000f4c <ConfigureMotor02>
+ 800202c:	4b0f      	ldr	r3, [pc, #60]	@ (800206c <StartDefaultTask+0x594>)
+ 800202e:	881b      	ldrh	r3, [r3, #0]
+ 8002030:	4618      	mov	r0, r3
+ 8002032:	4b11      	ldr	r3, [pc, #68]	@ (8002078 <StartDefaultTask+0x5a0>)
+ 8002034:	681b      	ldr	r3, [r3, #0]
+ 8002036:	4a12      	ldr	r2, [pc, #72]	@ (8002080 <StartDefaultTask+0x5a8>)
+ 8002038:	8812      	ldrh	r2, [r2, #0]
+ 800203a:	4619      	mov	r1, r3
+ 800203c:	f7fe ff86 	bl	8000f4c <ConfigureMotor02>
 
 	  /*********************************************************
 	   *               Update Time Interval                   *
 	   *********************************************************/
 
 	  osDelay(5);
- 8002044:	2005      	movs	r0, #5
- 8002046:	f005 fb99 	bl	800777c <osDelay>
+ 8002040:	2005      	movs	r0, #5
+ 8002042:	f005 fb9b 	bl	800777c <osDelay>
 	  time_end = __HAL_TIM_GET_COUNTER(&htim2);
- 800204a:	4b10      	ldr	r3, [pc, #64]	@ (800208c <StartDefaultTask+0x5b4>)
- 800204c:	681b      	ldr	r3, [r3, #0]
- 800204e:	6a5b      	ldr	r3, [r3, #36]	@ 0x24
- 8002050:	4a0f      	ldr	r2, [pc, #60]	@ (8002090 <StartDefaultTask+0x5b8>)
- 8002052:	6013      	str	r3, [r2, #0]
+ 8002046:	4b10      	ldr	r3, [pc, #64]	@ (8002088 <StartDefaultTask+0x5b0>)
+ 8002048:	681b      	ldr	r3, [r3, #0]
+ 800204a:	6a5b      	ldr	r3, [r3, #36]	@ 0x24
+ 800204c:	4a0f      	ldr	r2, [pc, #60]	@ (800208c <StartDefaultTask+0x5b4>)
+ 800204e:	6013      	str	r3, [r2, #0]
   {
- 8002054:	e544      	b.n	8001ae0 <StartDefaultTask+0x8>
- 8002056:	bf00      	nop
- 8002058:	20001d7c 	.word	0x20001d7c
- 800205c:	20001d74 	.word	0x20001d74
- 8002060:	bf800000 	.word	0xbf800000
- 8002064:	20001d78 	.word	0x20001d78
- 8002068:	20000028 	.word	0x20000028
- 800206c:	457ff000 	.word	0x457ff000
- 8002070:	20001e20 	.word	0x20001e20
- 8002074:	20001dcc 	.word	0x20001dcc
- 8002078:	40400000 	.word	0x40400000
- 800207c:	20001dd0 	.word	0x20001dd0
- 8002080:	44aaa000 	.word	0x44aaa000
- 8002084:	20001d7e 	.word	0x20001d7e
- 8002088:	c0400000 	.word	0xc0400000
- 800208c:	20000400 	.word	0x20000400
- 8002090:	2000050c 	.word	0x2000050c
+ 8002050:	e546      	b.n	8001ae0 <StartDefaultTask+0x8>
+ 8002052:	bf00      	nop
+ 8002054:	20001d7c 	.word	0x20001d7c
+ 8002058:	20001d74 	.word	0x20001d74
+ 800205c:	bf800000 	.word	0xbf800000
+ 8002060:	20001d78 	.word	0x20001d78
+ 8002064:	20000028 	.word	0x20000028
+ 8002068:	457ff000 	.word	0x457ff000
+ 800206c:	20001e20 	.word	0x20001e20
+ 8002070:	20001dcc 	.word	0x20001dcc
+ 8002074:	40400000 	.word	0x40400000
+ 8002078:	20001dd0 	.word	0x20001dd0
+ 800207c:	44aaa000 	.word	0x44aaa000
+ 8002080:	20001d7e 	.word	0x20001d7e
+ 8002084:	c0400000 	.word	0xc0400000
+ 8002088:	20000400 	.word	0x20000400
+ 800208c:	2000050c 	.word	0x2000050c
 
-08002094 <StartTask02>:
+08002090 <StartTask02>:
 * @param argument: Not used
 * @retval None
 */
 /* USER CODE END Header_StartTask02 */
 void StartTask02(void const * argument)
 {
- 8002094:	b580      	push	{r7, lr}
- 8002096:	b096      	sub	sp, #88	@ 0x58
- 8002098:	af02      	add	r7, sp, #8
- 800209a:	6078      	str	r0, [r7, #4]
+ 8002090:	b580      	push	{r7, lr}
+ 8002092:	b096      	sub	sp, #88	@ 0x58
+ 8002094:	af02      	add	r7, sp, #8
+ 8002096:	6078      	str	r0, [r7, #4]
   /* Infinite loop */
   for(;;)
   {
 
 
 	if (SDCardRecordMode==1){
- 800209c:	4b66      	ldr	r3, [pc, #408]	@ (8002238 <StartTask02+0x1a4>)
- 800209e:	681b      	ldr	r3, [r3, #0]
- 80020a0:	2b01      	cmp	r3, #1
- 80020a2:	d15c      	bne.n	800215e <StartTask02+0xca>
+ 8002098:	4b66      	ldr	r3, [pc, #408]	@ (8002234 <StartTask02+0x1a4>)
+ 800209a:	681b      	ldr	r3, [r3, #0]
+ 800209c:	2b01      	cmp	r3, #1
+ 800209e:	d15c      	bne.n	800215a <StartTask02+0xca>
     SDCardCount++;
- 80020a4:	4b65      	ldr	r3, [pc, #404]	@ (800223c <StartTask02+0x1a8>)
- 80020a6:	681b      	ldr	r3, [r3, #0]
- 80020a8:	3301      	adds	r3, #1
- 80020aa:	4a64      	ldr	r2, [pc, #400]	@ (800223c <StartTask02+0x1a8>)
- 80020ac:	6013      	str	r3, [r2, #0]
+ 80020a0:	4b65      	ldr	r3, [pc, #404]	@ (8002238 <StartTask02+0x1a8>)
+ 80020a2:	681b      	ldr	r3, [r3, #0]
+ 80020a4:	3301      	adds	r3, #1
+ 80020a6:	4a64      	ldr	r2, [pc, #400]	@ (8002238 <StartTask02+0x1a8>)
+ 80020a8:	6013      	str	r3, [r2, #0]
     if (EncoderUpdated == 1 && communicationError==0) {
- 80020ae:	4b64      	ldr	r3, [pc, #400]	@ (8002240 <StartTask02+0x1ac>)
- 80020b0:	681b      	ldr	r3, [r3, #0]
- 80020b2:	2b01      	cmp	r3, #1
- 80020b4:	f040 80b9 	bne.w	800222a <StartTask02+0x196>
- 80020b8:	4b62      	ldr	r3, [pc, #392]	@ (8002244 <StartTask02+0x1b0>)
- 80020ba:	681b      	ldr	r3, [r3, #0]
- 80020bc:	2b00      	cmp	r3, #0
- 80020be:	f040 80b4 	bne.w	800222a <StartTask02+0x196>
+ 80020aa:	4b64      	ldr	r3, [pc, #400]	@ (800223c <StartTask02+0x1ac>)
+ 80020ac:	681b      	ldr	r3, [r3, #0]
+ 80020ae:	2b01      	cmp	r3, #1
+ 80020b0:	f040 80b9 	bne.w	8002226 <StartTask02+0x196>
+ 80020b4:	4b62      	ldr	r3, [pc, #392]	@ (8002240 <StartTask02+0x1b0>)
+ 80020b6:	681b      	ldr	r3, [r3, #0]
+ 80020b8:	2b00      	cmp	r3, #0
+ 80020ba:	f040 80b4 	bne.w	8002226 <StartTask02+0x196>
         FRESULT fr;
         UINT bytes_written;
 
         // Open the file for appending
         fr = f_open(&fil, "Data.txt", FA_OPEN_APPEND | FA_WRITE);
- 80020c2:	2232      	movs	r2, #50	@ 0x32
- 80020c4:	4960      	ldr	r1, [pc, #384]	@ (8002248 <StartTask02+0x1b4>)
- 80020c6:	4861      	ldr	r0, [pc, #388]	@ (800224c <StartTask02+0x1b8>)
- 80020c8:	f004 fe15 	bl	8006cf6 <f_open>
- 80020cc:	4603      	mov	r3, r0
- 80020ce:	f887 3046 	strb.w	r3, [r7, #70]	@ 0x46
+ 80020be:	2232      	movs	r2, #50	@ 0x32
+ 80020c0:	4960      	ldr	r1, [pc, #384]	@ (8002244 <StartTask02+0x1b4>)
+ 80020c2:	4861      	ldr	r0, [pc, #388]	@ (8002248 <StartTask02+0x1b8>)
+ 80020c4:	f004 fe17 	bl	8006cf6 <f_open>
+ 80020c8:	4603      	mov	r3, r0
+ 80020ca:	f887 3046 	strb.w	r3, [r7, #70]	@ 0x46
         if (fr != FR_OK) {
- 80020d2:	f897 3046 	ldrb.w	r3, [r7, #70]	@ 0x46
- 80020d6:	2b00      	cmp	r3, #0
- 80020d8:	d003      	beq.n	80020e2 <StartTask02+0x4e>
+ 80020ce:	f897 3046 	ldrb.w	r3, [r7, #70]	@ 0x46
+ 80020d2:	2b00      	cmp	r3, #0
+ 80020d4:	d003      	beq.n	80020de <StartTask02+0x4e>
             // Optional: Handle error (blink LED, set flag, etc.)
         	communicationError=1;
- 80020da:	4b5a      	ldr	r3, [pc, #360]	@ (8002244 <StartTask02+0x1b0>)
- 80020dc:	2201      	movs	r2, #1
- 80020de:	601a      	str	r2, [r3, #0]
+ 80020d6:	4b5a      	ldr	r3, [pc, #360]	@ (8002240 <StartTask02+0x1b0>)
+ 80020d8:	2201      	movs	r2, #1
+ 80020da:	601a      	str	r2, [r3, #0]
             return;
- 80020e0:	e0a7      	b.n	8002232 <StartTask02+0x19e>
+ 80020dc:	e0a7      	b.n	800222e <StartTask02+0x19e>
         }
 
         // Format the record number and encoder tick data into a string
         sprintf(buffer, "R%lu: E1: %lu, E2: %lu\n", SDCardCount, encoder_ticks, encoder_ticks2);
- 80020e2:	4b56      	ldr	r3, [pc, #344]	@ (800223c <StartTask02+0x1a8>)
- 80020e4:	681a      	ldr	r2, [r3, #0]
- 80020e6:	4b5a      	ldr	r3, [pc, #360]	@ (8002250 <StartTask02+0x1bc>)
- 80020e8:	6819      	ldr	r1, [r3, #0]
- 80020ea:	4b5a      	ldr	r3, [pc, #360]	@ (8002254 <StartTask02+0x1c0>)
- 80020ec:	681b      	ldr	r3, [r3, #0]
- 80020ee:	9300      	str	r3, [sp, #0]
- 80020f0:	460b      	mov	r3, r1
- 80020f2:	4959      	ldr	r1, [pc, #356]	@ (8002258 <StartTask02+0x1c4>)
- 80020f4:	4859      	ldr	r0, [pc, #356]	@ (800225c <StartTask02+0x1c8>)
- 80020f6:	f007 fd59 	bl	8009bac <siprintf>
+ 80020de:	4b56      	ldr	r3, [pc, #344]	@ (8002238 <StartTask02+0x1a8>)
+ 80020e0:	681a      	ldr	r2, [r3, #0]
+ 80020e2:	4b5a      	ldr	r3, [pc, #360]	@ (800224c <StartTask02+0x1bc>)
+ 80020e4:	6819      	ldr	r1, [r3, #0]
+ 80020e6:	4b5a      	ldr	r3, [pc, #360]	@ (8002250 <StartTask02+0x1c0>)
+ 80020e8:	681b      	ldr	r3, [r3, #0]
+ 80020ea:	9300      	str	r3, [sp, #0]
+ 80020ec:	460b      	mov	r3, r1
+ 80020ee:	4959      	ldr	r1, [pc, #356]	@ (8002254 <StartTask02+0x1c4>)
+ 80020f0:	4859      	ldr	r0, [pc, #356]	@ (8002258 <StartTask02+0x1c8>)
+ 80020f2:	f007 fd5b 	bl	8009bac <siprintf>
         //"R%lu: E1: %lu, E2: %lu\n"
         // Write to the file
         fr = f_write(&fil, buffer, strlen(buffer), &bytes_written);
- 80020fa:	4858      	ldr	r0, [pc, #352]	@ (800225c <StartTask02+0x1c8>)
- 80020fc:	f7fe f888 	bl	8000210 <strlen>
- 8002100:	4602      	mov	r2, r0
- 8002102:	f107 0340 	add.w	r3, r7, #64	@ 0x40
- 8002106:	4955      	ldr	r1, [pc, #340]	@ (800225c <StartTask02+0x1c8>)
- 8002108:	4850      	ldr	r0, [pc, #320]	@ (800224c <StartTask02+0x1b8>)
- 800210a:	f004 ffc3 	bl	8007094 <f_write>
- 800210e:	4603      	mov	r3, r0
- 8002110:	f887 3046 	strb.w	r3, [r7, #70]	@ 0x46
+ 80020f6:	4858      	ldr	r0, [pc, #352]	@ (8002258 <StartTask02+0x1c8>)
+ 80020f8:	f7fe f88a 	bl	8000210 <strlen>
+ 80020fc:	4602      	mov	r2, r0
+ 80020fe:	f107 0340 	add.w	r3, r7, #64	@ 0x40
+ 8002102:	4955      	ldr	r1, [pc, #340]	@ (8002258 <StartTask02+0x1c8>)
+ 8002104:	4850      	ldr	r0, [pc, #320]	@ (8002248 <StartTask02+0x1b8>)
+ 8002106:	f004 ffc5 	bl	8007094 <f_write>
+ 800210a:	4603      	mov	r3, r0
+ 800210c:	f887 3046 	strb.w	r3, [r7, #70]	@ 0x46
         if (fr != FR_OK || bytes_written == 0) {
- 8002114:	f897 3046 	ldrb.w	r3, [r7, #70]	@ 0x46
- 8002118:	2b00      	cmp	r3, #0
- 800211a:	d102      	bne.n	8002122 <StartTask02+0x8e>
- 800211c:	6c3b      	ldr	r3, [r7, #64]	@ 0x40
- 800211e:	2b00      	cmp	r3, #0
- 8002120:	d106      	bne.n	8002130 <StartTask02+0x9c>
+ 8002110:	f897 3046 	ldrb.w	r3, [r7, #70]	@ 0x46
+ 8002114:	2b00      	cmp	r3, #0
+ 8002116:	d102      	bne.n	800211e <StartTask02+0x8e>
+ 8002118:	6c3b      	ldr	r3, [r7, #64]	@ 0x40
+ 800211a:	2b00      	cmp	r3, #0
+ 800211c:	d106      	bne.n	800212c <StartTask02+0x9c>
             f_close(&fil);  // Close anyway if open
- 8002122:	484a      	ldr	r0, [pc, #296]	@ (800224c <StartTask02+0x1b8>)
- 8002124:	f005 fa02 	bl	800752c <f_close>
+ 800211e:	484a      	ldr	r0, [pc, #296]	@ (8002248 <StartTask02+0x1b8>)
+ 8002120:	f005 fa04 	bl	800752c <f_close>
             communicationError=1;
- 8002128:	4b46      	ldr	r3, [pc, #280]	@ (8002244 <StartTask02+0x1b0>)
- 800212a:	2201      	movs	r2, #1
- 800212c:	601a      	str	r2, [r3, #0]
+ 8002124:	4b46      	ldr	r3, [pc, #280]	@ (8002240 <StartTask02+0x1b0>)
+ 8002126:	2201      	movs	r2, #1
+ 8002128:	601a      	str	r2, [r3, #0]
             return;
- 800212e:	e080      	b.n	8002232 <StartTask02+0x19e>
+ 800212a:	e080      	b.n	800222e <StartTask02+0x19e>
         }
 
         // Close the file
         fr = f_close(&fil);
- 8002130:	4846      	ldr	r0, [pc, #280]	@ (800224c <StartTask02+0x1b8>)
- 8002132:	f005 f9fb 	bl	800752c <f_close>
- 8002136:	4603      	mov	r3, r0
- 8002138:	f887 3046 	strb.w	r3, [r7, #70]	@ 0x46
+ 800212c:	4846      	ldr	r0, [pc, #280]	@ (8002248 <StartTask02+0x1b8>)
+ 800212e:	f005 f9fd 	bl	800752c <f_close>
+ 8002132:	4603      	mov	r3, r0
+ 8002134:	f887 3046 	strb.w	r3, [r7, #70]	@ 0x46
         if (fr != FR_OK) {
- 800213c:	f897 3046 	ldrb.w	r3, [r7, #70]	@ 0x46
- 8002140:	2b00      	cmp	r3, #0
- 8002142:	d003      	beq.n	800214c <StartTask02+0xb8>
+ 8002138:	f897 3046 	ldrb.w	r3, [r7, #70]	@ 0x46
+ 800213c:	2b00      	cmp	r3, #0
+ 800213e:	d003      	beq.n	8002148 <StartTask02+0xb8>
         	communicationError=1;
- 8002144:	4b3f      	ldr	r3, [pc, #252]	@ (8002244 <StartTask02+0x1b0>)
- 8002146:	2201      	movs	r2, #1
- 8002148:	601a      	str	r2, [r3, #0]
+ 8002140:	4b3f      	ldr	r3, [pc, #252]	@ (8002240 <StartTask02+0x1b0>)
+ 8002142:	2201      	movs	r2, #1
+ 8002144:	601a      	str	r2, [r3, #0]
             return;
- 800214a:	e072      	b.n	8002232 <StartTask02+0x19e>
+ 8002146:	e072      	b.n	800222e <StartTask02+0x19e>
         }
 
         EncoderUpdated = 0;
- 800214c:	4b3c      	ldr	r3, [pc, #240]	@ (8002240 <StartTask02+0x1ac>)
- 800214e:	2200      	movs	r2, #0
- 8002150:	601a      	str	r2, [r3, #0]
+ 8002148:	4b3c      	ldr	r3, [pc, #240]	@ (800223c <StartTask02+0x1ac>)
+ 800214a:	2200      	movs	r2, #0
+ 800214c:	601a      	str	r2, [r3, #0]
         record_number++;
- 8002152:	4b43      	ldr	r3, [pc, #268]	@ (8002260 <StartTask02+0x1cc>)
- 8002154:	681b      	ldr	r3, [r3, #0]
- 8002156:	3301      	adds	r3, #1
- 8002158:	4a41      	ldr	r2, [pc, #260]	@ (8002260 <StartTask02+0x1cc>)
- 800215a:	6013      	str	r3, [r2, #0]
- 800215c:	e065      	b.n	800222a <StartTask02+0x196>
+ 800214e:	4b43      	ldr	r3, [pc, #268]	@ (800225c <StartTask02+0x1cc>)
+ 8002150:	681b      	ldr	r3, [r3, #0]
+ 8002152:	3301      	adds	r3, #1
+ 8002154:	4a41      	ldr	r2, [pc, #260]	@ (800225c <StartTask02+0x1cc>)
+ 8002156:	6013      	str	r3, [r2, #0]
+ 8002158:	e065      	b.n	8002226 <StartTask02+0x196>
     }
 	}
 		else {
 
 			RecordTaskCount++;
- 800215e:	4b41      	ldr	r3, [pc, #260]	@ (8002264 <StartTask02+0x1d0>)
- 8002160:	681b      	ldr	r3, [r3, #0]
- 8002162:	3301      	adds	r3, #1
- 8002164:	4a3f      	ldr	r2, [pc, #252]	@ (8002264 <StartTask02+0x1d0>)
- 8002166:	6013      	str	r3, [r2, #0]
+ 800215a:	4b41      	ldr	r3, [pc, #260]	@ (8002260 <StartTask02+0x1d0>)
+ 800215c:	681b      	ldr	r3, [r3, #0]
+ 800215e:	3301      	adds	r3, #1
+ 8002160:	4a3f      	ldr	r2, [pc, #252]	@ (8002260 <StartTask02+0x1d0>)
+ 8002162:	6013      	str	r3, [r2, #0]
 		    uint8_t txBuf[25];  // 6 floats = 24 bytes + 1 byte for CRC
 		    uint8_t rxBuf[25];
 
-		    memcpy(&txBuf[0],  &desired_torque,     sizeof(float));
- 8002168:	4b3f      	ldr	r3, [pc, #252]	@ (8002268 <StartTask02+0x1d4>)
- 800216a:	681b      	ldr	r3, [r3, #0]
- 800216c:	627b      	str	r3, [r7, #36]	@ 0x24
-		    memcpy(&txBuf[4],  &filtered_reaction_torque,     sizeof(float));
- 800216e:	4b3f      	ldr	r3, [pc, #252]	@ (800226c <StartTask02+0x1d8>)
- 8002170:	681b      	ldr	r3, [r3, #0]
- 8002172:	62bb      	str	r3, [r7, #40]	@ 0x28
-		    memcpy(&txBuf[8],  &SDCardCount, sizeof(float));
- 8002174:	4b31      	ldr	r3, [pc, #196]	@ (800223c <StartTask02+0x1a8>)
- 8002176:	681b      	ldr	r3, [r3, #0]
- 8002178:	62fb      	str	r3, [r7, #44]	@ 0x2c
-		    memcpy(&txBuf[12], &torque_error, sizeof(float));
- 800217a:	4b3d      	ldr	r3, [pc, #244]	@ (8002270 <StartTask02+0x1dc>)
- 800217c:	681b      	ldr	r3, [r3, #0]
- 800217e:	633b      	str	r3, [r7, #48]	@ 0x30
+		    memcpy(&txBuf[0],  &reaction_torque_input,     sizeof(float));
+ 8002164:	4b3f      	ldr	r3, [pc, #252]	@ (8002264 <StartTask02+0x1d4>)
+ 8002166:	681b      	ldr	r3, [r3, #0]
+ 8002168:	627b      	str	r3, [r7, #36]	@ 0x24
+		    memcpy(&txBuf[4],  &desired_torque,     sizeof(float));
+ 800216a:	4b3f      	ldr	r3, [pc, #252]	@ (8002268 <StartTask02+0x1d8>)
+ 800216c:	681b      	ldr	r3, [r3, #0]
+ 800216e:	62bb      	str	r3, [r7, #40]	@ 0x28
+		    memcpy(&txBuf[8],  &velocity1, sizeof(float));
+ 8002170:	4b3e      	ldr	r3, [pc, #248]	@ (800226c <StartTask02+0x1dc>)
+ 8002172:	681b      	ldr	r3, [r3, #0]
+ 8002174:	62fb      	str	r3, [r7, #44]	@ 0x2c
+		    memcpy(&txBuf[12], &velocity2, sizeof(float));
+ 8002176:	4b3e      	ldr	r3, [pc, #248]	@ (8002270 <StartTask02+0x1e0>)
+ 8002178:	681b      	ldr	r3, [r3, #0]
+ 800217a:	633b      	str	r3, [r7, #48]	@ 0x30
 		    memcpy(&txBuf[16], &theta1,    sizeof(float));
- 8002180:	4b3c      	ldr	r3, [pc, #240]	@ (8002274 <StartTask02+0x1e0>)
- 8002182:	681b      	ldr	r3, [r3, #0]
- 8002184:	637b      	str	r3, [r7, #52]	@ 0x34
+ 800217c:	4b3d      	ldr	r3, [pc, #244]	@ (8002274 <StartTask02+0x1e4>)
+ 800217e:	681b      	ldr	r3, [r3, #0]
+ 8002180:	637b      	str	r3, [r7, #52]	@ 0x34
 		    memcpy(&txBuf[20], &theta2,    sizeof(float));
- 8002186:	4b3c      	ldr	r3, [pc, #240]	@ (8002278 <StartTask02+0x1e4>)
- 8002188:	681b      	ldr	r3, [r3, #0]
- 800218a:	63bb      	str	r3, [r7, #56]	@ 0x38
+ 8002182:	4b3d      	ldr	r3, [pc, #244]	@ (8002278 <StartTask02+0x1e8>)
+ 8002184:	681b      	ldr	r3, [r3, #0]
+ 8002186:	63bb      	str	r3, [r7, #56]	@ 0x38
 
 		    // CRC-8 calculation (same polynomial: 0x07)
 		    uint8_t crc = 0x00;
- 800218c:	2300      	movs	r3, #0
- 800218e:	f887 304f 	strb.w	r3, [r7, #79]	@ 0x4f
+ 8002188:	2300      	movs	r3, #0
+ 800218a:	f887 304f 	strb.w	r3, [r7, #79]	@ 0x4f
 		    for (int i = 0; i < 24; i++) {
- 8002192:	2300      	movs	r3, #0
- 8002194:	64bb      	str	r3, [r7, #72]	@ 0x48
- 8002196:	e02c      	b.n	80021f2 <StartTask02+0x15e>
+ 800218e:	2300      	movs	r3, #0
+ 8002190:	64bb      	str	r3, [r7, #72]	@ 0x48
+ 8002192:	e02c      	b.n	80021ee <StartTask02+0x15e>
 		        crc ^= txBuf[i];
- 8002198:	f107 0224 	add.w	r2, r7, #36	@ 0x24
- 800219c:	6cbb      	ldr	r3, [r7, #72]	@ 0x48
- 800219e:	4413      	add	r3, r2
- 80021a0:	781a      	ldrb	r2, [r3, #0]
- 80021a2:	f897 304f 	ldrb.w	r3, [r7, #79]	@ 0x4f
- 80021a6:	4053      	eors	r3, r2
- 80021a8:	f887 304f 	strb.w	r3, [r7, #79]	@ 0x4f
+ 8002194:	f107 0224 	add.w	r2, r7, #36	@ 0x24
+ 8002198:	6cbb      	ldr	r3, [r7, #72]	@ 0x48
+ 800219a:	4413      	add	r3, r2
+ 800219c:	781a      	ldrb	r2, [r3, #0]
+ 800219e:	f897 304f 	ldrb.w	r3, [r7, #79]	@ 0x4f
+ 80021a2:	4053      	eors	r3, r2
+ 80021a4:	f887 304f 	strb.w	r3, [r7, #79]	@ 0x4f
 		        for (uint8_t j = 0; j < 8; j++) {
- 80021ac:	2300      	movs	r3, #0
- 80021ae:	f887 3047 	strb.w	r3, [r7, #71]	@ 0x47
- 80021b2:	e017      	b.n	80021e4 <StartTask02+0x150>
+ 80021a8:	2300      	movs	r3, #0
+ 80021aa:	f887 3047 	strb.w	r3, [r7, #71]	@ 0x47
+ 80021ae:	e017      	b.n	80021e0 <StartTask02+0x150>
 		            crc = (crc & 0x80) ? (crc << 1) ^ 0x07 : (crc << 1);
- 80021b4:	f997 304f 	ldrsb.w	r3, [r7, #79]	@ 0x4f
- 80021b8:	2b00      	cmp	r3, #0
- 80021ba:	da08      	bge.n	80021ce <StartTask02+0x13a>
- 80021bc:	f997 304f 	ldrsb.w	r3, [r7, #79]	@ 0x4f
- 80021c0:	005b      	lsls	r3, r3, #1
- 80021c2:	b25b      	sxtb	r3, r3
- 80021c4:	f083 0307 	eor.w	r3, r3, #7
- 80021c8:	b25b      	sxtb	r3, r3
- 80021ca:	b2db      	uxtb	r3, r3
- 80021cc:	e003      	b.n	80021d6 <StartTask02+0x142>
- 80021ce:	f897 304f 	ldrb.w	r3, [r7, #79]	@ 0x4f
- 80021d2:	005b      	lsls	r3, r3, #1
- 80021d4:	b2db      	uxtb	r3, r3
- 80021d6:	f887 304f 	strb.w	r3, [r7, #79]	@ 0x4f
+ 80021b0:	f997 304f 	ldrsb.w	r3, [r7, #79]	@ 0x4f
+ 80021b4:	2b00      	cmp	r3, #0
+ 80021b6:	da08      	bge.n	80021ca <StartTask02+0x13a>
+ 80021b8:	f997 304f 	ldrsb.w	r3, [r7, #79]	@ 0x4f
+ 80021bc:	005b      	lsls	r3, r3, #1
+ 80021be:	b25b      	sxtb	r3, r3
+ 80021c0:	f083 0307 	eor.w	r3, r3, #7
+ 80021c4:	b25b      	sxtb	r3, r3
+ 80021c6:	b2db      	uxtb	r3, r3
+ 80021c8:	e003      	b.n	80021d2 <StartTask02+0x142>
+ 80021ca:	f897 304f 	ldrb.w	r3, [r7, #79]	@ 0x4f
+ 80021ce:	005b      	lsls	r3, r3, #1
+ 80021d0:	b2db      	uxtb	r3, r3
+ 80021d2:	f887 304f 	strb.w	r3, [r7, #79]	@ 0x4f
 		        for (uint8_t j = 0; j < 8; j++) {
- 80021da:	f897 3047 	ldrb.w	r3, [r7, #71]	@ 0x47
- 80021de:	3301      	adds	r3, #1
- 80021e0:	f887 3047 	strb.w	r3, [r7, #71]	@ 0x47
- 80021e4:	f897 3047 	ldrb.w	r3, [r7, #71]	@ 0x47
- 80021e8:	2b07      	cmp	r3, #7
- 80021ea:	d9e3      	bls.n	80021b4 <StartTask02+0x120>
+ 80021d6:	f897 3047 	ldrb.w	r3, [r7, #71]	@ 0x47
+ 80021da:	3301      	adds	r3, #1
+ 80021dc:	f887 3047 	strb.w	r3, [r7, #71]	@ 0x47
+ 80021e0:	f897 3047 	ldrb.w	r3, [r7, #71]	@ 0x47
+ 80021e4:	2b07      	cmp	r3, #7
+ 80021e6:	d9e3      	bls.n	80021b0 <StartTask02+0x120>
 		    for (int i = 0; i < 24; i++) {
- 80021ec:	6cbb      	ldr	r3, [r7, #72]	@ 0x48
- 80021ee:	3301      	adds	r3, #1
- 80021f0:	64bb      	str	r3, [r7, #72]	@ 0x48
- 80021f2:	6cbb      	ldr	r3, [r7, #72]	@ 0x48
- 80021f4:	2b17      	cmp	r3, #23
- 80021f6:	ddcf      	ble.n	8002198 <StartTask02+0x104>
+ 80021e8:	6cbb      	ldr	r3, [r7, #72]	@ 0x48
+ 80021ea:	3301      	adds	r3, #1
+ 80021ec:	64bb      	str	r3, [r7, #72]	@ 0x48
+ 80021ee:	6cbb      	ldr	r3, [r7, #72]	@ 0x48
+ 80021f0:	2b17      	cmp	r3, #23
+ 80021f2:	ddcf      	ble.n	8002194 <StartTask02+0x104>
 		        }
 		    }
 
 		    txBuf[24] = crc;  // Add CRC to the last byte
- 80021f8:	f897 304f 	ldrb.w	r3, [r7, #79]	@ 0x4f
- 80021fc:	f887 303c 	strb.w	r3, [r7, #60]	@ 0x3c
+ 80021f4:	f897 304f 	ldrb.w	r3, [r7, #79]	@ 0x4f
+ 80021f8:	f887 303c 	strb.w	r3, [r7, #60]	@ 0x3c
 
 		    // SPI Transaction
 		    HAL_GPIO_WritePin(GPIOB, GPIO_PIN_0, GPIO_PIN_RESET);  // CS LOW
- 8002200:	2200      	movs	r2, #0
- 8002202:	2101      	movs	r1, #1
- 8002204:	481d      	ldr	r0, [pc, #116]	@ (800227c <StartTask02+0x1e8>)
- 8002206:	f000 ff27 	bl	8003058 <HAL_GPIO_WritePin>
+ 80021fc:	2200      	movs	r2, #0
+ 80021fe:	2101      	movs	r1, #1
+ 8002200:	481e      	ldr	r0, [pc, #120]	@ (800227c <StartTask02+0x1ec>)
+ 8002202:	f000 ff29 	bl	8003058 <HAL_GPIO_WritePin>
 		    HAL_SPI_TransmitReceive(&hspi4, txBuf, rxBuf, sizeof(txBuf), HAL_MAX_DELAY);
- 800220a:	f107 0208 	add.w	r2, r7, #8
- 800220e:	f107 0124 	add.w	r1, r7, #36	@ 0x24
- 8002212:	f04f 33ff 	mov.w	r3, #4294967295
- 8002216:	9300      	str	r3, [sp, #0]
- 8002218:	2319      	movs	r3, #25
- 800221a:	4819      	ldr	r0, [pc, #100]	@ (8002280 <StartTask02+0x1ec>)
- 800221c:	f001 fc89 	bl	8003b32 <HAL_SPI_TransmitReceive>
+ 8002206:	f107 0208 	add.w	r2, r7, #8
+ 800220a:	f107 0124 	add.w	r1, r7, #36	@ 0x24
+ 800220e:	f04f 33ff 	mov.w	r3, #4294967295
+ 8002212:	9300      	str	r3, [sp, #0]
+ 8002214:	2319      	movs	r3, #25
+ 8002216:	481a      	ldr	r0, [pc, #104]	@ (8002280 <StartTask02+0x1f0>)
+ 8002218:	f001 fc8b 	bl	8003b32 <HAL_SPI_TransmitReceive>
 		    HAL_GPIO_WritePin(GPIOB, GPIO_PIN_0, GPIO_PIN_SET);    // CS HIGH
- 8002220:	2201      	movs	r2, #1
- 8002222:	2101      	movs	r1, #1
- 8002224:	4815      	ldr	r0, [pc, #84]	@ (800227c <StartTask02+0x1e8>)
- 8002226:	f000 ff17 	bl	8003058 <HAL_GPIO_WritePin>
+ 800221c:	2201      	movs	r2, #1
+ 800221e:	2101      	movs	r1, #1
+ 8002220:	4816      	ldr	r0, [pc, #88]	@ (800227c <StartTask02+0x1ec>)
+ 8002222:	f000 ff19 	bl	8003058 <HAL_GPIO_WritePin>
 
 		}
 
     osDelay(5);
- 800222a:	2005      	movs	r0, #5
- 800222c:	f005 faa6 	bl	800777c <osDelay>
+ 8002226:	2005      	movs	r0, #5
+ 8002228:	f005 faa8 	bl	800777c <osDelay>
 	if (SDCardRecordMode==1){
- 8002230:	e734      	b.n	800209c <StartTask02+0x8>
+ 800222c:	e734      	b.n	8002098 <StartTask02+0x8>
   }
   /* USER CODE END StartTask02 */
 }
- 8002232:	3750      	adds	r7, #80	@ 0x50
- 8002234:	46bd      	mov	sp, r7
- 8002236:	bd80      	pop	{r7, pc}
- 8002238:	20001d48 	.word	0x20001d48
- 800223c:	20000500 	.word	0x20000500
- 8002240:	20001d44 	.word	0x20001d44
- 8002244:	20000504 	.word	0x20000504
- 8002248:	0800a554 	.word	0x0800a554
- 800224c:	20000514 	.word	0x20000514
- 8002250:	200004f4 	.word	0x200004f4
- 8002254:	200004f8 	.word	0x200004f8
- 8002258:	0800a560 	.word	0x0800a560
- 800225c:	20001544 	.word	0x20001544
- 8002260:	20000000 	.word	0x20000000
- 8002264:	200004f0 	.word	0x200004f0
+ 800222e:	3750      	adds	r7, #80	@ 0x50
+ 8002230:	46bd      	mov	sp, r7
+ 8002232:	bd80      	pop	{r7, pc}
+ 8002234:	20001d48 	.word	0x20001d48
+ 8002238:	20000500 	.word	0x20000500
+ 800223c:	20001d44 	.word	0x20001d44
+ 8002240:	20000504 	.word	0x20000504
+ 8002244:	0800a554 	.word	0x0800a554
+ 8002248:	20000514 	.word	0x20000514
+ 800224c:	200004f4 	.word	0x200004f4
+ 8002250:	200004f8 	.word	0x200004f8
+ 8002254:	0800a560 	.word	0x0800a560
+ 8002258:	20001544 	.word	0x20001544
+ 800225c:	20000000 	.word	0x20000000
+ 8002260:	200004f0 	.word	0x200004f0
+ 8002264:	20001db0 	.word	0x20001db0
  8002268:	20001dbc 	.word	0x20001dbc
- 800226c:	20001db4 	.word	0x20001db4
- 8002270:	20001dc0 	.word	0x20001dc0
+ 800226c:	20001d5c 	.word	0x20001d5c
+ 8002270:	20001d60 	.word	0x20001d60
  8002274:	20001d4c 	.word	0x20001d4c
  8002278:	20001d50 	.word	0x20001d50
  800227c:	40020400 	.word	0x40020400
