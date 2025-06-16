@@ -83,18 +83,19 @@ void loop() {
   if (!WaitForCSHigh()) return;
 
   // Extract float values
-  float reaction_torque_input, desired_torque, velocity1, velocity2, theta1, theta2;
-  memcpy(&reaction_torque_input, &recvBuf[0],  sizeof(float));
+  float filtered_reaction_torque, desired_torque, velocity1, velocity2, theta1, theta2;
+  uint32_t MainTaskCount;
+  memcpy(&MainTaskCount, &recvBuf[0], sizeof(uint32_t));
   memcpy(&desired_torque,        &recvBuf[4],  sizeof(float));
-  memcpy(&velocity1,             &recvBuf[8],  sizeof(float));
+  memcpy(&filtered_reaction_torque,             &recvBuf[8],  sizeof(float));
   memcpy(&velocity2,             &recvBuf[12], sizeof(float));
   memcpy(&theta1,                &recvBuf[16], sizeof(float));
   memcpy(&theta2,                &recvBuf[20], sizeof(float));
 
   // Debug output
-  Serial.print("reaction_torque_input: "); Serial.print(reaction_torque_input, 4); Serial.print("\t");
+  Serial.print("MainTaskCount: "); Serial.print(MainTaskCount); Serial.print("\t");
   Serial.print("desired_torque: ");        Serial.print(desired_torque, 4);        Serial.print("\t");
-  Serial.print("velocity1: ");             Serial.print(velocity1, 4);             Serial.print("\t");
+  Serial.print("filtered_reaction_torque: ");             Serial.print(filtered_reaction_torque, 4);             Serial.print("\t");
   Serial.print("velocity2: ");             Serial.print(velocity2, 4);             Serial.print("\t");
   Serial.print("theta1: ");                Serial.print(theta1, 4);                Serial.print("\t");
   Serial.print("theta2: ");                Serial.println(theta2, 4);

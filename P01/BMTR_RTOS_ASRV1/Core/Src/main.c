@@ -28,6 +28,7 @@
 #include "stdio.h"
 #include <math.h>
 #include <stdint.h>
+#include <stdbool.h>
 uint16_t dac_value=500;
 /* USER CODE END Includes */
 
@@ -120,8 +121,8 @@ volatile int EncoderUpdated = 0;
 int SDCardRecordMode = 0;
 
 // ────────────── 🚀 Algorithm Code Variables ──────────────
-#define CPR (2048*26)         // Counter Per Revolution
-#define MAX_COUNT 65535
+#define CPR 106496.0f//(4096*26)         // Counter Per Revolution
+#define MAX_COUNT 65535*26
 
 // Position (angles in rad) for Encoder 1 and Encoder 2
 int16_t prev_ticks1 = 0, prev_ticks2 = 0;    // Previous counts for each encoder
@@ -136,8 +137,8 @@ float velocity1Filtered=0.0,velocity2Filtered=0.0;
 float acceleration1 = 0.0, acceleration2 = 0.0;
 float acceleration1_prev=0.0;
 // ────────────── 🛠 Parameters ──────────────
-#define G 100      // Smoothing factor for velocity filter
-#define G2 100      // Smoothing factor for velocity filter
+#define G 70     // Smoothing factor for velocity filter
+#define G2 70     // Smoothing factor for velocity filter
 // ────────────── ⚙️ Motor 2 Parameters ──────────────
 float Icmd2 = 1.1;      // Commanded current (A)
 float Ktn2 = 0.0705;    // Torque constant (Nm/A)
@@ -151,20 +152,21 @@ float Ffric2 = 0.04;    // Friction force (Nm)
 // ────────────── ⚙️ Motor 1 Physical and Control Parameters ──────────────
 float gear_ratio = 26.0f;                   // Gear ratio
 float commanded_current = 0.0f;             // Icmd1: Commanded current (A)
-float torque_constant_motor = 0.0705f;      // Ktn1: Motor torque constant (Nm/A)
-float motor_inertia = 3069.1e-7f*26*26;           // Jn1: Motor inertia (kg·m²)
-float torque_constant_load = 0.0705f;       // Kt1: Load-side torque constant (Nm/A)
-float disturbance_gain = 0.1f;             // Gdis1: DOB gain (~20Hz cutoff)
-float reaction_gain = 0.1f;                // Grtob1: RTOB gain (~15Hz cutoff)
-float internal_friction = 0.0129f;          // Fint: Internal friction torque (Nm)
+float torque_constant_motor = 1.5365f;      // Ktn1: Motor torque constant (Nm/A),(0.0712 x 26 x 0.83)
+float motor_inertia = 0.2144f;  //*26*26;           // Jn1: Motor inertia (kg·m²), (0.0003170 x 26 x 26)
+float torque_constant_load = 1.5365f;       // Kt1: Load-side torque constant (Nm/A), (0.0712 x 26 x 0.83)
+float disturbance_gain = 30.0f;             // Gdis1: DOB gain (~20Hz cutoff)
+float reaction_gain = 30.0f;                // Grtob1: RTOB gain (~15Hz cutoff)
+float internal_friction = 0.001f;//130f;          // Fint: Internal friction torque (Nm)
 float viscous_friction = 0.0003f;           // Ffric: Viscous friction torque (Nm)
-float pulses_per_revolution = 512.0f;       // PPR: Encoder pulses per revolution
-int motor_direction_flag = 0;               // Motor1DirB
+float pulses_per_revolution = 1024.0f;       // PPR: Encoder pulses per revolution
+int motor_direction_flag = 0;
+float dt_torque_constant_motor =0.0f;// Motor1DirB
 uint16_t voltage_reference_1=0;
 uint16_t voltage_reference_2=0;
 // PI Controller gains for acceleration control
 float proportional_gain = 5.0f;            // kp
-float integral_gain = 0.0f;                // ki
+float integral_gain = 0.001f;                // ki
 float motor1MaxCurrent=3.0f;
 // ────────────── ⏲️ Timing and Sampling ──────────────
 float sampling_time = 0.001f;                 // dt_s: Set this appropriately in your loop
@@ -190,35 +192,38 @@ float updated_motor_torque = 0.0f;
 float reaction_torque_input = 0.0f;
 float filtered_reaction_torque = 0.0f;
 float filtered_reaction_torque_prev = 0.0f;
-
+float reaction_torque =0.0f;
+float motor01_torque_profile_withtheta1 =0.0f;
+float assit_torque = 0.0f;
 // ────────────── ⚙️ Control Error Terms ──────────────
-float desired_torque = 0.0f;                // Set externally per control target
+float desired_torque = 0.25f;                // Set externally per control target
 float torque_error = 0.0f;
 float torque_error_integral = 0.0f;
 float motor_velocity = 0.0f;                // Set from encoder/sensor
+float effective_velocity =0.0f;
 // ────────────── ⚙️ Motor 2 Physical and Control Parameters ──────────────
 float motor02_commanded_current = 0.0f;             // Commanded current (A)
-float motor02_torque_constant = 0.0705f;            // Motor torque constant (Nm/A)
-float motor02_inertia = 3069.1e-7f*26*26;                 // Motor inertia (kg·m²)
-float motor02_torque_constant_load = 0.0705f;       // Load-side torque constant (Nm/A)
-float motor02_disturbance_gain = 0.1f;             // DOB gain (~20Hz cutoff)
-float motor02_reaction_gain = 0.1f;                 // RTOB gain (~15Hz cutoff)
-float motor02_internal_friction = 0.0129f;          // Internal friction torque (Nm)
+float motor02_torque_constant = 1.5365f;            // Motor torque constant (Nm/A)
+float motor02_inertia = 0.2144f;                 // Motor inertia (kg·m²)
+float motor02_torque_constant_load = 1.5365f;       // Load-side torque constant (Nm/A)
+float motor02_disturbance_gain = 30.1f;             // DOB gain (~20Hz cutoff)
+float motor02_reaction_gain = 30.1f;                 // RTOB gain (~15Hz cutoff)
+float motor02_internal_friction = 0.001f;          // Internal friction torque (Nm)
 float motor02_viscous_friction = 0.0003f;           // Viscous friction torque (Nm)
-float motor02_pulses_per_revolution = 512.0f;       // Encoder pulses per revolution
+float motor02_pulses_per_revolution = 1024.0f;       // Encoder pulses per revolution
 float motor02_gear_ratio = 26.0f;                    // Gear ratio
 int motor02_direction_flag = 0;                       // Motor direction flag
 
 // PI Controller gains for acceleration control
 float motor02_proportional_gain = 5.0f;            // kp
-float motor02_integral_gain = 0.0f;                 // ki
+float motor02_integral_gain = 0.001f;                 // ki
 
 // ────────────── ⏲️ Timing and Sampling ──────────────
 float motor02_sampling_time = 0.001f;                  // dt_s (set appropriately)
 
 // ────────────── 📊 Observer and Control State Variables ──────────────
 float motor02_previous_torque_error_integral = 0.0f; // Integral error accumulator
-
+bool reverse_motor2_encoder = true;  // Set to true to reverse Motor 2 encoder direction
 // Output variables
 float motor02_commanded_acceleration = 0.0f;
 float motor02_inertia_compensation_current = 0.0f;
@@ -237,21 +242,23 @@ float motor02_updated_motor_torque = 0.0f;
 float motor02_reaction_torque_input = 0.0f;
 float motor02_filtered_reaction_torque = 0.0f;
 float motor02_filtered_reaction_torque_prev = 0.0f;
-
+float motor02_reaction_torque = 0.0f;
 // ────────────── ⚙️ Control Error Terms ──────────────
 float motor02_desired_torque = 0.0f;                  // Set externally per control target
 float motor02_torque_error = 0.0f;
 float motor02_torque_error_integral = 0.0f;
-float motor02_motor_velocity = 0.0f;                  // From encoder/sensor
+float motor02_motor_velocity = 0.0f;
+float motor02_torque_profile_withtheta2 =0.0f;
 // ────────────── 🚀 Acceleration Set Points ──────────────
 float Set_Accelaration1 = 500;  // Desired acceleration
 float Set_Torque1 = 0;  // Desired acceleration
-float dt_s = 1000 * 1e-6f;
-float ks=0.1f;
+float dt_s = 0.001f;
+float ks=24.0f;
+#define MOTOR2_DIRECTION_SIGN  (-1.0f)  // Set to 1.0f for forward mount, -1.0f for reversed
 // ────────────── HAL Status ──────────────
 HAL_StatusTypeDef status;
 uint16_t OutputVref = 5000;         // DAC output voltage reference value
-uint16_t ENABLEmOTOR = 0;         // DAC output voltage reference value
+uint16_t ENABLEmOTOR = 1;         // DAC output voltage reference value
 
 // ────────────── Low-pass Filter Function ──────────────
 float applyLowPassFilterVelocity(float X, float Y_old) {
@@ -291,48 +298,52 @@ void UpdateMotor01CommandedCurrent(void)
 
     // Estimate velocity disturbance
     estimated_velocity_disturbance = motor_velocity * motor_inertia * disturbance_gain;
-
+    //estimated_velocity_disturbance = updated_motor_torque + motor_velocity * motor_inertia * reaction_gain - (internal_friction + viscous_friction * motor_velocity);
     // Input to disturbance observer filter
     disturbance_observer_input = estimated_motor_torque + estimated_velocity_disturbance;
 
     // Apply low-pass filter (difference equation form)
-    filtered_dob_input = filtered_dob_input_prev + (disturbance_gain * sampling_time) * (disturbance_observer_input - filtered_dob_input_prev);
+    filtered_dob_input = filtered_dob_input_prev + (disturbance_gain * sampling_time)* (disturbance_observer_input - filtered_dob_input_prev);
     filtered_dob_input_prev = filtered_dob_input;
 
     // Estimate torque disturbance and convert to equivalent current
     estimated_torque_disturbance = filtered_dob_input - estimated_velocity_disturbance;
-    disturbance_current = estimated_torque_disturbance / torque_constant_load;
+    disturbance_current = estimated_torque_disturbance / torque_constant_motor;
 
     /*********************************************************
      *   Torque Observer + PI Controller to Set Acceleration
      *********************************************************/
 
     // Recompute torque with updated current (for reaction estimation)
-    updated_motor_torque = commanded_current * torque_constant_load;
+    estimated_motor_torque = commanded_current * torque_constant_motor;
 
     // Estimate total reaction torque input (includes inertia and losses)
-    reaction_torque_input = updated_motor_torque + motor_velocity * motor_inertia * reaction_gain - (internal_friction + viscous_friction * motor_velocity);
+    estimated_velocity_disturbance = motor_velocity * motor_inertia * reaction_gain;
+    //Delta torque_constant_motor,  Delta torque_constant_motor
+    reaction_torque_input = estimated_motor_torque +  estimated_velocity_disturbance - (internal_friction + (viscous_friction * motor_velocity) - (dt_torque_constant_motor*commanded_current));
 
     // Apply low-pass filter for reaction torque estimate
     filtered_reaction_torque = filtered_reaction_torque_prev + (reaction_gain * sampling_time) * (reaction_torque_input - filtered_reaction_torque_prev);
     filtered_reaction_torque_prev = filtered_reaction_torque;
 
     // Subtract inertial effect to isolate external torque
-    filtered_reaction_torque -= motor_velocity * motor_inertia * reaction_gain;
 
+    reaction_torque = filtered_reaction_torque - estimated_velocity_disturbance;
+    //desired_torque = motor01_torque_profile_withtheta1;
     // PI Controller for acceleration control
-    torque_error = desired_torque - filtered_reaction_torque;
-    torque_error_integral = torque_error * sampling_time + previous_torque_error_integral;
+    torque_error = (desired_torque - reaction_torque);
+    torque_error_integral = (torque_error * sampling_time) + previous_torque_error_integral;
     previous_torque_error_integral = torque_error_integral;
 
-    commanded_acceleration = proportional_gain * torque_error + integral_gain * torque_error_integral;
+    commanded_acceleration = (proportional_gain * torque_error) + (integral_gain * torque_error_integral);
 
     // Compute inertia-driven current command
     inertia_compensation_current = (motor_inertia * commanded_acceleration) / torque_constant_motor;
 
     // Final commanded current is inertia compensation + disturbance compensation
     //commanded_current = inertia_compensation_current + disturbance_current;
-    commanded_current = inertia_compensation_current+ disturbance_current; //added for DOB tuning
+     commanded_current = inertia_compensation_current+ disturbance_current; //added for DOB tuning
+
 }
 void UpdateMotor02CommandedCurrent(void)
 {
@@ -343,18 +354,22 @@ void UpdateMotor02CommandedCurrent(void)
     // Calculate estimated motor torque
     motor02_estimated_motor_torque = motor02_commanded_current * motor02_torque_constant;
 
+    // Apply direction correction to velocity
+    effective_velocity = MOTOR2_DIRECTION_SIGN * motor02_motor_velocity;
+
     // Estimate velocity disturbance
-    motor02_estimated_velocity_disturbance = motor02_motor_velocity * motor02_inertia * motor02_disturbance_gain;
+    motor02_estimated_velocity_disturbance = effective_velocity * motor02_inertia * motor02_disturbance_gain;
 
     // Input to disturbance observer filter
     motor02_disturbance_observer_input = motor02_estimated_motor_torque + motor02_estimated_velocity_disturbance;
 
-    // Apply low-pass filter (difference equation form)
-    motor02_filtered_dob_input = motor02_filtered_dob_input_prev + (motor02_disturbance_gain * motor02_sampling_time) *
+    // Low-pass filter (difference equation form)
+    motor02_filtered_dob_input = motor02_filtered_dob_input_prev +
+                                 (motor02_disturbance_gain * motor02_sampling_time) *
                                  (motor02_disturbance_observer_input - motor02_filtered_dob_input_prev);
     motor02_filtered_dob_input_prev = motor02_filtered_dob_input;
 
-    // Estimate torque disturbance and convert to equivalent current
+    // Torque disturbance and equivalent current
     motor02_estimated_torque_disturbance = motor02_filtered_dob_input - motor02_estimated_velocity_disturbance;
     motor02_disturbance_current = motor02_estimated_torque_disturbance / motor02_torque_constant;
 
@@ -362,36 +377,35 @@ void UpdateMotor02CommandedCurrent(void)
      *   Torque Observer + PI Controller to Set Acceleration
      *********************************************************/
 
-    // Recompute torque with updated current (for reaction estimation)
     motor02_updated_motor_torque = motor02_commanded_current * motor02_torque_constant;
 
-    // Estimate total reaction torque input (includes inertia and losses)
-    motor02_reaction_torque_input = motor02_updated_motor_torque + motor02_motor_velocity * motor02_inertia * motor02_reaction_gain
-                                    - (motor02_internal_friction + motor02_viscous_friction * motor02_motor_velocity);
+    motor02_reaction_torque_input = motor02_updated_motor_torque + motor02_estimated_velocity_disturbance
+                                    - (motor02_internal_friction + motor02_viscous_friction * effective_velocity);
 
-    // Apply low-pass filter for reaction torque estimate
-    motor02_filtered_reaction_torque = motor02_filtered_reaction_torque_prev + (motor02_reaction_gain * motor02_sampling_time) *
+    motor02_filtered_reaction_torque = motor02_filtered_reaction_torque_prev +
+                                       (motor02_reaction_gain * motor02_sampling_time) *
                                        (motor02_reaction_torque_input - motor02_filtered_reaction_torque_prev);
     motor02_filtered_reaction_torque_prev = motor02_filtered_reaction_torque;
 
-    // Subtract inertial effect to isolate external torque
-    motor02_filtered_reaction_torque -= motor02_motor_velocity * motor02_inertia * motor02_reaction_gain;
+    motor02_reaction_torque = motor02_filtered_reaction_torque -
+                              (effective_velocity * motor02_inertia * motor02_reaction_gain);
 
-    // PI Controller for acceleration control
-    motor02_torque_error = motor02_desired_torque - motor02_filtered_reaction_torque;
-    motor02_torque_error_integral = motor02_torque_error * motor02_sampling_time + motor02_previous_torque_error_integral;
+    motor02_torque_error = motor02_desired_torque - motor02_reaction_torque;
+    motor02_torque_error_integral = (motor02_torque_error * motor02_sampling_time) + motor02_previous_torque_error_integral;
     motor02_previous_torque_error_integral = motor02_torque_error_integral;
 
-    motor02_commanded_acceleration = motor02_proportional_gain * motor02_torque_error + motor02_integral_gain * motor02_torque_error_integral;
+    motor02_commanded_acceleration =
+        (motor02_proportional_gain * motor02_torque_error) +
+        (motor02_integral_gain * motor02_torque_error_integral);
 
-    // Compute inertia-driven current command
-    motor02_inertia_compensation_current = (motor02_inertia * motor02_commanded_acceleration) / motor02_torque_constant;
+    motor02_inertia_compensation_current =
+        (motor02_inertia * motor02_commanded_acceleration) / motor02_torque_constant;
 
-    // Final commanded current is inertia compensation + disturbance compensation
     motor02_commanded_current = motor02_inertia_compensation_current + motor02_disturbance_current;
+    assit_torque = MOTOR2_DIRECTION_SIGN*ks*(theta1-theta2);
+
 }
 
-int result = 0;
 
 /* USER CODE END 0 */
 
@@ -915,17 +929,22 @@ void StartDefaultTask(void const * argument)
 	  float delta_theta1 = ((float)delta_ticks1) * 2.0f * M_PI / CPR;
 	  theta1 += delta_theta1;
 
+
 	  // Velocity and acceleration
 	  velocity1 = (theta1 - theta1_prev) / dt_s;
-	  float raw_acceleration1 = (velocity1 - velocity1_prev) / dt_s;
-	  acceleration1 = (1 - 0.1f) * acceleration1 + 0.1f * raw_acceleration1;  // Low-pass filter
+	  motor_velocity = velocity1_prev + G *dt_s* (velocity1 - velocity1_prev);
+	  velocity1_prev = motor_velocity;
+	  //float raw_acceleration1 = (velocity1 - velocity1_prev) / dt_s;
+	  //acceleration1 = (1 - 0.1f) * acceleration1 + 0.1f * raw_acceleration1;  // Low-pass filter
 
 	  // Apply velocity filter
-	  motor_velocity = applyLowPassFilterVelocity(velocity1, velocity1_prev);
+	  //motor_velocity = applyLowPassFilterVelocity(velocity1, velocity1_prev);
 
 	  // Update previous states
+	  // THEN update for next loop
 	  theta1_prev = theta1;
-	  velocity1_prev = motor_velocity;
+
+
 
 	  /*********************************************************
 	   *           Compute Position, Velocity, Acceleration    *
@@ -937,12 +956,15 @@ void StartDefaultTask(void const * argument)
 
 	  // Read current encoder count
 	  int16_t curr_ticks2 = __HAL_TIM_GET_COUNTER(&htim4);
-	  int16_t delta_ticks2 = (int16_t)(curr_ticks2 - prev_ticks2);  // Handles overflow
+	  //int16_t delta_ticks2 = (int16_t)(curr_ticks2 - prev_ticks2);  // Handles overflow
+	  // Compute delta and reverse if needed
+	  int16_t delta_ticks2 = (int16_t)(curr_ticks2 - prev_ticks2);
 	  prev_ticks2 = curr_ticks2;
 
 	  // Compute delta angle and accumulate
-	  float delta_theta2 = ((float)delta_ticks2) * 2.0f * M_PI / CPR;
+	  float delta_theta2 = ((float)delta_ticks2) * (MOTOR2_DIRECTION_SIGN *2.0f * M_PI )/ CPR;
 	  theta2 += delta_theta2;
+
 
 	  // Velocity and acceleration
 	  velocity2 = (theta2 - theta2_prev) / dt_s;
@@ -957,7 +979,11 @@ void StartDefaultTask(void const * argument)
 	  velocity2_prev = motor02_motor_velocity;
 	  UpdateMotor01CommandedCurrent();
 	  UpdateMotor02CommandedCurrent();
-	  motor02_desired_torque=desired_torque-ks*(theta1-theta2);
+	  //UpdateMotor02CommandedCurrentReversed();
+//Master-left, follower-right
+	  //desired_torque = motor02_desired_torque-assit_torque; // make sure to change the reaction torque in data print
+// Default: Master-right , follower -left (most of them are right-handed)
+	 motor02_desired_torque = desired_torque - assit_torque;
 	  /*********************************************************
 	   *         Motor Output Control & Saturation            *
 	   *********************************************************/
@@ -967,8 +993,8 @@ void StartDefaultTask(void const * argument)
 	      motor_direction_flag = 1;  // Forward
 	      voltage_reference_1 = (4095.0f / motor1MaxCurrent) * fabsf(commanded_current);
 	  }
-	  else if (commanded_current < -1.0f) {
-	      commanded_current = -1.0f;
+	  else if (commanded_current < -3.0f) {
+	      commanded_current = -3.0f;
 	      motor_direction_flag = 0;  // Reverse
 	      voltage_reference_1 = (4095.0f / motor1MaxCurrent) * fabsf(-1*commanded_current);
 	  }
@@ -1022,7 +1048,7 @@ void StartDefaultTask(void const * argument)
 	   *               Update Time Interval                   *
 	   *********************************************************/
 
-	  osDelay(5);
+	  osDelay(2);
 	  time_end = __HAL_TIM_GET_COUNTER(&htim2);
 
   }
@@ -1080,39 +1106,41 @@ void StartTask02(void const * argument)
         record_number++;
     }
 	}
-		else {
-			uint8_t txBuf[25];
-			    uint8_t rxBuf[25];
+	else {
+		// ===== STM32 Side (Master - Transmitter) =====
+		// Transmit 1 int + 5 floats (20 bytes) + start marker (1 byte) + CRC (1 byte) = 22 bytes
 
-			    // Start marker
-			    txBuf[0] = 0xAA;
+		uint8_t txBuf[22];
+		uint8_t rxBuf[22];
 
-			    // Pack floats after start marker (start from txBuf[1])
-			    memcpy(&txBuf[1],  &reaction_torque_input, sizeof(float));
-			    memcpy(&txBuf[5],  &desired_torque,        sizeof(float));
-			    memcpy(&txBuf[9],  &velocity1,             sizeof(float));
-			    memcpy(&txBuf[13], &velocity2,             sizeof(float));
-			    memcpy(&txBuf[17], &theta1,                sizeof(float));
-			    memcpy(&txBuf[21], &theta2,                sizeof(float));
+		memset(txBuf, 0, sizeof(txBuf));
+		memset(rxBuf, 0, sizeof(rxBuf));  // 💡 Important flush
 
-			    // No CRC now
+		txBuf[0] = 0xAA;
+		memcpy(&txBuf[1],  &time_start, sizeof(int));
+		memcpy(&txBuf[5],  &motor02_reaction_torque, sizeof(float));
+		memcpy(&txBuf[9],  &desired_torque, sizeof(float));
+		memcpy(&txBuf[13], &theta1, sizeof(float));
+		memcpy(&txBuf[17], &theta2, sizeof(float));
 
-			    // CS LOW
-			    HAL_GPIO_WritePin(GPIOB, GPIO_PIN_0, GPIO_PIN_RESET);
-			    HAL_Delay(1); // small delay before transfer
+		// CRC
+		uint8_t crc = 0;
+		for (int i = 0; i < 21; i++) {
+		    crc ^= txBuf[i];
+		}
+		txBuf[21] = crc;
 
-			    // Transmit full 25 bytes (blocking)
-			    HAL_SPI_TransmitReceive(&hspi4, txBuf, rxBuf, sizeof(txBuf), HAL_MAX_DELAY);
+		// SPI transmit
+		HAL_GPIO_WritePin(GPIOB, GPIO_PIN_0, GPIO_PIN_RESET);
+		HAL_Delay(1);
+		HAL_SPI_TransmitReceive(&hspi4, txBuf, rxBuf, sizeof(txBuf), HAL_MAX_DELAY);
+		HAL_Delay(1);
+		HAL_GPIO_WritePin(GPIOB, GPIO_PIN_0, GPIO_PIN_SET);
+		HAL_Delay(1);  // can increase to 3–5 ms if instability persists
+  // Delay before next cycle
+	}
 
-			    HAL_Delay(1); // small delay after transfer
-
-			    // CS HIGH
-			    HAL_GPIO_WritePin(GPIOB, GPIO_PIN_0, GPIO_PIN_SET);
-
-			    HAL_Delay(5); // extra delay between packets
-			}
-
-    osDelay(5);
+	osDelay(5);
   }
 }
   /* USER CODE END StartTask02 */

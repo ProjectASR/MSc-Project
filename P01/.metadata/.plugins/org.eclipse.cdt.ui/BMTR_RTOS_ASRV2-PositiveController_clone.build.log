@@ -1,0 +1,16 @@
+07:39:00 **** Build of configuration Debug for project BMTR_RTOS_ASRV2-PositiveController_clone ****
+make -j12 all 
+arm-none-eabi-gcc -o "BMTR_RTOS_ASRV2-PositiveController_clone.elf" @"objects.list"   -mcpu=cortex-m7 -T"C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_AIT_V06.10.zip_expanded\BMTR_AIT_V06.10\STM32F756ZGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="BMTR_RTOS_ASRV2-PositiveController_clone.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: BMTR_RTOS_ASRV2-PositiveController_clone.elf
+ 
+arm-none-eabi-size  BMTR_RTOS_ASRV2-PositiveController_clone.elf 
+arm-none-eabi-objdump -h -S BMTR_RTOS_ASRV2-PositiveController_clone.elf  > "BMTR_RTOS_ASRV2-PositiveController_clone.list"
+   text	   data	    bss	    dec	    hex	filename
+  42616	    216	  25208	  68040	  109c8	BMTR_RTOS_ASRV2-PositiveController_clone.elf
+Finished building: default.size.stdout
+ 
+Finished building: BMTR_RTOS_ASRV2-PositiveController_clone.list
+ 
+
+07:39:02 Build Finished. 0 errors, 0 warnings. (took 1s.586ms)
+
