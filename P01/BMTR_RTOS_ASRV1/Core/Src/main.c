@@ -137,8 +137,8 @@ float velocity1Filtered=0.0,velocity2Filtered=0.0;
 float acceleration1 = 0.0, acceleration2 = 0.0;
 float acceleration1_prev=0.0;
 // ────────────── 🛠 Parameters ──────────────
-#define G 70     // Smoothing factor for velocity filter
-#define G2 70     // Smoothing factor for velocity filter
+#define G 90     // Smoothing factor for velocity filter
+#define G2 90     // Smoothing factor for velocity filter
 // ────────────── ⚙️ Motor 2 Parameters ──────────────
 float Icmd2 = 1.1;      // Commanded current (A)
 float Ktn2 = 0.0705;    // Torque constant (Nm/A)
@@ -155,8 +155,8 @@ float commanded_current = 0.0f;             // Icmd1: Commanded current (A)
 float torque_constant_motor = 1.5365f;      // Ktn1: Motor torque constant (Nm/A),(0.0712 x 26 x 0.83)
 float motor_inertia = 0.2144f;  //*26*26;           // Jn1: Motor inertia (kg·m²), (0.0003170 x 26 x 26)
 float torque_constant_load = 1.5365f;       // Kt1: Load-side torque constant (Nm/A), (0.0712 x 26 x 0.83)
-float disturbance_gain = 30.0f;             // Gdis1: DOB gain (~20Hz cutoff)
-float reaction_gain = 30.0f;                // Grtob1: RTOB gain (~15Hz cutoff)
+float disturbance_gain = 20.0f;             // Gdis1: DOB gain (~20Hz cutoff)
+float reaction_gain = 20.0f;                // Grtob1: RTOB gain (~15Hz cutoff)
 float internal_friction = 0.001f;//130f;          // Fint: Internal friction torque (Nm)
 float viscous_friction = 0.0003f;           // Ffric: Viscous friction torque (Nm)
 float pulses_per_revolution = 1024.0f;       // PPR: Encoder pulses per revolution
@@ -206,8 +206,8 @@ float motor02_commanded_current = 0.0f;             // Commanded current (A)
 float motor02_torque_constant = 1.5365f;            // Motor torque constant (Nm/A)
 float motor02_inertia = 0.2144f;                 // Motor inertia (kg·m²)
 float motor02_torque_constant_load = 1.5365f;       // Load-side torque constant (Nm/A)
-float motor02_disturbance_gain = 30.1f;             // DOB gain (~20Hz cutoff)
-float motor02_reaction_gain = 30.1f;                 // RTOB gain (~15Hz cutoff)
+float motor02_disturbance_gain = 20.1f;             // DOB gain (~20Hz cutoff)
+float motor02_reaction_gain = 20.1f;                 // RTOB gain (~15Hz cutoff)
 float motor02_internal_friction = 0.001f;          // Internal friction torque (Nm)
 float motor02_viscous_friction = 0.0003f;           // Viscous friction torque (Nm)
 float motor02_pulses_per_revolution = 1024.0f;       // Encoder pulses per revolution
@@ -889,6 +889,9 @@ static void MX_GPIO_Init(void)
 void StartDefaultTask(void const * argument)
 {
   /* USER CODE BEGIN 5 */
+    const uint32_t period_ms = 60;
+    uint32_t tick_period = osKernelGetTickFreq() * period_ms / 1000;
+    uint32_t last_wake_time = osKernelGetTickCount();
   /* Infinite loop */
   for(;;)
   {
@@ -1048,8 +1051,8 @@ void StartDefaultTask(void const * argument)
 	   *               Update Time Interval                   *
 	   *********************************************************/
 
-	  osDelay(2);
-	  time_end = __HAL_TIM_GET_COUNTER(&htim2);
+      osDelayUntil(&last_wake_time, tick_period);
+
 
   }
   /* USER CODE END 5 */
@@ -1107,37 +1110,37 @@ void StartTask02(void const * argument)
     }
 	}
 	else {
-		// ===== STM32 Side (Master - Transmitter) =====
-		// Transmit 1 int + 5 floats (20 bytes) + start marker (1 byte) + CRC (1 byte) = 22 bytes
-
-		uint8_t txBuf[22];
-		uint8_t rxBuf[22];
-
-		memset(txBuf, 0, sizeof(txBuf));
-		memset(rxBuf, 0, sizeof(rxBuf));  // 💡 Important flush
-
-		txBuf[0] = 0xAA;
-		memcpy(&txBuf[1],  &time_start, sizeof(int));
-		memcpy(&txBuf[5],  &motor02_reaction_torque, sizeof(float));
-		memcpy(&txBuf[9],  &desired_torque, sizeof(float));
-		memcpy(&txBuf[13], &theta1, sizeof(float));
-		memcpy(&txBuf[17], &theta2, sizeof(float));
-
-		// CRC
-		uint8_t crc = 0;
-		for (int i = 0; i < 21; i++) {
-		    crc ^= txBuf[i];
-		}
-		txBuf[21] = crc;
-
-		// SPI transmit
-		HAL_GPIO_WritePin(GPIOB, GPIO_PIN_0, GPIO_PIN_RESET);
-		HAL_Delay(1);
-		HAL_SPI_TransmitReceive(&hspi4, txBuf, rxBuf, sizeof(txBuf), HAL_MAX_DELAY);
-		HAL_Delay(1);
-		HAL_GPIO_WritePin(GPIOB, GPIO_PIN_0, GPIO_PIN_SET);
-		HAL_Delay(1);  // can increase to 3–5 ms if instability persists
-  // Delay before next cycle
+//		// ===== STM32 Side (Master - Transmitter) =====
+//		// Transmit 1 int + 5 floats (20 bytes) + start marker (1 byte) + CRC (1 byte) = 22 bytes
+//
+//		uint8_t txBuf[22];
+//		uint8_t rxBuf[22];
+//
+//		memset(txBuf, 0, sizeof(txBuf));
+//		memset(rxBuf, 0, sizeof(rxBuf));  // 💡 Important flush
+//
+//		txBuf[0] = 0xAA;
+//		memcpy(&txBuf[1],  &time_start, sizeof(int));
+//		memcpy(&txBuf[5],  &motor02_reaction_torque, sizeof(float));
+//		memcpy(&txBuf[9],  &desired_torque, sizeof(float));
+//		memcpy(&txBuf[13], &theta1, sizeof(float));
+//		memcpy(&txBuf[17], &theta2, sizeof(float));
+//
+//		// CRC
+//		uint8_t crc = 0;
+//		for (int i = 0; i < 21; i++) {
+//		    crc ^= txBuf[i];
+//		}
+//		txBuf[21] = crc;
+//
+//		// SPI transmit
+//		HAL_GPIO_WritePin(GPIOB, GPIO_PIN_0, GPIO_PIN_RESET);
+//		HAL_Delay(1);
+//		HAL_SPI_TransmitReceive(&hspi4, txBuf, rxBuf, sizeof(txBuf), HAL_MAX_DELAY);
+//		HAL_Delay(1);
+//		HAL_GPIO_WritePin(GPIOB, GPIO_PIN_0, GPIO_PIN_SET);
+//		HAL_Delay(1);  // can increase to 3–5 ms if instability persists
+//  // Delay before next cycle
 	}
 
 	osDelay(5);

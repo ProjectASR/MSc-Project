@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Move &apos;P01&apos; to &apos;MSc-Project-fc214cd67df696c1e281f490ec135e3553eeb646.zip_expanded&apos;" description="Move &apos;P01&apos; to &apos;MSc-Project-fc214cd67df696c1e281f490ec135e3553eeb646.zip_expanded&apos;" destination="/MSc-Project-fc214cd67df696c1e281f490ec135e3553eeb646.zip_expanded" element1="MSc-Project-fc214cd67df696c1e281f490ec135e3553eeb646/P01" flags="7" id="org.eclipse.ltk.core.refactoring.move.resources" resources="1" stamp="1750413474897" updateReferences="true"/>
+</session>

@@ -1,0 +1,20 @@
+theta1
+encoder_ticks
+velocity1
+time_interval
+__HAL_TIM_GET_COUNTER(&htim2)
+secondFromStart
+ENABLEmOTOR
+Set_Accelaration1
+acceleration1
+Icmd1
+motor_torque
+Tdis1
+Text1
+Set_Accelaration1/800+Text1
+Grtob1
+Icmd1 * (Kt1)
+Fint
+Tdis1
+Text1Filtered
+Set_Torque1

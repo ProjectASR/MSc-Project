@@ -1,0 +1,967 @@
+2025-05-05 00:36:38,206 [INFO] WebApp:194 - Connection lost
+2025-05-05 00:38:09,185 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 985021464 Bytes (1073741824)
+2025-05-05 00:38:10,940 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 995230944 Bytes (1073741824)
+2025-05-05 00:38:12,683 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 911366640 Bytes (1073741824)
+2025-05-05 00:38:39,238 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 694076688 Bytes (1073741824)
+2025-05-05 00:38:40,508 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 725533968 Bytes (1073741824)
+2025-05-05 00:38:41,837 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 776387856 Bytes (1073741824)
+2025-05-05 00:39:21,706 [INFO] WebApp:191 - Connection restablished
+2025-05-05 00:41:01,657 [INFO] TasksAndQueuesTab:757 - Dynamic
+2025-05-05 00:41:01,657 [WARN] TasksAndQueuesTab:763 - 128 128
+2025-05-05 00:41:01,657 [WARN] TasksAndQueuesTab:775 - max value is: 3840.0
+2025-05-05 00:41:03,598 [INFO] EditThreadDialog:704 - RAM SIZE (in KB): 320
+2025-05-05 00:41:03,598 [INFO] EditThreadDialog:706 - RAM SIZE (in words): 81920
+2025-05-05 00:41:21,468 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 696915792 Bytes (1073741824)
+2025-05-05 00:41:22,807 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 728373072 Bytes (1073741824)
+2025-05-05 00:41:25,967 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 835327824 Bytes (1073741824)
+2025-05-05 00:42:30,643 [ERROR] RtosPanel:558 - Can not restore the selected Tab for FREERTOS(A reason can be that the tab is no more available.)
+2025-05-05 00:42:30,965 [ERROR] RtosPanel:558 - Can not restore the selected Tab for FREERTOS(A reason can be that the tab is no more available.)
+2025-05-05 00:42:38,432 [INFO] TasksAndQueuesTab:757 - Dynamic
+2025-05-05 00:42:38,432 [WARN] TasksAndQueuesTab:763 - 128 128
+2025-05-05 00:42:38,432 [WARN] TasksAndQueuesTab:775 - max value is: 3840.0
+2025-05-05 00:42:39,941 [INFO] EditThreadDialog:704 - RAM SIZE (in KB): 320
+2025-05-05 00:42:39,941 [INFO] EditThreadDialog:706 - RAM SIZE (in words): 81920
+2025-05-05 00:42:42,150 [INFO] EditThreadDialog:704 - RAM SIZE (in KB): 320
+2025-05-05 00:42:42,150 [INFO] EditThreadDialog:706 - RAM SIZE (in words): 81920
+2025-05-05 00:42:43,950 [INFO] TasksAndQueuesTab:757 - Dynamic
+2025-05-05 00:42:43,950 [WARN] TasksAndQueuesTab:763 - 128 128
+2025-05-05 00:42:43,950 [WARN] TasksAndQueuesTab:775 - max value is: 3840.0
+2025-05-05 00:42:43,950 [INFO] TasksAndQueuesTab:757 - Dynamic
+2025-05-05 00:42:43,951 [WARN] TasksAndQueuesTab:763 - 128 128
+2025-05-05 00:42:43,951 [WARN] TasksAndQueuesTab:775 - max value is: 3840.0
+2025-05-05 00:42:44,086 [ERROR] RtosPanel:558 - Can not restore the selected Tab for FREERTOS(A reason can be that the tab is no more available.)
+2025-05-05 00:42:58,905 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 919189096 Bytes (1073741824)
+2025-05-05 00:43:18,325 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 951168616 Bytes (1073741824)
+2025-05-05 00:43:20,449 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 686183336 Bytes (1073741824)
+2025-05-05 00:43:45,030 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: FREERTOS
+2025-05-05 00:43:45,030 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: SYS
+2025-05-05 00:43:45,030 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: RCC
+2025-05-05 00:43:45,030 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: NVIC
+2025-05-05 00:43:45,030 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: CORTEX_M7
+2025-05-05 00:43:45,031 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: GPIO
+2025-05-05 00:43:45,034 [INFO] CodeGenerator:882 - code generatio: config db path: C:\ST\STM32CubeIDE_1.17.0\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_6.14.0.202502271554\\db\
+2025-05-05 00:43:45,183 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\RTOS_V1ASR\MXTmpFiles\license.tmp_save
+2025-05-05 00:43:45,478 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\RTOS_V1ASR\MXTmpFiles\license.tmp
+2025-05-05 00:43:45,499 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\RTOS_V1ASR\MXTmpFiles\gpio.tmp_save
+2025-05-05 00:43:45,672 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\RTOS_V1ASR\MXTmpFiles\gpio.tmp
+2025-05-05 00:43:45,718 [INFO] Middleware:1452 - No code input for Bsp Dependency
+2025-05-05 00:43:45,725 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\RTOS_V1ASR\MXTmpFiles\rtos_inc.tmp_save
+2025-05-05 00:43:45,841 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\RTOS_V1ASR\MXTmpFiles\rtos_inc.tmp
+2025-05-05 00:43:45,850 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\RTOS_V1ASR\MXTmpFiles\rtos_vars.tmp_save
+2025-05-05 00:43:45,968 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\RTOS_V1ASR\MXTmpFiles\rtos_vars.tmp
+2025-05-05 00:43:45,975 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\RTOS_V1ASR\MXTmpFiles\rtos_pfp.tmp_save
+2025-05-05 00:43:46,085 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\RTOS_V1ASR\MXTmpFiles\rtos_pfp.tmp
+2025-05-05 00:43:46,090 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\RTOS_V1ASR\MXTmpFiles\rtos_obj_creat.tmp_save
+2025-05-05 00:43:46,201 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\RTOS_V1ASR\MXTmpFiles\rtos_obj_creat.tmp
+2025-05-05 00:43:46,207 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\RTOS_V1ASR\MXTmpFiles\rtos_kernelStart.tmp_save
+2025-05-05 00:43:46,302 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\RTOS_V1ASR\MXTmpFiles\rtos_kernelStart.tmp
+2025-05-05 00:43:46,309 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\RTOS_V1ASR\MXTmpFiles\rtos_default_thread.tmp_save
+2025-05-05 00:43:46,385 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\RTOS_V1ASR\MXTmpFiles\rtos_default_thread.tmp
+2025-05-05 00:43:46,392 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\RTOS_V1ASR\MXTmpFiles\rtos_threads.tmp_save
+2025-05-05 00:43:46,462 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\RTOS_V1ASR\MXTmpFiles\rtos_threads.tmp
+2025-05-05 00:43:46,482 [INFO] Middleware:1452 - No code input for Bsp Dependency
+2025-05-05 00:43:46,492 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\RTOS_V1ASR\MXTmpFiles\rtos_inc.tmp_save
+2025-05-05 00:43:46,555 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\RTOS_V1ASR\MXTmpFiles\rtos_inc.tmp
+2025-05-05 00:43:46,566 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\RTOS_V1ASR\MXTmpFiles\rtos_vars.tmp_save
+2025-05-05 00:43:46,634 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\RTOS_V1ASR\MXTmpFiles\rtos_vars.tmp
+2025-05-05 00:43:46,642 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\RTOS_V1ASR\MXTmpFiles\rtos_pfp.tmp_save
+2025-05-05 00:43:46,704 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\RTOS_V1ASR\MXTmpFiles\rtos_pfp.tmp
+2025-05-05 00:43:46,713 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\RTOS_V1ASR\MXTmpFiles\rtos_obj_creat.tmp_save
+2025-05-05 00:43:46,778 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\RTOS_V1ASR\MXTmpFiles\rtos_obj_creat.tmp
+2025-05-05 00:43:46,789 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\RTOS_V1ASR\MXTmpFiles\rtos_kernelStart.tmp_save
+2025-05-05 00:43:46,849 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\RTOS_V1ASR\MXTmpFiles\rtos_kernelStart.tmp
+2025-05-05 00:43:46,858 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\RTOS_V1ASR\MXTmpFiles\rtos_default_thread.tmp_save
+2025-05-05 00:43:46,921 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\RTOS_V1ASR\MXTmpFiles\rtos_default_thread.tmp
+2025-05-05 00:43:46,930 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\RTOS_V1ASR\MXTmpFiles\rtos_threads.tmp_save
+2025-05-05 00:43:46,994 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\RTOS_V1ASR\MXTmpFiles\rtos_threads.tmp
+2025-05-05 00:43:47,005 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\RTOS_V1ASR\Core\Inc\FreeRTOSConfig.h_save
+2025-05-05 00:43:47,104 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\RTOS_V1ASR\Core\Inc\FreeRTOSConfig.h
+2025-05-05 00:43:47,116 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\RTOS_V1ASR\Core\Src\freertos.c_save
+2025-05-05 00:43:47,191 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\RTOS_V1ASR\Core\Src\freertos.c
+2025-05-05 00:43:47,207 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\RTOS_V1ASR\MXTmpFiles\cortex.tmp_save
+2025-05-05 00:43:47,300 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\RTOS_V1ASR\MXTmpFiles\cortex.tmp
+2025-05-05 00:43:47,318 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\RTOS_V1ASR\Core\Src\stm32f7xx_it.c_save
+2025-05-05 00:43:47,452 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\RTOS_V1ASR\Core\Src\stm32f7xx_it.c
+2025-05-05 00:43:47,460 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\RTOS_V1ASR\Core\Inc\stm32f7xx_it.h_save
+2025-05-05 00:43:47,514 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\RTOS_V1ASR\Core\Inc\stm32f7xx_it.h
+2025-05-05 00:43:47,532 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\RTOS_V1ASR\Core\Src\stm32f7xx_hal_msp.c_save
+2025-05-05 00:43:47,602 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\RTOS_V1ASR\Core\Src\stm32f7xx_hal_msp.c
+2025-05-05 00:43:47,609 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\RTOS_V1ASR\MXTmpFiles\system.tmp_save
+2025-05-05 00:43:47,654 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\RTOS_V1ASR\MXTmpFiles\system.tmp
+2025-05-05 00:43:47,660 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\RTOS_V1ASR\Core\Src\stm32f7xx_hal_timebase_tim.c_save
+2025-05-05 00:43:47,716 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\RTOS_V1ASR\Core\Src\stm32f7xx_hal_timebase_tim.c
+2025-05-05 00:43:47,729 [INFO] CodeEngine:319 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\RTOS_V1ASR\Core\Inc\stm32f7xx_hal_conf.h_save
+2025-05-05 00:43:47,788 [INFO] CodeEngine:343 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\RTOS_V1ASR\Core\Inc\stm32f7xx_hal_conf.h
+2025-05-05 00:43:47,818 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\RTOS_V1ASR\Core\Inc\main.h_save
+2025-05-05 00:43:47,892 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\RTOS_V1ASR\Core\Inc\main.h
+2025-05-05 00:43:47,900 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\RTOS_V1ASR\Core\Src\main.c_save
+2025-05-05 00:43:47,992 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\RTOS_V1ASR\Core\Src\main.c
+2025-05-05 00:43:48,572 [INFO] ProjectBuilder:3324 - Time for Copy HAL[1] : 395mS.
+2025-05-05 00:43:48,576 [INFO] ProjectBuilder:4912 - Project Generator version: 4.6.0-B36
+2025-05-05 00:43:48,650 [INFO] ConfigFileManager:1590 - The Die is : DIE449
+2025-05-05 00:43:50,017 [INFO] ProjectBuilder:5191 - Time for Generating toolchain IDE Files: 1440mS.
+2025-05-05 00:43:50,020 [INFO] ProjectBuilder:3181 - Time for Copy CMSIS : 3mS.
+2025-05-05 00:43:50,027 [INFO] ProjectBuilder:3181 - Time for Copy CMSIS : 0mS.
+2025-05-05 00:45:02,247 [INFO] TasksAndQueuesTab:757 - Static
+2025-05-05 00:45:02,248 [INFO] TasksAndQueuesTab:757 - Static
+2025-05-05 00:45:26,031 [INFO] TasksAndQueuesTab:757 - Dynamic
+2025-05-05 00:45:26,031 [WARN] TasksAndQueuesTab:763 - 128 128
+2025-05-05 00:45:26,031 [WARN] TasksAndQueuesTab:775 - max value is: 3840.0
+2025-05-05 00:45:26,031 [INFO] TasksAndQueuesTab:757 - Dynamic
+2025-05-05 00:45:26,031 [WARN] TasksAndQueuesTab:763 - 128 128
+2025-05-05 00:45:26,031 [WARN] TasksAndQueuesTab:775 - max value is: 3840.0
+2025-05-05 00:45:29,194 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 865754192 Bytes (1073741824)
+2025-05-05 00:45:30,547 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 897733712 Bytes (1073741824)
+2025-05-05 00:45:31,916 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 951211088 Bytes (1073741824)
+2025-05-05 00:45:41,874 [INFO] TasksAndQueuesTab:757 - Static
+2025-05-05 00:45:41,874 [INFO] TasksAndQueuesTab:757 - Static
+2025-05-05 00:45:43,912 [INFO] TasksAndQueuesTab:757 - Dynamic
+2025-05-05 00:45:43,912 [WARN] TasksAndQueuesTab:763 - 128 128
+2025-05-05 00:45:43,912 [WARN] TasksAndQueuesTab:775 - max value is: 3840.0
+2025-05-05 00:45:43,912 [INFO] TasksAndQueuesTab:757 - Dynamic
+2025-05-05 00:45:43,912 [WARN] TasksAndQueuesTab:763 - 128 128
+2025-05-05 00:45:43,912 [WARN] TasksAndQueuesTab:775 - max value is: 3840.0
+2025-05-05 00:45:46,871 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 855879080 Bytes (1073741824)
+2025-05-05 00:45:48,211 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 887858600 Bytes (1073741824)
+2025-05-05 00:45:49,779 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 994813352 Bytes (1073741824)
+2025-05-05 00:45:51,544 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: FREERTOS
+2025-05-05 00:45:51,544 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: SYS
+2025-05-05 00:45:51,544 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: RCC
+2025-05-05 00:45:51,544 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: NVIC
+2025-05-05 00:45:51,544 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: CORTEX_M7
+2025-05-05 00:45:51,544 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: GPIO
+2025-05-05 00:45:51,547 [INFO] CodeGenerator:882 - code generatio: config db path: C:\ST\STM32CubeIDE_1.17.0\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_6.14.0.202502271554\\db\
+2025-05-05 00:45:51,699 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\RTOS_V1ASR\MXTmpFiles\license.tmp_save
+2025-05-05 00:45:51,758 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\RTOS_V1ASR\MXTmpFiles\license.tmp
+2025-05-05 00:45:51,771 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\RTOS_V1ASR\MXTmpFiles\gpio.tmp_save
+2025-05-05 00:45:51,822 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\RTOS_V1ASR\MXTmpFiles\gpio.tmp
+2025-05-05 00:45:51,853 [INFO] Middleware:1452 - No code input for Bsp Dependency
+2025-05-05 00:45:51,860 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\RTOS_V1ASR\MXTmpFiles\rtos_inc.tmp_save
+2025-05-05 00:45:51,915 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\RTOS_V1ASR\MXTmpFiles\rtos_inc.tmp
+2025-05-05 00:45:51,929 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\RTOS_V1ASR\MXTmpFiles\rtos_vars.tmp_save
+2025-05-05 00:45:51,983 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\RTOS_V1ASR\MXTmpFiles\rtos_vars.tmp
+2025-05-05 00:45:51,990 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\RTOS_V1ASR\MXTmpFiles\rtos_pfp.tmp_save
+2025-05-05 00:45:52,038 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\RTOS_V1ASR\MXTmpFiles\rtos_pfp.tmp
+2025-05-05 00:45:52,044 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\RTOS_V1ASR\MXTmpFiles\rtos_obj_creat.tmp_save
+2025-05-05 00:45:52,095 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\RTOS_V1ASR\MXTmpFiles\rtos_obj_creat.tmp
+2025-05-05 00:45:52,100 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\RTOS_V1ASR\MXTmpFiles\rtos_kernelStart.tmp_save
+2025-05-05 00:45:52,148 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\RTOS_V1ASR\MXTmpFiles\rtos_kernelStart.tmp
+2025-05-05 00:45:52,152 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\RTOS_V1ASR\MXTmpFiles\rtos_default_thread.tmp_save
+2025-05-05 00:45:52,204 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\RTOS_V1ASR\MXTmpFiles\rtos_default_thread.tmp
+2025-05-05 00:45:52,210 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\RTOS_V1ASR\MXTmpFiles\rtos_threads.tmp_save
+2025-05-05 00:45:52,257 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\RTOS_V1ASR\MXTmpFiles\rtos_threads.tmp
+2025-05-05 00:45:52,271 [INFO] Middleware:1452 - No code input for Bsp Dependency
+2025-05-05 00:45:52,278 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\RTOS_V1ASR\MXTmpFiles\rtos_inc.tmp_save
+2025-05-05 00:45:52,333 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\RTOS_V1ASR\MXTmpFiles\rtos_inc.tmp
+2025-05-05 00:45:52,354 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\RTOS_V1ASR\MXTmpFiles\rtos_vars.tmp_save
+2025-05-05 00:45:52,403 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\RTOS_V1ASR\MXTmpFiles\rtos_vars.tmp
+2025-05-05 00:45:52,411 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\RTOS_V1ASR\MXTmpFiles\rtos_pfp.tmp_save
+2025-05-05 00:45:52,460 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\RTOS_V1ASR\MXTmpFiles\rtos_pfp.tmp
+2025-05-05 00:45:52,466 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\RTOS_V1ASR\MXTmpFiles\rtos_obj_creat.tmp_save
+2025-05-05 00:45:52,517 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\RTOS_V1ASR\MXTmpFiles\rtos_obj_creat.tmp
+2025-05-05 00:45:52,525 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\RTOS_V1ASR\MXTmpFiles\rtos_kernelStart.tmp_save
+2025-05-05 00:45:52,571 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\RTOS_V1ASR\MXTmpFiles\rtos_kernelStart.tmp
+2025-05-05 00:45:52,579 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\RTOS_V1ASR\MXTmpFiles\rtos_default_thread.tmp_save
+2025-05-05 00:45:52,628 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\RTOS_V1ASR\MXTmpFiles\rtos_default_thread.tmp
+2025-05-05 00:45:52,636 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\RTOS_V1ASR\MXTmpFiles\rtos_threads.tmp_save
+2025-05-05 00:45:52,685 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\RTOS_V1ASR\MXTmpFiles\rtos_threads.tmp
+2025-05-05 00:45:52,693 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\RTOS_V1ASR\Core\Inc\FreeRTOSConfig.h_save
+2025-05-05 00:45:52,784 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\RTOS_V1ASR\Core\Inc\FreeRTOSConfig.h
+2025-05-05 00:45:52,793 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\RTOS_V1ASR\Core\Src\freertos.c_save
+2025-05-05 00:45:52,855 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\RTOS_V1ASR\Core\Src\freertos.c
+2025-05-05 00:45:52,869 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\RTOS_V1ASR\MXTmpFiles\cortex.tmp_save
+2025-05-05 00:45:52,933 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\RTOS_V1ASR\MXTmpFiles\cortex.tmp
+2025-05-05 00:45:52,959 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\RTOS_V1ASR\Core\Src\stm32f7xx_it.c_save
+2025-05-05 00:45:53,034 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\RTOS_V1ASR\Core\Src\stm32f7xx_it.c
+2025-05-05 00:45:53,048 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\RTOS_V1ASR\Core\Inc\stm32f7xx_it.h_save
+2025-05-05 00:45:53,106 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\RTOS_V1ASR\Core\Inc\stm32f7xx_it.h
+2025-05-05 00:45:53,127 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\RTOS_V1ASR\Core\Src\stm32f7xx_hal_msp.c_save
+2025-05-05 00:45:53,222 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\RTOS_V1ASR\Core\Src\stm32f7xx_hal_msp.c
+2025-05-05 00:45:53,230 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\RTOS_V1ASR\MXTmpFiles\system.tmp_save
+2025-05-05 00:45:53,279 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\RTOS_V1ASR\MXTmpFiles\system.tmp
+2025-05-05 00:45:53,287 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\RTOS_V1ASR\Core\Src\stm32f7xx_hal_timebase_tim.c_save
+2025-05-05 00:45:53,344 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\RTOS_V1ASR\Core\Src\stm32f7xx_hal_timebase_tim.c
+2025-05-05 00:45:53,359 [INFO] CodeEngine:319 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\RTOS_V1ASR\Core\Inc\stm32f7xx_hal_conf.h_save
+2025-05-05 00:45:53,418 [INFO] CodeEngine:343 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\RTOS_V1ASR\Core\Inc\stm32f7xx_hal_conf.h
+2025-05-05 00:45:53,447 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\RTOS_V1ASR\Core\Inc\main.h_save
+2025-05-05 00:45:53,518 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\RTOS_V1ASR\Core\Inc\main.h
+2025-05-05 00:45:53,529 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\RTOS_V1ASR\Core\Src\main.c_save
+2025-05-05 00:45:53,619 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\RTOS_V1ASR\Core\Src\main.c
+2025-05-05 00:45:54,219 [INFO] ProjectBuilder:3324 - Time for Copy HAL[1] : 351mS.
+2025-05-05 00:45:54,223 [INFO] ProjectBuilder:4912 - Project Generator version: 4.6.0-B36
+2025-05-05 00:45:54,306 [INFO] ConfigFileManager:1590 - The Die is : DIE449
+2025-05-05 00:45:55,183 [INFO] ProjectBuilder:5191 - Time for Generating toolchain IDE Files: 960mS.
+2025-05-05 00:45:55,185 [INFO] ProjectBuilder:3181 - Time for Copy CMSIS : 2mS.
+2025-05-05 00:45:55,193 [INFO] ProjectBuilder:3181 - Time for Copy CMSIS : 0mS.
+2025-05-05 00:57:09,487 [INFO] MainUpdater:2872 - connection check result : 10
+2025-05-05 00:57:09,665 [INFO] McuFinderGlobals:76 - Set McuFinderConnectedMode to true
+2025-05-05 00:57:09,668 [INFO] MultiScanPanel:200 - Auto-refresh data requested => check proxy status ongoing
+2025-05-05 00:57:09,669 [INFO] FinderPluginLoader:95 - Searching for filters in installed packs
+2025-05-05 00:57:11,392 [INFO] LoadUrlFilesThread:185 - End of LoadServerUrlFiles without Thread
+2025-05-05 00:57:11,392 [INFO] DetailPanel:341 - Set advertising image to C:/Users/ashen/STM32Cube/Repository/\en.prom-stm32u3-mcu-finder.jpg
+2025-05-05 00:57:51,847 [INFO] MainUpdater:2872 - connection check result : 10
+2025-05-05 00:57:51,847 [INFO] MainUpdater:2872 - connection check result : 10
+2025-05-05 00:57:51,871 [INFO] MicroXplorer:468 - Change Database Path : 
+2025-05-05 00:57:51,871 [INFO] MicroXplorer:498 - Change Database Version : DB.6.0.140
+2025-05-05 00:57:51,897 [ERROR] ProjectManagerView:394 - 
+java.lang.NullPointerException: Cannot invoke "javax.swing.JTextField.getText()" because the return value of "java.util.List.get(int)" is null
+	at com.st.microxplorer.plugins.projectmanager.gui.ProjectChoiceTab$9.caretUpdate(ProjectChoiceTab.java:2678) ~[filemanager.jar:?]
+	at javax.swing.text.JTextComponent.fireCaretUpdate(JTextComponent.java:408) ~[?:?]
+	at javax.swing.text.JTextComponent$MutableCaretEvent.fire(JTextComponent.java:4484) ~[?:?]
+	at javax.swing.text.JTextComponent$MutableCaretEvent.stateChanged(JTextComponent.java:4506) ~[?:?]
+	at javax.swing.text.DefaultCaret.fireStateChanged(DefaultCaret.java:857) ~[?:?]
+	at javax.swing.text.DefaultCaret.changeCaretPosition(DefaultCaret.java:1343) ~[?:?]
+	at javax.swing.text.DefaultCaret.handleSetDot(DefaultCaret.java:1242) ~[?:?]
+	at javax.swing.text.DefaultCaret.setDot(DefaultCaret.java:1223) ~[?:?]
+	at javax.swing.text.DefaultCaret$Handler.insertUpdate(DefaultCaret.java:1819) ~[?:?]
+	at javax.swing.text.AbstractDocument.fireInsertUpdate(AbstractDocument.java:227) ~[?:?]
+	at javax.swing.text.AbstractDocument.handleInsertString(AbstractDocument.java:781) ~[?:?]
+	at javax.swing.text.AbstractDocument.insertString(AbstractDocument.java:740) ~[?:?]
+	at javax.swing.text.PlainDocument.insertString(PlainDocument.java:131) ~[?:?]
+	at javax.swing.text.AbstractDocument.replace(AbstractDocument.java:699) ~[?:?]
+	at javax.swing.text.JTextComponent.setText(JTextComponent.java:1725) ~[?:?]
+	at com.st.microxplorer.plugins.projectmanager.gui.ProjectChoiceTab.createHeapStackFields(ProjectChoiceTab.java:979) ~[filemanager.jar:?]
+	at com.st.microxplorer.plugins.projectmanager.gui.ProjectChoiceTab.buildLinkSettingsPanel(ProjectChoiceTab.java:3766) ~[filemanager.jar:?]
+	at com.st.microxplorer.plugins.projectmanager.gui.ProjectChoiceTab.defineWindowsFields(ProjectChoiceTab.java:1962) ~[filemanager.jar:?]
+	at com.st.microxplorer.plugins.projectmanager.gui.ProjectChoiceTab.updateSettings(ProjectChoiceTab.java:555) ~[filemanager.jar:?]
+	at com.st.microxplorer.plugins.projectmanager.gui.ProjectSettingsPanel.UpdateDialog(ProjectSettingsPanel.java:245) ~[filemanager.jar:?]
+	at com.st.microxplorer.plugins.projectmanager.ProjectManagerView.propertyChange(ProjectManagerView.java:391) ~[filemanager.jar:?]
+	at java.beans.PropertyChangeSupport.fire(PropertyChangeSupport.java:343) ~[?:?]
+	at java.beans.PropertyChangeSupport.firePropertyChange(PropertyChangeSupport.java:335) ~[?:?]
+	at java.beans.PropertyChangeSupport.firePropertyChange(PropertyChangeSupport.java:268) ~[?:?]
+	at com.st.microxplorer.util.MXPropertyChangeSupport.firePropertyChange(MXPropertyChangeSupport.java:54) ~[STM32CubeMX.jar:?]
+	at com.st.microxplorer.mxsystem.MxSystem.closeConfig(MxSystem.java:899) ~[STM32CubeMX.jar:?]
+	at com.st.microxplorer.maingui.MainPanel.closeConfig(MainPanel.java:789) ~[STM32CubeMX.jar:?]
+	at com.st.microxplorer.plugins.filemanager.engine.OpenFileManager.loadConfigurationFile(OpenFileManager.java:287) ~[filemanager.jar:?]
+	at com.st.microxplorer.plugins.filemanager.engine.MainFileManager.userLoadConfig(MainFileManager.java:341) ~[filemanager.jar:?]
+	at com.st.microxplorer.plugins.filemanager.engine.MainFileManager.userLoadConfig(MainFileManager.java:319) ~[filemanager.jar:?]
+	at com.st.microxplorer.plugins.filemanager.FileManagerView.getSpecificTask(FileManagerView.java:246) ~[filemanager.jar:?]
+	at com.st.stm32cube.common.mx.editor.CubeMxEditor.getMxTabbedPaneInstance(CubeMxEditor.java:1198) ~[com.st.stm32cube.common.mx_6.14.0.202502271554/:?]
+	at com.st.stm32cube.common.mx.editor.CubeMxEditor$12$1.createSwingComponent(CubeMxEditor.java:1068) ~[com.st.stm32cube.common.mx_6.14.0.202502271554/:?]
+	at com.st.stm32cube.common.mx.oss.core.awtswtbridge.EmbeddedSwingComposite.doComponentCreation(EmbeddedSwingComposite.java:492) ~[com.st.stm32cube.common.mx.oss_6.14.0.202502271554/:?]
+	at com.st.stm32cube.common.mx.oss.core.awtswtbridge.EmbeddedSwingComposite$4.run(EmbeddedSwingComposite.java:291) ~[com.st.stm32cube.common.mx.oss_6.14.0.202502271554/:?]
+	at com.st.stm32cube.common.mx.oss.core.awtswtbridge.AwtEnvironment$2.run(AwtEnvironment.java:166) ~[com.st.stm32cube.common.mx.oss_6.14.0.202502271554/:?]
+	at java.awt.event.InvocationEvent.dispatch(InvocationEvent.java:318) ~[?:?]
+	at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:773) ~[?:?]
+	at java.awt.EventQueue$4.run(EventQueue.java:720) ~[?:?]
+	at java.awt.EventQueue$4.run(EventQueue.java:714) ~[?:?]
+	at java.security.AccessController.doPrivileged(AccessController.java:400) ~[?:?]
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:87) ~[?:?]
+	at java.awt.EventQueue.dispatchEvent(EventQueue.java:742) ~[?:?]
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:203) ~[?:?]
+	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:124) ~[?:?]
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:113) ~[?:?]
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:109) ~[?:?]
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101) ~[?:?]
+	at java.awt.EventDispatchThread.run(EventDispatchThread.java:90) ~[?:?]
+2025-05-05 00:57:51,901 [WARN] ThirdParty:871 - waiting for thirdparty lock release [close project]
+2025-05-05 00:57:51,901 [INFO] ThirdParty:873 - entering critical section [close project]
+2025-05-05 00:57:51,905 [INFO] ThirdParty:883 - exiting critical section [close project]
+2025-05-05 00:57:51,915 [INFO] PinOutPanel:1589 - setPackage(No Configuration,No Configuration)
+2025-05-05 00:57:51,932 [WARN] IpParametersView:155 - Warning: This peripheral hasn't parameters
+2025-05-05 00:57:51,940 [WARN] MainPanel:289 - <html><b><center>Warning: This peripheral has no parameters to be configured<br></b></html>
+2025-05-05 00:57:51,951 [INFO] UtilMem:75 - Begin LoadConfig() Used Memory: 989138776 Bytes (1073741824)
+2025-05-05 00:57:51,951 [INFO] MicroXplorer:468 - Change Database Path : 
+2025-05-05 00:57:51,952 [INFO] MicroXplorer:498 - Change Database Version : DB.6.0.140
+2025-05-05 00:57:51,952 [INFO] OpenFileManager:354 - Change cursor
+2025-05-05 00:57:51,986 [INFO] RulesReader:64 - Compatibility file has been processed (301 Rules)
+2025-05-05 00:57:51,997 [INFO] Mcu:2011 - Initializing MCU STM32F756ZGTx STM32F756ZGTx STM32F756ZGT6
+2025-05-05 00:57:54,474 [INFO] Context:756 - Trying to add GPIOservice into a context  which must be forbidden
+2025-05-05 00:57:55,455 [INFO] ImportTextPane:218 - (OptionalMessage_ERROR) Pin26 (VP_RIF_VS_RIF1) cannot be retrieved for this MCU
+2025-05-05 00:57:55,763 [INFO] RtosManager:558 - Registered RTOS mode: class=CMSIS, group=RTOS, mode=CMSIS_V1, owner=FREERTOS
+2025-05-05 00:57:55,764 [INFO] RtosManager:558 - Registered RTOS mode: class=CMSIS, group=RTOS2, mode=CMSIS_V2, owner=FREERTOS
+2025-05-05 00:57:55,764 [INFO] RtosManager:558 - Registered RTOS mode: class=RTOS, group=Core, mode=CMSIS_V1, owner=FREERTOS
+2025-05-05 00:57:55,764 [INFO] RtosManager:558 - Registered RTOS mode: class=RTOS, group=Core, mode=CMSIS_V2, owner=FREERTOS
+2025-05-05 00:57:55,764 [WARN] ModelIntegratedComponent:184 - Missing modes for component STMicroelectronics:FreeRTOS:0.0.1:STMicroelectronics:RTOS:FreeRTOS:Core:::10.2.0:
+2025-05-05 00:57:55,777 [WARN] ModelIntegratedComponent:63 - No mode defined for component null
+2025-05-05 00:57:55,777 [WARN] ModelIntegratedComponent:63 - No mode defined for component null
+2025-05-05 00:57:55,777 [WARN] ModelIntegratedComponent:63 - No mode defined for component null
+2025-05-05 00:57:55,777 [WARN] ModelIntegratedComponent:63 - No mode defined for component null
+2025-05-05 00:57:55,777 [WARN] ModelIntegratedComponent:63 - No mode defined for component null
+2025-05-05 00:57:55,777 [WARN] ModelIntegratedComponent:63 - No mode defined for component null
+2025-05-05 00:57:55,777 [WARN] ModelIntegratedComponent:63 - No mode defined for component null
+2025-05-05 00:57:55,777 [WARN] ModelIntegratedComponent:63 - No mode defined for component null
+2025-05-05 00:57:55,777 [WARN] ModelIntegratedComponent:63 - No mode defined for component null
+2025-05-05 00:57:55,777 [WARN] ModelIntegratedComponent:63 - No mode defined for component null
+2025-05-05 00:57:55,777 [WARN] ModelIntegratedComponent:63 - No mode defined for component null
+2025-05-05 00:57:55,777 [WARN] ModelIntegratedComponent:63 - No mode defined for component null
+2025-05-05 00:57:55,777 [WARN] ModelIntegratedComponent:63 - No mode defined for component null
+2025-05-05 00:57:55,777 [WARN] ModelIntegratedComponent:63 - No mode defined for component null
+2025-05-05 00:57:55,777 [WARN] ModelIntegratedComponent:63 - No mode defined for component null
+2025-05-05 00:57:55,777 [WARN] ModelIntegratedComponent:63 - No mode defined for component null
+2025-05-05 00:57:55,777 [WARN] ModelIntegratedComponent:63 - No mode defined for component null
+2025-05-05 00:57:55,777 [WARN] ModelIntegratedComponent:63 - No mode defined for component null
+2025-05-05 00:57:55,777 [WARN] ModelIntegratedComponent:63 - No mode defined for component null
+2025-05-05 00:57:55,777 [WARN] ModelIntegratedComponent:63 - No mode defined for component null
+2025-05-05 00:57:55,777 [WARN] ModelIntegratedComponent:63 - No mode defined for component null
+2025-05-05 00:57:55,777 [WARN] ModelIntegratedComponent:63 - No mode defined for component null
+2025-05-05 00:57:55,777 [WARN] ModelIntegratedComponent:63 - No mode defined for component null
+2025-05-05 00:57:55,777 [WARN] ModelIntegratedComponent:63 - No mode defined for component null
+2025-05-05 00:57:55,777 [WARN] ModelIntegratedComponent:63 - No mode defined for component null
+2025-05-05 00:57:55,777 [WARN] ModelIntegratedComponent:63 - No mode defined for component null
+2025-05-05 00:57:55,778 [WARN] ModelIntegratedComponent:63 - No mode defined for component null
+2025-05-05 00:57:55,778 [WARN] ModelIntegratedComponent:63 - No mode defined for component null
+2025-05-05 00:57:55,778 [WARN] ModelIntegratedComponent:63 - No mode defined for component null
+2025-05-05 00:57:55,778 [WARN] ModelIntegratedComponent:63 - No mode defined for component null
+2025-05-05 00:57:55,778 [WARN] ModelIntegratedComponent:63 - No mode defined for component null
+2025-05-05 00:57:55,778 [WARN] ModelIntegratedComponent:63 - No mode defined for component null
+2025-05-05 00:57:55,778 [WARN] ModelIntegratedComponent:63 - No mode defined for component null
+2025-05-05 00:57:55,778 [WARN] ModelIntegratedComponent:63 - No mode defined for component null
+2025-05-05 00:57:55,778 [WARN] ModelIntegratedComponent:63 - No mode defined for component null
+2025-05-05 00:57:55,778 [WARN] ModelPack:524 - Component already loaded: STMicroelectronics:HAL Drivers:0.0.0:STMicroelectronics:Device:STMicro_Driver:XSPI:HAL::0.0.1:HAL_XSPI
+2025-05-05 00:57:55,920 [INFO] ThirdPartyModel:298 - Start build external matchings
+2025-05-05 00:57:57,209 [INFO] ThirdPartyModel:316 - End build external matchings
+2025-05-05 00:57:57,318 [INFO] ImportTextPane:218 - (OptionalMessage_ERROR) IP (RCC) : Invalid parameter (FamilyName)
+2025-05-05 00:57:57,319 [INFO] ImportTextPane:218 - (OptionalMessage_ERROR) IP (RCC) : Parameter (LCDTFToutputFreq_Value) has invalid value (48000000)
+2025-05-05 00:57:57,320 [INFO] ImportTextPane:218 - (OptionalMessage_ERROR) IP (RCC) : Parameter (RNGFreq_Value) has invalid value (72000000)
+2025-05-05 00:57:57,320 [INFO] ImportTextPane:218 - (OptionalMessage_ERROR) IP (RCC) : Parameter (SDMMCFreq_Value) has invalid value (72000000)
+2025-05-05 00:57:57,321 [INFO] ImportTextPane:218 - (OptionalMessage_ERROR) IP (RCC) : Parameter (USBFreq_Value) has invalid value (72000000)
+2025-05-05 00:57:57,921 [INFO] UtilMem:75 - End LoadConfig() Used Memory: 954327552 Bytes (1073741824)
+2025-05-05 00:57:58,007 [WARN] ThirdParty:833 - waiting for thirdparty lock release [change project]
+2025-05-05 00:57:58,008 [INFO] ThirdParty:835 - entering critical section [change project]
+2025-05-05 00:57:58,008 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics USBPD 4.1
+2025-05-05 00:57:58,008 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-AZRTOS-H7 3.3.0
+2025-05-05 00:57:58,008 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-NFC9 1.0.0
+2025-05-05 00:57:58,008 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics USB_HOST 2.0.0
+2025-05-05 00:57:58,008 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics FP-SNS-MOTENVWB1 1.4.0
+2025-05-05 00:57:58,008 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-AZRTOS-F4 1.1.0
+2025-05-05 00:57:58,008 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics LIBJPEG 8.0.0
+2025-05-05 00:57:58,008 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics FP-ATR-ASTRA1 2.0.2
+2025-05-05 00:57:58,008 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics FP-ATR-ASTRA1 2.0.1
+2025-05-05 00:57:58,008 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-BLE1 7.1.0
+2025-05-05 00:57:58,008 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :Avnet-IotConnect X-CUBE-IoTC-DA16k-PMOD 1.0.0
+2025-05-05 00:57:58,008 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-SMBUS 2.1.0
+2025-05-05 00:57:58,008 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-WB05N 1.1.0
+2025-05-05 00:57:58,008 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics USB_DEVICE 3.0.0
+2025-05-05 00:57:58,008 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-ISPU 2.1.0
+2025-05-05 00:57:58,008 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-AZRTOS-WB 2.0.0
+2025-05-05 00:57:58,008 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-GNSS1 7.0.1
+2025-05-05 00:57:58,008 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-AZRTOS-F7 1.1.0
+2025-05-05 00:57:58,008 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-AZRTOS-L5 2.0.0
+2025-05-05 00:57:58,008 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-TOUCHGFX 4.25.0
+2025-05-05 00:57:58,008 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics USB_DEVICE 2.0.0
+2025-05-05 00:57:58,008 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-NFC6 3.1.0
+2025-05-05 00:57:58,008 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics FP-SNS-STBOX1 2.0.0
+2025-05-05 00:57:58,008 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-MEMS1 11.2.0
+2025-05-05 00:57:58,008 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics FreeRTOS 0.0.1
+2025-05-05 00:57:58,008 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-AZRTOS-G0 1.1.0
+2025-05-05 00:57:58,008 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-SAFEA1 1.2.2
+2025-05-05 00:57:58,008 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-NFC4 3.0.0
+2025-05-05 00:57:58,008 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-DPower 1.2.0
+2025-05-05 00:57:58,008 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-SUBG2 5.0.0
+2025-05-05 00:57:58,009 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-AZRTOS-H7RS 1.1.0
+2025-05-05 00:57:58,009 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics STM32_WPAN 1.0.0
+2025-05-05 00:57:58,009 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :EmbeddedOffice I-CUBE-FS-RTOS 1.0.1
+2025-05-05 00:57:58,009 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics lwIP 2.0.3
+2025-05-05 00:57:58,009 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics FP-SNS-FLIGHT1 5.0.2
+2025-05-05 00:57:58,009 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :Cesanta I-CUBE-Mongoose 7.13.0
+2025-05-05 00:57:58,009 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics USB_HOST 1.0.0
+2025-05-05 00:57:58,009 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :Infineon AIROC-Wi-Fi-Bluetooth-STM32 1.7.0
+2025-05-05 00:57:58,009 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-AZRTOS-G4 2.0.0
+2025-05-05 00:57:58,009 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-WB05N 2.0.0
+2025-05-05 00:57:58,009 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics PDM2PCM 3.1.0
+2025-05-05 00:57:58,009 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics PDM2PCM 3.3.0
+2025-05-05 00:57:58,009 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-DISPLAY 3.0.0
+2025-05-05 00:57:58,009 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-TCPP 4.2.0
+2025-05-05 00:57:58,009 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :RealThread X-CUBE-RT-Thread_Nano 4.1.1
+2025-05-05 00:57:58,009 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-BLE1 7.0.0
+2025-05-05 00:57:58,009 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics FP-ATR-SIGFOX1 3.2.0
+2025-05-05 00:57:58,009 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-NFC10 1.0.0
+2025-05-05 00:57:58,009 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :quantropi X-CUBE-qispace-sdk-base 1.9.3
+2025-05-05 00:57:58,009 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-BLEMGR 4.0.0
+2025-05-05 00:57:58,009 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-EEPRMA1 5.1.0
+2025-05-05 00:57:58,009 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics HAL Drivers 0.0.0
+2025-05-05 00:57:58,009 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics MBEDTLS 2.16.2
+2025-05-05 00:57:58,009 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-IPS 3.1.0
+2025-05-05 00:57:58,009 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-ALS 1.0.2
+2025-05-05 00:57:58,009 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :emotas I-CUBE-CANOPEN 1.3.0
+2025-05-05 00:57:58,009 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-FREERTOS 1.3.0
+2025-05-05 00:57:58,009 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-NFC7 1.0.1
+2025-05-05 00:57:58,009 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics MBEDTLS 2.14.1
+2025-05-05 00:57:58,009 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :wolfSSL I-CUBE-wolfSSL 5.7.6
+2025-05-05 00:57:58,009 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :ITTIA_DB I-CUBE-ITTIADB 8.9.0
+2025-05-05 00:57:58,009 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-TOUCHGFX 4.24.2
+2025-05-05 00:57:58,009 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :wolfSSL I-CUBE-wolfTPM 3.4.0
+2025-05-05 00:57:58,009 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :portGmbH I-Cube-SoM-uGOAL 1.1.0
+2025-05-05 00:57:58,010 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-AI 10.0.0
+2025-05-05 00:57:58,010 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics ThreadX 1.0.0
+2025-05-05 00:57:58,010 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics FP-SNS-SMARTAG2 1.2.0
+2025-05-05 00:57:58,010 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics FP-SNS-FLIGHT1 5.1.0
+2025-05-05 00:57:58,010 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-MEMS1 11.1.0
+2025-05-05 00:57:58,010 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-AZRTOS-WL 2.0.0
+2025-05-05 00:57:58,010 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :SEGGER I-CUBE-embOS 1.3.1
+2025-05-05 00:57:58,010 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-ALGOBUILD 1.4.0
+2025-05-05 00:57:58,010 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-DPower 1.3.0
+2025-05-05 00:57:58,010 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics FP-SNS-MOTENV1 5.0.0
+2025-05-05 00:57:58,010 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics USB_DEVICE 1.0.0
+2025-05-05 00:57:58,010 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-AZRTOS-H7RS 1.0.0
+2025-05-05 00:57:58,010 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :wolfSSL I-CUBE-wolfMQTT 1.19.0
+2025-05-05 00:57:58,010 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-AZRTOS-L4 2.0.0
+2025-05-05 00:57:58,010 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics ThreadX 0.0.2
+2025-05-05 00:57:58,010 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :WES I-CUBE-Cesium 1.3.0
+2025-05-05 00:57:58,010 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics lwIP 2.1.2
+2025-05-05 00:57:58,010 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-SFXS2LP1 4.0.0
+2025-05-05 00:57:58,010 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-BLE2 3.3.0
+2025-05-05 00:57:58,010 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-TOF1 3.4.2
+2025-05-05 00:57:58,010 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-TOF1 3.4.3
+2025-05-05 00:57:58,010 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics PDM2PCM 3.2.0
+2025-05-05 00:57:58,010 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :wolfSSL I-CUBE-wolfSSH 1.4.17
+2025-05-05 00:57:58,010 [INFO] ThirdParty:841 - exiting critical section [change project]
+2025-05-05 00:57:58,409 [INFO] PinOutPanel:1589 - setPackage(No Configuration,No Configuration)
+2025-05-05 00:57:58,412 [INFO] PinOutPanel:1589 - setPackage(STM32F756ZGTx,LQFP144)
+2025-05-05 00:57:59,036 [INFO] UtilMem:75 - Before build in PCC Used Memory: 870881792 Bytes (1073741824)
+2025-05-05 00:57:59,399 [INFO] UtilMem:75 - After build in PCC Used Memory: 922268176 Bytes (1073741824)
+2025-05-05 00:57:59,406 [INFO] ApiDbMcu:508 - Load IP Config File for FATFS
+2025-05-05 00:57:59,442 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-05-05 00:57:59,442 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-05-05 00:57:59,442 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-05-05 00:57:59,442 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-05-05 00:57:59,442 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-05-05 00:57:59,442 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-05-05 00:57:59,443 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-05-05 00:57:59,443 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-05-05 00:57:59,443 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-05-05 00:57:59,443 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-05-05 00:57:59,443 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-05-05 00:57:59,443 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-05-05 00:57:59,443 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-05-05 00:57:59,443 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-05-05 00:57:59,443 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-05-05 00:57:59,444 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-05-05 00:57:59,444 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-05-05 00:57:59,444 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-05-05 00:57:59,444 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-05-05 00:57:59,444 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-05-05 00:57:59,444 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-05-05 00:57:59,445 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-05-05 00:57:59,445 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-05-05 00:57:59,445 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-05-05 00:57:59,445 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-05-05 00:57:59,445 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-05-05 00:57:59,445 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-05-05 00:57:59,445 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-05-05 00:57:59,446 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-05-05 00:57:59,446 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-05-05 00:57:59,446 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-05-05 00:57:59,446 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-05-05 00:57:59,446 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-05-05 00:57:59,447 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-05-05 00:57:59,447 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-05-05 00:57:59,447 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-05-05 00:57:59,447 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-05-05 00:57:59,447 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-05-05 00:57:59,448 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-05-05 00:57:59,448 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-05-05 00:57:59,448 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-05-05 00:57:59,449 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-05-05 00:57:59,449 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-05-05 00:57:59,450 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-05-05 00:57:59,450 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-05-05 00:57:59,450 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-05-05 00:57:59,450 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-05-05 00:57:59,451 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-05-05 00:57:59,451 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-05-05 00:57:59,451 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-05-05 00:57:59,452 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-05-05 00:57:59,452 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-05-05 00:57:59,452 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-05-05 00:57:59,453 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-05-05 00:57:59,453 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-05-05 00:57:59,453 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-05-05 00:57:59,454 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-05-05 00:57:59,454 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-05-05 00:57:59,454 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-05-05 00:57:59,454 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-05-05 00:57:59,454 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-05-05 00:57:59,456 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-05-05 00:57:59,456 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-05-05 00:57:59,456 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-05-05 00:57:59,457 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-05-05 00:57:59,457 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-05-05 00:57:59,457 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-05-05 00:57:59,458 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-05-05 00:57:59,458 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-05-05 00:57:59,458 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-05-05 00:57:59,458 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-05-05 00:57:59,459 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-05-05 00:57:59,459 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-05-05 00:57:59,460 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-05-05 00:57:59,460 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-05-05 00:57:59,460 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-05-05 00:57:59,467 [INFO] ApiDbMcu:508 - Load IP Config File for PDM2PCM
+2025-05-05 00:57:59,577 [INFO] CADModel:165 - CPN selected for project levelSTM32F756ZGT6
+2025-05-05 00:57:59,577 [INFO] CADModel:114 - Register for checkConnection events
+2025-05-05 00:57:59,648 [INFO] OpenFileManager:385 - Restore cursor
+2025-05-05 00:57:59,672 [INFO] ApiDb:581 - Connected to CubeFinder SQLite database (C:\Users\ashen\.stmcufinder\plugins\mcufinder\mcu\cube-finder-db.db)
+2025-05-05 00:58:00,698 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 915848624 Bytes (1073741824)
+2025-05-05 00:58:00,806 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 945299584 Bytes (1073741824)
+2025-05-05 00:58:01,139 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: SPI
+2025-05-05 00:58:01,139 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: TIM1_8F7
+2025-05-05 00:58:01,139 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: TIM1_8F7
+2025-05-05 00:58:01,139 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: TIM1_8F7
+2025-05-05 00:58:01,139 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: SYS
+2025-05-05 00:58:01,139 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: RCC
+2025-05-05 00:58:01,139 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: NVIC
+2025-05-05 00:58:01,139 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: TIM1_8F7
+2025-05-05 00:58:01,139 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: CORTEX_M7
+2025-05-05 00:58:01,139 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: DAC
+2025-05-05 00:58:01,140 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: GPIO
+2025-05-05 00:58:01,140 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: FATFS
+2025-05-05 00:58:01,142 [INFO] CodeGenerator:882 - code generatio: config db path: C:\ST\STM32CubeIDE_1.17.0\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_6.14.0.202502271554\\db\
+2025-05-05 00:58:01,287 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\MXTmpFiles\license.tmp_save
+2025-05-05 00:58:01,599 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\MXTmpFiles\license.tmp
+2025-05-05 00:58:01,699 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\MXTmpFiles\gpio.tmp_save
+2025-05-05 00:58:01,896 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\MXTmpFiles\gpio.tmp
+2025-05-05 00:58:02,389 [INFO] Middleware:1452 - No code input for Bsp Dependency
+2025-05-05 00:58:02,398 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\MXTmpFiles\fatfs_HalInit.tmp_save
+2025-05-05 00:58:02,526 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\MXTmpFiles\fatfs_HalInit.tmp
+2025-05-05 00:58:02,533 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\MXTmpFiles\fatfs_vars.tmp_save
+2025-05-05 00:58:02,618 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\MXTmpFiles\fatfs_vars.tmp
+2025-05-05 00:58:02,626 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\MXTmpFiles\fatfs_ext_vars.tmp_save
+2025-05-05 00:58:02,703 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\MXTmpFiles\fatfs_ext_vars.tmp
+2025-05-05 00:58:02,711 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\MXTmpFiles\fatfs_inc.tmp_save
+2025-05-05 00:58:02,787 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\MXTmpFiles\fatfs_inc.tmp
+2025-05-05 00:58:02,803 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\MXTmpFiles\cortex.tmp_save
+2025-05-05 00:58:02,882 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\MXTmpFiles\cortex.tmp
+2025-05-05 00:58:02,899 [INFO] Middleware:1452 - No code input for Bsp Dependency
+2025-05-05 00:58:02,909 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\MXTmpFiles\fatfs_HalInit.tmp_save
+2025-05-05 00:58:02,977 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\MXTmpFiles\fatfs_HalInit.tmp
+2025-05-05 00:58:02,986 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\MXTmpFiles\fatfs_vars.tmp_save
+2025-05-05 00:58:03,052 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\MXTmpFiles\fatfs_vars.tmp
+2025-05-05 00:58:03,061 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\MXTmpFiles\fatfs_ext_vars.tmp_save
+2025-05-05 00:58:03,129 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\MXTmpFiles\fatfs_ext_vars.tmp
+2025-05-05 00:58:03,138 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\MXTmpFiles\fatfs_inc.tmp_save
+2025-05-05 00:58:03,204 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\MXTmpFiles\fatfs_inc.tmp
+2025-05-05 00:58:03,214 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\FATFS\Target\ffconf.h_save
+2025-05-05 00:58:03,298 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\FATFS\Target\ffconf.h
+2025-05-05 00:58:03,307 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\FATFS\Target\user_diskio.c_save
+2025-05-05 00:58:03,386 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\FATFS\Target\user_diskio.c
+2025-05-05 00:58:03,394 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\FATFS\Target\user_diskio.h_save
+2025-05-05 00:58:03,508 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\FATFS\Target\user_diskio.h
+2025-05-05 00:58:03,517 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\FATFS\App\fatfs.c_save
+2025-05-05 00:58:03,645 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\FATFS\App\fatfs.c
+2025-05-05 00:58:03,654 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\FATFS\App\fatfs.h_save
+2025-05-05 00:58:03,760 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\FATFS\App\fatfs.h
+2025-05-05 00:58:03,792 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\Core\Src\stm32f7xx_it.c_save
+2025-05-05 00:58:04,137 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\Core\Src\stm32f7xx_it.c
+2025-05-05 00:58:04,146 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\Core\Inc\stm32f7xx_it.h_save
+2025-05-05 00:58:04,221 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\Core\Inc\stm32f7xx_it.h
+2025-05-05 00:58:04,244 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\Core\Src\stm32f7xx_hal_msp.c_save
+2025-05-05 00:58:04,355 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\Core\Src\stm32f7xx_hal_msp.c
+2025-05-05 00:58:04,363 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\MXTmpFiles\system.tmp_save
+2025-05-05 00:58:04,430 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\MXTmpFiles\system.tmp
+2025-05-05 00:58:04,442 [INFO] CodeEngine:319 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\Core\Inc\stm32f7xx_hal_conf.h_save
+2025-05-05 00:58:04,514 [INFO] CodeEngine:343 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\Core\Inc\stm32f7xx_hal_conf.h
+2025-05-05 00:58:04,560 [INFO] ApiDbMcu:508 - Load IP Config File for DAC
+2025-05-05 00:58:04,564 [INFO] ApiDbMcu:508 - Load IP Config File for SPI4
+2025-05-05 00:58:04,579 [INFO] ApiDbMcu:508 - Load IP Config File for TIM1
+2025-05-05 00:58:04,595 [INFO] ApiDbMcu:508 - Load IP Config File for TIM2
+2025-05-05 00:58:04,610 [INFO] ApiDbMcu:508 - Load IP Config File for TIM4
+2025-05-05 00:58:04,626 [INFO] ApiDbMcu:508 - Load IP Config File for TIM13
+2025-05-05 00:58:04,630 [INFO] ApiDbMcu:508 - Load IP Config File for RCC
+2025-05-05 00:58:04,634 [WARN] IPConfigManager:3747 - IP not found : TIM
+2025-05-05 00:58:04,635 [WARN] CodeGenerator:4198 - IP not found : null
+2025-05-05 00:58:04,661 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\Core\Inc\main.h_save
+2025-05-05 00:58:04,758 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\Core\Inc\main.h
+2025-05-05 00:58:04,764 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\Core\Src\main.c_save
+2025-05-05 00:58:04,878 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\Core\Src\main.c
+2025-05-05 00:58:05,216 [INFO] ProjectBuilder:3324 - Time for Copy HAL[1] : 148mS.
+2025-05-05 00:58:05,222 [INFO] ProjectBuilder:4912 - Project Generator version: 4.6.0-B36
+2025-05-05 00:58:05,296 [INFO] ConfigFileManager:1590 - The Die is : DIE449
+2025-05-05 00:58:05,301 [INFO] ApiDbMcu:508 - Load IP Config File for FREERTOS
+2025-05-05 00:58:05,303 [INFO] ApiDbMcu:508 - Load IP Config File for LIBJPEG
+2025-05-05 00:58:05,310 [INFO] ApiDbMcu:508 - Load IP Config File for LWIP
+2025-05-05 00:58:05,316 [INFO] ApiDbMcu:508 - Load IP Config File for MBEDTLS
+2025-05-05 00:58:05,323 [INFO] ApiDbMcu:508 - Load IP Config File for USB_DEVICE
+2025-05-05 00:58:05,327 [INFO] ApiDbMcu:508 - Load IP Config File for USB_HOST
+2025-05-05 00:58:07,896 [INFO] ProjectBuilder:5191 - Time for Generating toolchain IDE Files: 2673mS.
+2025-05-05 00:58:07,898 [INFO] ProjectBuilder:3181 - Time for Copy CMSIS : 1mS.
+2025-05-05 00:58:07,901 [INFO] ProjectBuilder:3181 - Time for Copy CMSIS : 0mS.
+2025-05-05 00:58:08,391 [INFO] McuFinderGlobals:76 - Set McuFinderConnectedMode to true
+2025-05-05 00:58:08,396 [INFO] ApiDb:448 - Save user favorites file C:\Users\ashen/.stm32cubeide/favorites.mcus.txt: 0 item(s)
+2025-05-05 00:58:08,397 [INFO] ApiDb:452 - User favorites MCUs=[]
+2025-05-05 00:58:27,013 [INFO] RtosManager:967 - Current active RTOS is FREERTOS [Cortex-M7NS]
+2025-05-05 00:58:27,940 [ERROR] RtosPanel:558 - Can not restore the selected Tab for FREERTOS(A reason can be that the tab is no more available.)
+2025-05-05 00:58:28,082 [ERROR] RtosPanel:558 - Can not restore the selected Tab for FREERTOS(A reason can be that the tab is no more available.)
+2025-05-05 00:58:58,835 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 868153832 Bytes (1073741824)
+2025-05-05 00:59:00,238 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 899088872 Bytes (1073741824)
+2025-05-05 00:59:02,681 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 782084952 Bytes (1073741824)
+2025-05-05 00:59:04,927 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: SPI
+2025-05-05 00:59:04,927 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: FREERTOS
+2025-05-05 00:59:04,927 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: TIM1_8F7
+2025-05-05 00:59:04,927 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: TIM1_8F7
+2025-05-05 00:59:04,927 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: TIM1_8F7
+2025-05-05 00:59:04,927 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: SYS
+2025-05-05 00:59:04,927 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: RCC
+2025-05-05 00:59:04,927 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: NVIC
+2025-05-05 00:59:04,927 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: TIM1_8F7
+2025-05-05 00:59:04,927 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: CORTEX_M7
+2025-05-05 00:59:04,927 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: DAC
+2025-05-05 00:59:04,928 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: GPIO
+2025-05-05 00:59:04,928 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: FATFS
+2025-05-05 00:59:04,933 [INFO] CodeGenerator:882 - code generatio: config db path: C:\ST\STM32CubeIDE_1.17.0\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_6.14.0.202502271554\\db\
+2025-05-05 00:59:05,086 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\MXTmpFiles\license.tmp_save
+2025-05-05 00:59:05,313 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\MXTmpFiles\license.tmp
+2025-05-05 00:59:05,375 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\MXTmpFiles\gpio.tmp_save
+2025-05-05 00:59:05,518 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\MXTmpFiles\gpio.tmp
+2025-05-05 00:59:05,923 [INFO] Middleware:1452 - No code input for Bsp Dependency
+2025-05-05 00:59:05,929 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\MXTmpFiles\rtos_inc.tmp_save
+2025-05-05 00:59:06,005 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\MXTmpFiles\rtos_inc.tmp
+2025-05-05 00:59:06,018 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\MXTmpFiles\rtos_vars.tmp_save
+2025-05-05 00:59:06,088 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\MXTmpFiles\rtos_vars.tmp
+2025-05-05 00:59:06,100 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\MXTmpFiles\rtos_pfp.tmp_save
+2025-05-05 00:59:06,167 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\MXTmpFiles\rtos_pfp.tmp
+2025-05-05 00:59:06,178 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\MXTmpFiles\rtos_obj_creat.tmp_save
+2025-05-05 00:59:06,247 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\MXTmpFiles\rtos_obj_creat.tmp
+2025-05-05 00:59:06,258 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\MXTmpFiles\rtos_kernelStart.tmp_save
+2025-05-05 00:59:06,320 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\MXTmpFiles\rtos_kernelStart.tmp
+2025-05-05 00:59:06,331 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\MXTmpFiles\rtos_default_thread.tmp_save
+2025-05-05 00:59:06,396 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\MXTmpFiles\rtos_default_thread.tmp
+2025-05-05 00:59:06,408 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\MXTmpFiles\rtos_threads.tmp_save
+2025-05-05 00:59:06,470 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\MXTmpFiles\rtos_threads.tmp
+2025-05-05 00:59:06,495 [INFO] Middleware:1452 - No code input for Bsp Dependency
+2025-05-05 00:59:06,503 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\MXTmpFiles\fatfs_HalInit.tmp_save
+2025-05-05 00:59:06,569 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\MXTmpFiles\fatfs_HalInit.tmp
+2025-05-05 00:59:06,581 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\MXTmpFiles\fatfs_vars.tmp_save
+2025-05-05 00:59:06,642 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\MXTmpFiles\fatfs_vars.tmp
+2025-05-05 00:59:06,655 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\MXTmpFiles\fatfs_ext_vars.tmp_save
+2025-05-05 00:59:06,763 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\MXTmpFiles\fatfs_ext_vars.tmp
+2025-05-05 00:59:06,777 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\MXTmpFiles\fatfs_inc.tmp_save
+2025-05-05 00:59:06,863 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\MXTmpFiles\fatfs_inc.tmp
+2025-05-05 00:59:06,910 [INFO] Middleware:1452 - No code input for Bsp Dependency
+2025-05-05 00:59:06,920 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\MXTmpFiles\rtos_inc.tmp_save
+2025-05-05 00:59:06,998 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\MXTmpFiles\rtos_inc.tmp
+2025-05-05 00:59:07,015 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\MXTmpFiles\rtos_vars.tmp_save
+2025-05-05 00:59:07,089 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\MXTmpFiles\rtos_vars.tmp
+2025-05-05 00:59:07,107 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\MXTmpFiles\rtos_pfp.tmp_save
+2025-05-05 00:59:07,211 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\MXTmpFiles\rtos_pfp.tmp
+2025-05-05 00:59:07,229 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\MXTmpFiles\rtos_obj_creat.tmp_save
+2025-05-05 00:59:07,298 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\MXTmpFiles\rtos_obj_creat.tmp
+2025-05-05 00:59:07,316 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\MXTmpFiles\rtos_kernelStart.tmp_save
+2025-05-05 00:59:07,372 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\MXTmpFiles\rtos_kernelStart.tmp
+2025-05-05 00:59:07,390 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\MXTmpFiles\rtos_default_thread.tmp_save
+2025-05-05 00:59:07,441 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\MXTmpFiles\rtos_default_thread.tmp
+2025-05-05 00:59:07,457 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\MXTmpFiles\rtos_threads.tmp_save
+2025-05-05 00:59:07,508 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\MXTmpFiles\rtos_threads.tmp
+2025-05-05 00:59:07,524 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\Core\Inc\FreeRTOSConfig.h_save
+2025-05-05 00:59:07,599 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\Core\Inc\FreeRTOSConfig.h
+2025-05-05 00:59:07,612 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\Core\Src\freertos.c_save
+2025-05-05 00:59:07,685 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\Core\Src\freertos.c
+2025-05-05 00:59:07,709 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\MXTmpFiles\cortex.tmp_save
+2025-05-05 00:59:07,765 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\MXTmpFiles\cortex.tmp
+2025-05-05 00:59:07,792 [INFO] Middleware:1452 - No code input for Bsp Dependency
+2025-05-05 00:59:07,798 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\MXTmpFiles\fatfs_HalInit.tmp_save
+2025-05-05 00:59:07,851 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\MXTmpFiles\fatfs_HalInit.tmp
+2025-05-05 00:59:07,867 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\MXTmpFiles\fatfs_vars.tmp_save
+2025-05-05 00:59:07,920 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\MXTmpFiles\fatfs_vars.tmp
+2025-05-05 00:59:07,936 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\MXTmpFiles\fatfs_ext_vars.tmp_save
+2025-05-05 00:59:07,992 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\MXTmpFiles\fatfs_ext_vars.tmp
+2025-05-05 00:59:08,007 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\MXTmpFiles\fatfs_inc.tmp_save
+2025-05-05 00:59:08,062 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\MXTmpFiles\fatfs_inc.tmp
+2025-05-05 00:59:08,077 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\FATFS\Target\ffconf.h_save
+2025-05-05 00:59:08,153 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\FATFS\Target\ffconf.h
+2025-05-05 00:59:08,169 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\FATFS\Target\user_diskio.c_save
+2025-05-05 00:59:08,230 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\FATFS\Target\user_diskio.c
+2025-05-05 00:59:08,245 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\FATFS\Target\user_diskio.h_save
+2025-05-05 00:59:08,307 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\FATFS\Target\user_diskio.h
+2025-05-05 00:59:08,322 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\FATFS\App\fatfs.c_save
+2025-05-05 00:59:08,383 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\FATFS\App\fatfs.c
+2025-05-05 00:59:08,399 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\FATFS\App\fatfs.h_save
+2025-05-05 00:59:08,462 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\FATFS\App\fatfs.h
+2025-05-05 00:59:08,498 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\Core\Src\stm32f7xx_it.c_save
+2025-05-05 00:59:08,591 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\Core\Src\stm32f7xx_it.c
+2025-05-05 00:59:08,607 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\Core\Inc\stm32f7xx_it.h_save
+2025-05-05 00:59:08,687 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\Core\Inc\stm32f7xx_it.h
+2025-05-05 00:59:08,744 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\Core\Src\stm32f7xx_hal_msp.c_save
+2025-05-05 00:59:08,870 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\Core\Src\stm32f7xx_hal_msp.c
+2025-05-05 00:59:08,886 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\MXTmpFiles\system.tmp_save
+2025-05-05 00:59:08,946 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\MXTmpFiles\system.tmp
+2025-05-05 00:59:08,974 [INFO] CodeEngine:319 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\Core\Inc\stm32f7xx_hal_conf.h_save
+2025-05-05 00:59:09,050 [INFO] CodeEngine:343 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\Core\Inc\stm32f7xx_hal_conf.h
+2025-05-05 00:59:09,106 [WARN] IPConfigManager:3747 - IP not found : TIM
+2025-05-05 00:59:09,106 [WARN] CodeGenerator:4198 - IP not found : null
+2025-05-05 00:59:09,112 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\Core\Inc\main.h_save
+2025-05-05 00:59:09,181 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\Core\Inc\main.h
+2025-05-05 00:59:09,196 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\Core\Src\main.c_save
+2025-05-05 00:59:09,341 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\Core\Src\main.c
+2025-05-05 00:59:09,864 [INFO] ProjectBuilder:3324 - Time for Copy HAL[1] : 308mS.
+2025-05-05 00:59:09,869 [INFO] ProjectBuilder:4912 - Project Generator version: 4.6.0-B36
+2025-05-05 00:59:09,938 [INFO] ConfigFileManager:1590 - The Die is : DIE449
+2025-05-05 00:59:11,304 [INFO] ProjectBuilder:5191 - Time for Generating toolchain IDE Files: 1435mS.
+2025-05-05 00:59:11,309 [INFO] ProjectBuilder:3181 - Time for Copy CMSIS : 3mS.
+2025-05-05 00:59:11,318 [INFO] ProjectBuilder:3181 - Time for Copy CMSIS : 0mS.
+2025-05-05 01:01:59,886 [INFO] TasksAndQueuesTab:757 - Dynamic
+2025-05-05 01:01:59,886 [WARN] TasksAndQueuesTab:763 - 128 128
+2025-05-05 01:01:59,886 [WARN] TasksAndQueuesTab:775 - max value is: 3840.0
+2025-05-05 01:02:02,471 [INFO] EditThreadDialog:704 - RAM SIZE (in KB): 320
+2025-05-05 01:02:02,471 [INFO] EditThreadDialog:706 - RAM SIZE (in words): 81920
+2025-05-05 01:02:20,659 [INFO] TasksAndQueuesTab:757 - Dynamic
+2025-05-05 01:02:20,659 [WARN] TasksAndQueuesTab:763 - 128 128
+2025-05-05 01:02:20,660 [WARN] TasksAndQueuesTab:775 - max value is: 3840.0
+2025-05-05 01:02:20,662 [INFO] TasksAndQueuesTab:757 - Dynamic
+2025-05-05 01:02:20,662 [WARN] TasksAndQueuesTab:763 - 128 128
+2025-05-05 01:02:20,662 [WARN] TasksAndQueuesTab:775 - max value is: 3840.0
+2025-05-05 01:02:20,913 [ERROR] RtosPanel:558 - Can not restore the selected Tab for FREERTOS(A reason can be that the tab is no more available.)
+2025-05-05 01:02:22,650 [INFO] TasksAndQueuesTab:757 - Dynamic
+2025-05-05 01:02:22,650 [WARN] TasksAndQueuesTab:763 - 128 128
+2025-05-05 01:02:22,650 [WARN] TasksAndQueuesTab:775 - max value is: 3840.0
+2025-05-05 01:02:22,650 [INFO] TasksAndQueuesTab:757 - Dynamic
+2025-05-05 01:02:22,650 [WARN] TasksAndQueuesTab:763 - 128 128
+2025-05-05 01:02:22,650 [WARN] TasksAndQueuesTab:775 - max value is: 3840.0
+2025-05-05 01:02:23,831 [INFO] EditThreadDialog:704 - RAM SIZE (in KB): 320
+2025-05-05 01:02:23,831 [INFO] EditThreadDialog:706 - RAM SIZE (in words): 81920
+2025-05-05 01:02:28,637 [INFO] TasksAndQueuesTab:757 - Dynamic
+2025-05-05 01:02:28,638 [WARN] TasksAndQueuesTab:763 - 128 128
+2025-05-05 01:02:28,638 [WARN] TasksAndQueuesTab:775 - max value is: 3840.0
+2025-05-05 01:02:28,638 [INFO] TasksAndQueuesTab:757 - Dynamic
+2025-05-05 01:02:28,638 [WARN] TasksAndQueuesTab:763 - 128 128
+2025-05-05 01:02:28,638 [WARN] TasksAndQueuesTab:775 - max value is: 3840.0
+2025-05-05 01:03:12,697 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 765119240 Bytes (1073741824)
+2025-05-05 01:03:14,077 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 795005704 Bytes (1073741824)
+2025-05-05 01:03:15,802 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 922405640 Bytes (1073741824)
+2025-05-05 01:03:32,695 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 755591248 Bytes (1073741824)
+2025-05-05 01:03:34,107 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 822700112 Bytes (1073741824)
+2025-05-05 01:03:36,241 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 938565712 Bytes (1073741824)
+2025-05-05 01:03:38,186 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: SPI
+2025-05-05 01:03:38,188 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: FREERTOS
+2025-05-05 01:03:38,188 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: TIM1_8F7
+2025-05-05 01:03:38,188 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: TIM1_8F7
+2025-05-05 01:03:38,188 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: SYS
+2025-05-05 01:03:38,188 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: RCC
+2025-05-05 01:03:38,188 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: NVIC
+2025-05-05 01:03:38,188 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: TIM1_8F7
+2025-05-05 01:03:38,188 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: CORTEX_M7
+2025-05-05 01:03:38,188 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: DAC
+2025-05-05 01:03:38,189 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: GPIO
+2025-05-05 01:03:38,189 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: FATFS
+2025-05-05 01:03:38,196 [INFO] CodeGenerator:882 - code generatio: config db path: C:\ST\STM32CubeIDE_1.17.0\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_6.14.0.202502271554\\db\
+2025-05-05 01:03:38,426 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\MXTmpFiles\license.tmp_save
+2025-05-05 01:03:38,718 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\MXTmpFiles\license.tmp
+2025-05-05 01:03:38,797 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\MXTmpFiles\gpio.tmp_save
+2025-05-05 01:03:38,990 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\MXTmpFiles\gpio.tmp
+2025-05-05 01:03:39,435 [INFO] Middleware:1452 - No code input for Bsp Dependency
+2025-05-05 01:03:39,449 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\MXTmpFiles\rtos_inc.tmp_save
+2025-05-05 01:03:39,565 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\MXTmpFiles\rtos_inc.tmp
+2025-05-05 01:03:39,574 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\MXTmpFiles\rtos_vars.tmp_save
+2025-05-05 01:03:39,669 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\MXTmpFiles\rtos_vars.tmp
+2025-05-05 01:03:39,678 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\MXTmpFiles\rtos_pfp.tmp_save
+2025-05-05 01:03:39,765 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\MXTmpFiles\rtos_pfp.tmp
+2025-05-05 01:03:39,778 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\MXTmpFiles\rtos_obj_creat.tmp_save
+2025-05-05 01:03:39,862 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\MXTmpFiles\rtos_obj_creat.tmp
+2025-05-05 01:03:39,868 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\MXTmpFiles\rtos_kernelStart.tmp_save
+2025-05-05 01:03:39,949 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\MXTmpFiles\rtos_kernelStart.tmp
+2025-05-05 01:03:39,955 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\MXTmpFiles\rtos_default_thread.tmp_save
+2025-05-05 01:03:40,039 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\MXTmpFiles\rtos_default_thread.tmp
+2025-05-05 01:03:40,051 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\MXTmpFiles\rtos_threads.tmp_save
+2025-05-05 01:03:40,134 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\MXTmpFiles\rtos_threads.tmp
+2025-05-05 01:03:40,154 [INFO] Middleware:1452 - No code input for Bsp Dependency
+2025-05-05 01:03:40,164 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\MXTmpFiles\fatfs_HalInit.tmp_save
+2025-05-05 01:03:40,259 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\MXTmpFiles\fatfs_HalInit.tmp
+2025-05-05 01:03:40,267 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\MXTmpFiles\fatfs_vars.tmp_save
+2025-05-05 01:03:40,344 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\MXTmpFiles\fatfs_vars.tmp
+2025-05-05 01:03:40,352 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\MXTmpFiles\fatfs_ext_vars.tmp_save
+2025-05-05 01:03:40,424 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\MXTmpFiles\fatfs_ext_vars.tmp
+2025-05-05 01:03:40,435 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\MXTmpFiles\fatfs_inc.tmp_save
+2025-05-05 01:03:40,515 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\MXTmpFiles\fatfs_inc.tmp
+2025-05-05 01:03:40,549 [INFO] Middleware:1452 - No code input for Bsp Dependency
+2025-05-05 01:03:40,558 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\MXTmpFiles\rtos_inc.tmp_save
+2025-05-05 01:03:40,628 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\MXTmpFiles\rtos_inc.tmp
+2025-05-05 01:03:40,638 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\MXTmpFiles\rtos_vars.tmp_save
+2025-05-05 01:03:40,726 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\MXTmpFiles\rtos_vars.tmp
+2025-05-05 01:03:40,738 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\MXTmpFiles\rtos_pfp.tmp_save
+2025-05-05 01:03:40,801 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\MXTmpFiles\rtos_pfp.tmp
+2025-05-05 01:03:40,812 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\MXTmpFiles\rtos_obj_creat.tmp_save
+2025-05-05 01:03:40,869 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\MXTmpFiles\rtos_obj_creat.tmp
+2025-05-05 01:03:40,879 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\MXTmpFiles\rtos_kernelStart.tmp_save
+2025-05-05 01:03:40,934 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\MXTmpFiles\rtos_kernelStart.tmp
+2025-05-05 01:03:40,940 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\MXTmpFiles\rtos_default_thread.tmp_save
+2025-05-05 01:03:40,998 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\MXTmpFiles\rtos_default_thread.tmp
+2025-05-05 01:03:41,007 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\MXTmpFiles\rtos_threads.tmp_save
+2025-05-05 01:03:41,071 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\MXTmpFiles\rtos_threads.tmp
+2025-05-05 01:03:41,080 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\Core\Inc\FreeRTOSConfig.h_save
+2025-05-05 01:03:41,164 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\Core\Inc\FreeRTOSConfig.h
+2025-05-05 01:03:41,175 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\Core\Src\freertos.c_save
+2025-05-05 01:03:41,259 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\Core\Src\freertos.c
+2025-05-05 01:03:41,281 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\MXTmpFiles\cortex.tmp_save
+2025-05-05 01:03:41,345 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\MXTmpFiles\cortex.tmp
+2025-05-05 01:03:41,360 [INFO] Middleware:1452 - No code input for Bsp Dependency
+2025-05-05 01:03:41,367 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\MXTmpFiles\fatfs_HalInit.tmp_save
+2025-05-05 01:03:41,430 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\MXTmpFiles\fatfs_HalInit.tmp
+2025-05-05 01:03:41,438 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\MXTmpFiles\fatfs_vars.tmp_save
+2025-05-05 01:03:41,506 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\MXTmpFiles\fatfs_vars.tmp
+2025-05-05 01:03:41,517 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\MXTmpFiles\fatfs_ext_vars.tmp_save
+2025-05-05 01:03:41,581 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\MXTmpFiles\fatfs_ext_vars.tmp
+2025-05-05 01:03:41,590 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\MXTmpFiles\fatfs_inc.tmp_save
+2025-05-05 01:03:41,652 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\MXTmpFiles\fatfs_inc.tmp
+2025-05-05 01:03:41,664 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\FATFS\Target\ffconf.h_save
+2025-05-05 01:03:41,752 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\FATFS\Target\ffconf.h
+2025-05-05 01:03:41,765 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\FATFS\Target\user_diskio.c_save
+2025-05-05 01:03:41,850 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\FATFS\Target\user_diskio.c
+2025-05-05 01:03:41,866 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\FATFS\Target\user_diskio.h_save
+2025-05-05 01:03:41,950 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\FATFS\Target\user_diskio.h
+2025-05-05 01:03:41,961 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\FATFS\App\fatfs.c_save
+2025-05-05 01:03:42,043 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\FATFS\App\fatfs.c
+2025-05-05 01:03:42,053 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\FATFS\App\fatfs.h_save
+2025-05-05 01:03:42,136 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\FATFS\App\fatfs.h
+2025-05-05 01:03:42,169 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\Core\Src\stm32f7xx_it.c_save
+2025-05-05 01:03:42,321 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\Core\Src\stm32f7xx_it.c
+2025-05-05 01:03:42,335 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\Core\Inc\stm32f7xx_it.h_save
+2025-05-05 01:03:42,427 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\Core\Inc\stm32f7xx_it.h
+2025-05-05 01:03:42,468 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\Core\Src\stm32f7xx_hal_msp.c_save
+2025-05-05 01:03:42,590 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\Core\Src\stm32f7xx_hal_msp.c
+2025-05-05 01:03:42,598 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\MXTmpFiles\system.tmp_save
+2025-05-05 01:03:42,659 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\MXTmpFiles\system.tmp
+2025-05-05 01:03:42,667 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\Core\Src\stm32f7xx_hal_timebase_tim.c_save
+2025-05-05 01:03:42,734 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\Core\Src\stm32f7xx_hal_timebase_tim.c
+2025-05-05 01:03:42,751 [INFO] CodeEngine:319 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\Core\Inc\stm32f7xx_hal_conf.h_save
+2025-05-05 01:03:42,826 [INFO] CodeEngine:343 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\Core\Inc\stm32f7xx_hal_conf.h
+2025-05-05 01:03:42,862 [WARN] IPConfigManager:3747 - IP not found : TIM
+2025-05-05 01:03:42,864 [WARN] CodeGenerator:4198 - IP not found : null
+2025-05-05 01:03:42,874 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\Core\Inc\main.h_save
+2025-05-05 01:03:42,942 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\Core\Inc\main.h
+2025-05-05 01:03:42,953 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\Core\Src\main.c_save
+2025-05-05 01:03:43,098 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\Core\Src\main.c
+2025-05-05 01:03:43,763 [INFO] ProjectBuilder:3324 - Time for Copy HAL[1] : 431mS.
+2025-05-05 01:03:43,772 [INFO] ProjectBuilder:4912 - Project Generator version: 4.6.0-B36
+2025-05-05 01:03:43,854 [INFO] ConfigFileManager:1590 - The Die is : DIE449
+2025-05-05 01:03:46,090 [INFO] ProjectBuilder:5191 - Time for Generating toolchain IDE Files: 2319mS.
+2025-05-05 01:03:46,094 [INFO] ProjectBuilder:3181 - Time for Copy CMSIS : 3mS.
+2025-05-05 01:03:46,108 [INFO] ProjectBuilder:3181 - Time for Copy CMSIS : 0mS.
+2025-05-05 01:05:21,757 [ERROR] RtosPanel:558 - Can not restore the selected Tab for FREERTOS(A reason can be that the tab is no more available.)
+2025-05-05 01:05:25,704 [INFO] TasksAndQueuesTab:757 - Dynamic
+2025-05-05 01:05:25,704 [WARN] TasksAndQueuesTab:763 - 128 128
+2025-05-05 01:05:25,704 [WARN] TasksAndQueuesTab:775 - max value is: 3840.0
+2025-05-05 01:05:25,704 [INFO] TasksAndQueuesTab:757 - Dynamic
+2025-05-05 01:05:25,704 [WARN] TasksAndQueuesTab:763 - 128 128
+2025-05-05 01:05:25,704 [WARN] TasksAndQueuesTab:775 - max value is: 3840.0
+2025-05-05 01:05:30,824 [INFO] EditThreadDialog:704 - RAM SIZE (in KB): 320
+2025-05-05 01:05:30,824 [INFO] EditThreadDialog:706 - RAM SIZE (in words): 81920
+2025-05-05 01:05:34,398 [INFO] EditThreadDialog:704 - RAM SIZE (in KB): 320
+2025-05-05 01:05:34,398 [INFO] EditThreadDialog:706 - RAM SIZE (in words): 81920
+2025-05-05 01:05:44,320 [INFO] TasksAndQueuesTab:757 - Dynamic
+2025-05-05 01:05:44,320 [WARN] TasksAndQueuesTab:763 - 128 128
+2025-05-05 01:05:44,320 [WARN] TasksAndQueuesTab:775 - max value is: 3840.0
+2025-05-05 01:05:44,320 [INFO] TasksAndQueuesTab:757 - Dynamic
+2025-05-05 01:05:44,320 [WARN] TasksAndQueuesTab:763 - 128 128
+2025-05-05 01:05:44,320 [WARN] TasksAndQueuesTab:775 - max value is: 3840.0
+2025-05-05 01:05:46,919 [INFO] EditThreadDialog:704 - RAM SIZE (in KB): 320
+2025-05-05 01:05:46,919 [INFO] EditThreadDialog:706 - RAM SIZE (in words): 81920
+2025-05-05 01:05:55,830 [INFO] TasksAndQueuesTab:757 - Dynamic
+2025-05-05 01:05:55,830 [WARN] TasksAndQueuesTab:763 - 128 128
+2025-05-05 01:05:55,830 [WARN] TasksAndQueuesTab:775 - max value is: 3840.0
+2025-05-05 01:05:55,830 [INFO] TasksAndQueuesTab:757 - Dynamic
+2025-05-05 01:05:55,830 [WARN] TasksAndQueuesTab:763 - 128 128
+2025-05-05 01:05:55,830 [WARN] TasksAndQueuesTab:775 - max value is: 3840.0
+2025-05-05 01:05:57,583 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 936806152 Bytes (1073741824)
+2025-05-05 01:05:58,805 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 966692616 Bytes (1073741824)
+2025-05-05 01:06:00,979 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 834354072 Bytes (1073741824)
+2025-05-05 01:06:02,560 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: SPI
+2025-05-05 01:06:02,560 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: FREERTOS
+2025-05-05 01:06:02,560 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: TIM1_8F7
+2025-05-05 01:06:02,560 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: TIM1_8F7
+2025-05-05 01:06:02,560 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: SYS
+2025-05-05 01:06:02,560 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: RCC
+2025-05-05 01:06:02,560 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: NVIC
+2025-05-05 01:06:02,560 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: TIM1_8F7
+2025-05-05 01:06:02,560 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: CORTEX_M7
+2025-05-05 01:06:02,560 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: DAC
+2025-05-05 01:06:02,561 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: GPIO
+2025-05-05 01:06:02,561 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: FATFS
+2025-05-05 01:06:02,563 [INFO] CodeGenerator:882 - code generatio: config db path: C:\ST\STM32CubeIDE_1.17.0\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_6.14.0.202502271554\\db\
+2025-05-05 01:06:02,778 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\MXTmpFiles\license.tmp_save
+2025-05-05 01:06:02,861 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\MXTmpFiles\license.tmp
+2025-05-05 01:06:02,942 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\MXTmpFiles\gpio.tmp_save
+2025-05-05 01:06:03,072 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\MXTmpFiles\gpio.tmp
+2025-05-05 01:06:03,471 [INFO] Middleware:1452 - No code input for Bsp Dependency
+2025-05-05 01:06:03,488 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\MXTmpFiles\rtos_inc.tmp_save
+2025-05-05 01:06:03,568 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\MXTmpFiles\rtos_inc.tmp
+2025-05-05 01:06:03,577 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\MXTmpFiles\rtos_vars.tmp_save
+2025-05-05 01:06:03,659 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\MXTmpFiles\rtos_vars.tmp
+2025-05-05 01:06:03,666 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\MXTmpFiles\rtos_pfp.tmp_save
+2025-05-05 01:06:03,721 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\MXTmpFiles\rtos_pfp.tmp
+2025-05-05 01:06:03,727 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\MXTmpFiles\rtos_obj_creat.tmp_save
+2025-05-05 01:06:03,791 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\MXTmpFiles\rtos_obj_creat.tmp
+2025-05-05 01:06:03,796 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\MXTmpFiles\rtos_kernelStart.tmp_save
+2025-05-05 01:06:03,872 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\MXTmpFiles\rtos_kernelStart.tmp
+2025-05-05 01:06:03,878 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\MXTmpFiles\rtos_default_thread.tmp_save
+2025-05-05 01:06:03,938 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\MXTmpFiles\rtos_default_thread.tmp
+2025-05-05 01:06:03,946 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\MXTmpFiles\rtos_threads.tmp_save
+2025-05-05 01:06:03,998 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\MXTmpFiles\rtos_threads.tmp
+2025-05-05 01:06:04,021 [INFO] Middleware:1452 - No code input for Bsp Dependency
+2025-05-05 01:06:04,027 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\MXTmpFiles\fatfs_HalInit.tmp_save
+2025-05-05 01:06:04,104 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\MXTmpFiles\fatfs_HalInit.tmp
+2025-05-05 01:06:04,112 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\MXTmpFiles\fatfs_vars.tmp_save
+2025-05-05 01:06:04,193 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\MXTmpFiles\fatfs_vars.tmp
+2025-05-05 01:06:04,201 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\MXTmpFiles\fatfs_ext_vars.tmp_save
+2025-05-05 01:06:04,281 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\MXTmpFiles\fatfs_ext_vars.tmp
+2025-05-05 01:06:04,290 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\MXTmpFiles\fatfs_inc.tmp_save
+2025-05-05 01:06:04,360 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\MXTmpFiles\fatfs_inc.tmp
+2025-05-05 01:06:04,391 [INFO] Middleware:1452 - No code input for Bsp Dependency
+2025-05-05 01:06:04,399 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\MXTmpFiles\rtos_inc.tmp_save
+2025-05-05 01:06:04,478 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\MXTmpFiles\rtos_inc.tmp
+2025-05-05 01:06:04,490 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\MXTmpFiles\rtos_vars.tmp_save
+2025-05-05 01:06:04,598 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\MXTmpFiles\rtos_vars.tmp
+2025-05-05 01:06:04,609 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\MXTmpFiles\rtos_pfp.tmp_save
+2025-05-05 01:06:04,722 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\MXTmpFiles\rtos_pfp.tmp
+2025-05-05 01:06:04,732 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\MXTmpFiles\rtos_obj_creat.tmp_save
+2025-05-05 01:06:04,802 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\MXTmpFiles\rtos_obj_creat.tmp
+2025-05-05 01:06:04,815 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\MXTmpFiles\rtos_kernelStart.tmp_save
+2025-05-05 01:06:04,892 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\MXTmpFiles\rtos_kernelStart.tmp
+2025-05-05 01:06:04,899 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\MXTmpFiles\rtos_default_thread.tmp_save
+2025-05-05 01:06:04,956 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\MXTmpFiles\rtos_default_thread.tmp
+2025-05-05 01:06:04,964 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\MXTmpFiles\rtos_threads.tmp_save
+2025-05-05 01:06:05,018 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\MXTmpFiles\rtos_threads.tmp
+2025-05-05 01:06:05,028 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\Core\Inc\FreeRTOSConfig.h_save
+2025-05-05 01:06:05,099 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\Core\Inc\FreeRTOSConfig.h
+2025-05-05 01:06:05,108 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\Core\Src\freertos.c_save
+2025-05-05 01:06:05,174 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\Core\Src\freertos.c
+2025-05-05 01:06:05,188 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\MXTmpFiles\cortex.tmp_save
+2025-05-05 01:06:05,245 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\MXTmpFiles\cortex.tmp
+2025-05-05 01:06:05,260 [INFO] Middleware:1452 - No code input for Bsp Dependency
+2025-05-05 01:06:05,265 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\MXTmpFiles\fatfs_HalInit.tmp_save
+2025-05-05 01:06:05,330 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\MXTmpFiles\fatfs_HalInit.tmp
+2025-05-05 01:06:05,338 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\MXTmpFiles\fatfs_vars.tmp_save
+2025-05-05 01:06:05,390 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\MXTmpFiles\fatfs_vars.tmp
+2025-05-05 01:06:05,398 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\MXTmpFiles\fatfs_ext_vars.tmp_save
+2025-05-05 01:06:05,451 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\MXTmpFiles\fatfs_ext_vars.tmp
+2025-05-05 01:06:05,459 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\MXTmpFiles\fatfs_inc.tmp_save
+2025-05-05 01:06:05,511 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\MXTmpFiles\fatfs_inc.tmp
+2025-05-05 01:06:05,521 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\FATFS\Target\ffconf.h_save
+2025-05-05 01:06:05,589 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\FATFS\Target\ffconf.h
+2025-05-05 01:06:05,597 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\FATFS\Target\user_diskio.c_save
+2025-05-05 01:06:05,655 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\FATFS\Target\user_diskio.c
+2025-05-05 01:06:05,664 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\FATFS\Target\user_diskio.h_save
+2025-05-05 01:06:05,725 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\FATFS\Target\user_diskio.h
+2025-05-05 01:06:05,734 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\FATFS\App\fatfs.c_save
+2025-05-05 01:06:05,794 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\FATFS\App\fatfs.c
+2025-05-05 01:06:05,801 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\FATFS\App\fatfs.h_save
+2025-05-05 01:06:05,866 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\FATFS\App\fatfs.h
+2025-05-05 01:06:05,898 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\Core\Src\stm32f7xx_it.c_save
+2025-05-05 01:06:05,975 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\Core\Src\stm32f7xx_it.c
+2025-05-05 01:06:05,982 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\Core\Inc\stm32f7xx_it.h_save
+2025-05-05 01:06:06,041 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\Core\Inc\stm32f7xx_it.h
+2025-05-05 01:06:06,065 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\Core\Src\stm32f7xx_hal_msp.c_save
+2025-05-05 01:06:06,168 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\Core\Src\stm32f7xx_hal_msp.c
+2025-05-05 01:06:06,179 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\MXTmpFiles\system.tmp_save
+2025-05-05 01:06:06,232 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\MXTmpFiles\system.tmp
+2025-05-05 01:06:06,240 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\Core\Src\stm32f7xx_hal_timebase_tim.c_save
+2025-05-05 01:06:06,302 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\Core\Src\stm32f7xx_hal_timebase_tim.c
+2025-05-05 01:06:06,317 [INFO] CodeEngine:319 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\Core\Inc\stm32f7xx_hal_conf.h_save
+2025-05-05 01:06:06,394 [INFO] CodeEngine:343 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\Core\Inc\stm32f7xx_hal_conf.h
+2025-05-05 01:06:06,432 [WARN] IPConfigManager:3747 - IP not found : TIM
+2025-05-05 01:06:06,434 [WARN] CodeGenerator:4198 - IP not found : null
+2025-05-05 01:06:06,445 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\Core\Inc\main.h_save
+2025-05-05 01:06:06,514 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\Core\Inc\main.h
+2025-05-05 01:06:06,528 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\Core\Src\main.c_save
+2025-05-05 01:06:06,670 [INFO] CodeEngine:287 - Generated code: C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\Core\Src\main.c
+2025-05-05 01:06:07,359 [INFO] ProjectBuilder:3324 - Time for Copy HAL[1] : 434mS.
+2025-05-05 01:06:07,367 [INFO] ProjectBuilder:4912 - Project Generator version: 4.6.0-B36
+2025-05-05 01:06:07,445 [INFO] ConfigFileManager:1590 - The Die is : DIE449
+2025-05-05 01:06:09,346 [INFO] ProjectBuilder:5191 - Time for Generating toolchain IDE Files: 1979mS.
+2025-05-05 01:06:09,350 [INFO] ProjectBuilder:3181 - Time for Copy CMSIS : 2mS.
+2025-05-05 01:06:09,370 [INFO] ProjectBuilder:3181 - Time for Copy CMSIS : 0mS.
+2025-05-05 07:30:57,715 [INFO] WebApp:194 - Connection lost
+2025-05-05 07:30:59,567 [INFO] WebApp:191 - Connection restablished
+2025-05-05 07:38:31,988 [INFO] WebApp:194 - Connection lost
+2025-05-05 07:38:57,835 [INFO] WebApp:191 - Connection restablished
+2025-05-05 11:27:23,536 [INFO] WebApp:194 - Connection lost

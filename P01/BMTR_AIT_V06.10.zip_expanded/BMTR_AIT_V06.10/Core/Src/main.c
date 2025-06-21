@@ -1107,37 +1107,37 @@ void StartTask02(void const * argument)
     }
 	}
 	else {
-		// ===== STM32 Side (Master - Transmitter) =====
-		// Transmit 1 int + 5 floats (20 bytes) + start marker (1 byte) + CRC (1 byte) = 22 bytes
-
-		uint8_t txBuf[22];
-		uint8_t rxBuf[22];
-
-		memset(txBuf, 0, sizeof(txBuf));
-		memset(rxBuf, 0, sizeof(rxBuf));  // 💡 Important flush
-
-		txBuf[0] = 0xAA;
-		memcpy(&txBuf[1],  &time_start, sizeof(int));
-		memcpy(&txBuf[5],  &motor02_reaction_torque, sizeof(float));
-		memcpy(&txBuf[9],  &desired_torque, sizeof(float));
-		memcpy(&txBuf[13], &theta1, sizeof(float));
-		memcpy(&txBuf[17], &theta2, sizeof(float));
-
-		// CRC
-		uint8_t crc = 0;
-		for (int i = 0; i < 21; i++) {
-		    crc ^= txBuf[i];
-		}
-		txBuf[21] = crc;
-
-		// SPI transmit
-		HAL_GPIO_WritePin(GPIOB, GPIO_PIN_0, GPIO_PIN_RESET);
-		HAL_Delay(1);
-		HAL_SPI_TransmitReceive(&hspi4, txBuf, rxBuf, sizeof(txBuf), HAL_MAX_DELAY);
-		HAL_Delay(1);
-		HAL_GPIO_WritePin(GPIOB, GPIO_PIN_0, GPIO_PIN_SET);
-		HAL_Delay(1);  // can increase to 3–5 ms if instability persists
-  // Delay before next cycle
+//		// ===== STM32 Side (Master - Transmitter) =====
+//		// Transmit 1 int + 5 floats (20 bytes) + start marker (1 byte) + CRC (1 byte) = 22 bytes
+//
+//		uint8_t txBuf[22];
+//		uint8_t rxBuf[22];
+//
+//		memset(txBuf, 0, sizeof(txBuf));
+//		memset(rxBuf, 0, sizeof(rxBuf));  // 💡 Important flush
+//
+//		txBuf[0] = 0xAA;
+//		memcpy(&txBuf[1],  &time_start, sizeof(int));
+//		memcpy(&txBuf[5],  &motor02_reaction_torque, sizeof(float));
+//		memcpy(&txBuf[9],  &desired_torque, sizeof(float));
+//		memcpy(&txBuf[13], &theta1, sizeof(float));
+//		memcpy(&txBuf[17], &theta2, sizeof(float));
+//
+//		// CRC
+//		uint8_t crc = 0;
+//		for (int i = 0; i < 21; i++) {
+//		    crc ^= txBuf[i];
+//		}
+//		txBuf[21] = crc;
+//
+//		// SPI transmit
+//		HAL_GPIO_WritePin(GPIOB, GPIO_PIN_0, GPIO_PIN_RESET);
+//		HAL_Delay(1);
+//		HAL_SPI_TransmitReceive(&hspi4, txBuf, rxBuf, sizeof(txBuf), HAL_MAX_DELAY);
+//		HAL_Delay(1);
+//		HAL_GPIO_WritePin(GPIOB, GPIO_PIN_0, GPIO_PIN_SET);
+//		HAL_Delay(1);  // can increase to 3–5 ms if instability persists
+//  // Delay before next cycle
 	}
 
 	osDelay(5);
