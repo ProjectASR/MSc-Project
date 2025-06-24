@@ -253,8 +253,8 @@ float motor02_torque_profile_withtheta2 =0.0f;
 float Set_Accelaration1 = 500;  // Desired acceleration
 float Set_Torque1 = 0;  // Desired acceleration
 float dt_s = 0.001f;
-float ks=24.0f;
-#define MOTOR2_DIRECTION_SIGN  (-1.0f)  // Set to 1.0f for forward mount, -1.0f for reversed
+float ks=6.0f;
+#define MOTOR2_DIRECTION_SIGN  (1.0f)  // Set to 1.0f for forward mount, -1.0f for reversed
 // ────────────── HAL Status ──────────────
 HAL_StatusTypeDef status;
 uint16_t OutputVref = 5000;         // DAC output voltage reference value
@@ -343,7 +343,7 @@ void UpdateMotor01CommandedCurrent(void)
     // Final commanded current is inertia compensation + disturbance compensation
     //commanded_current = inertia_compensation_current + disturbance_current;
      commanded_current = inertia_compensation_current+ disturbance_current; //added for DOB tuning
-
+     desired_torque=ks*(theta2-theta1)-reaction_torque-motor02_reaction_torque;
 }
 void UpdateMotor02CommandedCurrent(void)
 {
@@ -402,7 +402,7 @@ void UpdateMotor02CommandedCurrent(void)
         (motor02_inertia * motor02_commanded_acceleration) / motor02_torque_constant;
 
     motor02_commanded_current = motor02_inertia_compensation_current + motor02_disturbance_current;
-    assit_torque = MOTOR2_DIRECTION_SIGN*ks*(theta1-theta2);
+    assit_torque = MOTOR2_DIRECTION_SIGN*ks*(theta1-theta2)+reaction_torque+motor02_reaction_torque;
 
 }
 
@@ -617,7 +617,7 @@ static void MX_SPI4_Init(void)
   hspi4.Init.CLKPolarity = SPI_POLARITY_LOW;
   hspi4.Init.CLKPhase = SPI_PHASE_1EDGE;
   hspi4.Init.NSS = SPI_NSS_SOFT;
-  hspi4.Init.BaudRatePrescaler = SPI_BAUDRATEPRESCALER_256;
+  hspi4.Init.BaudRatePrescaler = SPI_BAUDRATEPRESCALER_64;
   hspi4.Init.FirstBit = SPI_FIRSTBIT_MSB;
   hspi4.Init.TIMode = SPI_TIMODE_DISABLE;
   hspi4.Init.CRCCalculation = SPI_CRCCALCULATION_DISABLE;
@@ -889,9 +889,6 @@ static void MX_GPIO_Init(void)
 void StartDefaultTask(void const * argument)
 {
   /* USER CODE BEGIN 5 */
-    const uint32_t period_ms = 60;
-    uint32_t tick_period = osKernelGetTickFreq() * period_ms / 1000;
-    uint32_t last_wake_time = osKernelGetTickCount();
   /* Infinite loop */
   for(;;)
   {
@@ -1051,8 +1048,8 @@ void StartDefaultTask(void const * argument)
 	   *               Update Time Interval                   *
 	   *********************************************************/
 
-      osDelayUntil(&last_wake_time, tick_period);
-
+	  osDelay(2);
+	  time_end = __HAL_TIM_GET_COUNTER(&htim2);
 
   }
   /* USER CODE END 5 */
@@ -1147,6 +1144,7 @@ void StartTask02(void const * argument)
   }
 }
   /* USER CODE END StartTask02 */
+
 
  /* MPU Configuration */
 

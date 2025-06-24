@@ -68,8 +68,8 @@ all: main-build
 main-build: BMTR_RTOS_ASRV1.elf secondary-outputs
 
 # Tool invocations
-BMTR_RTOS_ASRV1.elf BMTR_RTOS_ASRV1.map: $(OBJS) $(USER_OBJS) C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\STM32F756ZGTX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "BMTR_RTOS_ASRV1.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m7 -T"C:\Users\ashen\Documents\GitHub\MSc-Project\P01\BMTR_RTOS_ASRV1\STM32F756ZGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="BMTR_RTOS_ASRV1.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+BMTR_RTOS_ASRV1.elf BMTR_RTOS_ASRV1.map: $(OBJS) $(USER_OBJS) C:\Users\ashen\Desktop\BMTR_RTOS_ASRV1\STM32F756ZGTX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "BMTR_RTOS_ASRV1.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m7 -T"C:\Users\ashen\Desktop\BMTR_RTOS_ASRV1\STM32F756ZGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="BMTR_RTOS_ASRV1.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 
