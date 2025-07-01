@@ -137,8 +137,8 @@ float velocity1Filtered=0.0,velocity2Filtered=0.0;
 float acceleration1 = 0.0, acceleration2 = 0.0;
 float acceleration1_prev=0.0;
 // ────────────── 🛠 Parameters ──────────────
-#define G 90     // Smoothing factor for velocity filter
-#define G2 90     // Smoothing factor for velocity filter
+#define G 70     // Smoothing factor for velocity filter
+#define G2 70     // Smoothing factor for velocity filter
 // ────────────── ⚙️ Motor 2 Parameters ──────────────
 float Icmd2 = 1.1;      // Commanded current (A)
 float Ktn2 = 0.0705;    // Torque constant (Nm/A)
@@ -343,7 +343,7 @@ void UpdateMotor01CommandedCurrent(void)
     // Final commanded current is inertia compensation + disturbance compensation
     //commanded_current = inertia_compensation_current + disturbance_current;
      commanded_current = inertia_compensation_current+ disturbance_current; //added for DOB tuning
-     desired_torque=ks*(theta2-theta1)*motor_inertia-reaction_torque-motor02_reaction_torque;
+     desired_torque=ks*(theta1-theta2)*motor_inertia-reaction_torque-motor02_reaction_torque;
 }
 void UpdateMotor02CommandedCurrent(void)
 {
@@ -402,7 +402,7 @@ void UpdateMotor02CommandedCurrent(void)
         (motor02_inertia * motor02_commanded_acceleration) / motor02_torque_constant;
 
     motor02_commanded_current = motor02_inertia_compensation_current + motor02_disturbance_current;
-    motor02_desired_torque =ks*(theta1-theta2)*motor_inertia-reaction_torque-motor02_reaction_torque;
+    motor02_desired_torque =(ks*(theta2-theta1)*motor_inertia-reaction_torque-motor02_reaction_torque);
 
 }
 
@@ -888,172 +888,84 @@ static void MX_GPIO_Init(void)
 /* USER CODE END Header_StartDefaultTask */
 void StartDefaultTask(void const * argument)
 {
-  /* USER CODE BEGIN 5 */
-  /* Infinite loop */
-  for(;;)
+  static int16_t prev_ticks1 = 0;
+  static int16_t prev_ticks2 = 0;
+
+  for (;;)
   {
-	  /*********************************************************
-	   *                  Main Task Counter Update              *
-	   *********************************************************/
-	  MainTaskCount++;
-	  time_start = __HAL_TIM_GET_COUNTER(&htim2);
-	  MainloopCount++;
-	  if (time_interval == 0) time_interval = 1;  // Safety check (avoid division by zero)
+    uint32_t t_start = __HAL_TIM_GET_COUNTER(&htim2);
+    uint32_t t_now   = t_start;
 
-	  /*********************************************************
-	   *                Read Encoder Tick Counts               *
-	   *********************************************************/
-	  EncoderUpdated = 0;
-	  encoder_ticks = __HAL_TIM_GET_COUNTER(&htim1);   // Encoder 1
-	  encoder_ticks2 = __HAL_TIM_GET_COUNTER(&htim4);  // Encoder 2
-	  EncoderUpdated = 1;
-	  /*********************************************************
-	   *                 Time from Start (in sec)              *
-	   *********************************************************/
-	  secondFromStart = __HAL_TIM_GET_COUNTER(&htim2) / 100000;
+    while (((t_now - t_start) & 0xFFFFFFFF) < 200)  // Run for 2000 µs (2 ms)
+    {
+      MainTaskCount++;
+      MainloopCount++;
+      time_start = __HAL_TIM_GET_COUNTER(&htim2);
 
-	  /*********************************************************
-	   *           Compute Position, Velocity, Acceleration    *
-	   *                  For Encoder 1 (Motor 1)              *
-	   *********************************************************/
+      EncoderUpdated = 0;
+      encoder_ticks  = __HAL_TIM_GET_COUNTER(&htim1);
+      encoder_ticks2 = __HAL_TIM_GET_COUNTER(&htim4);
+      EncoderUpdated = 1;
 
-	  // Persistent variable
-	  static int16_t prev_ticks1 = 0;
+      secondFromStart = time_start / 1000000.0f;
 
-	  // Read current encoder count
-	  int16_t curr_ticks1 = __HAL_TIM_GET_COUNTER(&htim1);
-	  int16_t delta_ticks1 = (int16_t)(curr_ticks1 - prev_ticks1);  // Handles overflow
-	  prev_ticks1 = curr_ticks1;
+      /************ Motor 1 (Encoder 1) ************/
+      int16_t curr_ticks1 = __HAL_TIM_GET_COUNTER(&htim1);
+      int16_t delta_ticks1 = (int16_t)(curr_ticks1 - prev_ticks1);
+      prev_ticks1 = curr_ticks1;
 
-	  // Compute delta angle and accumulate
-	  float delta_theta1 = ((float)delta_ticks1) * 2.0f * M_PI / CPR;
-	  theta1 += delta_theta1;
+      float delta_theta1 = delta_ticks1 * 2.0f * M_PI / CPR;
+      theta1 += delta_theta1;
 
+      velocity1 = (theta1 - theta1_prev) / dt_s;
+      motor_velocity = velocity1_prev + G * dt_s * (velocity1 - velocity1_prev);
+      theta1_prev = theta1;
+      velocity1_prev = motor_velocity;
 
-	  // Velocity and acceleration
-	  velocity1 = (theta1 - theta1_prev) / dt_s;
-	  motor_velocity = velocity1_prev + G *dt_s* (velocity1 - velocity1_prev);
-	  velocity1_prev = motor_velocity;
-	  //float raw_acceleration1 = (velocity1 - velocity1_prev) / dt_s;
-	  //acceleration1 = (1 - 0.1f) * acceleration1 + 0.1f * raw_acceleration1;  // Low-pass filter
+      /************ Motor 2 (Encoder 2) ************/
+      int16_t curr_ticks2 = __HAL_TIM_GET_COUNTER(&htim4);
+      int16_t delta_ticks2 = (int16_t)(curr_ticks2 - prev_ticks2);
+      prev_ticks2 = curr_ticks2;
 
-	  // Apply velocity filter
-	  //motor_velocity = applyLowPassFilterVelocity(velocity1, velocity1_prev);
+      float delta_theta2 = delta_ticks2 * 2.0f * M_PI / CPR;
+      theta2 += delta_theta2;
 
-	  // Update previous states
-	  // THEN update for next loop
-	  theta1_prev = theta1;
+      velocity2 = (theta2 - theta2_prev) / dt_s;
+      float raw_accel2 = (velocity2 - velocity2_prev) / dt_s;
+      acceleration2 = 0.9f * acceleration2 + 0.1f * raw_accel2;
 
+      motor02_motor_velocity = applyLowPassFilterVelocity2(velocity2, velocity2_prev);
+      theta2_prev = theta2;
+      velocity2_prev = motor02_motor_velocity;
 
+      UpdateMotor01CommandedCurrent();
+      UpdateMotor02CommandedCurrent();
 
-	  /*********************************************************
-	   *           Compute Position, Velocity, Acceleration    *
-	   *                  For Encoder 2 (Motor 2)              *
-	   *********************************************************/
+      // === Motor 1 Output ===
+      float curr = commanded_current;
+      curr = (curr > motor1MaxCurrent) ? motor1MaxCurrent : (curr < -motor1MaxCurrent ? -motor1MaxCurrent : curr);
+      motor_direction_flag = (curr >= 0) ? 1 : 0;
+      voltage_reference_1 = (4095.0f / motor1MaxCurrent) * fabsf(curr);
+      ConfigureMotor01(ENABLEmOTOR, motor_direction_flag, voltage_reference_1);
 
-	  // Persistent variable
-	  static int16_t prev_ticks2 = 0;
+      // === Motor 2 Output ===
+      curr = motor02_commanded_current;
+      curr = (curr > 3.0f) ? 3.0f : (curr < -3.0f ? -3.0f : curr);
+      motor02_direction_flag = (curr >= 0) ? 1 : 0;
+      voltage_reference_2 = (4095.0f / 3.0f) * fabsf(curr);
+      ConfigureMotor02(ENABLEmOTOR, motor02_direction_flag, voltage_reference_2);
 
-	  // Read current encoder count
-	  int16_t curr_ticks2 = __HAL_TIM_GET_COUNTER(&htim4);
-	  //int16_t delta_ticks2 = (int16_t)(curr_ticks2 - prev_ticks2);  // Handles overflow
-	  // Compute delta and reverse if needed
-	  int16_t delta_ticks2 = (int16_t)(curr_ticks2 - prev_ticks2);
-	  prev_ticks2 = curr_ticks2;
+      t_now = __HAL_TIM_GET_COUNTER(&htim2);
+      uint32_t delta_time_us = (t_now - time_start) & 0xFFFFFFFF;  // Handles overflow
+      dt_s = delta_time_us / 100000.0f;  // Convert µs to seconds
 
-	  // Compute delta angle and accumulate
-	  float delta_theta2 = ((float)delta_ticks2) * (2.0f * M_PI )/ CPR;
-	  theta2 += delta_theta2;
+    }
 
-
-	  // Velocity and acceleration
-	  velocity2 = (theta2 - theta2_prev) / dt_s;
-	  float raw_acceleration2 = (velocity2 - velocity2_prev) / dt_s;
-	  acceleration2 = (1 - 0.1f) * acceleration2 + 0.1f * raw_acceleration2;  // Low-pass filter
-
-	  // Apply velocity filter
-	  motor02_motor_velocity = applyLowPassFilterVelocity2(velocity2, velocity2_prev);
-
-	  // Update previous states
-	  theta2_prev = theta2;
-	  velocity2_prev = motor02_motor_velocity;
-	  UpdateMotor01CommandedCurrent();
-	  UpdateMotor02CommandedCurrent();
-	  //UpdateMotor02CommandedCurrentReversed();
-//Master-left, follower-right
-	  //desired_torque = motor02_desired_torque-assit_torque; // make sure to change the reaction torque in data print
-// Default: Master-right , follower -left (most of them are right-handed)
-	 //motor02_desired_torque =assit_torque;
-	  /*********************************************************
-	   *         Motor Output Control & Saturation            *
-	   *********************************************************/
-	  // Limit commanded current to ±3.0 A and set motor direction
-	  if (commanded_current > motor1MaxCurrent) {
-	      commanded_current = motor1MaxCurrent;
-	      motor_direction_flag = 1;  // Forward
-	      voltage_reference_1 = (4095.0f / motor1MaxCurrent) * fabsf(commanded_current);
-	  }
-	  else if (commanded_current < -3.0f) {
-	      commanded_current = -3.0f;
-	      motor_direction_flag = 0;  // Reverse
-	      voltage_reference_1 = (4095.0f / motor1MaxCurrent) * fabsf(-1*commanded_current);
-	  }
-	  else {
-	      // Current is within safe bounds; determine direction by sign
-	      if (commanded_current >= 0.0f) {
-	          motor_direction_flag = 1;  // Forward
-	          voltage_reference_1 = (4095.0f /motor1MaxCurrent) * fabsf(commanded_current);
-	      } else {
-	          motor_direction_flag = 0;  // Reverse
-	          voltage_reference_1 = (4095.0f / motor1MaxCurrent) * fabsf(-1*commanded_current);
-	      }
-	  }
-
-	  // Convert current to PWM duty cycle (12-bit scale), store in voltage_reference_1
-
-
-	  // Apply output using reference voltage and direction
-	  ConfigureMotor01(ENABLEmOTOR, motor_direction_flag, voltage_reference_1);
-	  // Limit commanded current to ±3.0 A and set motor direction
-	  if (motor02_commanded_current > 3.0f) {
-		  motor02_commanded_current = 3.0f;
-		  motor02_direction_flag = 1;  // Forward direction
-		  voltage_reference_2 = (4095.0f / 3.0f) * fabsf(motor02_commanded_current);
-	  }
-	  else if (motor02_commanded_current < -3.0f) {
-		  motor02_commanded_current = -3.0f;
-		  motor02_direction_flag = 0;  // Reverse direction
-		  voltage_reference_2 = (4095.0f / 3.0f) * fabsf(-1*motor02_commanded_current);
-	  }
-	  else {
-	      // Current is within safe bounds; determine direction by sign
-	      if (motor02_commanded_current >= 0.0f) {
-	    	  motor02_direction_flag = 1;  // Forward
-	    	  voltage_reference_2 = (4095.0f / 3.0f) * fabsf(motor02_commanded_current);
-	      } else {
-	    	  motor02_direction_flag = 0;  // Reverse
-	          voltage_reference_2 = (4095.0f / 3.0f) * fabsf(-1*motor02_commanded_current);
-	      }
-	  }
-
-	  // Convert commanded current to PWM duty cycle (12-bit scale)
-	  // Assuming 3.3V corresponds to max current of 3A
-	  //voltage_reference_2 = (4096.0f / 3.3f) * fabsf(motor02_commanded_current);
-
-	  ConfigureMotor02(ENABLEmOTOR, motor02_direction_flag, voltage_reference_2);
-	  // Apply output using reference voltage and direction
-	  //ConfigureMotor02(ENABLEmOTOR, Motor1DirB, Icmd1 * (4096) / 3.3);
-
-	  /*********************************************************
-	   *               Update Time Interval                   *
-	   *********************************************************/
-
-	  osDelay(2);
-	  time_end = __HAL_TIM_GET_COUNTER(&htim2);
-
+    // Optional: Yield to let other tasks run
+    taskYIELD();
   }
-  /* USER CODE END 5 */
 }
+
 
 /* USER CODE BEGIN Header_StartTask02 */
 /**
@@ -1064,85 +976,41 @@ void StartDefaultTask(void const * argument)
 /* USER CODE END Header_StartTask02 */
 void StartTask02(void const * argument)
 {
-  /* USER CODE BEGIN StartTask02 */
-  /* Infinite loop */
-  for(;;)
+  TickType_t lastWakeTime = xTaskGetTickCount();
+  const TickType_t frequency = pdMS_TO_TICKS(2); // 2 ms
+
+  for (;;)
   {
+    if (SDCardRecordMode == 1 && EncoderUpdated == 1 && communicationError == 0)
+    {
+      SDCardCount++;
+      FRESULT fr;
+      UINT bytes_written;
 
-
-	if (SDCardRecordMode==1){
-    SDCardCount++;
-    if (EncoderUpdated == 1 && communicationError==0) {
-        FRESULT fr;
-        UINT bytes_written;
-
-        // Open the file for appending
-        fr = f_open(&fil, "Data.txt", FA_OPEN_APPEND | FA_WRITE);
-        if (fr != FR_OK) {
-            // Optional: Handle error (blink LED, set flag, etc.)
-        	communicationError=1;
-            return;
-        }
-
-        // Format the record number and encoder tick data into a string
+      fr = f_open(&fil, "Data.txt", FA_OPEN_APPEND | FA_WRITE);
+      if (fr == FR_OK)
+      {
         sprintf(buffer, "R%lu: E1: %lu, E2: %lu\n", SDCardCount, encoder_ticks, encoder_ticks2);
-        //"R%lu: E1: %lu, E2: %lu\n"
-        // Write to the file
         fr = f_write(&fil, buffer, strlen(buffer), &bytes_written);
-        if (fr != FR_OK || bytes_written == 0) {
-            f_close(&fil);  // Close anyway if open
-            communicationError=1;
-            return;
-        }
+        f_close(&fil);
 
-        // Close the file
-        fr = f_close(&fil);
-        if (fr != FR_OK) {
-        	communicationError=1;
-            return;
-        }
+        if (fr != FR_OK || bytes_written == 0)
+          communicationError = 1;
 
         EncoderUpdated = 0;
         record_number++;
+      }
+      else
+      {
+        communicationError = 1;
+      }
     }
-	}
-	else {
-//		// ===== STM32 Side (Master - Transmitter) =====
-//		// Transmit 1 int + 5 floats (20 bytes) + start marker (1 byte) + CRC (1 byte) = 22 bytes
-//
-//		uint8_t txBuf[22];
-//		uint8_t rxBuf[22];
-//
-//		memset(txBuf, 0, sizeof(txBuf));
-//		memset(rxBuf, 0, sizeof(rxBuf));  // 💡 Important flush
-//
-//		txBuf[0] = 0xAA;
-//		memcpy(&txBuf[1],  &time_start, sizeof(int));
-//		memcpy(&txBuf[5],  &motor02_reaction_torque, sizeof(float));
-//		memcpy(&txBuf[9],  &desired_torque, sizeof(float));
-//		memcpy(&txBuf[13], &theta1, sizeof(float));
-//		memcpy(&txBuf[17], &theta2, sizeof(float));
-//
-//		// CRC
-//		uint8_t crc = 0;
-//		for (int i = 0; i < 21; i++) {
-//		    crc ^= txBuf[i];
-//		}
-//		txBuf[21] = crc;
-//
-//		// SPI transmit
-//		HAL_GPIO_WritePin(GPIOB, GPIO_PIN_0, GPIO_PIN_RESET);
-//		HAL_Delay(1);
-//		HAL_SPI_TransmitReceive(&hspi4, txBuf, rxBuf, sizeof(txBuf), HAL_MAX_DELAY);
-//		HAL_Delay(1);
-//		HAL_GPIO_WritePin(GPIOB, GPIO_PIN_0, GPIO_PIN_SET);
-//		HAL_Delay(1);  // can increase to 3–5 ms if instability persists
-//  // Delay before next cycle
-	}
 
-	osDelay(5);
+    osDelay(2);
+
   }
 }
+
   /* USER CODE END StartTask02 */
 
 
